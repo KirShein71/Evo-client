@@ -1,0 +1,39 @@
+.brand {
+    margin-top: 15px;
+    &__title {
+        font-size: 18px;
+        color: rgb(7,7,7);
+        font-weight: 400; 
+        cursor: pointer;
+        span {
+            font-size: 19px;
+            color: rgb(7,7,7);
+            font-weight: 500;
+        }
+    }
+    &__modal {
+        width: 750px;
+        height: 260px;
+        background-color: #ffff;
+        border: 2px solid grey;
+        border-radius: 10px;
+
+        &-content {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+        }
+
+        &-item {
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+}

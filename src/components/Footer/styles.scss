@@ -1,0 +1,38 @@
+.footer {
+    background-color: rgb(204, 191, 191);
+    &__content {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__admin {
+        @media(max-width: 768px) {
+            display: none;
+        }
+        img {
+            width: 10%;
+            cursor: pointer;
+        }
+    }
+
+    &__title {
+        @media(max-width: 400px) {
+            font-size: 16px;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+        &:hover {
+            color: #f11818; 
+        }
+        @media(max-width: 480px) {
+            font-size: 16px;
+        }
+        @media(max-width: 400px) {
+            font-size: 13px;
+        }
+        
+    }
+}

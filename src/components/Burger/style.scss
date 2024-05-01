@@ -1,0 +1,24 @@
+.burger {
+    display: none;
+    @media(max-width: 595px) {
+        display: block;
+        margin-top: 20px;
+    }
+    @media(max-width: 480px) {
+        display: block;
+        margin-top: 8px;
+    }
+
+    &__border {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 4px 0;
+        @media(max-width: 480px) {
+            width: 20px;
+            height: 2px;
+            background-color: black;
+            margin: 4px 0;
+        }
+    }
+}
