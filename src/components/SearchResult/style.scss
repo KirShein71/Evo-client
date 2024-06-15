@@ -1,0 +1,190 @@
+.searchresult {
+    margin-bottom: 50px;
+    
+   
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 25px;
+        justify-items: center; 
+        align-items: center;
+        @media(max-width: 1024px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media(max-width: 991px) {
+            grid-column-gap: 10px;
+        }
+        @media(max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media(max-width: 480px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+}
+
+.cardresult {
+    width: 100%;
+    height: 330px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 7px #706f6f;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+    position: relative;
+    &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+        @media(max-width: 991px) {
+            box-shadow: none;
+            transform: none;
+        }
+    }
+    @media(max-width: 1024px) {
+        transition: none;
+        box-shadow:none;
+        border: 2px solid #dfdfdf;
+       
+    }
+ 
+    @media(max-width: 595px) {
+        height: 320px;
+    }
+    @media(max-width: 480px) {
+        height: 300px;
+        padding: 10px 7px;
+    }
+    @media(max-width: 380px) {
+        height: 275px; 
+    }
+
+    
+  
+    &__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 160px;
+        @media(max-width: 595px) {
+            height: 130px;
+        }
+        @media(max-width: 480px) {
+            height: 120px;
+        }
+        @media(max-width: 400px) {
+            height: 110px;
+        }
+        img {
+            margin-top: 25px;
+            width: 80%;
+            @media(max-width: 595px) {
+                margin-top: 15px;
+            }
+            @media(max-width: 460px) {
+                margin-top: 0px;
+            }
+           
+            
+            
+        }
+    }
+  
+    &__title {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 600;
+        padding-top: 25px;
+        @media(max-width: 1024px){
+            font-size: 17px;
+            color: #0a0707;
+            
+        }
+        @media(max-width: 768px){
+            font-size: 16px;
+        }
+        @media(max-width: 595px) {
+            padding-top: 15px;
+        }
+        @media(max-width: 480px) {
+            font-size: 15px;
+        }
+        @media(max-width: 440px) {
+            padding-top: 10px;
+            font-size: 14px;
+        }
+        @media(max-width: 380px) {
+            padding-top: 10px;
+        }
+    }
+
+    &__bottom {
+        overflow: hidden;
+        border-top: 1px solid #eee;
+        padding: 25px 15px;
+        display: flex;
+        justify-content: space-between;
+        @media(max-width: 991px) {
+            padding: 18px 10px;
+        }
+        @media(max-width: 595px) {
+            display: contents;
+        }
+    }
+
+    &__price {
+        font-size: 20px;
+        color: #d81212;
+        font-weight: 600;
+        small {
+            font-size: 80%;
+            color: #0a0707;
+            font-weight: 500;
+            text-decoration: line-through;
+            display: inline-block;
+            margin-right: 5px;
+            @media(max-width: 768px) {
+                font-size: 90%;
+            }
+        }
+        @media(max-width: 1024px) {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        @media(max-width: 768px) {
+            font-size: 16px;
+        }
+        @media(max-width: 595px) {
+            font-size: 17px;
+        }
+        @media(max-width: 380px) {
+            margin-bottom: 10px;
+        }
+    }   
+    
+    &__button {
+        display: block;
+        width: 100px;
+        height: 35px;
+        border-radius: 10px;
+        background-color: #d81212;
+        border: none;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+            background-color: #ffffff;
+            color: #d81212;
+            border: 2px solid #d81212;
+        }
+        @media(max-width: 1024px) {
+            margin: 0 auto;
+            width: 120px;
+        }
+    }
+  }

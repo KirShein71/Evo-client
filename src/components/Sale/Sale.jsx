@@ -18,7 +18,7 @@ function Sale() {
         <h2 className="sale__title">Актуальные акции</h2>
         <div className="sale__content">
           {saleProducts.map((saleProduct) => (
-            <CardSale {...saleProduct} />
+            <CardSale {...saleProduct} key={saleProduct.id} />
           ))}
         </div>
       </div>

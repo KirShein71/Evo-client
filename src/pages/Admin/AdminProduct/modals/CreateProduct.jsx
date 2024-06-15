@@ -34,11 +34,11 @@ const isValid = (value) => {
 const CreateProduct = (props) => {
   const { show, setShow, setChange } = props;
   const [brands, setBrands] = React.useState(null);
-  const [carModels, setCarModels] = React.useState([]);
   const [filteredCarModels, setFilteredCarModels] = React.useState([]);
   const [value, setValue] = React.useState(defaultValue);
   const [valid, setValid] = React.useState(defaultValid);
   const [image, setImage] = React.useState(null);
+  const [patternImage, setPatternImage] = React.useState(null);
   const [fetching, setFetching] = React.useState(true);
 
   React.useEffect(() => {
@@ -70,6 +70,9 @@ const CreateProduct = (props) => {
     setImage(event.target.files[0]);
   };
 
+  const handlePatternImageChange = (event) => {
+    setPatternImage(event.target.files[0]);
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     const correct = isValid(value);
@@ -88,10 +91,11 @@ const CreateProduct = (props) => {
       data.append('brandId', value.brand);
       data.append('carModelId', value.carModel);
       data.append('image', image, image.name);
-
+      data.append('pattern_image', patternImage, patternImage.name);
       createProduct(data)
         .then((data) => {
           event.target.image.value = '';
+          event.target.patternImage.image = '';
           setValue(defaultValue);
           setValid(defaultValid);
           setShow(false);
@@ -168,7 +172,7 @@ const CreateProduct = (props) => {
                 onChange={(e) => handleInputChange(e)}
                 isValid={valid.old_price === true}
                 isInvalid={valid.old_price === false}
-                placeholder="Старая цена."
+                placeholder="Старая цена"
                 className="mb-3"
               />
             </Col>
@@ -185,11 +189,20 @@ const CreateProduct = (props) => {
             </Col>
           </Row>
           <Col className="mb-3">
+            <div>Фотография товара</div>
             <Form.Control
               name="image"
               type="file"
               onChange={(e) => handleImageChange(e)}
               placeholder="Фото товара..."
+            />
+          </Col>
+          <Col className="mb-3">
+            <div>Фотография лекало</div>
+            <Form.Control
+              name="patternImage"
+              type="file"
+              onChange={(e) => handlePatternImageChange(e)}
             />
           </Col>
           <Row>

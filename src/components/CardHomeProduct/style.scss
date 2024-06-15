@@ -1,0 +1,119 @@
+.cardhomeproduct {
+    width: 300px;
+    max-height: 100%;
+    box-shadow: 0 2px 7px #706f6f;
+    border-radius: 10px;
+    padding: 20px 15px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+    
+    @media(max-width: 1200px) {
+        width: 280px;
+    }
+    @media(max-width: 1024px) {
+        width: 300px;
+    }
+    @media(max-width: 768px) {
+        width: 320px;
+    }
+    @media(max-width: 595px) {
+        width: 280px;
+    }
+    @media(max-width: 480px) {
+        width: 200px;
+    }
+    @media(max-width: 430px) {
+        width: 190px;
+    }
+    @media(max-width: 400px) {
+        width: 170px;
+    }
+
+
+    &__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+        img {
+            width: 80%;
+            border-radius: 10px;
+            @media(max-width: 480px) {
+                width: 75%;
+            }
+        }
+    }
+    &__title {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 500;
+        @media(max-width: 480px) {
+            font-size: 13px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+        @media(max-width: 480px) {
+            margin-top: 10px;
+            display: contents;
+        }
+    }
+
+    &__price {
+        display: flex;
+        @media(max-width: 480px) {
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        &-oldprice {
+            font-size: 18px;
+            color: #0a0707;
+            font-weight: 500;
+            text-decoration: line-through;
+            display: inline-block;
+            margin-right: 5px;
+            @media(max-width: 480px) {
+                font-size: 15px;
+            }
+        }
+
+        &-newprice {
+            font-size: 18px;
+            color: #d81212;
+            font-weight: 600;
+            @media(max-width: 480px) {
+                font-size: 15px;
+            }
+        }
+    }
+
+    &__button {
+        display: block;
+        width: 100px;
+        height: 35px;
+        border-radius: 10px;
+        background-color: #d81212;
+        border: none;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+            background-color: #ffffff;
+            color: #d81212;
+            border: 2px solid #d81212;
+        }
+        @media(max-width: 480px) {
+            margin: 0 auto;
+            width: 90px;
+            font-weight: 500;
+        }
+    }
+
+}

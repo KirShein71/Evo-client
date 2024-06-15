@@ -1,0 +1,49 @@
+.modalrug {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 350px;
+    height: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px 25px;
+    
+  
+  
+  &__text {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+  
+    color: rgb(7,7,7);
+    margin-bottom: 15px;
+    
+  }
+  &__button {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid rgb(107, 107, 107);
+    background-color: transparent;
+    color: rgb(7,7,7);
+    font-size: 18px;
+    font-weight: 500;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+
+  }
+}
+
+.overlay__modalrug {
+    position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+  z-index: 10;
+}

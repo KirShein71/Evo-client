@@ -2,7 +2,8 @@ import { Container, Spinner } from 'react-bootstrap';
 import React from 'react';
 import { guestCreate } from '../../http/orderApi';
 import { fetchBasket, getAllBasketProduct } from '../../http/basketApi';
-
+import Delevery from './Delevery';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 const isValid = (input) => {
@@ -28,6 +29,10 @@ const CheckoutList = () => {
   const form = React.useRef();
   const [clicked, setClicked] = React.useState(false);
   const [isBasketLoaded, setIsBasketLoaded] = React.useState(false);
+  const [selectedRegion, setSelectedRegion] = React.useState(null);
+  const [selectedCity, setSelectedCity] = React.useState(null);
+  const [selectedDelevery, setSelectedDelevery] = React.useState(1);
+  const [checkboxConfid, setCheckboxConfid] = React.useState(true);
 
   React.useEffect(() => {
     fetchBasket()
@@ -81,17 +86,23 @@ const CheckoutList = () => {
       const body = {
         name: value.name,
         phone: value.phone,
+        delivery: selectedDelevery,
+        region: selectedRegion,
+        city: selectedCity,
         items: basketProduct,
       };
-      console.log(body);
-      guestCreate(body)
-        .then((data) => {
-          setOrder(data);
-          setBasketProduct(data);
-        })
-        .catch((error) => {
-          console.error('Ошибка при отправке данных:', error);
-        });
+      if (!checkboxConfid) {
+        alert('Вы забыли подтвердить согласие на обработку персональных данных');
+      } else {
+        guestCreate(body)
+          .then((data) => {
+            setOrder(data);
+            setBasketProduct(data);
+          })
+          .catch((error) => {
+            console.error('Ошибка при отправке данных:', error);
+          });
+      }
     } else {
       console.error('Данные корзины не загружены или неверные данные в форме');
     }
@@ -103,27 +114,62 @@ const CheckoutList = () => {
         <h1 className="checkout__title">Оформление заказа</h1>
         <h3 className="checkout__subtitle">Введите Ваши данные</h3>
         <form className="checkout__form" ref={form} noValidate onSubmit={handleSubmit}>
-          <input
-            name="name"
-            value={value.name}
-            onChange={(e) => handleChange(e)}
-            isValid={valid.name === true}
-            isInvalid={valid.name === false}
-            placeholder="Введите имя..."
-            className="checkout__input"
+          <div className="checkout__inputs">
+            <input
+              name="name"
+              value={value.name}
+              onChange={(e) => handleChange(e)}
+              isValid={valid.name === true}
+              isInvalid={valid.name === false}
+              placeholder="Введите имя..."
+              className="checkout__input"
+            />
+            <input
+              name="phone"
+              value={clicked ? value.phone || '8' : ''}
+              onChange={(e) => handleChange(e)}
+              onClick={handleInputClick}
+              isValid={valid.phone === true}
+              isInvalid={valid.phone === false}
+              placeholder="Введите номер телефона..."
+              minlength="10"
+              maxlength="11"
+              className="checkout__input"
+            />
+          </div>
+          <Delevery
+            selectedDelevery={selectedDelevery}
+            setSelectedDelevery={setSelectedDelevery}
+            selectedCity={selectedCity}
+            setSelectedCity={setSelectedCity}
+            selectedRegion={selectedRegion}
+            setSelectedRegion={setSelectedRegion}
           />
-          <input
-            name="phone"
-            value={clicked ? value.phone || '8' : ''}
-            onChange={(e) => handleChange(e)}
-            onClick={handleInputClick}
-            isValid={valid.phone === true}
-            isInvalid={valid.phone === false}
-            placeholder="Введите номер телефона..."
-            minlength="10"
-            maxlength="11"
-            className="checkout__input"
-          />
+          <div className="checkout__checkbox">
+            <div class="cntr">
+              <label for="cbxConfiden" class="label-cbx">
+                <input
+                  id="cbxConfiden"
+                  type="checkbox"
+                  class="invisible"
+                  checked={checkboxConfid}
+                  onChange={() => {
+                    setCheckboxConfid(!checkboxConfid);
+                  }}
+                />
+                <div class="checkbox">
+                  <svg width="20px" height="20px" viewBox="0 0 20 20">
+                    <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                    <polyline points="4 11 8 15 16 6"></polyline>
+                  </svg>
+                </div>
+              </label>
+            </div>{' '}
+            <span className="checkout__span">
+              Подтверждаю свое согласие на{' '}
+              <Link to="/confidentiality">обработку персональных данных</Link>
+            </span>
+          </div>
           <button className="checkout__button" type="submit">
             Отправить
           </button>

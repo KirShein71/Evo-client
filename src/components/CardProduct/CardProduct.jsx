@@ -16,13 +16,14 @@ function CardProduct({ name, old_price, new_price, image, id }) {
         <div className="cardproduct__image">
           <img src={process.env.REACT_APP_IMG_URL + image} alt="image_car" />
         </div>
-        <h2 className="cardproduct__title">{name}</h2>
-        <div className="cardproduct__price">
-          <div className="cardproduct__Oldprice">{old_price}Р</div>
-          <div className="cardproduct__Newprice">{new_price}Р</div>
+        <h4 class="cardproduct__title">{name}</h4>
+        <div class="cardproduct__bottom">
+          <div class="cardproduct__price">
+            <small>{old_price} Р</small>
+            {new_price} Р
+          </div>
+          <button className="cardproduct__button">Подробнее</button>
         </div>
-
-        <button className="cardproduct__button">Подробнее</button>
       </div>
     </div>
   );

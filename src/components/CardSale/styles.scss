@@ -1,10 +1,8 @@
 .cardsale {
-    width: 280px;
+    width: 100%;
     height: 380px;
-    
     box-shadow: 0 2px 7px #706f6f;
     border-radius: 10px;
-    
     cursor: pointer;
     transition: box-shadow 0.3s, transform 0.3s;
     &:hover {
@@ -12,27 +10,26 @@
         transform: scale(1.05);
     }
     @media(max-width: 1024px) {
-        width: 230px;
+    
         height: 320px;
     }
     @media(max-width: 768px) {
-        width: 170px;
-        height: 290px;
+    
+        height: 310px;
     }
     @media(max-width: 595px) {
-        width: 250px;
+       
         height: 320px;
     }
     @media(max-width: 480px) {
-        width: 200px;
-        height: 300px;
-    }
-    @media(max-width: 422px) {
-        width: 190px;
+      
+        height: 280px;
     }
     @media(max-width: 400px) {
-        width: 180px;
+        
+        height: 245px;
     }
+    
     
     
     
@@ -41,6 +38,9 @@
         height: 25px;
         background: red;
         margin-top: 30px;
+        @media(max-width: 1024px) {
+            margin-top: 19px;
+        }
         &-title {
             color: #ffffff;
             font-size: 13px;
@@ -60,16 +60,22 @@
         padding-bottom: 90px;
         height: 150px;
         @media(max-width: 1024px) {
-            padding-top: 30px;
-            padding-bottom: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        @media(max-width: 480px) {
+            height: 110px;
         }
         @media(max-width: 400px) {
-            height: 120px;
+            height: 80px;
         }
         img {
             width: 90%;
             @media(max-width: 1024px) {
                 width: 92%;
+            }
+            @media(max-width: 575px) {
+                width: 80%;
             }
         }
        

@@ -1,16 +1,18 @@
 import React from 'react';
 import NavBar from './NavBar';
-import { Link } from 'react-router-dom';
-import BasketContext from '../../context/BasketContext';
-import { Twirl as Hamburger } from 'hamburger-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../../context/AppContext';
 import { observer } from 'mobx-react';
 import Burger from '../Burger/Burger';
 
 import './styles.scss';
 
 const Header = observer(() => {
-  const basketProduct = React.useContext(BasketContext);
+  const { basketProduct } = React.useContext(AppContext);
   const [isOpen, setOpen] = React.useState(false);
+  const [query, setQuery] = React.useState('');
+  const initialQuery = '';
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setOpen(!isOpen);
@@ -21,7 +23,6 @@ const Header = observer(() => {
     }
   };
 
-  // В вашем useEffect добавьте следующий код
   React.useEffect(() => {
     if (isOpen) {
       document.body.classList.add('no-scroll');
@@ -29,6 +30,16 @@ const Header = observer(() => {
       document.body.classList.remove('no-scroll');
     }
   }, [isOpen]);
+
+  const handleChange = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate(`/result?query=${query}`);
+    setQuery(initialQuery);
+  };
 
   return (
     <div className="header">
@@ -38,18 +49,32 @@ const Header = observer(() => {
             <Burger isOpen={isOpen} toggleMenu={toggleMenu} />
             <div className="header__logo">
               <Link to="/">
-                <img src="./img/savaks.jpg" alt="logo" />
+                <img src="./img/savaks (1) (1).png" alt="logo" />
               </Link>
             </div>
           </div>
+          <div className="header__search">
+            <form className="header__form" onSubmit={handleSubmit}>
+              <input
+                className="header__input"
+                placeholder="Поиск..."
+                value={query}
+                onChange={handleChange}
+              />
+            </form>
+          </div>
           <div className="header__information">
             <a className="header__phone" href="tel:+79618080539">
-              8-961-808-0539
+              <img src="./img/phone.png" alt="phone" />
             </a>
             <Link to="/basket">
               <div className="header__basket">
                 <img src="./img/icon_basket.png" alt="icon_basket" />
-                <div>{basketProduct?.count}</div>
+                {!!basketProduct.count && (
+                  <div className="header__basket-circle">
+                    <div className="header__basket-count">{basketProduct.count}</div>
+                  </div>
+                )}
               </div>
             </Link>
             {isOpen && (
@@ -60,17 +85,28 @@ const Header = observer(() => {
                     <img onClick={() => setOpen(false)} src="./img/delete.png" alt="closed" />
                   </div>
                   <div className="burger-menu__item">
-                    <div className="burger-menu__items">Главная</div>
-                    <Link to="/allbrands">
-                      <div onClick={() => setOpen(false)} className="burger-menu__items">
-                        Каталог
-                      </div>
+                    <Link to="/" onClick={() => setOpen(false)}>
+                      <div className="burger-menu__items">Главная</div>
                     </Link>
-                    <div className="burger-menu__items">О нас</div>
+                    <Link to="/allbrands" onClick={() => setOpen(false)}>
+                      <div className="burger-menu__items">Автомобильные коврики</div>
+                    </Link>
+                    <Link to="/homeproduct" onClick={() => setOpen(false)}>
+                      <div className="burger-menu__items">Коврики для дома</div>
+                    </Link>
+                    <Link to="/animals" onClick={() => setOpen(false)}>
+                      <div className="burger-menu__items">Коврики для животных</div>
+                    </Link>
+                    <Link to="/about" onClick={() => setOpen(false)}>
+                      <div className="burger-menu__items">О нас</div>
+                    </Link>
                     <div className="burger-menu__items">Доставка и оплата</div>
-                    <div className="burger-menu__items">Гарантии</div>
-                    <div className="burger-menu__items">Полезная информация</div>
-                    <div className="burger-menu__items">Контакты</div>
+                    <Link to="/guarantees" onClick={() => setOpen(false)}>
+                      <div className="burger-menu__items">Гарантии</div>
+                    </Link>
+                    <Link to="/contact" onClick={() => setOpen(false)}>
+                      <div className="burger-menu__items">Контакты</div>
+                    </Link>
                   </div>
                 </div>
               </>

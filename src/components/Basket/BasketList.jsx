@@ -2,46 +2,82 @@ import React from 'react';
 import BasketCard from './BasketCard';
 import { fetchBasket, getAllBasketProduct, deleteBasketProduct } from '../../http/basketApi';
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../../context/AppContext';
 import CartEmpty from './CartEmpty';
+import Loader from '../Loader/Loader';
+import { observer } from 'mobx-react';
 
-function BasketList() {
-  const [basketProduct, setBasketProduct] = React.useState([]);
+const BasketList = observer(() => {
+  const { basketProduct } = React.useContext(AppContext);
+  const [fetching, setFetching] = React.useState(true);
   const navigate = useNavigate();
 
-  let totalAmount = 0;
-  basketProduct.forEach((basketproduct) => {
-    const trunkPrice = basketproduct.trunk ? basketproduct.trunk.new_price : 0;
-    const productPrice = basketproduct.product ? basketproduct.product.new_price : 0;
-
-    totalAmount +=
-      trunkPrice * basketproduct.quantity_trunk + productPrice * basketproduct.quantity;
-  });
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   React.useEffect(() => {
     fetchBasket().then((data) => {
       const basketId = data.id;
-      getAllBasketProduct(basketId).then((item) => setBasketProduct(item));
+      getAllBasketProduct(basketId)
+        .then((item) => {
+          basketProduct.products = item;
+          setFetching(false);
+        })
+        .catch((error) => {
+          console.error('Произошла ошибка при загрузке данных:', error);
+          setFetching(false);
+        });
     });
-  }, []);
+  }, [basketProduct]);
+
+  let totalAmount = 0;
+  basketProduct.products.forEach((basketproduct) => {
+    const trunkPrice = basketproduct.trunk ? basketproduct.trunk.new_price : 0;
+    const thirdrowPrice = basketproduct.thirdrow ? basketproduct.thirdrow.new_price : 0;
+    const productPrice = basketproduct.product ? basketproduct.product.new_price : 0;
+    const animalPrice = basketproduct.animal ? basketproduct.animal.new_price : 0;
+    const homePrice = basketproduct.home ? basketproduct.home.new_price : 0;
+    const saddlePrice = basketproduct.saddle ? basketproduct.saddle.new_price : 0;
+    const steelPrice = basketproduct.steel ? basketproduct.steel.new_price : 0;
+    const organizerPrice = basketproduct.organizer ? basketproduct.organizer.new_price : 0;
+    totalAmount +=
+      trunkPrice * basketproduct.quantity_trunk +
+      (thirdrowPrice === 0
+        ? productPrice * basketproduct.quantity
+        : thirdrowPrice * basketproduct.quantity) +
+      animalPrice * basketproduct.quantity +
+      homePrice * basketproduct.quantity +
+      saddlePrice +
+      steelPrice +
+      organizerPrice;
+  });
 
   const handleRemove = (id) => {
     deleteBasketProduct(id)
       .then((deletedItem) => {
-        const updatedBasketProduct = basketProduct.filter((item) => item.id !== deletedItem.id);
-        setBasketProduct(updatedBasketProduct);
+        basketProduct.products = basketProduct.products.filter(
+          (item) => item.id !== deletedItem.id,
+        );
       })
-      .catch((error) => alert(error.response.data.message));
+      .catch((error) => {
+        console.error('Произошла ошибка при удалении товара:', error);
+      });
   };
+
+  if (fetching) {
+    return <Loader />;
+  }
 
   return (
     <>
-      {basketProduct.length > 0 ? (
+      {basketProduct.products.length > 0 ? (
         <div className="basketlist">
           <div className="container">
             <h1 className="basketlist__title">Корзина</h1>
             <div className="basketlist__content">
-              {Array.isArray(basketProduct) &&
-                basketProduct.map((obj) => (
+              {Array.isArray(basketProduct.products) &&
+                basketProduct.products.map((obj) => (
                   <BasketCard key={obj.id} {...obj} remove={handleRemove} />
                 ))}
             </div>
@@ -60,6 +96,6 @@ function BasketList() {
       )}
     </>
   );
-}
+});
 
 export default BasketList;

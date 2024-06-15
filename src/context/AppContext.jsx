@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductStore from '../store/productStore';
-import BasketProductStore from '../store/basketStore';
+import BasketProductStore from '../store/basketProductStore';
 import UserStore from '../store/userStote';
 
 const AppContext = React.createContext();
@@ -8,7 +8,7 @@ const AppContext = React.createContext();
 // контекст, который будем передавать
 const context = {
   product: new ProductStore(),
-  basketproduct: new BasketProductStore(),
+  basketProduct: new BasketProductStore(),
   user: new UserStore(),
 };
 

@@ -5,9 +5,8 @@
     }
    
     &__title {
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 30px;
+        text-align: left;
+        font-size: 27px;
         font-weight: 500;
         color: rgb(7, 6, 6);
         @media(max-width: 1024px) {
@@ -29,6 +28,8 @@
         grid-template-rows: repeat(3, 1fr);
         grid-column-gap: 10px;
         grid-row-gap: 10px;
+        justify-items: center; 
+        align-items: center;
         @media(max-width: 1024px) {
             grid-template-columns: repeat(5, 1fr);
              
@@ -75,6 +76,20 @@
         box-shadow: 0 0 10px rgba(230, 7, 7, 0.897);
         background-color: rgba(230, 7, 7, 0.897);
         border: none;
+        color: #ffffff;
+        @media(max-width: 1024px) {
+            box-shadow: none;
+            background-color: #ffffff;
+            border: 2px solid grey;
+            color: rgb(2, 2, 2);
+
+        }
+    }
+    @media(max-width: 991px) {
+        background-color: #d81212;
+        border: none;
+        width: 150px;
+        height: 40px;
         color: #ffffff;
         
     }

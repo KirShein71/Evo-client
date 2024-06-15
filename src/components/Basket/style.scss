@@ -16,7 +16,7 @@
         grid-template-rows: 1fr;
         grid-column-gap: 10px;
         grid-row-gap: 20px;
-        @media(max-width: 768px) {
+        @media(max-width: 1024px) {
             grid-template-columns: repeat(1, 1fr);
         }
     }
@@ -48,14 +48,15 @@
             width: 170px;
             height: 40px;
             border-radius: 10px;
-            background-color: #fefe22;
+            background-color: #ff2b2b;
             border: none;
-            color: black;
+            color: #ffff;
             font-size: 18px;
             font-weight: 400;
             &:hover {
-                background-color: #ff2b2b;
-                color: #ffff
+                background-color: #ffffff;
+                color: #ff2b2b;
+                border: 2px solid #ff2b2b;
             }
             @media(max-width: 480px) {
                 width: 200px;
@@ -87,6 +88,12 @@
     }
     @media(max-width: 400px) {
         width: 370px
+    }
+    @media(max-width: 380px) {
+        width: 350px
+    }
+    @media(max-width: 360px) {
+        width: 340px
     }
   
     &__delete {
@@ -132,6 +139,9 @@
                 @media(max-width: 480px) {
                     font-size: 18px;
                 }
+                @media(max-width: 400px) {
+                    font-size: 16px;
+                }
             }
 
             &__body, &__cellshape, &__material, &__edging {
@@ -143,6 +153,12 @@
                 }
                 @media(max-width: 440px) {
                     font-size: 14px;
+                }
+                @media(max-width: 400px) {
+                    font-size: 13px;
+                }
+                @media(max-width: 380px) {
+                    font-size: 11px;
                 }
             }
 
@@ -160,6 +176,12 @@
                 @media(max-width: 440px) {
                     font-size: 15px;
                 }
+                @media(max-width: 400px) {
+                    font-size: 13px;
+                }
+                @media(max-width: 380px) {
+                    font-size: 11px;
+                }
             }
         }
     }
@@ -171,26 +193,35 @@
         &-content {
             display: flex;
             padding-left: 15px;
-            @media(max-width: 1024px) {
-                display: contents;
-                
-            }
-            @media(max-width: 768px) {
-                display: flex;
-                
-            }
-            @media(max-width: 595px) {
-                display: contents;
-                
-            }
             
             &__title, &__price {
                 font-size: 17px;
                 font-weight: 400;
                 color: rgb(7, 7, 7);
                 padding-right: 8px;
-                @media(max-width: 440px) {
-                    font-size: 15px;
+                @media(max-width: 480px) {
+                    font-size: 14px;
+                    span{
+                        @media(max-width: 480px) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+                @media(max-width: 430px) {
+                    font-size: 13px;
+                    span{
+                        @media(max-width: 430px) {
+                            font-size: 13px;
+                        }
+                    }
+                }
+                @media(max-width: 430px) {
+                    font-size: 11px;
+                    span{
+                        @media(max-width: 430px) {
+                            font-size: 11px;
+                        }
+                    }
                 }
             }
 
@@ -206,7 +237,65 @@
         font-weight: 500;
         color: #534141;
         margin-bottom: 10px;
+        @media(max-width: 460px) {
+            font-size: 18px;
+        }
+        @media(max-width: 400px) {
+            font-size: 16px;
+        }
         
+    }
+
+    // basketcard-animal
+    &__animal {
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+
+        &-left {
+            margin-top: 55px;
+            &__image {
+                
+                img {
+                    width: 80%;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        &-right {
+            margin-top: 55px;
+            &__name {
+                font-size: 20px;
+                font-weight: 500;
+                padding-bottom: 7px;
+                color: rgb(7, 7, 7);
+                @media(max-width: 480px) {
+                    font-size: 18px;
+                }
+                @media(max-width: 400px) {
+                    font-size: 16px;
+                }
+            }
+
+            &__price, &__quantity {
+                font-size: 19px;
+                font-weight: 400;
+                color: rgb(7, 7, 7);
+                @media(max-width: 1024px) {
+                    font-size: 17px;
+                }
+                @media(max-width: 480px) {
+                    font-size: 14px;
+                }
+                @media(max-width: 430px) {
+                    font-size: 13px;
+                }
+                @media(max-width: 400px) {
+                    font-size: 11px;
+                }
+            }
+        }
     }
 }
 
@@ -214,8 +303,8 @@
 
 .cart-empty {
     &__content {
-        margin-top: 25px;
-        margin-bottom: 50px;
+        margin-top: 50px;
+        margin-bottom: 70px;
     }
     &__title {
         font-size: 25px;
@@ -255,4 +344,13 @@ span {
     font-size: 16px;
     font-weight: 400;
     color: rgb(7, 7, 7);
+    @media(max-width: 480px) {
+        font-size: 14px;
+    }
+    @media(max-width: 480px) {
+        font-size: 13px;
+    }
+    @media(max-width: 400px) {
+        font-size: 11px;
+    }
 }

@@ -1,0 +1,52 @@
+.organizer {
+    margin-top: 15px;
+    &__title {
+        font-size: 18px;
+        font-weight: 500;
+        color: rgb(7, 6, 6);
+    }
+    &__content {
+        margin-top: 15px;
+    }
+    &__card {
+        width: 180px;
+        height: 175px;
+        border: 2px solid #979aaa;
+        padding: 7px;
+        border-radius: 10px;
+        @media(max-width: 460px) {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    &__image {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 67%;
+        }
+    }
+
+    &__checkbox {
+        display: flex;
+        span {
+            font-size: 18px;
+            font-weight: 400;
+            color: rgb(7, 7, 7);
+            padding-right: 15px;
+            @media(max-width: 460px) {
+                font-size: 16px;
+            }
+        }
+        p {
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(7, 7, 7);
+            @media(max-width: 460px) {
+                font-size: 16px;
+            }
+        }
+    }
+}

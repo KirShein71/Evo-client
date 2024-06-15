@@ -28,6 +28,15 @@ function Admin() {
         <Link to="/adminproduct">
           <li>Создание карточки товара</li>
         </Link>
+        <Link to="/adminhome">
+          <li>Создание карточки товара для дома</li>
+        </Link>
+        <Link to="/adminanimal">
+          <li>Создание карточки товара для животных</li>
+        </Link>
+        <Link to="/adminorganizer">
+          <li>Создание карточки органайзера</li>
+        </Link>
         <Link to="/adminmaterialrug">
           <li>Создание цвета материала коврика</li>
         </Link>

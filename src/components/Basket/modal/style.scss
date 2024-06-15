@@ -1,0 +1,70 @@
+.modalbasket {
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px; 
+    width: 100%; 
+    padding: 20px; 
+    text-align: center;
+    position: absolute;
+    @media (max-width: 420px) {
+        max-width: 380px;
+    }
+    @media(max-width: 400px) {
+        max-width: 360px;
+    }
+    @media(max-width: 370px) {
+        max-width: 340px;
+    }
+
+    &__text {
+        font-size: 18px; 
+        font-weight: 500;
+        color: rgb(7,7,7);
+        @media(max-width: 400px) {
+            font-size: 16px;
+        }
+    }
+
+    &__button {
+        display: flex; 
+        justify-content: space-around;
+
+        &-yes {
+            padding: 10px 20px; 
+            font-size: 16px; 
+            border: none;
+            text-align: center; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            background-color: rgba(230, 7, 7, 0.897); 
+            color: #fff; 
+        }
+
+        &-not {
+            padding: 10px 20px; 
+            font-size: 16px; 
+            border: none;
+            text-align: center; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            background-color: #9b9898; 
+            color: #ffffff; 
+        }
+    }
+}
+
+.overlay__modalbasket {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}

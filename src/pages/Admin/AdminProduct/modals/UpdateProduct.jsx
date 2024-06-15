@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import { getOneProduct, updateProduct } from '../../../../http/productApi';
 import { getAllBrand } from '../../../../http/brandApi';
-import { getAllCarModel } from '../../../../http/carModelApi';
+import { getAllCarModelByBrandId } from '../../../../http/carModelApi';
 
 const defaultValue = { name: '', old_price: '', new_price: '', brand: '', carmodel: '' };
 const defaultValid = {
@@ -28,10 +28,11 @@ const isValid = (value) => {
 const UpdateProduct = (props) => {
   const { id, show, setShow, setChange } = props;
   const [brands, setBrands] = React.useState(null);
-  const [carmodels, setCarmodels] = React.useState(null);
+  const [filteredCarModels, setFilteredCarModels] = React.useState([]);
   const [value, setValue] = React.useState(defaultValue);
   const [valid, setValid] = React.useState(defaultValid);
   const [image, setImage] = React.useState(null);
+  const [patternImage, setPatternImage] = React.useState(null);
 
   React.useEffect(() => {
     if (id) {
@@ -43,10 +44,9 @@ const UpdateProduct = (props) => {
           setValue(prod);
           setValid(isValid(prod));
         })
-        .catch((error) => alert(error.response.data.message));
+        .catch((error) => console.log(error.response.data.message));
     }
     getAllBrand().then((data) => setBrands(data));
-    getAllCarModel().then((data) => setCarmodels(data));
   }, [id]);
 
   const handleInputChange = (event) => {
@@ -55,8 +55,27 @@ const UpdateProduct = (props) => {
     setValid(isValid(data));
   };
 
+  const handleBrandChange = (e) => {
+    const selectedBrandId = e.target.value;
+    setValue({
+      ...value,
+      brand: selectedBrandId,
+      carmodel: '', // Reset carModel when brand changes
+    });
+  };
+
+  React.useEffect(() => {
+    if (value.brand) {
+      getAllCarModelByBrandId(value.brand).then((data) => setFilteredCarModels(data));
+    }
+  }, [value.brand]);
+
   const handleImageChange = (event) => {
     setImage(event.target.files[0]);
+  };
+
+  const handlePatternImageChange = (event) => {
+    setPatternImage(event.target.files[0]);
   };
 
   const handleSubmit = async (event) => {
@@ -77,9 +96,11 @@ const UpdateProduct = (props) => {
       data.append('brandId', value.brand);
       data.append('carmodelId', value.carmodel);
       if (image) data.append('image', image, image.name);
+      if (patternImage) data.append('pattern_image', patternImage, patternImage.name);
       updateProduct(id, data)
         .then((data) => {
           event.target.image.value = '';
+          event.target.patternImage.value = '';
           const prod = {
             name: data.name,
           };
@@ -104,7 +125,7 @@ const UpdateProduct = (props) => {
               <Form.Select
                 name="brand"
                 value={value.brand}
-                onChange={(e) => handleInputChange(e)}
+                onChange={(e) => handleBrandChange(e)}
                 isValid={valid.brand === true}
                 isInvalid={valid.brand === false}>
                 <option value="">Бренд</option>
@@ -126,12 +147,11 @@ const UpdateProduct = (props) => {
                 isValid={valid.carmodel === true}
                 isInvalid={valid.carmodel === false}>
                 <option value="">Серия</option>
-                {carmodels &&
-                  carmodels.map((carmodel) => (
-                    <option key={carmodel.id} value={carmodel.id}>
-                      {carmodel.name}
-                    </option>
-                  ))}
+                {filteredCarModels.map((carModel) => (
+                  <option key={carModel.id} value={carModel.id}>
+                    {carModel.name}
+                  </option>
+                ))}
               </Form.Select>
             </Col>
           </Row>
@@ -168,12 +188,22 @@ const UpdateProduct = (props) => {
               />
             </Col>
           </Row>
-          <Col>
+          <Col className="mb-3">
+            <div>Фотография товара</div>
             <Form.Control
               name="image"
               type="file"
               onChange={(e) => handleImageChange(e)}
               placeholder="Фото товара..."
+            />
+          </Col>
+          <Col className="mb-3">
+            <div>Фотография лекало</div>
+            <Form.Control
+              name="image"
+              type="file"
+              onChange={(e) => handlePatternImageChange(e)}
+              placeholder="Фото лекало..."
             />
           </Col>
           <Row className="mt-3">

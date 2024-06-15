@@ -1,42 +1,73 @@
 .onebrandcatalog {
-    
-    padding-top: 25px;
-    
-
+    border-top: 2px solid #999999;
+    padding-top: 50px;
+    @media(max-width: 1024px) {
+        padding-top: 15px;
+    }
     &__title {
         font-size: 25px;
-        font-weight: 500;
+        font-weight: bold;
         color: rgb(7, 6, 6);
         &-span {
             font-size: 25px;
-            font-weight: 500;
+            font-weight: bold;
             color: rgb(7, 6, 6);
             padding-right: 7px;
+            @media(max-width: 595px) {
+                font-size: 21px;
+            }
             @media(max-width: 480px) {
                 font-size: 18px;
             }
+        }
+        @media(max-width: 595px) {
+            font-size: 21px;
         }
         @media(max-width: 480px) {
             font-size: 18px;
         }
     }
 
+    &__text {
+        font-size: 25px;
+        font-weight: 500;
+        color: rgb(7, 6, 6);
+        text-align: center;
+        margin-top: 55px;
+        margin-bottom: 55px;
+        @media(max-width: 1024px) {
+            font-size: 23px;
+        }
+        @media(max-width: 991px) {
+            font-size: 21px;
+        }
+        @media(max-width: 768px) {
+            font-size: 19px;
+        }
+        @media(max-width: 460px) {
+            font-size: 17px;
+        }
+        @media(max-width: 400px) {
+            font-size: 16px;
+        }
+    }
+
     &__content {
         padding-top: 25px;
-        display: flex;
-        justify-content: space-between;
-        @media(max-width: 480px) {
-            justify-content: space-around;
-        }
     }
 
     &__product {
         padding-bottom: 35px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(1, 1fr);
         grid-column-gap: 20px;
-        grid-row-gap: 20px;
+        grid-row-gap: 25px;
+        justify-items: center; 
+        align-items: center;
+        @media(max-width: 1024px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
         @media(max-width: 991px) {
             grid-column-gap: 10px;
         }
@@ -44,37 +75,91 @@
             grid-template-columns: repeat(2, 1fr);
         }
         @media(max-width: 480px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
         
     }
 
-    &__carmodel {
-        ul {
-          overflow: hidden;
-      
-          li {
-            font-size: 20px;
-            color: #050505;
-            list-style: none;
-            font-weight: bold;
-            list-style: none;
-            cursor: pointer;
-            transition: background-color 0.1s ease-in-out;
-      
-           
-            &:hover {
-              color: rgb(255, 13, 13);
-            }
-      
-            &:active {
-              background-color: darken(#f9f9f9, 5%);
-            }
-      
-            &.selected {
-              color: red;
-            }
-          }
+    //modal
+    &-modal {
+        padding-top: 15px;
+        &__title {
+            font-size: 18px;
+            font-weight: 500;
+            color: rgb(7, 6, 6);
         }
-      }
-}
+
+        .modaldown {
+            position: relative;
+            &__container {
+                width: 252px;
+                min-height: 100%;
+                border-radius: 10px;
+                border: 2px solid rgb(156, 153, 153);
+                cursor: pointer;
+                @media(max-width: 480px) {
+                    width: 230px;
+                }     
+            }
+            &__content {
+                padding: 5px 10px;
+                display: flex;
+                
+            }
+            &__title {
+                font-size: 18px;
+                font-weight: 400;
+                color: rgb(7, 6, 6);
+                @media(max-width: 480px) {
+                    font-size: 16px;
+                }
+            }
+
+            &__modal {
+                margin-top: 3px;
+                position: absolute;
+                width: 252px;
+                
+                background-color: #ffffff;
+                border-radius: 10px;
+                border: 2px solid rgb(156, 153, 153);
+                cursor: pointer;
+                z-index: 5;
+                @media(max-width: 991px) {
+                    max-height: 220px;
+                    overflow: auto;
+                }
+                @media(max-width: 480px) {
+                    width: 230px;
+                }
+                
+
+                &-content {
+                    padding-top: 10px;
+                    padding-left: 9px;
+                    float: left;
+                }
+    
+                &-items {
+                    list-style-type: none;
+                }
+
+              
+
+                &-item {
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: rgb(7, 6, 6);
+                    padding-bottom: 3px;
+                    @media(max-width: 480px) {
+                        font-size: 16px;
+                    }
+                    &:hover {
+                        font-weight: 600;
+                    }
+                }
+            }
+            }
+        }
+    }
+    

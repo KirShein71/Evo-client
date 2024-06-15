@@ -13,6 +13,9 @@ import UpdateProduct from './modals/UpdateProduct';
 import CreateProductTrunk from './modals/CreateProductTrunk';
 import UpdateProductTrunk from './modals/UpdateProductTrunk';
 import UpdatePrice from './modals/UpdatePrice';
+import CreateProductThirdrow from './modals/CreateProductThirdrow';
+import UpdateProductThirdrow from './modals/UpdateProductThirdrow';
+import { deleteProductThirdrow } from '../../../http/thirdrowApi';
 
 import './style.scss';
 
@@ -23,7 +26,7 @@ const AdminProduct = () => {
   const [change, setChange] = React.useState(true);
   const [updateShow, setUpdateShow] = React.useState(false);
   const [productId, setProductId] = React.useState(null);
-  const [trunkId, setTrunkid] = React.useState(null);
+  const [trunkId, setTrunkId] = React.useState(null);
   const [createTrunk, setCreateTrunk] = React.useState(false);
   const [updateTrunk, setUpdateTrunk] = React.useState(false);
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -33,6 +36,9 @@ const AdminProduct = () => {
   const [brands, setBrands] = React.useState([]);
   const [selectedBrand, setSelectedBrand] = React.useState(11);
   const [openBrandModal, setOpenBrandModal] = React.useState(false);
+  const [createThirdrow, setCreateThirdrow] = React.useState(false);
+  const [updateThirdrow, setUpdateThirdrow] = React.useState(false);
+  const [thirdrowId, setThirdrowId] = React.useState(null);
 
   React.useEffect(() => {
     getAllProduct().then((data) => setProducts(data));
@@ -58,7 +64,7 @@ const AdminProduct = () => {
   };
 
   const handleUpdateTrunk = (trunkId, productId) => {
-    setTrunkid(trunkId);
+    setTrunkId(trunkId);
     setProductId(productId);
     setUpdateTrunk(true);
   };
@@ -105,6 +111,26 @@ const AdminProduct = () => {
         })
         .catch((error) => alert(error.response.data.message));
     }
+  };
+
+  const handleCreateThirdrow = (productId) => {
+    setProductId(productId);
+    setCreateThirdrow(true);
+  };
+
+  const handleUpdateThirdrow = (thirdrowId, productId) => {
+    setThirdrowId(thirdrowId);
+    setProductId(productId);
+    setUpdateThirdrow(true);
+  };
+
+  const handleDeleteThirdrow = (id) => {
+    deleteProductThirdrow(id)
+      .then((data) => {
+        setChange(!change);
+        alert(`Коврик удален`);
+      })
+      .catch((error) => alert(error.response.data.message));
   };
 
   const handleSaleCheckboxChange = () => {
@@ -163,6 +189,19 @@ const AdminProduct = () => {
         setChange={setChange}
         productId={productId}
         trunkId={trunkId}
+      />
+      <CreateProductThirdrow
+        show={createThirdrow}
+        setShow={setCreateThirdrow}
+        setChange={setChange}
+        productId={productId}
+      />
+      <UpdateProductThirdrow
+        show={updateThirdrow}
+        setShow={setUpdateThirdrow}
+        setChange={setChange}
+        productId={productId}
+        thirdrowId={thirdrowId}
       />
       <div className="checkbox" style={{ display: 'flex' }}>
         <div class="cntr">
@@ -225,13 +264,15 @@ const AdminProduct = () => {
           <thead>
             <tr>
               <th>Название</th>
-              <th>Картинка</th>
               <th>Редактировать</th>
               <th>Стоимость</th>
               <th>Удалить</th>
               <th>Добавить коврик для багажника</th>
               <th>Редактировать коврик для багажника</th>
               <th>Удалить коврик для багажника</th>
+              <th>Добавить третий ряд ковриков</th>
+              <th>Редактировать третий ряд ковриков</th>
+              <th>Удалить третий ряд ковриков</th>
               <th>Добавить товар в акции</th>
             </tr>
           </thead>
@@ -241,16 +282,6 @@ const AdminProduct = () => {
               .map((product) => (
                 <tr key={product.id}>
                   <td>{product.name}</td>
-                  <td>
-                    {product.image && (
-                      <a
-                        href={process.env.REACT_APP_IMG_URL + product.image}
-                        target="_blank"
-                        rel="noreferrer">
-                        фото
-                      </a>
-                    )}
-                  </td>
                   <td>
                     <Button
                       variant="success"
@@ -299,6 +330,38 @@ const AdminProduct = () => {
                       variant="danger"
                       size="sm"
                       onClick={() => handleDeleteTrunk(product.trunks[0].id)}>
+                      Удалить
+                    </Button>
+                  </td>
+                  <td>
+                    {product.thirdrows.length > 0 && product.thirdrows[0].id ? (
+                      'Добавлен'
+                    ) : (
+                      <Button
+                        variant="success"
+                        size="sm"
+                        onClick={() => handleCreateThirdrow(product.id)}>
+                        Добавить
+                      </Button>
+                    )}
+                  </td>
+                  <td>
+                    {product.thirdrows.length > 0 && product.thirdrows[0].id ? (
+                      <Button
+                        variant="success"
+                        size="sm"
+                        onClick={() => handleUpdateThirdrow(product.thirdrows[0].id, product.id)}>
+                        Редакатировать
+                      </Button>
+                    ) : (
+                      ''
+                    )}
+                  </td>
+                  <td>
+                    <Button
+                      variant="danger"
+                      size="sm"
+                      onClick={() => handleDeleteThirdrow(product.thirdrows[0].id)}>
                       Удалить
                     </Button>
                   </td>

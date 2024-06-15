@@ -5,6 +5,11 @@ export const getAllMaterialRug = async () => {
     return data
 }
 
+export const getAllMaterialForAnimal = async () => {
+    const { data} = await guestInstance.get('material/getAllMaterialForAnimal')
+    return data
+}
+
 export const createMaterialRug = async (material) => {
     const { data } = await authInstance.post('material/create', material)
     return data
