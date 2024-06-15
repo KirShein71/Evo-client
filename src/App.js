@@ -33,7 +33,7 @@ const App = observer(() => {
             .finally(
                 () => setLoading(false)
             )
-    }, [user])
+    }, [user, basketProduct])
 
 
     if (loading) {

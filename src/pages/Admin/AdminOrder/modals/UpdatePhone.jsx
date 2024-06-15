@@ -29,7 +29,6 @@ const UpdatePhone = (props) => {
           };
           setValue(prod);
           setValid(isValid(prod));
-          setShow(false);
         })
         .catch((error) => {
           if (error.response && error.response.data) {

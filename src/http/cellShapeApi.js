@@ -1,4 +1,4 @@
-import { guestInstance, authInstance } from './index'
+import { guestInstance } from './index'
 
 export const getAllCellShape = async () => {
     const {data} = await guestInstance.get('cellshape/getall')

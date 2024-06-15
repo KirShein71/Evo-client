@@ -216,6 +216,7 @@ function Product() {
                   <img
                     className="image_one"
                     src={process.env.REACT_APP_IMG_URL + imageMaterial.image}
+                    alt="car mat"
                   />
                 </div>
               ))}
@@ -226,6 +227,7 @@ function Product() {
                   <img
                     className="image_two"
                     src={process.env.REACT_APP_IMG_URL + imageEdging.image}
+                    alt="car mat"
                   />
                 </div>
               ))}

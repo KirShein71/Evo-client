@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button, Form, Row, Col, Spinner } from 'react-bootstrap';
+import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import { createAnimal } from '../../../../http/animalApi';
 
 const defaultValue = {
