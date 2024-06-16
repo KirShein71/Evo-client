@@ -1,9 +1,10 @@
-import { Container, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import React from 'react';
 import { guestCreate } from '../../http/orderApi';
 import { fetchBasket, getAllBasketProduct } from '../../http/basketApi';
 import Delevery from './Delevery';
 import { Link } from 'react-router-dom';
+import Message from './Message';
 import './style.scss';
 
 const isValid = (input) => {
@@ -51,12 +52,7 @@ const CheckoutList = () => {
   }
 
   if (order) {
-    return (
-      <Container>
-        <h1 className="processed__title">Заказ оформлен</h1>
-        <p className="processed__text">Наш менеджер скоро позвонит для уточнения деталей.</p>
-      </Container>
-    );
+    return <Message />;
   }
 
   const handleChange = (event) => {
