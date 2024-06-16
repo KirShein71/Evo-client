@@ -41,11 +41,13 @@ const App = observer(() => {
     }
   return (
     <div className="wrapper">
+        <div className="content">
             <BrowserRouter> 
                 <Header/>
                 <AppRouter/>
                 <Footer/>
             </BrowserRouter>
+        </div>
     </div>
   );
 })
