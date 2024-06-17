@@ -2,6 +2,10 @@ import React from 'react';
 import './style.scss';
 
 function ConfidentialityList() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="confidentialitylist">
       <div className="container">
@@ -9,8 +13,8 @@ function ConfidentialityList() {
         <div className="confidentialitylist__content">
           <p className="confidentialitylist__text">
             Информация, полученная от Клиента при использовании им продуктов компании savaks
-            (юридическая информация: ИП Западаев И.И. ИНН 672303514458, ОГРНИП 315673300032721;
-            адрес: 117570 г. Москва, ул. Красного маяка, д.16, стр.2), обслуживается
+            (юридическая информация: ИП Шатский И.А. ИНН 781698384040, ОГРНИП 320784700157350;
+            адрес: 192288 г. Санкт-Петербург, ул. Бухарестская, д.120), обслуживается
             Интернет-магазином savaks огласно настоящей Политике обработки персональных данных и
             соответствует законам РФ.
           </p>
@@ -256,7 +260,7 @@ function ConfidentialityList() {
           <p className="confidentialitylist__title">
             10. Как с нами связаться Любые вопросы касательно Политики обработки персональных
             данных, использования сайта, оформления заказа и другие вопросы вы можете задать по
-            контактному телефону или по email info@savaks
+            контактному телефону.
           </p>
         </div>
       </div>

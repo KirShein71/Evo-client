@@ -51,7 +51,6 @@ function NavBar() {
         <Link to="/about">
           <div className="navbar__items">О нас</div>
         </Link>
-        <div className="navbar__items">Доставка и оплата</div>
         <Link to="/guarantees">
           <div className="navbar__items">Гарантии</div>
         </Link>

@@ -45,13 +45,10 @@ const Header = observer(() => {
     <div className="header">
       <div className="container">
         <div className="header__content">
-          <div style={{ display: 'flex' }}>
-            <Burger isOpen={isOpen} toggleMenu={toggleMenu} />
-            <div className="header__logo">
-              <Link to="/">
-                <img src="./img/savaks (1) (1).png" alt="logo" />
-              </Link>
-            </div>
+          <div className="header__logo">
+            <Link to="/">
+              <img src="./img/savaks (1) (1).png" alt="logo" />
+            </Link>
           </div>
           <div className="header__search">
             <form className="header__form" onSubmit={handleSubmit}>
@@ -64,6 +61,12 @@ const Header = observer(() => {
             </form>
           </div>
           <div className="header__information">
+            <div className="header__information-operating">
+              <div className="header__information-operating__phone">8-800-301-29-01</div>
+              <div className="header__information-operating__time">
+                с 09-00 до 18-00 без выходных
+              </div>
+            </div>
             <a className="header__phone" href="tel:+79618080539">
               <img src="./img/phone.png" alt="phone" />
             </a>
@@ -77,6 +80,7 @@ const Header = observer(() => {
                 )}
               </div>
             </Link>
+            <Burger isOpen={isOpen} toggleMenu={toggleMenu} />
             {isOpen && (
               <>
                 <div className="overlay"></div>
@@ -100,7 +104,6 @@ const Header = observer(() => {
                     <Link to="/about" onClick={() => setOpen(false)}>
                       <div className="burger-menu__items">О нас</div>
                     </Link>
-                    <div className="burger-menu__items">Доставка и оплата</div>
                     <Link to="/guarantees" onClick={() => setOpen(false)}>
                       <div className="burger-menu__items">Гарантии</div>
                     </Link>
