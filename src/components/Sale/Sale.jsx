@@ -9,11 +9,24 @@ import 'slick-carousel/slick/slick-theme.css';
 function Sale() {
   const [saleProducts, setSaleProducts] = React.useState([]);
   const [sliderRef, setSliderRef] = React.useState(null);
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
     getSaleProduct()
       .then((data) => setSaleProducts(data))
       .catch((error) => alert(error.response.data.message));
+  }, []);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const settings = {
@@ -28,12 +41,14 @@ function Sale() {
         settings: {
           slidesToShow: 3,
           swipeToSlide: true,
+          initialSlide: 0,
         },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 2,
+          initialSlide: 0,
         },
       },
     ],
@@ -53,13 +68,21 @@ function Sale() {
             </div>
           </div>
         </div>
-        <div className="sale__content">
-          <Slider ref={setSliderRef} {...settings}>
+        {windowWidth > 768 ? (
+          <div className="sale__content">
+            <Slider ref={setSliderRef} {...settings}>
+              {saleProducts.map((saleProduct) => (
+                <CardSale {...saleProduct} key={saleProduct.id} />
+              ))}
+            </Slider>
+          </div>
+        ) : (
+          <div className="sale__content-768">
             {saleProducts.map((saleProduct) => (
               <CardSale {...saleProduct} key={saleProduct.id} />
             ))}
-          </Slider>
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -41,18 +41,21 @@
         }
         &__content {
             margin-top: 35px;
-         
-                width: 100%; /* Ширина контейнера слайдера */
-                margin: 0 auto; /* Центрирование контейнера по горизонтали */
-    
-           @media(max-width: 768px) {
-            margin-top: 15px;
-           }
+            width: 100%; /* Ширина контейнера слайдера */
+            margin: 0 auto; /* Центрирование контейнера по горизонтали */
         }
+
+        &__content-768 {
+            margin-top: 15px;
+            display: flex;
+            overflow-x: auto;
+        }
+        
+       
     }
 
-    .slick-track {
-        overflow: visible !important; 
-      }
 
+    
+
+    
   
