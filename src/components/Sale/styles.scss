@@ -39,49 +39,20 @@
                 font-size: 20px;
             }
         }
-        // &__content {
-        //     margin-top: 35px;
+        &__content {
+            margin-top: 35px;
          
-        //         width: 100%; /* Ширина контейнера слайдера */
-        //         margin: 0 auto; /* Центрирование контейнера по горизонтали */
+                width: 100%; /* Ширина контейнера слайдера */
+                margin: 0 auto; /* Центрирование контейнера по горизонтали */
     
-        //    @media(max-width: 768px) {
-        //     margin-top: 15px;
-        //    }
-        // }
-        
+           @media(max-width: 768px) {
+            margin-top: 15px;
+           }
+        }
     }
 
-    .sale__content {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        margin: 0 auto;
-        margin-top: 35px;
-      }
-      
-      .slider {
-        display: flex;
-        transition: transform 0.5s ease; /* Добавление плавного перехода */
-      }
-      
-      .slider-slide {
-        flex: 0 0 auto; /* Неизменяемая ширина слайда */
-      }
-      
-      @media (max-width: 768px) {
-        .slider {
-          display: block; /* Изменение на блочный элемент для мобильных устройств */
-          white-space: nowrap; /* Отключение переноса строк */
-          overflow-x: auto; /* Добавление горизонтальной прокрутки */
-          -webkit-overflow-scrolling: touch; /* Плавная прокрутка на iOS */
-          scroll-snap-type: x mandatory; /* Прокрутка по слайдам */
-        }
-      
-        .slider-slide {
-          display: inline-block; /* Отображение слайдов в одну линию */
-          scroll-snap-align: start; /* Выравнивание слайдов по началу */
-        }
+    .slick-track {
+        overflow: visible !important; 
       }
 
   
