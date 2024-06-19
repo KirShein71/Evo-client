@@ -130,9 +130,6 @@ function HomeProductInfo() {
               <div className="homeproduct__content-equipment__title">Выберите количество</div>
               <div className="homeproduct__content-equipment__interior">
                 <div className="homeproduct__content-equipment__price">
-                  <div className="homeproduct__content-equipment__oldPrice">
-                    {homeProduct?.old_price * quantity}
-                  </div>
                   <div className="homeproduct__content-equipment__newPrice">
                     {homeProduct?.new_price * quantity}
                   </div>

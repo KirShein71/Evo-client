@@ -130,9 +130,6 @@ function AnimalsProduct() {
               <div className="animalsproduct__content-equipment__title">Выберите количество</div>
               <div className="animalsproduct__content-equipment__interior">
                 <div className="animalsproduct__content-equipment__price">
-                  <div className="animalsproduct__content-equipment__oldPrice">
-                    {animal?.old_price * quantity}
-                  </div>
                   <div className="animalsproduct__content-equipment__newPrice">
                     {animal?.new_price * quantity}
                   </div>

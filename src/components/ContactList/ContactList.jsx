@@ -16,7 +16,7 @@ function ContactList() {
               Адрес: <span>Санкт-Петербург, Боровая 51</span>
             </div>
             <div className="contactlist__information-item">
-              Режим работы: <span>Пн-Вск 09:00 - 18:00</span>
+              Режим работы: <span>Пн-Вс 09:00 - 18:00</span>
             </div>
             <div className="contactlist__information-item">
               Телефон:

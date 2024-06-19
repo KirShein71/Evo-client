@@ -66,6 +66,15 @@ const CheckoutList = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    const inputs = document.querySelectorAll('.checkout__input');
+    inputs.forEach((input) => {
+      if (!input.value.trim()) {
+        input.classList.add('invalid');
+      } else {
+        input.classList.remove('invalid');
+      }
+    });
+
     setValue({
       name: event.target.name.value.trim(),
       phone: event.target.phone.value.trim(),
@@ -102,6 +111,8 @@ const CheckoutList = () => {
     } else {
       console.error('Данные корзины не загружены или неверные данные в форме');
     }
+    const formCheck = document.querySelector('.checkout__form');
+    formCheck.addEventListener('submit', handleSubmit);
   };
 
   return (
@@ -119,6 +130,7 @@ const CheckoutList = () => {
               isInvalid={valid.name === false}
               placeholder="Введите имя..."
               className="checkout__input"
+              required
             />
             <input
               name="phone"
@@ -131,6 +143,7 @@ const CheckoutList = () => {
               minlength="10"
               maxlength="11"
               className="checkout__input"
+              required
             />
           </div>
           <Delevery
