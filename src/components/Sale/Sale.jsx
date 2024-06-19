@@ -27,6 +27,7 @@ function Sale() {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
+          swipeToSlide: true,
         },
       },
       {
