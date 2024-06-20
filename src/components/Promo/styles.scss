@@ -59,8 +59,7 @@
     }
 
     &__button {
-        display: block;
-        margin: 0 auto;
+        display: inline-block;
         width: 200px;
         height: 50px;
         border-radius: 10px;
@@ -71,6 +70,9 @@
         font-weight: 500;
         color: rgb(2, 2, 2);
         transition: box-shadow 0.3s, transform 0.3s;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
     
     &:hover {
         box-shadow: 0 0 10px rgba(230, 7, 7, 0.897);
@@ -86,11 +88,10 @@
         }
     }
     @media(max-width: 991px) {
-        background-color: #d81212;
-        border: none;
+        transition: none;
         width: 150px;
         height: 40px;
-        color: #ffffff;
+        color: rgb(2, 2, 2);;
         
     }
     }

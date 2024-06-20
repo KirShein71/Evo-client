@@ -38,6 +38,9 @@
     &__logo {
         img {
            width: 40%;
+           @media(max-width: 1024px) {
+                width: 75%;
+           }
             @media(max-width: 991px) {
                 width: 78%;
             }

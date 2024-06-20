@@ -35,23 +35,6 @@ function Sale() {
     slidesToScroll: 1,
     infinite: false,
     dots: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          swipeToSlide: true,
-          initialSlide: 0,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          initialSlide: 0,
-        },
-      },
-    ],
   };
 
   return (
