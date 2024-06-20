@@ -41,7 +41,7 @@ function Sale() {
     <div className="sale">
       <div className="container">
         <div className="sale__header">
-          <h2 className="sale__title">Актуальные акции</h2>
+          <h2 className="sale__title">Лучшие предложения</h2>
           <div className="sale__controls">
             <div className="sale__arrow" onClick={() => sliderRef?.slickPrev()}>
               <img src="./img/left.png" alt="arrow_left" />
