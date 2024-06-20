@@ -10,8 +10,8 @@ function CardHomeProduct({ name, new_price, image, id }) {
     navigate(`/homeproductproperty/${id}`, { state: { from: location.pathname } });
   };
   return (
-    <div className="cardhomeproduct">
-      <div onClick={addToOneAnimalProduct} className="cardhomeproduct__content">
+    <div className="cardhomeproduct" onClick={addToOneAnimalProduct}>
+      <div className="cardhomeproduct__content">
         <div className="cardhomeproduct__image">
           <img src={process.env.REACT_APP_IMG_URL + image} alt="image_car" />
         </div>

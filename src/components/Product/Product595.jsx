@@ -308,31 +308,33 @@ function Product() {
           </div>
         </div>
         <div className="image">
-          <div className="product__content-images">
-            {materials.map((imageMaterial) => (
-              <div
-                key={imageMaterial.id}
-                style={{
-                  display: imageMaterial.color === selectedMaterial ? 'block' : 'none',
-                }}>
-                <img
-                  className="image_one"
-                  src={process.env.REACT_APP_IMG_URL + imageMaterial.image}
-                  alt="car mat"
-                />
-              </div>
-            ))}
-            {edgings.map((imageEdging) => (
-              <div
-                key={imageEdging.id}
-                style={{ display: imageEdging.color === selectedEdging ? 'block' : 'none' }}>
-                <img
-                  className="image_two"
-                  src={process.env.REACT_APP_IMG_URL + imageEdging.image}
-                  alt="car mat"
-                />
-              </div>
-            ))}
+          <div className="product__content-flex">
+            <div className="product__content-images">
+              {materials.map((imageMaterial) => (
+                <div
+                  key={imageMaterial.id}
+                  style={{
+                    display: imageMaterial.color === selectedMaterial ? 'block' : 'none',
+                  }}>
+                  <img
+                    className="image_one"
+                    src={process.env.REACT_APP_IMG_URL + imageMaterial.image}
+                    alt="car mat"
+                  />
+                </div>
+              ))}
+              {edgings.map((imageEdging) => (
+                <div
+                  key={imageEdging.id}
+                  style={{ display: imageEdging.color === selectedEdging ? 'block' : 'none' }}>
+                  <img
+                    className="image_two"
+                    src={process.env.REACT_APP_IMG_URL + imageEdging.image}
+                    alt="car mat"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <div className="image__sxema">
             <div>
