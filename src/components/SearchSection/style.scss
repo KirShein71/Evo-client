@@ -1,5 +1,10 @@
 .searchsection {
-    margin-top: 25px;
+    display: none;
+    @media(max-width: 480px) {
+        display: contents;
+        margin-top: 25px;
+    }
+    
 
     &__title {
         text-align: left;
@@ -40,7 +45,7 @@
         &-modal {
             
             position: absolute;
-            width: 95%;
+            width: 94%;
             background-color: #ffffff;
             border-radius: 10px;
             border: 2px solid rgb(156, 153, 153);
