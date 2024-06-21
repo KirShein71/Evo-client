@@ -1,6 +1,6 @@
 import React from 'react';
 import { getAllBrand } from '../../http/brandApi';
-import { getAllCarModel, getAllCarModelByBrandId } from '../../http/carModelApi';
+import { getAllCarModelByBrandId } from '../../http/carModelApi';
 import { useNavigate } from 'react-router-dom';
 import './style.scss';
 
