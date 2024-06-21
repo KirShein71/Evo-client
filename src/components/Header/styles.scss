@@ -35,6 +35,10 @@
 
     }
 
+    &__left {
+        display: flex;
+    }
+
     &__logo {
         img {
            width: 40%;
@@ -49,6 +53,7 @@
             }
             @media(max-width: 595px) {
                 width: 56%;
+                margin-left: 7px;
             }
             @media(max-width: 460px) {
                 width: 53%;

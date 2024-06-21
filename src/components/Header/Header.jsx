@@ -45,10 +45,13 @@ const Header = observer(() => {
     <div className="header">
       <div className="container">
         <div className="header__content">
-          <div className="header__logo">
-            <Link to="/">
-              <img src="./img/savaks (1) (1).png" alt="logo" />
-            </Link>
+          <div className="header__left">
+            <Burger isOpen={isOpen} toggleMenu={toggleMenu} />
+            <div className="header__logo">
+              <Link to="/">
+                <img src="./img/savaks (1) (1).png" alt="logo" />
+              </Link>
+            </div>
           </div>
           <div className="header__search">
             <form className="header__form" onSubmit={handleSubmit}>
@@ -80,7 +83,7 @@ const Header = observer(() => {
                 )}
               </div>
             </Link>
-            <Burger isOpen={isOpen} toggleMenu={toggleMenu} />
+
             {isOpen && (
               <>
                 <div className="overlay"></div>
