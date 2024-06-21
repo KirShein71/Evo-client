@@ -153,6 +153,11 @@
             background-color: #ffffff;
             color: #d81212;
             border: 2px solid #d81212;
+            @media(max-width: 1024px) {
+                background-color: #d81212;
+                border: none;
+                color: #ffffff;
+            }
         }
         @media(max-width: 1024px) {
             margin: 0 auto;

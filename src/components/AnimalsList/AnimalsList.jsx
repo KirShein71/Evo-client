@@ -31,12 +31,22 @@ function AnimalsList() {
   return (
     <div className="animalslist">
       <div className="container">
-        <div className="animalslist__title">Коврики для животных</div>
-        <div className="animalslist__content">
-          {animals.map((animal) => (
-            <CardAnimal key={animal.id} {...animal} />
-          ))}
-        </div>
+        {animals.length === 0 ? (
+          <div className="animalslist__text">
+            Приносим извинения, что карточки товаров пока не добавлены. Однако, мы всегда готовы
+            помочь вам с выбором! Просто позвоните нам, и наши опытные менеджеры с удовольствием
+            окажут вам помощь в подборе и консультации по нашему ассортименту
+          </div>
+        ) : (
+          <>
+            <div className="animalslist__title">Коврики для животных</div>
+            <div className="animalslist__content">
+              {animals.map((animal) => (
+                <CardAnimal key={animal.id} {...animal} />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

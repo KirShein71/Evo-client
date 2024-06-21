@@ -3,6 +3,7 @@ import Promo from './Promo/Promo';
 import Sale from './Sale/Sale';
 import Image from './Image/Image';
 import Video from './VideoPlayer/Video';
+import SearchSection from './SearchSection/SearchSection';
 
 function HomeContent() {
   React.useEffect(() => {
@@ -12,6 +13,7 @@ function HomeContent() {
   return (
     <>
       <Video />
+      <SearchSection />
       <Promo />
       <Sale />
       <Image />
