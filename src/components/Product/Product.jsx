@@ -35,6 +35,7 @@ function Product() {
   const [selectedSteel, setSelectedSteel] = React.useState(null);
   const [selectedSaddle, setSelectedSaddle] = React.useState(null);
   const [selectedOrganizer, setSelectedOrganizer] = React.useState(null);
+  const [selectedOrganizerFifty, setSelectedOrganizerFifty] = React.useState(null);
   const [opendDropdownModal, setOpenDropdownModal] = React.useState(false);
   const bodyRef = React.useRef();
   const navigate = useNavigate();
@@ -56,6 +57,12 @@ function Product() {
 
   const [trunkQuantity, setTrunkQuantity] = React.useState(1);
   const isCountTrunkDisabled = trunkQuantity <= 1;
+
+  const [organizerQuantity, setOrganizerQuantity] = React.useState(1);
+  const isCountOrganizerDisabled = organizerQuantity <= 1;
+
+  const [organizerFiftyQuantity, setOrganizerFiftyQuantity] = React.useState(1);
+  const isCountOrganizerFiftyDisabled = organizerFiftyQuantity <= 1;
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -161,8 +168,11 @@ function Product() {
     saddleId,
     steelId,
     organizerId,
+    organizerfiftyId,
     quantity,
     trunkQuantity,
+    organizerQuantity,
+    organizerFiftyQuantity,
   ) => {
     if (productId === null && trunkId === null) {
       setPopupOpen(true);
@@ -178,8 +188,11 @@ function Product() {
         saddleId,
         steelId,
         organizerId,
+        organizerfiftyId,
         quantity,
         trunkQuantity,
+        organizerQuantity,
+        organizerFiftyQuantity,
       )
         .then((data) => {
           setIsAddedToCart(true);
@@ -568,8 +581,14 @@ function Product() {
           </div>
           <Saddle setSelectedSaddle={setSelectedSaddle} setSelectedSteel={setSelectedSteel} />
           <Organizer
-            selectedOrganizer={selectedOrganizer}
             setSelectedOrganizer={setSelectedOrganizer}
+            setSelectedOrganizerFifty={setSelectedOrganizerFifty}
+            organizerQuantity={organizerQuantity}
+            setOrganizerQuantity={setOrganizerQuantity}
+            isCountOrganizerDisabled={isCountOrganizerDisabled}
+            organizerFiftyQuantity={organizerFiftyQuantity}
+            setOrganizerFiftyQuantity={setOrganizerFiftyQuantity}
+            isCountOrganizerFiftyDisabled={isCountOrganizerFiftyDisabled}
           />
         </div>
       </div>
@@ -590,8 +609,11 @@ function Product() {
               selectedSaddle,
               selectedSteel,
               selectedOrganizer,
+              selectedOrganizerFifty,
               quantity,
               trunkQuantity,
+              organizerQuantity,
+              organizerFiftyQuantity,
             );
           }
         }}

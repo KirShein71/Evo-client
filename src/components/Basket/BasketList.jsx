@@ -41,6 +41,9 @@ const BasketList = observer(() => {
     const saddlePrice = basketproduct.saddle ? basketproduct.saddle.new_price : 0;
     const steelPrice = basketproduct.steel ? basketproduct.steel.new_price : 0;
     const organizerPrice = basketproduct.organizer ? basketproduct.organizer.new_price : 0;
+    const organizerFiftyPrice = basketproduct.organizerfifty
+      ? basketproduct.organizerfifty.new_price
+      : 0;
     totalAmount +=
       trunkPrice * basketproduct.quantity_trunk +
       (thirdrowPrice === 0
@@ -50,7 +53,8 @@ const BasketList = observer(() => {
       homePrice * basketproduct.quantity +
       saddlePrice +
       steelPrice +
-      organizerPrice;
+      organizerPrice * basketproduct.quantity_organizer +
+      organizerFiftyPrice * basketproduct.quantity_organizerfifty;
   });
 
   const handleRemove = (id) => {

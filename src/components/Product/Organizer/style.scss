@@ -10,13 +10,13 @@
     }
     &__card {
         width: 180px;
-        height: 175px;
+        height: auto;
         border: 2px solid #979aaa;
         padding: 7px;
         border-radius: 10px;
         @media(max-width: 460px) {
             width: 170px;
-            height: 160px;
+            
         }
     }
     &__image {
@@ -31,6 +31,7 @@
 
     &__checkbox {
         display: flex;
+        margin-bottom: 5px;
         span {
             font-size: 18px;
             font-weight: 400;
@@ -44,8 +45,49 @@
             font-size: 18px;
             font-weight: 600;
             color: rgb(7, 7, 7);
+            margin-bottom: 0px;
             @media(max-width: 460px) {
                 font-size: 16px;
+            }
+        }
+    }
+
+    &-equipment{
+        &__quantity {
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: center;
+            @media(max-width: 595px) {
+                ustify-content: left;
+            }
+            }
+        &__total {
+            font-size: 18px;
+            font-weight: 500;
+            color: rgb(7, 6, 6);
+            padding-left: 10px;
+            padding-right: 10px;
+            @media(max-width: 460px) {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+        &__minus, &__plus {
+            width: 40px;
+            height: 30px;
+            border: none;
+            background-color: #ffffff;
+            &:hover {
+                border: none; 
+            }
+            @media(max-width: 460px) {
+                width: 35px;
+                height: 25px;
+            }
+            img {
+                display: block;
+                margin: 0 auto;
             }
         }
     }

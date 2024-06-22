@@ -15,10 +15,13 @@ function BasketCard({
   saddle,
   steel,
   organizer,
+  organizerfifty,
   remove,
   id,
   quantity,
   quantity_trunk,
+  quantity_organizer,
+  quantity_organizerfifty,
 }) {
   const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
 
@@ -191,7 +194,19 @@ function BasketCard({
                   + Органайзер {organizer.size} см :
                 </div>
                 <div className="basketcard__bottom-content__price">
-                  Цена: {organizer.new_price} Р
+                  Цена: {organizer.new_price} Р ({quantity_organizer} шт)
+                </div>
+              </div>
+            )}
+            {organizerfifty === null ? (
+              ''
+            ) : (
+              <div className="basketcard__bottom-content">
+                <div className="basketcard__bottom-content__title">
+                  + Органайзер {organizer.size} см :
+                </div>
+                <div className="basketcard__bottom-content__price">
+                  Цена: {organizerfifty.new_price} Р ({quantity_organizerfifty} шт)
                 </div>
               </div>
             )}
@@ -201,7 +216,9 @@ function BasketCard({
                 (trunk && trunk.new_price ? trunk.new_price : 0) * quantity_trunk +
                 (steel && steel.new_price ? steel.new_price : 0) +
                 (saddle && saddle.new_price ? saddle.new_price : 0) +
-                (organizer && organizer.new_price ? organizer.new_price : 0)}
+                (organizer && organizer.new_price ? organizer.new_price : 0) * quantity_organizer +
+                (organizerfifty && organizerfifty.new_price ? organizerfifty.new_price : 0) *
+                  quantity_organizerfifty}
               Р
             </div>
           </div>

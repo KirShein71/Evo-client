@@ -5,6 +5,11 @@ export const getAllOrganizer = async () => {
     return data
 }
 
+export const getAllOrganizerFifty = async () => {
+    const {data} = await guestInstance.get('organizerfifty/getall')
+    return data
+}
+
 
 export const createOrganizer = async (organizer) => {
     const { data } = await authInstance.post('organizer/create', organizer)
@@ -14,6 +19,11 @@ export const createOrganizer = async (organizer) => {
 
 export const getOneOrganizer = async (id) => {
     const { data } = await guestInstance.get(`organizer/getone/${id}`)
+    return data
+}
+
+export const getOneOrganizerFifty = async (id) => {
+    const { data } = await guestInstance.get(`organizerfifty/getone/${id}`)
     return data
 }
 

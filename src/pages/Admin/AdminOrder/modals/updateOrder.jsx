@@ -4,7 +4,6 @@ import { getOneOrderItem, updateOrder } from '../../../../http/orderApi';
 import { getAllMaterialRug } from '../../../../http/materailRugApi';
 import { getAllBody } from '../../../../http/bodyApi';
 import { getAllEdging } from '../../../../http/edgingApi';
-import { getAllOrganizer } from '../../../../http/organizerApi';
 import { getAllProductId } from '../../../../http/trunkApi';
 import { getAllProductIdThirdrow } from '../../../../http/thirdrowApi';
 
@@ -13,24 +12,30 @@ const defaultValue = {
   edgingId: '',
   materialId: '',
   organizerId: '',
+  organizerfiftyId: '',
   saddleId: '',
   steelId: '',
   trunkId: '',
   thirdrowId: '',
   quantity_trunk: '',
   quantity: '',
+  quantity_organizer: '',
+  quantity_organizerfifty: '',
 };
 const defaultValid = {
   bodyId: null,
   edgingId: null,
   materialId: null,
   organizerId: null,
+  organizerfiftyId: null,
   saddleId: null,
   steelId: null,
   trunkId: null,
   thirdrowId: null,
   quantity_trunk: null,
   quantity: null,
+  quantity_organizer: null,
+  quantity_organizerfifty: null,
 };
 
 const isValid = (value) => {
@@ -40,12 +45,16 @@ const isValid = (value) => {
     if (key === 'edgingId') result.edgingId = value.edgingId;
     if (key === 'materialId') result.materialId = value.materialId;
     if (key === 'organizerId') result.organizerId = value.organizerId;
+    if (key === 'organizerfiftyId') result.organizerfiftyId = value.organizerfiftyId;
     if (key === 'saddleId') result.saddleId = value.saddleId;
     if (key === 'steelId') result.steelId = value.steelId;
     if (key === 'trunkId') result.trunkId = value.trunkId;
     if (key === 'thirdrowId') result.thirdrowId = value.thirdrowId;
     if (key === 'quantity_trunk') result.quantity_trunk = value.quantity_trunk;
     if (key === 'quantity') result.quantity = value.quantity;
+    if (key === 'quantity_organizer') result.quantity_organizer = value.quantity_organizer;
+    if (key === 'quantity_organizerfifty')
+      result.quantity_organizerfifty = value.quantity_organizerfifty;
   }
   return result;
 };
@@ -55,7 +64,6 @@ const UpdateOrder = (props) => {
   const [bodyIdes, setbodyIdes] = React.useState(null);
   const [edgings, setEdgings] = React.useState(null);
   const [materials, setMaterials] = React.useState(null);
-  const [organizers, setOrganizers] = React.useState(null);
   const [trunk, setTrunk] = React.useState();
   const [thirdrow, setThidrow] = React.useState();
   const [value, setValue] = React.useState(defaultValue);
@@ -72,6 +80,9 @@ const UpdateOrder = (props) => {
             edgingId: data.edgingId,
             materialId: data.materialId,
             organizerId: data.organizerId,
+            organizerfiftyId: data.organizerfiftyId,
+            quantity_organizer: data.quantity_organizer,
+            quantity_organizerfifty: data.quantity_organizerfifty,
             steelId: data.steelId,
             saddleId: data.saddleId,
             trunkId: data.trunkId,
@@ -85,7 +96,6 @@ const UpdateOrder = (props) => {
       getAllBody().then((data) => setbodyIdes(data));
       getAllEdging().then((data) => setEdgings(data));
       getAllMaterialRug().then((data) => setMaterials(data));
-      getAllOrganizer().then((data) => setOrganizers(data));
     }
   }, [id]);
 
@@ -117,6 +127,24 @@ const UpdateOrder = (props) => {
     setValue((prevValue) => ({
       ...prevValue,
       steelId: steelValue,
+    }));
+  };
+
+  const handleOrganizerChange = (e) => {
+    const isChecked = e.target.checked;
+    const steelValue = isChecked ? 1 : 0; // Определяем значение для отправки на сервер
+    setValue((prevValue) => ({
+      ...prevValue,
+      organizerId: steelValue,
+    }));
+  };
+
+  const handleOrganizerFiftyChange = (e) => {
+    const isChecked = e.target.checked;
+    const steelValue = isChecked ? 1 : 0; // Определяем значение для отправки на сервер
+    setValue((prevValue) => ({
+      ...prevValue,
+      organizerfiftyId: steelValue,
     }));
   };
 
@@ -160,21 +188,27 @@ const UpdateOrder = (props) => {
     data.append('edgingId', value.edgingId);
     data.append('materialId', value.materialId);
     data.append('organizerId', value.organizerId === null ? 0 : value.organizerId);
+    data.append('organizerfiftyId', value.organizerfiftyId === null ? 0 : value.organizerfiftyId);
     data.append('saddleId', value.saddleId === null ? 0 : value.saddleId);
     data.append('steelId', value.steelId === null ? 0 : value.steelId);
     data.append('trunkId', value.trunkId === null ? 0 : value.trunkId);
     data.append('thirdrowId', value.thirdrowId === null ? 0 : value.thirdrowId);
     data.append('quantity_trunk', value.quantity_trunk);
     data.append('quantity', value.quantity);
+    data.append('quantity_organizer', value.quantity_organizer);
+    data.append('quantity_organizerfifty', value.quantity_organizerfifty);
     updateOrder(id, data)
       .then((data) => {
         const prod = {
           quantity: data.quantity,
           quantity_trunk: data.quantity_trunk,
+          quantity_organizer: data.quantity_organizer,
+          quantity_organizerfifty: data.quantity_organizerfifty,
           bodyId: data.bodyId,
           edgingId: data.edgingId,
           materialId: data.materialId,
           organizerId: data.organizerId,
+          organizerfiftyId: data.organizerfiftyId,
           steelId: data.steelId,
           saddleId: data.saddleId,
           turnkId: data.trunkId,
@@ -251,24 +285,6 @@ const UpdateOrder = (props) => {
           </Row>
           <Row className="mb-3">
             <Col>
-              <Form.Select
-                name="organizerId"
-                value={value.organizerId}
-                onChange={(e) => handleInputChange(e)}
-                isValid={valid.organizerId === true}
-                isInvalid={valid.organizerId === false}>
-                <option value="">Органайзер</option>
-                {organizers &&
-                  organizers.map((organizer) => (
-                    <option key={organizer.id} value={organizer.id}>
-                      {organizer.size}
-                    </option>
-                  ))}
-              </Form.Select>
-            </Col>
-          </Row>
-          <Row className="mb-3">
-            <Col>
               <Form.Check
                 name="saddleId"
                 type="switch"
@@ -292,6 +308,62 @@ const UpdateOrder = (props) => {
                 isValid={valid.steelId === true}
                 isInvalid={valid.steelId === false}
                 onChange={(e) => handleSteelChange(e)}
+              />
+            </Col>
+          </Row>
+          <Row className="mb-3">
+            <Col>
+              <Form.Check
+                name="organizerId"
+                type="switch"
+                id="steel-switch"
+                label="Органайзер 40см"
+                checked={value.organizerId === 1}
+                isValid={valid.organizerId === true}
+                isInvalid={valid.organizerId === false}
+                onChange={(e) => handleOrganizerChange(e)}
+              />
+            </Col>
+          </Row>
+          <div>Количество штук органайзера 40 см</div>
+          <Row className="mb-3">
+            <Col>
+              <Form.Control
+                name="quantity_organizer"
+                value={value.quantity_organizer}
+                onChange={(e) => handleInputChange(e)}
+                isValid={valid.quantity_organizer === true}
+                isInvalid={valid.quantity_organizer === false}
+                placeholder="Количество"
+                className="mb-3"
+              />
+            </Col>
+          </Row>
+          <Row className="mb-3">
+            <Col>
+              <Form.Check
+                name="organizerfiftyId"
+                type="switch"
+                id="organizerfifty-switch"
+                label="Органайзер 60см"
+                checked={value.organizerfiftyId === 1}
+                isValid={valid.organizerfiftyId === true}
+                isInvalid={valid.organizerfiftyId === false}
+                onChange={(e) => handleOrganizerFiftyChange(e)}
+              />
+            </Col>
+          </Row>
+          <div>Количество штук органайзера 60 см</div>
+          <Row className="mb-3">
+            <Col>
+              <Form.Control
+                name="quantity_organizerfifty"
+                value={value.quantity_organizerfifty}
+                onChange={(e) => handleInputChange(e)}
+                isValid={valid.quantity_organizerfifty === true}
+                isInvalid={valid.quantity_organizerfifty === false}
+                placeholder="Количество"
+                className="mb-3"
               />
             </Col>
           </Row>

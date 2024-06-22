@@ -204,7 +204,16 @@ const AdminOrder = () => {
                     {item.steel ? <span>{item.steel.name}</span> : null}{' '}
                     {item.saddle ? <span>{item.saddle.name}</span> : null}
                   </li>
-                  <li>{item.organizer ? <span>Органайзер: {item.organizer.size}</span> : null}</li>
+                  <li>
+                    {item.quantity_organizer ? (
+                      <span>Органайзер 40см: {item.quantity_organizer}</span>
+                    ) : null}
+                  </li>
+                  <li>
+                    {item.quantity_organizerfifty ? (
+                      <span>Органайзер 50см: {item.quantity_organizerfifty}</span>
+                    ) : null}
+                  </li>
                 </ul>
               </td>
               <td>{item.prettyCreatedAt}</td>
