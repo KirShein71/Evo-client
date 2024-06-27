@@ -1,8 +1,36 @@
 .searchresult {
     margin-bottom: 50px;
+
+    &__title {
+        text-align: left;
+        font-size: 27px;
+        font-weight: 500;
+        color: rgb(7, 6, 6);
+        @media(max-width: 1024px) {
+            font-size: 28px;
+        }
+        @media(max-width: 768px) {
+            font-size: 23px;
+        }
+        @media(max-width: 480px) {
+            font-size: 20px;
+        }
+    }
+
+    &__nothing {
+        font-size: 25px;
+        font-weight: 500;
+        color: rgb(7, 7, 7);
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+    }
     
    
     &__content {
+        margin-top: 25px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(1, 1fr);
