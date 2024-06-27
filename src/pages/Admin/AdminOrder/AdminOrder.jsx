@@ -195,7 +195,6 @@ const AdminOrder = () => {
                 <ul>
                   <li>Материал: {item.material?.name}</li>
                   <li>{item.edging ? <span>Кант: {item.edging.name}</span> : null}</li>
-                  <li>{item.body ? <span>Кузов: {item.body.name}</span> : null}</li>
                   <li>
                     Количество: {item.quantity} шт {item.thirdrow ? '3 ряда' : ''}
                   </li>
@@ -205,12 +204,12 @@ const AdminOrder = () => {
                     {item.saddle ? <span>{item.saddle.name}</span> : null}
                   </li>
                   <li>
-                    {item.quantity_organizer ? (
+                    {item.organizer ? (
                       <span>Органайзер 40см: {item.quantity_organizer}</span>
                     ) : null}
                   </li>
                   <li>
-                    {item.quantity_organizerfifty ? (
+                    {item.organizerfifty ? (
                       <span>Органайзер 50см: {item.quantity_organizerfifty}</span>
                     ) : null}
                   </li>

@@ -2,13 +2,11 @@ import React from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import { getOneOrderItem, updateOrder } from '../../../../http/orderApi';
 import { getAllMaterialRug } from '../../../../http/materailRugApi';
-import { getAllBody } from '../../../../http/bodyApi';
 import { getAllEdging } from '../../../../http/edgingApi';
 import { getAllProductId } from '../../../../http/trunkApi';
 import { getAllProductIdThirdrow } from '../../../../http/thirdrowApi';
 
 const defaultValue = {
-  bodyId: '',
   edgingId: '',
   materialId: '',
   organizerId: '',
@@ -23,7 +21,6 @@ const defaultValue = {
   quantity_organizerfifty: '',
 };
 const defaultValid = {
-  bodyId: null,
   edgingId: null,
   materialId: null,
   organizerId: null,
@@ -41,7 +38,6 @@ const defaultValid = {
 const isValid = (value) => {
   const result = {};
   for (let key in value) {
-    if (key === 'bodyId') result.bodyId = value.bodyId;
     if (key === 'edgingId') result.edgingId = value.edgingId;
     if (key === 'materialId') result.materialId = value.materialId;
     if (key === 'organizerId') result.organizerId = value.organizerId;
@@ -61,7 +57,6 @@ const isValid = (value) => {
 
 const UpdateOrder = (props) => {
   const { id, productId, show, setShow, setChange } = props;
-  const [bodyIdes, setbodyIdes] = React.useState(null);
   const [edgings, setEdgings] = React.useState(null);
   const [materials, setMaterials] = React.useState(null);
   const [trunk, setTrunk] = React.useState();
@@ -76,7 +71,6 @@ const UpdateOrder = (props) => {
           const prod = {
             quantity: data.quantity,
             quantity_trunk: data.quantity_trunk,
-            bodyId: data.bodyId,
             edgingId: data.edgingId,
             materialId: data.materialId,
             organizerId: data.organizerId,
@@ -93,7 +87,6 @@ const UpdateOrder = (props) => {
         })
         .catch((error) => alert(error.response.data.message));
 
-      getAllBody().then((data) => setbodyIdes(data));
       getAllEdging().then((data) => setEdgings(data));
       getAllMaterialRug().then((data) => setMaterials(data));
     }
@@ -184,7 +177,6 @@ const UpdateOrder = (props) => {
     setValid(correct);
 
     const data = new FormData();
-    data.append('bodyId', value.bodyId);
     data.append('edgingId', value.edgingId);
     data.append('materialId', value.materialId);
     data.append('organizerId', value.organizerId === null ? 0 : value.organizerId);
@@ -204,7 +196,6 @@ const UpdateOrder = (props) => {
           quantity_trunk: data.quantity_trunk,
           quantity_organizer: data.quantity_organizer,
           quantity_organizerfifty: data.quantity_organizerfifty,
-          bodyId: data.bodyId,
           edgingId: data.edgingId,
           materialId: data.materialId,
           organizerId: data.organizerId,
@@ -229,24 +220,6 @@ const UpdateOrder = (props) => {
       </Modal.Header>
       <Modal.Body>
         <Form noValidate onSubmit={handleSubmit}>
-          <Row className="mb-3">
-            <Col>
-              <Form.Select
-                name="bodyId"
-                value={value.bodyId}
-                onChange={(e) => handleInputChange(e)}
-                isValid={valid.bodyId === true}
-                isInvalid={valid.bodyId === false}>
-                <option value="">Кузов</option>
-                {bodyIdes &&
-                  bodyIdes.map((bodyId) => (
-                    <option key={bodyId.id} value={bodyId.id}>
-                      {bodyId.name}
-                    </option>
-                  ))}
-              </Form.Select>
-            </Col>
-          </Row>
           <Row className="mb-3">
             <Col>
               <Form.Select

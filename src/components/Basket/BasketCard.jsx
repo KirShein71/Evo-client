@@ -9,7 +9,6 @@ function BasketCard({
   material,
   cellshape,
   edging,
-  body,
   trunk,
   thirdrow,
   saddle,
@@ -67,7 +66,6 @@ function BasketCard({
                 <div className="basketcard__content-right__name">
                   {trunk.product?.name}(Коврик в багажник)
                 </div>
-                <div className="basketcard__content-right__body">Тип кузова: {body.name}</div>
                 <div className="basketcard__content-right__cellshape">
                   Форма ячейки: {cellshape?.name === 'sota' ? 'Сота' : 'Ромб'}
                 </div>
@@ -124,7 +122,6 @@ function BasketCard({
                 <div className="basketcard__content-right__name">
                   {product === null ? trunk.product.name : product.name}
                 </div>
-                <div className="basketcard__content-right__body">Тип кузова: {body.name}</div>
                 <div className="basketcard__content-right__cellshape">
                   Форма ячейки: {cellshape?.name === 'sota' ? 'Сота' : 'Ромб'}
                 </div>
@@ -203,7 +200,7 @@ function BasketCard({
             ) : (
               <div className="basketcard__bottom-content">
                 <div className="basketcard__bottom-content__title">
-                  + Органайзер {organizer.size} см :
+                  + Органайзер {organizer?.size} см :
                 </div>
                 <div className="basketcard__bottom-content__price">
                   Цена: {organizerfifty.new_price} Р ({quantity_organizerfifty} шт)

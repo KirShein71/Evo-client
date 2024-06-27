@@ -6,7 +6,6 @@ import { getAllProductIdThirdrow } from '../../http/thirdrowApi';
 import { getAllMaterialRug } from '../../http/materailRugApi';
 import { getAllEdging } from '../../http/edgingApi';
 import { getAllCellShape } from '../../http/cellShapeApi';
-import { getAllBody } from '../../http/bodyApi';
 import { append } from '../../http/basketApi';
 import { useNavigate } from 'react-router-dom';
 import Saddle from './Saddle/Saddle';
@@ -22,7 +21,6 @@ function Product() {
   const [materials, setMaterials] = React.useState([]);
   const [edgings, setEdgings] = React.useState([]);
   const [cellshapes, setCellshapes] = React.useState([]);
-  const [bodies, setBodies] = React.useState([]);
   const [selectedMaterial, setSelectedMaterial] = React.useState('blacksota');
   const [selectedMaterialId, setSelectedMaterialId] = React.useState(28);
   const [selectedEdging, setSelectedEdging] = React.useState('black');
@@ -30,14 +28,10 @@ function Product() {
   const [selectedMaterialName, setSelectedMaterialName] = React.useState('Черный');
   const [selectedEdgingName, setSelectedEdgingName] = React.useState('Черный');
   const [selectedEdgingId, setSelectedEdgingId] = React.useState(13);
-  const [selectedBody, setSelectedBody] = React.useState('Хэтчбек');
-  const [selectedBodyId, setSelectedBodyId] = React.useState(2);
   const [selectedSteel, setSelectedSteel] = React.useState(null);
   const [selectedSaddle, setSelectedSaddle] = React.useState(null);
   const [selectedOrganizer, setSelectedOrganizer] = React.useState(null);
   const [selectedOrganizerFifty, setSelectedOrganizerFifty] = React.useState(null);
-  const [opendDropdownModal, setOpenDropdownModal] = React.useState(false);
-  const bodyRef = React.useRef();
   const navigate = useNavigate();
   const [buttonText, setButtonText] = React.useState('В корзину');
   const [isAddedToCart, setIsAddedToCart] = React.useState(false);
@@ -69,7 +63,6 @@ function Product() {
     let materialLoaded = false;
     let edgingLoaded = false;
     let cellshapeLoaded = false;
-    let bodyLoaded = false;
     let trunkLoaded = false;
     let thirdrowLoaded = false;
 
@@ -90,10 +83,6 @@ function Product() {
       setCellshapes(cellshapeData);
       cellshapeLoaded = true;
 
-      const bodyData = await getAllBody();
-      setBodies(bodyData);
-      bodyLoaded = true;
-
       const trunkData = await getAllProductId(id);
       setTrunk(trunkData);
       trunkLoaded = true;
@@ -107,7 +96,6 @@ function Product() {
         materialLoaded &&
         edgingLoaded &&
         cellshapeLoaded &&
-        bodyLoaded &&
         trunkLoaded &&
         thirdrowLoaded
       ) {
@@ -117,20 +105,6 @@ function Product() {
 
     fetchData();
   }, [id]);
-
-  React.useEffect(() => {
-    const hadleClickOutside = (e) => {
-      if (bodyRef.current && !bodyRef.current.contains(e.target)) {
-        setOpenDropdownModal(false);
-      }
-    };
-
-    document.body.addEventListener('click', hadleClickOutside);
-
-    return () => {
-      document.body.removeEventListener('click', hadleClickOutside);
-    };
-  });
 
   const handleSalonCheckboxChange = (productId) => {
     setIsSalonChecked(!isSalonChecked);
@@ -158,7 +132,6 @@ function Product() {
     materialId,
     cellshapeId,
     edgingId,
-    bodyId,
     trunkId,
     thirdrowId,
     saddleId,
@@ -178,7 +151,6 @@ function Product() {
         materialId,
         cellshapeId,
         edgingId,
-        bodyId,
         trunkId,
         thirdrowId,
         saddleId,
@@ -214,46 +186,6 @@ function Product() {
     <div className="product">
       <div className="product__content">
         <h2 className="product__content-title">{product?.name}</h2>
-        <div className="product__content-body">
-          <div className="product__content-body__title">Выбирите тип кузова</div>
-          <div className="dropdown" ref={bodyRef}>
-            <div
-              className="dropdown__container"
-              onClick={() => setOpenDropdownModal(!opendDropdownModal)}>
-              <div className="dropdown__content">
-                <div className="dropdown__title">{selectedBody}</div>
-                <div className="dropdown__icon">
-                  {opendDropdownModal ? (
-                    <img src="../img/up.png" alt="up" />
-                  ) : (
-                    <img src="../img/down.png" alt="down" />
-                  )}
-                </div>
-              </div>
-            </div>
-            {opendDropdownModal && (
-              <div className="dropdown__modal">
-                <div className="dropdown__modal-content">
-                  <ul className="dropdown__modal-items">
-                    {bodies.map((body) => (
-                      <div key={body.id}>
-                        <li
-                          className="dropdown__modal-item"
-                          onClick={() => {
-                            setSelectedBody(body.name);
-                            setSelectedBodyId(body.id);
-                            setOpenDropdownModal(false);
-                          }}>
-                          {body.name}
-                        </li>
-                      </div>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
         <div className="product__content-cell">
           <div className="product__content-cell__title">Форма ячейки</div>
           <div className="product__content-cell__items">
@@ -597,7 +529,6 @@ function Product() {
               selectedMaterialId,
               selectedCellShape,
               selectedEdgingId,
-              selectedBodyId,
               selectedProductTrunk,
               selectedProductThirdrow,
               selectedSaddle,

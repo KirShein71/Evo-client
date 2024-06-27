@@ -70,7 +70,7 @@ const Header = observer(() => {
                 с 09-00 до 18-00 без выходных
               </div>
             </div>
-            <a className="header__phone" href="tel:+79618080539">
+            <a className="header__phone" href="tel:88003012901">
               <img src="./img/phone.png" alt="phone" />
             </a>
             <Link to="/basket">

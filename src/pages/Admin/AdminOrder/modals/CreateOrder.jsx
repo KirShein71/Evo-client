@@ -5,7 +5,6 @@ import { getAllEdging } from '../../../../http/edgingApi';
 import { getAllMaterialRug } from '../../../../http/materailRugApi';
 import { getAllProductId } from '../../../../http/trunkApi';
 import { getAllProductIdThirdrow } from '../../../../http/thirdrowApi';
-import { getAllBody } from '../../../../http/bodyApi';
 import { adminCreate } from '../../../../http/orderApi';
 
 const defaultValue = {
@@ -16,7 +15,6 @@ const defaultValue = {
   region: '',
   product: '',
   material: '',
-  body: '',
   cellshape: '',
   edging: '',
   trunk: '',
@@ -38,7 +36,6 @@ const defaultValid = {
   region: null,
   product: null,
   material: null,
-  body: null,
   cellshape: null,
   edging: null,
   trunk: null,
@@ -62,7 +59,6 @@ const isValid = (value) => {
     if (key === 'region') result.region = value.region;
     if (key === 'product') result.product = value.product;
     if (key === 'material') result.material = value.material;
-    if (key === 'body') result.body = value.body;
     if (key === 'cellshape') result.cellshape = value.cellshape;
     if (key === 'edging') result.edging = value.edging;
     if (key === 'trunk') result.trunk = value.trunk;
@@ -84,7 +80,6 @@ const CreateOrder = (props) => {
   const { show, setShow, setChange } = props;
   const [products, setProducts] = React.useState([]);
   const [materials, setMaterials] = React.useState([]);
-  const [bodies, setBodies] = React.useState([]);
   const [edgings, setEdgings] = React.useState([]);
   const [trunks, setTrunks] = React.useState([]);
   const [thirdrows, setThidrows] = React.useState([]);
@@ -110,7 +105,6 @@ const CreateOrder = (props) => {
     getAllProduct().then((data) => setProducts(data));
     getAllMaterialRug().then((data) => setMaterials(data));
     getAllEdging().then((data) => setEdgings(data));
-    getAllBody().then((data) => setBodies(data));
   }, []);
 
   const handleInputChange = (event) => {
@@ -208,14 +202,7 @@ const CreateOrder = (props) => {
     event.preventDefault();
     const correct = isValid(value);
     setValid(correct);
-    if (
-      correct.product &&
-      correct.material &&
-      correct.body &&
-      correct.edging &&
-      correct.name &&
-      correct.phone
-    ) {
+    if (correct.product && correct.material && correct.edging && correct.name && correct.phone) {
       const data = new FormData();
       data.append('name', value.name.trim());
       data.append('phone', value.phone.trim());
@@ -318,23 +305,6 @@ const CreateOrder = (props) => {
                 {edgings.map((edging) => (
                   <option key={edging.id} value={edging.id}>
                     {edging.name}
-                  </option>
-                ))}
-              </Form.Select>
-            </Col>
-          </Row>
-          <Row className="mb-3">
-            <Col>
-              <Form.Select
-                name="body"
-                value={value.body}
-                onChange={(e) => handleInputChange(e)}
-                isValid={valid.body === true}
-                isInvalid={valid.body === false}>
-                <option value="">Тип кузова</option>
-                {bodies.map((body) => (
-                  <option key={body.id} value={body.id}>
-                    {body.name}
                   </option>
                 ))}
               </Form.Select>
