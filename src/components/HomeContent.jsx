@@ -5,7 +5,6 @@ import Image from './Image/Image';
 import Video from './VideoPlayer/Video';
 import SearchSection from './SearchSection/SearchSection';
 import CarouselSlider from './CarouselSlider';
-import Cdek from './Cdek/Cdek';
 
 function HomeContent() {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
@@ -32,7 +31,6 @@ function HomeContent() {
       <Promo />
       <Sale />
       <Image />
-      <Cdek />
     </>
   );
 }
