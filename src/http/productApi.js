@@ -46,6 +46,6 @@ export const updatePrice = async (id, product) => {
 }
 
 export const deleteProduct = async (id) => {
-    const { data } = await authInstance.delete(`product/delete/${id}`)
+    const { data } = await guestInstance.delete(`product/delete/${id}`)
     return data
 }

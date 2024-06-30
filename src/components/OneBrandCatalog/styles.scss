@@ -124,6 +124,8 @@
                 border-radius: 10px;
                 border: 2px solid rgb(156, 153, 153);
                 cursor: pointer;
+                overflow: auto;
+                max-height: 350px;
                 z-index: 5;
                 @media(max-width: 991px) {
                     max-height: 220px;
