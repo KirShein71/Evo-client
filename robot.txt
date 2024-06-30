@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /adminbrand/
+Disallow: /admincarmodel/
+Disallow: /adminproduct/
+Disallow: /adminhome/
+Disallow: /adminanimal/
+Disallow: /adminorganizer/
+Disallow: /adminmaterialrug/
+Disallow: /adminedging/
+Disallow: /adminorder/
+Disallow: /login/
+Allow: /sitemap.xml
