@@ -2,6 +2,7 @@ import React from 'react';
 import regions from '../../region.json';
 import cites from '../../cites.json';
 import './style.scss';
+import Cdek from '../Cdek/Cdek';
 
 function Delevery({
   selectedDelevery,
@@ -10,6 +11,13 @@ function Delevery({
   setSelectedCity,
   selectedRegion,
   setSelectedRegion,
+  selectedCodePVZ,
+  setSelectedCodePVZ,
+  selectedCityCode,
+  setSelectedCityCode,
+  value,
+  valid,
+  handleChange,
 }) {
   const delevery = [
     {
@@ -69,7 +77,7 @@ function Delevery({
           </div>
         ))}
       </div>
-      {selectedDelevery > 1 ? (
+      {selectedDelevery === 3 ? (
         <div className="delevery__region">
           <div className="delevery__region-content">
             <div className="delevery__region-items">
@@ -107,6 +115,19 @@ function Delevery({
             </div>
           </div>
         </div>
+      ) : (
+        ''
+      )}
+      {selectedDelevery === 2 ? (
+        <Cdek
+          selectedCodePVZ={selectedCodePVZ}
+          setSelectedCodePVZ={setSelectedCodePVZ}
+          selectedCityCode={selectedCityCode}
+          setSelectedCityCode={setSelectedCityCode}
+          value={value}
+          valid={valid}
+          handleChange={handleChange}
+        />
       ) : (
         ''
       )}

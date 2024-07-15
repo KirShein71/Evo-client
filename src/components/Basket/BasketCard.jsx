@@ -7,7 +7,6 @@ function BasketCard({
   animal,
   home,
   material,
-  cellshape,
   edging,
   trunk,
   thirdrow,
@@ -51,12 +50,12 @@ function BasketCard({
               <div className="basketcard__content-left__image">
                 <img
                   className="edging__image"
-                  src={process.env.REACT_APP_IMG_URL + edging.image}
+                  src={process.env.REACT_APP_IMG_URL + edging?.image}
                   alt="edging__image"
                 />
                 <img
                   className="material__image"
-                  src={process.env.REACT_APP_IMG_URL + material.image}
+                  src={process.env.REACT_APP_IMG_URL + material?.image}
                   alt="material__image"
                 />
               </div>
@@ -66,9 +65,7 @@ function BasketCard({
                 <div className="basketcard__content-right__name">
                   {trunk.product?.name}(Коврик в багажник)
                 </div>
-                <div className="basketcard__content-right__cellshape">
-                  Форма ячейки: {cellshape?.name === 'sota' ? 'Сота' : 'Ромб'}
-                </div>
+                <div className="basketcard__content-right__cellshape">Форма ячейки: Сота</div>
                 <div className="basketcard__content-right__material">
                   Цвет материала: {material.name}
                 </div>
@@ -122,9 +119,7 @@ function BasketCard({
                 <div className="basketcard__content-right__name">
                   {product === null ? trunk.product.name : product.name}
                 </div>
-                <div className="basketcard__content-right__cellshape">
-                  Форма ячейки: {cellshape?.name === 'sota' ? 'Сота' : 'Ромб'}
-                </div>
+                <div className="basketcard__content-right__cellshape">Форма ячейки: Сота</div>
                 <div className="basketcard__content-right__material">
                   Цвет материала: {material.name}
                 </div>

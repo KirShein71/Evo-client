@@ -2,15 +2,14 @@
     display: none;
     @media(max-width: 480px) {
         display: contents;
-        margin-top: 25px;
     }
     
 
     &__title {
-        text-align: left;
-        font-size: 20px;
-        font-weight: 500;
-        color: rgb(7, 6, 6);
+        text-align: center;
+        font-size: 21px;
+        font-weight: 600;
+        color: var(--e-global-color-primary);
     }
 
     &__forms {
@@ -24,7 +23,7 @@
             width: 100%;
             min-height: 100%;
             border-radius: 10px;
-            border: 2px solid rgb(156, 153, 153);
+            border: 3px solid #3A5BCC26;
             cursor: pointer;     
         }
         &-content {
@@ -34,21 +33,19 @@
             
         }
         &-title {
-            font-size: 18px;
-            font-weight: 400;
-            color: rgb(7, 6, 6);
-            @media(max-width: 480px) {
-                font-size: 16px;
-            }
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--e-global-color-primary);
+            
         }
 
         &-modal {
             
             position: absolute;
-            width: 94%;
+            width: 95%;
             background-color: #ffffff;
             border-radius: 10px;
-            border: 2px solid rgb(156, 153, 153);
+            border: 3px solid #3A5BCC26;
             cursor: pointer;
             z-index: 5;
             overflow: auto;
@@ -68,8 +65,8 @@
 
             &__item {
                 font-size: 16px;
-                font-weight: 400;
-                color: rgb(7, 6, 6);
+                font-weight: 500;
+                color: var(--e-global-color-primary);
                 padding-bottom: 3px;
             }
         }
@@ -79,13 +76,13 @@
         display: inline-block;
         width: 150px;
         height: 40px;
-        border-radius: 10px;
-        background-color: #ffffff;
-        border: 2px solid grey;
+        border-radius: 100px 100px 100px 100px;
+        background-color: #3A5BCC;
+        border: 2px solid #3A5BCC;
         text-align: center;
         font-size: 18px;
         font-weight: 500;
-        color: rgb(2, 2, 2);
+        color: #ffffff;
         position: relative;
         left: 50%;
         transform: translate(-50%, 0);

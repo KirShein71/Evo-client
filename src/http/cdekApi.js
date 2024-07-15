@@ -26,9 +26,19 @@ export const getAllOffices = async (cityCode) => {
     }
   };
 
-  export const getRates = async (cityCode) => {
+  export const getRatesPvz = async (cityCode) => {
     try {
-      const { data } = await guestInstance.post(`/cdek/getrates/${cityCode}`);
+      const { data } = await guestInstance.post(`/cdek/getratespvz/${cityCode}`);
+      return data;
+    } catch (error) {
+      console.error('Ошибка получения данных о тарифах:', error);
+      throw error; 
+    }
+  };
+
+  export const getRatesDelivery = async (cityCode) => {
+    try {
+      const { data } = await guestInstance.post(`/cdek/getratesdelivery/${cityCode}`);
       return data;
     } catch (error) {
       console.error('Ошибка получения данных о тарифах:', error);
@@ -37,7 +47,19 @@ export const getAllOffices = async (cityCode) => {
   };
 
 
-  export const createOrderCdek = async () => {
-    const {data} = await guestInstance.post('cdek/createordercdek')
+  export const createOrderCdek = async (name, surname, phone, codepvz, totalamount, citycode) => {
+    const {data} = await guestInstance.post('cdek/createordercdek', {name, surname, phone, codepvz, totalamount, citycode})
+    return data
+    }
+
+    export const createOrderCdekDelivery = async (name, surname, phone, totalamount, citycode, street, home, flat) => {
+        const {data} = await guestInstance.post('cdek/createordercdekdelivery', {name, surname, phone, totalamount, citycode, street, home, flat})
+        return data
+        }
+
+export const getOrderCdek = async () => {
+    const {data} = await guestInstance.get('cdek/getordercdek')
     return data
 }
+    
+    

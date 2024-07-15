@@ -15,18 +15,25 @@ function Saddle({ setSelectedSaddle, setSelectedSteel }) {
   }, []);
 
   const handleSaddleChange = (saddleId) => {
-    setSaddleChecked(!saddleChecked);
-    setSelectedSaddle(saddleId);
+    setSaddleChecked((prev) => !prev);
+    if (saddleChecked) {
+      setSelectedSaddle(null);
+    } else {
+      setSelectedSaddle(saddleId);
+    }
   };
 
   const handleSteelChange = (steelId) => {
-    setSteelChecked(!steelChecked);
-    setSelectedSteel(steelId);
+    setSteelChecked((prev) => !prev);
+    if (steelChecked) {
+      setSelectedSteel(null);
+    } else {
+      setSteelChecked(steelId);
+    }
   };
 
   return (
     <div className="saddle">
-      <div className="saddle__title">Выберите подпятник</div>
       <div className="saddle__content">
         {saddles.map((saddle) => (
           <div key={saddle.id}>

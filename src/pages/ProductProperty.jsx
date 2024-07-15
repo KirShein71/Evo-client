@@ -1,6 +1,7 @@
 import React from 'react';
 import Product from '../components/Product/Product';
 import Product595 from '../components/Product/Product595';
+import Product991 from '../components/Product/Product991';
 
 function ProductProperty() {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
@@ -16,7 +17,9 @@ function ProductProperty() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  return <>{windowWidth < 600 ? <Product595 /> : <Product />}</>;
+  return (
+    <>{windowWidth < 600 ? <Product595 /> : windowWidth < 992 ? <Product991 /> : <Product />}</>
+  );
 }
 
 export default ProductProperty;

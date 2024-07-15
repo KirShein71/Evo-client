@@ -16,13 +16,12 @@ function CardResult({ name, old_price, new_price, image, id }) {
         <div className="cardresult__image">
           <img src={process.env.REACT_APP_IMG_URL + image} alt="image_car" />
         </div>
-        <h4 class="cardresult__title">{name}</h4>
         <div class="cardresult__bottom">
+          <h4 class="cardresult__title">{name}</h4>
           <div class="cardresult__price">
             <small>{old_price} Р</small>
             {new_price} Р
           </div>
-          <button className="cardresult__button">Подробнее</button>
         </div>
       </div>
     </div>

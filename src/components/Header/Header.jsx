@@ -11,6 +11,8 @@ const Header = observer(() => {
   const { basketProduct } = React.useContext(AppContext);
   const [isOpen, setOpen] = React.useState(false);
   const [query, setQuery] = React.useState('');
+  const [openCatalogModal, setOpenCatalogModal] = React.useState(false);
+  const catalogRef = React.useRef();
   const initialQuery = '';
   const navigate = useNavigate();
 
@@ -41,6 +43,24 @@ const Header = observer(() => {
     setQuery(initialQuery);
   };
 
+  const hadleOpenCatalogModal = () => {
+    setOpenCatalogModal(!openCatalogModal);
+  };
+
+  React.useEffect(() => {
+    const hadleClickOutside = (e) => {
+      if (catalogRef.current && !catalogRef.current.contains(e.target)) {
+        setOpenCatalogModal(false);
+      }
+    };
+
+    document.body.addEventListener('click', hadleClickOutside);
+
+    return () => {
+      document.body.removeEventListener('click', hadleClickOutside);
+    };
+  });
+
   return (
     <div className="header">
       <div className="container">
@@ -53,6 +73,24 @@ const Header = observer(() => {
               </Link>
             </div>
           </div>
+          <button className="header__catalog" ref={catalogRef} onClick={hadleOpenCatalogModal}>
+            Каталог товаров
+          </button>
+          {openCatalogModal && (
+            <div className="catalog-modal">
+              <div className="catalog-modal__content">
+                <Link to="/allbrands">
+                  <div className="catalog-modal__item">Коврики для автомобилей</div>
+                </Link>
+                <Link to="/homeproduct">
+                  <div className="catalog-modal__item">Коврики для дома</div>
+                </Link>
+                <Link to="/animals">
+                  <div className="catalog-modal__item">Коврики для животных</div>
+                </Link>
+              </div>
+            </div>
+          )}
           <div className="header__search">
             <form className="header__form" onSubmit={handleSubmit}>
               <input
@@ -64,15 +102,23 @@ const Header = observer(() => {
             </form>
           </div>
           <div className="header__information">
-            <div className="header__information-operating">
-              <div className="header__information-operating__phone">8-800-301-29-01</div>
-              <div className="header__information-operating__time">
-                с 09-00 до 18-00 без выходных
+            <div className="header__information-call">
+              <div style={{ textAlign: 'right' }}>
+                <a className="header__information-call__phone" href="tel:88003012901">
+                  8-800-301-29-01
+                </a>
+              </div>
+              <div style={{ textAlign: 'right', marginTop: '-3px' }}>
+                <a className="header__information-call__phone" href="tel:88122202909">
+                  8-812-220-29-09
+                </a>
+              </div>
+              <div className="header__information-operating">
+                <div className="header__information-operating__time">
+                  С 09-00 до 18-00 без выходных
+                </div>
               </div>
             </div>
-            <a className="header__phone" href="tel:88003012901">
-              <img src="./img/phone.png" alt="phone" />
-            </a>
             <Link to="/basket">
               <div className="header__basket">
                 <img src="./img/icon_basket.png" alt="icon_basket" />
@@ -119,7 +165,8 @@ const Header = observer(() => {
             )}
           </div>
         </div>
-        <NavBar />
+        <div
+          className={window.location.pathname === '/' ? 'header__hidden' : 'header__border'}></div>
       </div>
     </div>
   );

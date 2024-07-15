@@ -9,7 +9,7 @@ function Promo() {
   const [brands, setBrands] = React.useState([]);
 
   React.useEffect(() => {
-    getAllBrand().then((data) => setBrands(data.slice(0, 18)));
+    getAllBrand().then((data) => setBrands(data.slice(0, 15)));
   }, []);
 
   return (
@@ -17,7 +17,7 @@ function Promo() {
       <div className="container">
         <h1 className="promo__title">Автомобильные коврики</h1>
         <div className="promo__content">
-          {brands.slice(0, window.innerWidth < 768 ? 15 : 18).map((brand) => (
+          {brands.slice(0, window.innerWidth < 1025 ? 15 : 12).map((brand) => (
             <CardBrand key={brand.id} {...brand} />
           ))}
         </div>

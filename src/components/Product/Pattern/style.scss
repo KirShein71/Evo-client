@@ -1,0 +1,36 @@
+.pattern {
+    &__car {
+        &-image {
+            @media(max-width: 991px) {
+                display: none;
+            }
+            img {
+                width: 246px;
+            }
+            
+        }
+    }
+
+    &__schema, &__trunk {
+        margin-top: 25px;
+        &-image {
+            display: flex;
+            justify-content: center;
+            img {
+                width: 300px;
+            }
+        }
+        &-text {
+            margin-top: 7px;
+            font-size: 16px;
+            text-align: center;
+            color: #9b9999;
+            &__bottom {
+                font-size: 16px;
+                text-align: center;
+                color: #9b9999; 
+            }
+            
+        }
+    }
+}

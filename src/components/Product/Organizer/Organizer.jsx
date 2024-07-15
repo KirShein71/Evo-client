@@ -23,24 +23,32 @@ function Organizer({
   }, []);
 
   const handleOrganizerChange = (organizerId) => {
-    setOrganizerChecked(!organizerChecked);
-    setSelectedOrganizer(organizerId);
+    setOrganizerChecked((prev) => !prev);
+    if (organizerChecked) {
+      setSelectedOrganizer(null);
+    } else {
+      setSelectedOrganizer(organizerId);
+    }
   };
 
   const handleOrganizerFiftyChange = (organizerFiftyId) => {
-    setOrganizerFiftyChecked(!organizerFiftyChecked);
-    setSelectedOrganizerFifty(organizerFiftyId);
+    setOrganizerFiftyChecked((prev) => !prev);
+    if (organizerFiftyChecked) {
+      setSelectedOrganizerFifty(null);
+    } else {
+      setSelectedOrganizerFifty(organizerFiftyId);
+    }
   };
 
   return (
     <div className="organizer">
-      <div className="organizer__title">Не забудьте добавить органайзер</div>
       <div className="organizer__content">
         <div className="organizer__card">
           <div className="organizer__image">
             <img src="../img/organizer.jpg" alt="organizer" />
           </div>
-          {organizers.map((organizer) => (
+          <div className="organizer__title">Органайзер</div>
+          {organizers.map((organizer, index) => (
             <>
               <div key={organizer.id}>
                 <div className="checkbox" style={{ display: 'flex' }}>
@@ -69,24 +77,22 @@ function Organizer({
                   </div>
                 </div>
               </div>
-              {organizerChecked && (
-                <div className="organizer-equipment__quantity">
-                  <button
-                    className="organizer-equipment__minus"
-                    onClick={() => setOrganizerQuantity(organizerQuantity - 1)}
-                    disabled={isCountOrganizerDisabled}>
-                    <img src="../img/minus.png" alt="minus" />
-                  </button>
-                  <div className="organizer-equipment__total">{organizerQuantity}</div>
-                  <button className="organizer-equipment__plus">
-                    <img
-                      src="../img/plus.png"
-                      alt="plus"
-                      onClick={() => setOrganizerQuantity(organizerQuantity + 1)}
-                    />
-                  </button>
-                </div>
-              )}
+              <div className="organizer-equipment__quantity">
+                <button
+                  className="organizer-equipment__minus"
+                  onClick={() => setOrganizerQuantity(organizerQuantity - 1)}
+                  disabled={isCountOrganizerDisabled}>
+                  <img src="../img/minus.png" alt="minus" />
+                </button>
+                <div className="organizer-equipment__total">{organizerQuantity}</div>
+                <button className="organizer-equipment__plus">
+                  <img
+                    src="../img/plus.png"
+                    alt="plus"
+                    onClick={() => setOrganizerQuantity(organizerQuantity + 1)}
+                  />
+                </button>
+              </div>
             </>
           ))}
           {organizersFifty.map((organizerFifty) => (
@@ -117,8 +123,6 @@ function Organizer({
                     <p>{organizerFifty.new_price * organizerFiftyQuantity} Р</p>
                   </div>
                 </div>
-              </div>
-              {organizerFiftyChecked && (
                 <div className="organizer-equipment__quantity">
                   <button
                     className="organizer-equipment__minus"
@@ -135,7 +139,7 @@ function Organizer({
                     />
                   </button>
                 </div>
-              )}
+              </div>
             </>
           ))}
         </div>

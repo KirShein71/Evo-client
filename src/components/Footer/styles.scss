@@ -42,11 +42,11 @@
         cursor: pointer;
         font-size: 18px;
         font-weight: 400;
-        color: rgb(7,7,7);
+        color: #000000ff;
         &:hover {
-            color: #f11818; 
+            color:  #3A5BCC; 
             @media(max-width: 1024px) {
-                color: rgb(7,7,7);
+                color: #000000ff;
             }
         }
         @media(max-width: 768px) {

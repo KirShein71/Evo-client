@@ -10,6 +10,7 @@ import { observer } from 'mobx-react';
 const BasketList = observer(() => {
   const { basketProduct } = React.useContext(AppContext);
   const [fetching, setFetching] = React.useState(true);
+
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -69,6 +70,14 @@ const BasketList = observer(() => {
       });
   };
 
+  const handleCheckout = () => {
+    // Сохранение в localStorage
+    localStorage.setItem('totalAmount', totalAmount);
+
+    // Переход на checkout
+    navigate('/checkout');
+  };
+
   if (fetching) {
     return <Loader />;
   }
@@ -88,7 +97,7 @@ const BasketList = observer(() => {
             <div className="basketlist__bottom">
               <div className="basketlist__bottom-content">
                 <div className="basketlist__bottom-total">Общая сумма: {totalAmount}Р</div>
-                <button className="basketlist__bottom-button" onClick={() => navigate('/checkout')}>
+                <button className="basketlist__bottom-button" onClick={handleCheckout}>
                   Оформить заказ
                 </button>
               </div>

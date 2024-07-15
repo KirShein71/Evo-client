@@ -1,10 +1,14 @@
 import React from 'react';
 import Promo from './Promo/Promo';
 import Sale from './Sale/Sale';
-import Image from './Image/Image';
+
 import Video from './VideoPlayer/Video';
 import SearchSection from './SearchSection/SearchSection';
 import CarouselSlider from './CarouselSlider';
+import Banner from './Banner';
+import Track from './Track/Track';
+import Categories from './Categories/Categories';
+import CompanyAdvantages from './CompanyAdvantages/CompanyAdvantages';
 
 function HomeContent() {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
@@ -26,11 +30,27 @@ function HomeContent() {
 
   return (
     <>
-      {windowWidth < 600 ? <CarouselSlider /> : <Video />};
-      <SearchSection />
-      <Promo />
-      <Sale />
-      <Image />
+      {windowWidth < 480 ? (
+        <>
+          {windowWidth < 600 ? <CarouselSlider /> : <Banner />}
+          <Track />
+          <SearchSection />
+          <Sale />
+          <Promo />
+          <Categories />
+          <CompanyAdvantages />
+        </>
+      ) : (
+        <>
+          {windowWidth < 600 ? <CarouselSlider /> : <Banner />}
+          <Track />
+          <SearchSection />
+          <CompanyAdvantages />
+          <Promo />
+          <Categories />
+          <Sale />
+        </>
+      )}
     </>
   );
 }

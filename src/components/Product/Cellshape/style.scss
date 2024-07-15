@@ -1,0 +1,44 @@
+.cellshape {
+    margin-top: 15px;
+    border-bottom: 2px solid #3A5BCC26;
+    &__title {
+        font-size: 21px;
+        font-weight: 600;
+        color: var(--e-global-color-primary); 
+        @media(max-width: 460px) {
+            font-size: 19px;
+        }    
+    }
+
+    &__image {
+        margin-top: 15px;
+        
+        img {
+            width: 70px;
+            height: 70px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            @media(max-width: 460px) {
+                width: 60px;
+                height: 60px;
+            }
+          
+        }
+    }
+
+    &__subtitle {
+        margin-top: 5px;
+        font-size: 17px;
+        font-weight: 500;
+        color: var(--e-global-color-primary); 
+        text-transform: uppercase;
+        padding-left: 13px;
+        padding-bottom: 10px;
+        @media(max-width: 460px) {
+            font-size: 15px;
+            padding-left: 9px;
+        }
+
+    }
+    
+}

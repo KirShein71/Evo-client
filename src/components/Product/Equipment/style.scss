@@ -1,0 +1,110 @@
+.equipment {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3A5BCC26;
+    &__title {
+        font-size: 21px;
+        font-weight: 600;
+        color: var(--e-global-color-primary);
+        @media(max-width: 460px) {
+            font-size: 19px;
+        }
+    }
+
+    &__trunk, &__interior {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .checkbox {
+        display: flex;
+
+        span {
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--e-global-color-primary);
+        }
+    }
+
+    &__price {
+        display: flex;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+
+    &__oldPrice {
+        font-size: 20px;
+        color: var(--e-global-color-primary);
+        font-weight: 400;
+        text-decoration: line-through;
+        display: inline-block;
+        margin-right: 7px;
+        @media(max-width: 460px) {
+            font-size: 18px;
+        }
+    }
+    &__newPrice {
+        font-size: 20px;
+        color: #d81212;
+        font-weight: 500;
+        @media(max-width: 460px) {
+            font-size: 18px;
+        }
+    }
+    &__quantity {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        @media(max-width: 595px) {
+            justify-content: left;
+        }
+    }
+    &__total {
+        font-size: 22px;
+        font-weight: 500;
+        color: var(--e-global-color-primary);
+        padding-left: 15px;
+        padding-right: 15px;
+        @media(max-width: 460px) {
+            font-size: 18px;
+        }
+    }
+
+    .minus, .plus {
+        width: 40px;
+        height: 30px;
+        border: none;
+        background-color: #ffffff;
+        &:hover {
+            border: none; 
+        }
+        @media(max-width: 460px) {
+            width: 30px;
+            height: 20px;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+
+    &__maxtrunk {
+        margin-top: 25px;
+        &-title {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--e-global-color-primary);
+            cursor: pointer;
+            @media(max-width: 460px) {
+                font-size: 19px;
+            }
+        }
+
+        &-content {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+    
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { getAllOrders, deleteOrder } from '../../../http/orderApi';
+import { createOrderCdek, createOrderCdekDelivery } from '../../../http/cdekApi';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import UpdateStatus from './modals/UpdateStatus';
 import UpdateOrder from './modals/updateOrder';
@@ -25,7 +26,8 @@ const AdminOrder = () => {
   const [openModalPhone, setOpenModalPhone] = React.useState(false);
   const [openModalDelivery, setOpenModalDelivery] = React.useState(false);
   const [openCreateOrder, setOpenCreateOrder] = React.useState(false);
-
+  const [isButtonPvzDisabled, setIsButtonPvzDisabled] = React.useState(false);
+  const [isButtonDeliveryDisabled, setIsButtonDeliveryDisabled] = React.useState(false);
   const modalRef = React.useRef();
 
   React.useEffect(() => {
@@ -94,6 +96,52 @@ const AdminOrder = () => {
           alert(`Заказ был удален`);
         })
         .catch((error) => alert(error.response.data.message));
+    }
+  };
+
+  const handleOrderRegistration = async (name, surname, phone, codepvz, totalamount, citycode) => {
+    try {
+      const response = await createOrderCdek(name, surname, phone, codepvz, totalamount, citycode);
+      if (response && response.requests[0].state === 'ACCEPTED') {
+        alert('Заказ успешно зарегистрован в Сдэк');
+        setIsButtonPvzDisabled(true);
+      } else {
+        console.error('Ошибка регистрации заказа:', response);
+      }
+    } catch (error) {
+      console.error('Ошибка регистрации заказа:', error);
+    }
+  };
+
+  const handleOrderDeliveryRegistration = async (
+    name,
+    surname,
+    phone,
+    totalamount,
+    citycode,
+    street,
+    home,
+    flat,
+  ) => {
+    try {
+      const response = await createOrderCdekDelivery(
+        name,
+        surname,
+        phone,
+        totalamount,
+        citycode,
+        street,
+        home,
+        flat,
+      );
+      if (response && response.requests[0].state === 'ACCEPTED') {
+        alert('Заказ успешно зарегистрован в Сдэк');
+        setIsButtonDeliveryDisabled(true);
+      } else {
+        console.error('Ошибка регистрации заказа:', response);
+      }
+    } catch (error) {
+      console.error('Ошибка регистрации заказа:', error);
     }
   };
 
@@ -169,7 +217,6 @@ const AdminOrder = () => {
             <th>Дата</th>
             <th>Статус</th>
             <th>Покупатель</th>
-            <th>Телефон</th>
             <th>Доставка</th>
             <th></th>
           </tr>
@@ -213,6 +260,7 @@ const AdminOrder = () => {
                       <span>Органайзер 50см: {item.quantity_organizerfifty}</span>
                     ) : null}
                   </li>
+                  <li>Полная стоимость заказа (без доставки): {item.order.totalamount}</li>
                 </ul>
               </td>
               <td>{item.prettyCreatedAt}</td>
@@ -230,25 +278,69 @@ const AdminOrder = () => {
                 onClick={() => handleUpdateStatus(item.order.id)}>
                 {item.order.status}
               </td>
-              <td>{item.order.name}</td>
-              <td style={{ cursor: 'pointer' }} onClick={() => handleUpdatePhone(item.order.id)}>
-                {item.order.phone}
-              </td>
-              <td style={{ cursor: 'pointer' }} onClick={() => handleUpdateDelivery(item.order.id)}>
-                <div>
-                  {item.order.delivery === 1
-                    ? 'Самовывоз'
-                    : item.order.delivery === 2
-                    ? 'СДЭК'
-                    : item.order.delivery === 3
-                    ? 'Почта'
-                    : ''}
-                </div>
-                <div>
-                  {item.order.city}
-                  <div>{item.order.region}</div>
+              <td>
+                {item.order.name} {item.order.surname}
+                <div style={{ cursor: 'pointer' }} onClick={() => handleUpdatePhone(item.order.id)}>
+                  {item.order.phone}
                 </div>
               </td>
+              {item.order.delivery === 2 ? (
+                <td>
+                  {item.order.codepvz !== null ? (
+                    <Button
+                      variant="primary"
+                      disabled={isButtonPvzDisabled}
+                      onClick={() =>
+                        handleOrderRegistration(
+                          item.order.name,
+                          item.order.surname,
+                          item.order.phone,
+                          item.order.codepvz,
+                          item.order.totalamount,
+                          item.order.citycode,
+                        )
+                      }>
+                      Зарегистрировать заказ
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="primary"
+                      size="sm"
+                      disabled={isButtonDeliveryDisabled}
+                      onClick={() =>
+                        handleOrderDeliveryRegistration(
+                          item.order.name,
+                          item.order.surname,
+                          item.order.phone,
+                          item.order.totalamount,
+                          item.order.citycode,
+                          item.order.street,
+                          item.order.home,
+                          item.order.flat,
+                        )
+                      }>
+                      Зарегистрировать заказ с доставкой
+                    </Button>
+                  )}
+                </td>
+              ) : (
+                <td
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => handleUpdateDelivery(item.order.id)}>
+                  <div>
+                    {item.order.delivery === 1
+                      ? 'Самовывоз'
+                      : item.order.delivery === 3
+                      ? 'Почта'
+                      : ''}
+                  </div>
+                  <div>
+                    {item.order.city}
+                    <div>{item.order.region}</div>
+                  </div>
+                </td>
+              )}
+
               <td>
                 <Button onClick={() => handleDeleteOrder(item.order.id)}>Удалить</Button>
               </td>

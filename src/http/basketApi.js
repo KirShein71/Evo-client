@@ -6,8 +6,8 @@ export const fetchBasket = async () => {
     return data
 }
 
-export const append = async (productId, materialId, cellshapeId, edgingId, trunkId, thirdrowId, saddleId, steelId, organizerId, organizerfiftyId, quantity, quantity_trunk, quantity_organizer, quantity_organizerfifty) => {
-    const { data } = await guestInstance.post(`basket/append`, {materialId, productId, cellshapeId, edgingId, trunkId, thirdrowId, saddleId, steelId, organizerId, organizerfiftyId, quantity, quantity_trunk, quantity_organizer, quantity_organizerfifty});
+export const append = async (productId, materialId, edgingId, trunkId, thirdrowId, saddleId, steelId, organizerId, organizerfiftyId, quantity, quantity_trunk, quantity_organizer, quantity_organizerfifty) => {
+    const { data } = await guestInstance.post(`basket/append`, {materialId, productId, edgingId, trunkId, thirdrowId, saddleId, steelId, organizerId, organizerfiftyId, quantity, quantity_trunk, quantity_organizer, quantity_organizerfifty});
     return data;
 }
 

@@ -13,9 +13,13 @@ const isValid = (input) => {
     case 'name':
       pattern = /^[а-яА-Я\s]+$/i;
       return pattern.test(input.value.trim());
+    case 'surname':
+      pattern = /^[а-яА-Я\s]+$/i;
+      return pattern.test(input.value.trim());
     case 'phone':
       pattern = /^[8]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/i;
       return pattern.test(input.value.trim());
+
     default:
       return false;
   }
@@ -33,7 +37,11 @@ const CheckoutList = () => {
   const [selectedRegion, setSelectedRegion] = React.useState(null);
   const [selectedCity, setSelectedCity] = React.useState(null);
   const [selectedDelevery, setSelectedDelevery] = React.useState(1);
+  const [selectedCodePVZ, setSelectedCodePVZ] = React.useState(null);
+  const [selectedCityCode, setSelectedCityCode] = React.useState(null);
+  const [selectedTotalSum, setSelectedTotalSum] = React.useState(null);
   const [checkboxConfid, setCheckboxConfid] = React.useState(true);
+  const [totalAmount, setTotalAmount] = React.useState(null);
 
   React.useEffect(() => {
     fetchBasket()
@@ -45,6 +53,14 @@ const CheckoutList = () => {
         });
       })
       .finally(() => setFetching(false));
+  }, []);
+
+  React.useEffect(() => {
+    // Получение значения из localStorage при монтировании компонента
+    const storedTotalAmount = localStorage.getItem('totalAmount');
+    if (storedTotalAmount !== null) {
+      setTotalAmount(parseFloat(storedTotalAmount)); // Парсим строку в число
+    }
   }, []);
 
   if (fetching) {
@@ -77,23 +93,30 @@ const CheckoutList = () => {
 
     setValue({
       name: event.target.name.value.trim(),
+      surname: event.target.surname.value.trim(),
       phone: event.target.phone.value.trim(),
     });
 
     setValid({
       name: isValid(event.target.name),
+      surname: isValid(event.target.surname),
       phone: isValid(event.target.phone),
     });
 
-    if (valid.name && valid.phone && isBasketLoaded) {
-      console.log(basketProduct);
-      // Проверяем, что данные корзины загружены
+    if (valid.name && valid.surname && valid.phone && isBasketLoaded) {
       const body = {
         name: value.name,
+        surname: value.surname,
         phone: value.phone,
+        street: value.street,
+        home: value.home,
+        flat: value.flat,
         delivery: selectedDelevery,
         region: selectedRegion,
         city: selectedCity,
+        citycode: selectedCityCode,
+        codepvz: selectedCodePVZ,
+        totalamount: totalAmount,
         items: basketProduct,
       };
       if (!checkboxConfid) {
@@ -133,6 +156,16 @@ const CheckoutList = () => {
               required
             />
             <input
+              name="surname"
+              value={value.surname}
+              onChange={(e) => handleChange(e)}
+              isValid={valid.surname === true}
+              isInvalid={valid.surname === false}
+              placeholder="Введите фамилию..."
+              className="checkout__input"
+              required
+            />
+            <input
               name="phone"
               value={clicked ? value.phone || '8' : ''}
               onChange={(e) => handleChange(e)}
@@ -153,6 +186,13 @@ const CheckoutList = () => {
             setSelectedCity={setSelectedCity}
             selectedRegion={selectedRegion}
             setSelectedRegion={setSelectedRegion}
+            selectedCodePVZ={selectedCodePVZ}
+            setSelectedCodePVZ={setSelectedCodePVZ}
+            selectedCityCode={selectedCityCode}
+            setSelectedCityCode={setSelectedCityCode}
+            value={value}
+            valid={valid}
+            handleChange={handleChange}
           />
           <div className="checkout__checkbox">
             <div class="cntr">

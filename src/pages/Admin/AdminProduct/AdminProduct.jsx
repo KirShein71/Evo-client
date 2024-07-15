@@ -302,16 +302,12 @@ const AdminProduct = () => {
                     </Button>
                   </td>
                   <td>
-                    {product.trunks.length > 0 && product.trunks[0].id ? (
-                      'Добавлен'
-                    ) : (
-                      <Button
-                        variant="success"
-                        size="sm"
-                        onClick={() => hadleCreateTrunk(product.id)}>
-                        Добавить
-                      </Button>
-                    )}
+                    <Button
+                      variant="success"
+                      size="sm"
+                      onClick={() => hadleCreateTrunk(product.id)}>
+                      Добавить
+                    </Button>
                   </td>
                   <td>
                     {product.trunks.length > 0 && product.trunks[0].id ? (
