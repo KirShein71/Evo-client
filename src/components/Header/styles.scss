@@ -49,6 +49,7 @@
     }
 
     &__catalog {
+        position: relative;
         display: inline-block;
         margin-top: 14px;
         width: 165px;
@@ -357,8 +358,6 @@
 // catalog-modal 
 
 .catalog-modal {
-    top: 78px;
-    left: 290px;
     position: absolute;
     height: auto;
     background-color: #b5b8b8;
@@ -366,19 +365,7 @@
     border: 3px solid #b5b8b8;
     cursor: pointer;
     z-index: 3;
-    @media(max-width: 1200px) {
-        left: 229px;
-    }
-    @media(max-width: 1024px) {
-        left: 227px;
-    }
-    @media(max-width: 991px) {
-        left: 211px;
-    }
-    @media(max-width: 768px) {
-        left: 119px;
-        top: 50px;
-    }
+    
 
     &__content {
         padding: 20px 15px;

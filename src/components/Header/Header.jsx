@@ -73,24 +73,26 @@ const Header = observer(() => {
               </Link>
             </div>
           </div>
-          <button className="header__catalog" ref={catalogRef} onClick={hadleOpenCatalogModal}>
-            Каталог товаров
-          </button>
-          {openCatalogModal && (
-            <div className="catalog-modal">
-              <div className="catalog-modal__content">
-                <Link to="/allbrands">
-                  <div className="catalog-modal__item">Коврики для автомобилей</div>
-                </Link>
-                <Link to="/homeproduct">
-                  <div className="catalog-modal__item">Коврики для дома</div>
-                </Link>
-                <Link to="/animals">
-                  <div className="catalog-modal__item">Коврики для животных</div>
-                </Link>
+          <div>
+            <button className="header__catalog" ref={catalogRef} onClick={hadleOpenCatalogModal}>
+              Каталог товаров
+            </button>
+            {openCatalogModal && (
+              <div className="catalog-modal">
+                <div className="catalog-modal__content">
+                  <Link to="/allbrands">
+                    <div className="catalog-modal__item">Коврики для автомобилей</div>
+                  </Link>
+                  <Link to="/homeproduct">
+                    <div className="catalog-modal__item">Коврики для дома</div>
+                  </Link>
+                  <Link to="/animals">
+                    <div className="catalog-modal__item">Коврики для животных</div>
+                  </Link>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
           <div className="header__search">
             <form className="header__form" onSubmit={handleSubmit}>
               <input
