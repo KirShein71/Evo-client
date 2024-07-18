@@ -13,15 +13,12 @@ function CardHomeProduct({ name, new_price, image, id }) {
     <div className="cardhomeproduct" onClick={addToOneAnimalProduct}>
       <div className="cardhomeproduct__content">
         <div className="cardhomeproduct__image">
-          <img src={process.env.REACT_APP_IMG_URL + image} alt="image_car" />
+          <img src={process.env.REACT_APP_IMG_URL + image} alt="rug for home" />
         </div>
-        <div className="cardhomeproduct__title">{name}</div>
       </div>
-      <div className="cardhomeproduct__bottom">
-        <div className="cardhomeproduct__price">
-          <div className="cardhomeproduct__price-newprice">{new_price} Р</div>
-        </div>
-        <button className="cardhomeproduct__button">Подробнее</button>
+      <div class="cardhomeproduct__bottom">
+        <h4 class="cardhomeproduct__title">{name}</h4>
+        <div class="cardhomeproduct__price">{new_price} Р</div>
       </div>
     </div>
   );

@@ -69,7 +69,7 @@ const Header = observer(() => {
             <Burger isOpen={isOpen} toggleMenu={toggleMenu} />
             <div className="header__logo">
               <Link to="/">
-                <img src="./img/savaks (1) (1).png" alt="logo" />
+                <img src={`/img/savaks (1) (1).png?v=${Date.now()}`} alt="logo" />
               </Link>
             </div>
           </div>
@@ -123,7 +123,7 @@ const Header = observer(() => {
             </div>
             <Link to="/basket">
               <div className="header__basket">
-                <img src="./img/icon_basket.png" alt="icon_basket" />
+                <img src={`/img/icon_basket.png?v=${Date.now()}`} alt="icon_basket" />
                 {!!basketProduct.count && (
                   <div className="header__basket-circle">
                     <div className="header__basket-count">{basketProduct.count}</div>

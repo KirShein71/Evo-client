@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer__content">
         <div className="footer__title">
           <Link to="/">
-            <img src="./img/savaks (1).png" alt="logo" />
+            <img src={`/img/savaks (1) (1).png?v=${Date.now()}`} alt="logo" />
           </Link>
         </div>
         <div className="footer__menu">
@@ -34,7 +34,7 @@ function Footer() {
           </Link>
           <div className="footer__admin">
             <Link to="/login">
-              <img src="./img/admin.png" alt="car" />
+              <img src={`/img/admin.png?v=${Date.now()}`} alt="car" />
             </Link>
           </div>
           <a
