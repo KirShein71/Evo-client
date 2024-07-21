@@ -1,8 +1,6 @@
 import React from 'react';
 import Promo from './Promo/Promo';
 import Sale from './Sale/Sale';
-
-import Video from './VideoPlayer/Video';
 import SearchSection from './SearchSection/SearchSection';
 import CarouselSlider from './CarouselSlider';
 import Banner from './Banner';

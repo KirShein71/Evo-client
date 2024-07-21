@@ -48,7 +48,6 @@ function Product() {
   const [selectedProductThirdrow, setSelectedProductThirdrow] = React.useState(null);
   const [isSecondrowChecked, setIsSecondrowChecked] = React.useState(true);
   const [popupOpen, setPopupOpen] = React.useState(false);
-  const [trunkQuantities, setTrunkQuantities] = React.useState({});
 
   const [quantity, setQuantity] = React.useState(1);
   const isCountDisabled = quantity <= 1;
@@ -109,6 +108,7 @@ function Product() {
     } else {
       setSelectedProduct(productId);
     }
+    console.log(productId);
   };
 
   const handleTrunkCheckboxChange = (trunkId) => {
@@ -151,8 +151,7 @@ function Product() {
     organizerQuantity,
     organizerFiftyQuantity,
   ) => {
-    const selectedTrunk = trunk.length > 1 ? trunkQuantities[trunkId] : trunkQuantity;
-    if (productId === null && trunkId === null) {
+    if (selectedProductTrunk === null && selectedProduct === null) {
       setPopupOpen(true);
     } else {
       append(
@@ -167,7 +166,7 @@ function Product() {
         organizerId,
         organizerfiftyId,
         quantity,
-        selectedTrunk,
+        trunkQuantity,
         organizerQuantity,
         organizerFiftyQuantity,
       )
@@ -253,8 +252,6 @@ function Product() {
               isCountTrunkDisabled={isCountTrunkDisabled}
               handleMaxTrunkCheckboxChange={handleMaxTrunkCheckboxChange}
               selectedProductTrunk={selectedProductTrunk}
-              trunkQuantities={trunkQuantities}
-              setTrunkQuantities={setTrunkQuantities}
             />
           </div>
           <div className="product__content-pattern">

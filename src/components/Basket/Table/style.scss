@@ -1,0 +1,68 @@
+// table
+.baskettable {
+    &__image {
+        position: relative;
+        &-edging {
+            width: 100px;
+            position: absolute;
+            top: 0;
+            left:0;
+        }
+
+        &-material {
+            width: 100px;
+            position: relative;
+            top: 0;
+            left:0;
+        }
+
+        &-organizer, &-steel, &-saddle {
+            width: 100px;
+        }
+    }
+
+    &__information {
+        &-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000ff;
+            @media(max-width: 460px) {
+                font-size: 16px;
+            }
+        }
+        &-options {
+            font-size: 16px;
+            font-weight: 400;
+            color: #6b6b6b;
+            margin-right: 5px;
+            @media(max-width: 460px) {
+                font-size: 14px;
+            }
+        }
+
+        &-quantity, &-price {
+            display: none;
+            @media(max-width: 460px) {
+                display: inline;
+                font-weight: bold;
+                color: #000000ff;
+                margin-right: 5px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__quantity, &__price, &__total {
+        font-size: 18px;
+        font-weight: 500;
+        color: #000000ff;
+        text-align: center;
+        @media(max-width: 460px) {
+            display: none;
+        }
+    }
+
+    &__delete {
+        cursor: pointer;
+    }
+}

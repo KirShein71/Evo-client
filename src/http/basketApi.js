@@ -31,3 +31,29 @@ export const deleteBasketProduct = async(id) => {
     const {data} = await guestInstance.delete(`basketproduct/delete/${id}`)
     return data
 }
+
+export const deleteTrunk = async (id) => {
+    const { data } = await guestInstance.delete(`basketproduct/deleteTrunk/${id}`);
+    return data;
+};
+
+export const deleteOrganizer = async (id) => {
+    const { data } = await guestInstance.delete(`basketproduct/deleteOrganizer/${id}`);
+    return data;
+};
+
+export const deleteOrganizerFifty = async (id) => {
+    const { data } = await guestInstance.delete(`basketproduct/deleteOrganizerFifty/${id}`);
+    return data;
+};
+
+export const deleteSteel = async (id) => {
+    const { data } = await guestInstance.delete(`basketproduct/deleteSteel/${id}`);
+    return data;
+};
+
+export const deleteSaddle = async (id) => {
+    const { data } = await guestInstance.delete(`basketproduct/deleteSaddle/${id}`);
+    return data;
+};
+

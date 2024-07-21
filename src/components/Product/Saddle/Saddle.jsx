@@ -28,7 +28,7 @@ function Saddle({ setSelectedSaddle, setSelectedSteel }) {
     if (steelChecked) {
       setSelectedSteel(null);
     } else {
-      setSteelChecked(steelId);
+      setSelectedSteel(steelId);
     }
   };
 

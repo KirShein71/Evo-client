@@ -1,14 +1,23 @@
 import React from 'react';
-import BasketCard from './BasketCard';
-import { fetchBasket, getAllBasketProduct, deleteBasketProduct } from '../../http/basketApi';
+import { fetchBasket, getAllBasketProduct } from '../../http/basketApi';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import CartEmpty from './CartEmpty';
 import Loader from '../Loader/Loader';
 import { observer } from 'mobx-react';
+import { Table } from 'react-bootstrap';
+import ProductTable from './Table/ProductTable';
+import TrunkTable from './Table/TrunkTable';
+import SaddleTable from './Table/SaddleTable';
+import OrganizerTable from './Table/OrganizerTable';
+import OrganizerFiftyTable from './Table/OrganizerFifty';
+import SteelTable from './Table/SteelTable';
+import AnimalTable from './Table/AnimalTable';
+import HomeTable from './Table/HomeTable';
 
 const BasketList = observer(() => {
   const { basketProduct } = React.useContext(AppContext);
+  const [change, setChange] = React.useState(true);
   const [fetching, setFetching] = React.useState(true);
 
   const navigate = useNavigate();
@@ -30,7 +39,7 @@ const BasketList = observer(() => {
           setFetching(false);
         });
     });
-  }, [basketProduct]);
+  }, [basketProduct, change]);
 
   let totalAmount = 0;
   basketProduct.products.forEach((basketproduct) => {
@@ -58,18 +67,6 @@ const BasketList = observer(() => {
       organizerFiftyPrice * basketproduct.quantity_organizerfifty;
   });
 
-  const handleRemove = (id) => {
-    deleteBasketProduct(id)
-      .then((deletedItem) => {
-        basketProduct.products = basketProduct.products.filter(
-          (item) => item.id !== deletedItem.id,
-        );
-      })
-      .catch((error) => {
-        console.error('Произошла ошибка при удалении товара:', error);
-      });
-  };
-
   const handleCheckout = () => {
     // Сохранение в localStorage
     localStorage.setItem('totalAmount', totalAmount);
@@ -88,11 +85,92 @@ const BasketList = observer(() => {
         <div className="basketlist">
           <div className="container">
             <h1 className="basketlist__title">Корзина</h1>
-            <div className="basketlist__content">
-              {Array.isArray(basketProduct.products) &&
-                basketProduct.products.map((obj) => (
-                  <BasketCard key={obj.id} {...obj} remove={handleRemove} />
-                ))}
+            <div className="basketlist">
+              <div className="basketlist__content">
+                <Table size="sm">
+                  <thead>
+                    <tr>
+                      <th div className="basketlist__tabletitle">
+                        Наименование
+                      </th>
+                      <th></th>
+                      <th div className="basketlist__tableheader">
+                        Кол-во
+                      </th>
+                      <th div className="basketlist__tableheader">
+                        Цена
+                      </th>
+                      <th div className="basketlist__tableheader">
+                        Сумма
+                      </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Array.isArray(basketProduct.products) &&
+                      basketProduct.products.map((obj) => (
+                        <>
+                          {obj.product !== null ? (
+                            <tr key={obj.id}>
+                              <ProductTable {...obj} />
+                            </tr>
+                          ) : (
+                            ''
+                          )}
+                          {obj.trunk !== null ? (
+                            <tr>
+                              <TrunkTable {...obj} change={change} setChange={setChange} />
+                            </tr>
+                          ) : (
+                            ''
+                          )}
+                          {obj.organizer !== null ? (
+                            <tr>
+                              <OrganizerTable {...obj} change={change} setChange={setChange} />
+                            </tr>
+                          ) : (
+                            ''
+                          )}
+                          {obj.organizerfifty !== null ? (
+                            <tr>
+                              <OrganizerFiftyTable {...obj} change={change} setChange={setChange} />
+                            </tr>
+                          ) : (
+                            ''
+                          )}
+                          {obj.saddle !== null ? (
+                            <tr>
+                              <SaddleTable {...obj} change={change} setChange={setChange} />
+                            </tr>
+                          ) : (
+                            ''
+                          )}
+                          {obj.steel !== null ? (
+                            <tr>
+                              <SteelTable {...obj} change={change} setChange={setChange} />
+                            </tr>
+                          ) : (
+                            ''
+                          )}
+                          {obj.animal !== null ? (
+                            <tr>
+                              <AnimalTable {...obj} change={change} setChange={setChange} />
+                            </tr>
+                          ) : (
+                            ''
+                          )}
+                          {obj.home !== null ? (
+                            <tr>
+                              <HomeTable {...obj} change={change} setChange={setChange} />
+                            </tr>
+                          ) : (
+                            ''
+                          )}
+                        </>
+                      ))}
+                  </tbody>
+                </Table>
+              </div>
             </div>
             <div className="basketlist__bottom">
               <div className="basketlist__bottom-content">

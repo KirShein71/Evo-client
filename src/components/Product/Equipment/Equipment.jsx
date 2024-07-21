@@ -22,28 +22,7 @@ function Equipment({
   isCountTrunkDisabled,
   handleMaxTrunkCheckboxChange,
   selectedProductTrunk,
-  trunkQuantities,
-  setTrunkQuantities,
 }) {
-  React.useEffect(() => {
-    setTrunkQuantities(() => {
-      return trunk.reduce((acc, item) => {
-        acc[item.id] = 1;
-        return acc;
-      }, {});
-    });
-  }, [trunk]);
-
-  const handleTrunkQuantityChange = (trunkId, change) => {
-    setTrunkQuantities((prev) => {
-      const updatedQuantities = { ...prev };
-      if (updatedQuantities[trunkId] + change >= 1) {
-        updatedQuantities[trunkId] += change;
-      }
-      return updatedQuantities;
-    });
-  };
-
   return (
     <div className="equipment">
       <div className="equipment__content">
@@ -201,7 +180,7 @@ function Equipment({
           <div className="equipment__maxtrunk">
             <div className="equipment__maxtrunk-title">Коврик в багажник:</div>
             <div className="equipment__maxtrunk-content">
-              {trunk?.map((trunk, index) => (
+              {trunk?.map((trunk) => (
                 <div key={trunk.id}>
                   <div className="checkbox">
                     <div className="cntr">
@@ -225,27 +204,24 @@ function Equipment({
                     </div>{' '}
                     <span>{trunk.name}</span>
                   </div>
-                  <div className="equipment__price">
-                    <div className="equipment__oldPrice">
-                      {trunk.old_price * trunkQuantities[trunk.id]} Р
-                    </div>
-                    <div className="equipment__newPrice">
-                      {trunk.new_price * trunkQuantities[trunk.id]} Р
-                    </div>
-                  </div>
-                  <div className="equipment__quantity">
-                    <button
-                      className="minus"
-                      onClick={() => handleTrunkQuantityChange(trunk.id, -1)}>
-                      <img src="../img/minus.png" alt="minus" />
-                    </button>
-                    <div className="equipment__total">{trunkQuantities[trunk.id]}</div>
-                    <button className="plus" onClick={() => handleTrunkQuantityChange(trunk.id, 1)}>
-                      <img src="../img/plus.png" alt="plus" />
-                    </button>
-                  </div>
                 </div>
               ))}
+              <div className="equipment__price">
+                <div className="equipment__oldPrice">{2390 * trunkQuantity} Р</div>
+                <div className="equipment__newPrice">{2190 * trunkQuantity} Р</div>
+              </div>
+              <div className="equipment__quantity">
+                <button
+                  className="minus"
+                  onClick={() => setTrunkQuantity(trunkQuantity - 1)}
+                  disabled={isCountTrunkDisabled}>
+                  <img src="../img/minus.png" alt="minus" />
+                </button>
+                <div className="equipment__total">{trunkQuantity}</div>
+                <button className="plus" onClick={() => setTrunkQuantity(trunkQuantity + 1)}>
+                  <img src="../img/plus.png" alt="plus" />
+                </button>
+              </div>
             </div>
           </div>
         ) : (
