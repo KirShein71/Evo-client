@@ -50,9 +50,9 @@ function TrunkTable({ edging, material, trunk, quantity_trunk, id, change, setCh
           </div>
         </div>
         <td>
-          <div className="baskettable__price">Цена: {trunk.new_price}</div>
+          <div className="baskettable__information-price">Цена: {trunk.new_price}</div>
         </td>
-        <div className="baskettable__quantity">Количество: {quantity_trunk}</div>
+        <div className="baskettable__information-quantity">Количество: {quantity_trunk}</div>
       </td>
       <td>
         <div className="baskettable__quantity">{quantity_trunk}</div>
