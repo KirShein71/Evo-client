@@ -11,10 +11,10 @@ const isValid = (input) => {
   let pattern;
   switch (input.name) {
     case 'name':
-      pattern = /^[а-яА-Я\s]+$/i;
+      pattern = /^[а-яА-Яa-zA-Z\s]+$/;
       return pattern.test(input.value.trim());
     case 'surname':
-      pattern = /^[а-яА-Я\s]+$/i;
+      pattern = /^[а-яА-Яa-zA-Z\s]+$/;
       return pattern.test(input.value.trim());
     case 'phone':
       pattern = /^[8]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/i;
@@ -39,9 +39,9 @@ const CheckoutList = () => {
   const [selectedDelevery, setSelectedDelevery] = React.useState(1);
   const [selectedCodePVZ, setSelectedCodePVZ] = React.useState(null);
   const [selectedCityCode, setSelectedCityCode] = React.useState(null);
-  const [selectedTotalSum, setSelectedTotalSum] = React.useState(null);
   const [checkboxConfid, setCheckboxConfid] = React.useState(true);
   const [totalAmount, setTotalAmount] = React.useState(null);
+  const [phone, setPhone] = React.useState('');
 
   React.useEffect(() => {
     fetchBasket()
@@ -75,8 +75,21 @@ const CheckoutList = () => {
     setValue({ ...value, [event.target.name]: event.target.value });
     setValid({ ...valid, [event.target.name]: isValid(event.target) });
   };
+
   const handleInputClick = () => {
-    setClicked(true);
+    if (!clicked) {
+      setClicked(true);
+      setPhone('8');
+    } else {
+      setPhone('8');
+    }
+  };
+
+  const handleInputPhone = (event) => {
+    const regex = /^[0-9]*$/;
+    if (event.target.value.length <= 11 && regex.test(event.target.value)) {
+      setPhone(event.target.value);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -167,14 +180,12 @@ const CheckoutList = () => {
             />
             <input
               name="phone"
-              value={clicked ? value.phone || '8' : ''}
-              onChange={(e) => handleChange(e)}
+              value={clicked ? phone : ''}
+              onChange={handleInputPhone}
               onClick={handleInputClick}
               isValid={valid.phone === true}
               isInvalid={valid.phone === false}
               placeholder="Введите номер телефона..."
-              minlength="10"
-              maxlength="11"
               className="checkout__input"
               required
             />

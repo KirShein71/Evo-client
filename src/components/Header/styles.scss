@@ -280,37 +280,7 @@
 }
 
 
-.navbar {
-    display: block;
-    position: relative;
-    @media(max-width: 595px) {
-        display: none;
-    }
-    &__content {
-        display: flex;
-        justify-content: space-between;
-        @media(max-width: 768px) {
-            padding-bottom: 15px;
-        }
-      
-        
-    }
-    &__items {
-        font-size: 22px;
-        font-weight: 400;
-        color: #000000ff;
-        cursor: pointer;
-        line-height: 1;
-        -webkit-transition: all 0.5s ease;
-          transition: all 0.5s ease; 
-        &:hover {
-            color: #3A5BCC; 
-        }
-        @media(max-width: 768px) {
-            font-size: 20px;
-        }
-    }
-}
+
 
 // burger 
 .burger-menu {
