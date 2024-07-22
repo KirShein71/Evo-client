@@ -255,20 +255,20 @@ function Equipment({
                   <div className="equipment__newPrice">{trunk.new_price * trunkQuantity} Р</div>
                 </div>
                 <div className="equipment__quantity">
-                  <button
+                  <div
                     className="minus"
                     onClick={() => setTrunkQuantity(trunkQuantity - 1)}
                     disabled={isCountTrunkDisabled}>
                     <img src="../img/minus.png" alt="minus" />
-                  </button>
+                  </div>
                   <div className="equipment__total">{trunkQuantity}</div>
-                  <button className="plus">
+                  <div className="plus">
                     <img
                       src="../img/plus.png"
                       alt="plus"
                       onClick={() => setTrunkQuantity(trunkQuantity + 1)}
                     />
-                  </button>
+                  </div>
                 </div>
               </div>
             ))}

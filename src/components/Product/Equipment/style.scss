@@ -52,9 +52,9 @@
         }
     }
     &__quantity {
-        display: flex; /* Используем flexbox для выравнивания */
-        align-items: center; /* Выравниваем элементы по вертикали */
-        gap: 10px;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
         @media(max-width: 595px) {
             justify-content: left;
         }
@@ -63,29 +63,17 @@
         font-size: 22px;
         font-weight: 500;
         color: var(--e-global-color-primary);
-       
-      
+        padding-left: 15px;
+        padding-right: 15px;
         @media(max-width: 460px) {
-            font-size: 18px;
+            font-size: 20px;
         }
     }
 
     .minus, .plus {
-        width: 40px;
-        height: 30px;
+        cursor: pointer;
         border: none;
         background-color: #ffffff;
-        &:hover {
-            border: none; 
-        }
-        @media(max-width: 460px) {
-            width: 30px;
-            height: 20px;
-        }
-        img {
-            display: block;
-            margin: 0 auto;
-        }
     }
 
 
