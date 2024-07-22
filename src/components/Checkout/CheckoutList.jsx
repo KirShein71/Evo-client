@@ -6,6 +6,8 @@ import Delevery from './Delevery';
 import { Link } from 'react-router-dom';
 import Message from './Message';
 import './style.scss';
+import ModalCheckout from './modal/ModalCheckout';
+import ModalData from './modal/ModalData';
 
 const isValid = (input) => {
   let pattern;
@@ -42,6 +44,8 @@ const CheckoutList = () => {
   const [checkboxConfid, setCheckboxConfid] = React.useState(true);
   const [totalAmount, setTotalAmount] = React.useState(null);
   const [phone, setPhone] = React.useState('');
+  const [popupOpen, setPopupOpen] = React.useState(false);
+  const [popupDataOpen, setPopupDataOpen] = React.useState(false);
 
   React.useEffect(() => {
     fetchBasket()
@@ -92,49 +96,57 @@ const CheckoutList = () => {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
+  const checkInputsFilled = () => {
     const inputs = document.querySelectorAll('.checkout__input');
+    let allInputsFilled = true;
+
     inputs.forEach((input) => {
       if (!input.value.trim()) {
+        allInputsFilled = false;
         input.classList.add('invalid');
       } else {
         input.classList.remove('invalid');
       }
     });
 
-    setValue({
-      name: event.target.name.value.trim(),
-      surname: event.target.surname.value.trim(),
-      phone: event.target.phone.value.trim(),
-    });
+    return allInputsFilled;
+  };
 
-    setValid({
-      name: isValid(event.target.name),
-      surname: isValid(event.target.surname),
-      phone: isValid(event.target.phone),
-    });
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (!checkboxConfid) {
+      setPopupOpen(true);
+    } else {
+      setValue({
+        name: event.target.name.value.trim(),
+        surname: event.target.surname.value.trim(),
+        phone: event.target.phone.value.trim(),
+      });
 
-    if (valid.name && valid.surname && valid.phone && isBasketLoaded) {
-      const body = {
-        name: value.name,
-        surname: value.surname,
-        phone: value.phone,
-        street: value.street,
-        home: value.home,
-        flat: value.flat,
-        delivery: selectedDelevery,
-        region: selectedRegion,
-        city: selectedCity,
-        citycode: selectedCityCode,
-        codepvz: selectedCodePVZ,
-        totalamount: totalAmount,
-        items: basketProduct,
-      };
-      if (!checkboxConfid) {
-        alert('Вы забыли подтвердить согласие на обработку персональных данных');
-      } else {
+      setValid({
+        name: isValid(event.target.name),
+        surname: isValid(event.target.surname),
+        phone: isValid(event.target.phone),
+      });
+      const isAllInputsFilled = checkInputsFilled();
+
+      if (isAllInputsFilled && valid.name && valid.surname && valid.phone && isBasketLoaded) {
+        const body = {
+          name: value.name,
+          surname: value.surname,
+          phone: value.phone,
+          street: value.street,
+          home: value.home,
+          flat: value.flat,
+          delivery: selectedDelevery,
+          region: selectedRegion,
+          city: selectedCity,
+          citycode: selectedCityCode,
+          codepvz: selectedCodePVZ,
+          totalamount: totalAmount,
+          items: basketProduct,
+        };
+
         guestCreate(body)
           .then((data) => {
             setOrder(data);
@@ -143,12 +155,24 @@ const CheckoutList = () => {
           .catch((error) => {
             console.error('Ошибка при отправке данных:', error);
           });
+      } else {
+        console.error('Данные корзины не загружены или неверные данные в форме');
+        setTimeout(() => {
+          // Задержка в 1 секунду
+          setPopupDataOpen(true);
+        }, 1000);
       }
-    } else {
-      console.error('Данные корзины не загружены или неверные данные в форме');
+      const formCheck = document.querySelector('.checkout__form');
+      formCheck.addEventListener('submit', handleSubmit);
     }
-    const formCheck = document.querySelector('.checkout__form');
-    formCheck.addEventListener('submit', handleSubmit);
+  };
+
+  const onClosePopup = () => {
+    setPopupOpen(false);
+  };
+
+  const onClosePopupData = () => {
+    setPopupDataOpen(false);
   };
 
   return (
@@ -166,7 +190,6 @@ const CheckoutList = () => {
               isInvalid={valid.name === false}
               placeholder="Введите имя..."
               className="checkout__input"
-              required
             />
             <input
               name="surname"
@@ -176,7 +199,6 @@ const CheckoutList = () => {
               isInvalid={valid.surname === false}
               placeholder="Введите фамилию..."
               className="checkout__input"
-              required
             />
             <input
               name="phone"
@@ -187,7 +209,6 @@ const CheckoutList = () => {
               isInvalid={valid.phone === false}
               placeholder="Введите номер телефона..."
               className="checkout__input"
-              required
             />
           </div>
           <Delevery
@@ -230,6 +251,8 @@ const CheckoutList = () => {
               <Link to="/confidentiality">обработку персональных данных</Link>
             </span>
           </div>
+          {popupOpen && <ModalCheckout onClosePopup={onClosePopup} />}
+          {popupDataOpen && <ModalData onClosePopup={onClosePopupData} />}
           <button className="checkout__button" type="submit">
             Отправить
           </button>

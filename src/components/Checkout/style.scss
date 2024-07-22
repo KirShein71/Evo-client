@@ -86,6 +86,9 @@
                 color: #ffffff;
             }
         }
+        @media(max-width: 480px) {
+            margin: 0 auto;
+        }
     }
 
     &__span {
@@ -241,7 +244,4 @@
     }
 }
 
-.invalid {
-    border: 2px solid red;
-}
 

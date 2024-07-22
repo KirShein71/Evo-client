@@ -52,9 +52,9 @@
         }
     }
     &__quantity {
-        margin-top: 15px;
-        display: flex;
-        justify-content: center;
+        display: flex; /* Используем flexbox для выравнивания */
+        align-items: center; /* Выравниваем элементы по вертикали */
+        gap: 10px;
         @media(max-width: 595px) {
             justify-content: left;
         }
@@ -63,8 +63,8 @@
         font-size: 22px;
         font-weight: 500;
         color: var(--e-global-color-primary);
-        padding-left: 15px;
-        padding-right: 15px;
+       
+      
         @media(max-width: 460px) {
             font-size: 18px;
         }

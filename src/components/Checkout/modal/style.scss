@@ -1,4 +1,4 @@
-.modalrug {
+.modalcheckout {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,6 +17,13 @@
     font-weight: 500;
     color: var(--e-global-color-primary);
     margin-bottom: 15px;
+    width: 350px;
+    @media(max-width: 420px) {
+        width: 300px;
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 7px;
+    }
     
   }
   &__button {
@@ -32,11 +39,14 @@
     cursor: pointer;
     text-align: center;
     padding: 5px 10px;
+    @media(max-width: 420px) {
+        font-size: 16px;
+    }
 
   }
 }
 
-.overlay__modalrug {
+.overlay__modalcheckout {
     position: fixed;
   top: 0;
   left: 0;
