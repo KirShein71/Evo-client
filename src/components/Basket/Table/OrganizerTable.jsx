@@ -39,6 +39,9 @@ function OrganizerTable({ organizer, quantity_organizer, id, change, setChange }
         <div className="baskettable__information">
           <div className="baskettable__information-name">Органайзер {organizer.size} см</div>
         </div>
+        <td>
+          <div className="baskettable__information-price">Цена: {organizer.new_price}</div>
+        </td>
       </td>
       <td>
         <div className="baskettable__quantity">{quantity_organizer}</div>

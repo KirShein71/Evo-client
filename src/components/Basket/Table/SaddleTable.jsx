@@ -39,6 +39,9 @@ function SaddleTable({ saddle, id, change, setChange }) {
         <div className="baskettable__information">
           <div className="baskettable__information-name">{saddle.name}</div>
         </div>
+        <td>
+          <div className="baskettable__information-price">Цена: {saddle.new_price}</div>
+        </td>
       </td>
       <td>
         <div className="baskettable__quantity">1</div>

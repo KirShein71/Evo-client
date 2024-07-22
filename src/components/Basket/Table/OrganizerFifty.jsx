@@ -45,6 +45,9 @@ function OrganizerFiftyFiftyTable({
         <div className="baskettable__information">
           <div className="baskettable__information-name">Органайзер {organizerfifty.size} см</div>
         </div>
+        <td>
+          <div className="baskettable__information-price">Цена: {organizerfifty.new_price}</div>
+        </td>
       </td>
       <td>
         <div className="baskettable__quantity">{quantity_organizerfifty}</div>

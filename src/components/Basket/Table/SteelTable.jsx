@@ -39,6 +39,9 @@ function SteelTable({ steel, id, change, setChange }) {
         <div className="baskettable__information">
           <div className="baskettable__information-name">{steel.name}</div>
         </div>
+        <td>
+          <div className="baskettable__information-price">Цена: {steel.new_price}</div>
+        </td>
       </td>
       <td>
         <div className="baskettable__quantity">1</div>
