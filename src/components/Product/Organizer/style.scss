@@ -85,21 +85,9 @@
         }
 
         &__minus, &__plus {
-            width: 40px;
-            height: 30px;
+            cursor: pointer;
             border: none;
             background-color: #ffffff;
-            &:hover {
-                border: none; 
-            }
-            @media(max-width: 460px) {
-                width: 35px;
-                height: 25px;
-            }
-            img {
-                display: block;
-                margin: 0 auto;
-            }
         }
     }
 }
