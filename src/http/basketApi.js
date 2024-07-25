@@ -11,13 +11,13 @@ export const append = async (productId, materialId, edgingId, trunkId, thirdrowI
     return data;
 }
 
-export const appendAnimal = async (animalId, materialId, edgingId, quantity) => {
-    const { data } = await guestInstance.post(`basket/appendAnimal`, { animalId, materialId, edgingId, quantity  });
+export const appendAnimal = async (animalId, materialId, quantity) => {
+    const { data } = await guestInstance.post(`basket/appendAnimal`, { animalId, materialId, quantity  });
     return data;
 }
 
-export const appendHome = async (homeId, materialId, edgingId, quantity) => {
-    const { data } = await guestInstance.post(`basket/appendHome`, { homeId, materialId, edgingId, quantity  });
+export const appendHome = async (homeId, materialId, quantity) => {
+    const { data } = await guestInstance.post(`basket/appendHome`, { homeId, materialId, quantity  });
     return data;
 }
 

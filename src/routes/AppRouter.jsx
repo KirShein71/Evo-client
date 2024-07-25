@@ -20,7 +20,6 @@ import AnimalsProperty from '../pages/AnimalsProperty';
 import AdminAnimal from '../pages/Admin/AdminAnimal/AdminAnimal';
 import HomeProduct from '../pages/HomeProduct';
 import AdminHome from '../pages/Admin/AdminHome/AdminHome';
-import HomeProductProperty from '../pages/HomeProductProperty';
 import AdminOrganizer from '../pages/Admin/AdminOrganizer/AdminOrganizer';
 import Result from '../pages/Result';
 import Guarantees from '../pages/Guarantees';
@@ -41,7 +40,6 @@ const routes = [
   { path: '/animals', Component: Animals },
   { path: '/animalsproperty/:id', Component: AnimalsProperty },
   { path: '/homeproduct', Component: HomeProduct },
-  { path: '/homeproductproperty/:id', Component: HomeProductProperty },
   { path: '/result', Component: Result },
   { path: '/guarantees', Component: Guarantees },
   { path: '/confidentiality', Component: Confidentiality },
