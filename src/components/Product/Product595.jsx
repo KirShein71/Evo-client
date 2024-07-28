@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { getOneProduct } from '../../http/productApi';
 import { getAllProductId } from '../../http/trunkApi';
 import { getAllProductIdThirdrow } from '../../http/thirdrowApi';
@@ -20,7 +20,8 @@ import Edging from './Edging/Edging';
 import Pattern from './Pattern/Pattern';
 
 function Product595() {
-  const { id } = useParams();
+  const location = useLocation();
+  const originalName = location.state?.originalName;
   const [fetching, setFetching] = React.useState(true);
   const [product, setProduct] = React.useState();
   const [materials, setMaterials] = React.useState([]);
@@ -74,7 +75,7 @@ function Product595() {
     let thirdrowLoaded = false;
 
     const fetchData = async () => {
-      const productData = await getOneProduct(id);
+      const productData = await getOneProduct(originalName);
       setProduct(productData);
       productLoaded = true;
 
@@ -86,11 +87,11 @@ function Product595() {
       setEdgings(edgingData);
       edgingLoaded = true;
 
-      const trunkData = await getAllProductId(id);
+      const trunkData = await getAllProductId(productData.id);
       setTrunk(trunkData);
       trunkLoaded = true;
 
-      const thirdrowData = await getAllProductIdThirdrow(id);
+      const thirdrowData = await getAllProductIdThirdrow(productData.id);
       setThirdrow(thirdrowData);
       thirdrowLoaded = true;
 
@@ -100,7 +101,7 @@ function Product595() {
     };
 
     fetchData();
-  }, [id]);
+  }, [originalName]);
 
   const handleSalonCheckboxChange = (productId) => {
     setIsSalonChecked((prev) => !prev);
