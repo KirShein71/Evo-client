@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import './styles.scss';
 
 function OneBrandCatalog() {
-  const { id } = useParams();
+  const { name } = useParams();
   const [brand, setBrand] = React.useState();
   const [products, setProducts] = React.useState([]);
   const [carModels, setCarModels] = React.useState([]);
@@ -28,15 +28,15 @@ function OneBrandCatalog() {
     let carModelsLoaded = false;
 
     const fetchData = async () => {
-      const brandData = await getOneBrand(id);
+      const brandData = await getOneBrand(name);
       setBrand(brandData);
       brandLoaded = true;
 
-      const productsData = await getAllProductByBrandId(id);
+      const productsData = await getAllProductByBrandId(brandData.id);
       setProducts(productsData);
       productsLoaded = true;
 
-      const carModelsData = await getAllCarModelByBrandId(id);
+      const carModelsData = await getAllCarModelByBrandId(brandData.id);
       setCarModels(carModelsData);
       carModelsLoaded = true;
 
@@ -46,7 +46,7 @@ function OneBrandCatalog() {
     };
 
     fetchData();
-  }, [id]);
+  }, [name]);
 
   React.useEffect(() => {
     const hadleClickOutside = (e) => {

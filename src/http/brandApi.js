@@ -10,8 +10,8 @@ export const createBrand = async (brand) => {
     return data
 }
 
-export const getOneBrand = async (id) => {
-    const { data } = await guestInstance.get(`brand/getone/${id}`)
+export const getOneBrand = async (name) => {
+    const { data } = await guestInstance.get(`brand/getone/${name}`)
     return data
 }
 

@@ -30,8 +30,8 @@ export const deleteSaleProduct = async (id) => {
     return data
 }
 
-export const getOneProduct = async (id) => {
-    const { data } = await guestInstance.get(`product/getone/${id}`)
+export const getOneProduct = async (originalName) => {
+    const { data } = await guestInstance.get(`product/getone/${originalName}`)
     return data
 }
 

@@ -2,12 +2,12 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './styles.scss';
 
-function CardBrand({ image, name, id }) {
+function CardBrand({ image, name }) {
   const navigate = useNavigate();
   const location = useLocation();
 
   const addToOneBrandCatalog = () => {
-    navigate(`/onebrand/${id}`, { state: { from: location.pathname } });
+    navigate(`/onebrand/${name}`, { state: { from: location.pathname } });
   };
 
   return (

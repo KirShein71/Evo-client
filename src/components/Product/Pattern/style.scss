@@ -1,5 +1,7 @@
 .pattern {
     &__car {
+        display: flex;
+        justify-content: center;
         &-image {
             @media(max-width: 991px) {
                 display: none;

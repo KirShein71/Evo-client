@@ -1,12 +1,11 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { getOneProduct } from '../../http/productApi';
 import { getAllProductId } from '../../http/trunkApi';
 import { getAllProductIdThirdrow } from '../../http/thirdrowApi';
 import { getAllMaterialRug } from '../../http/materailRugApi';
 import { getAllEdging } from '../../http/edgingApi';
 import { append } from '../../http/basketApi';
-import { useNavigate } from 'react-router-dom';
 import Saddle from './Saddle/Saddle';
 import './styles.scss';
 import Organizer from './Organizer/Organizer';
@@ -20,7 +19,8 @@ import Edging from './Edging/Edging';
 import Pattern from './Pattern/Pattern';
 
 function Product() {
-  const { id } = useParams();
+  const location = useLocation();
+  const originalName = location.state?.originalName;
   const [fetching, setFetching] = React.useState(true);
   const [product, setProduct] = React.useState();
   const [materials, setMaterials] = React.useState([]);
@@ -73,7 +73,7 @@ function Product() {
     let thirdrowLoaded = false;
 
     const fetchData = async () => {
-      const productData = await getOneProduct(id);
+      const productData = await getOneProduct(originalName);
       setProduct(productData);
       productLoaded = true;
 
@@ -85,11 +85,11 @@ function Product() {
       setEdgings(edgingData);
       edgingLoaded = true;
 
-      const trunkData = await getAllProductId(id);
+      const trunkData = await getAllProductId(productData.id);
       setTrunk(trunkData);
       trunkLoaded = true;
 
-      const thirdrowData = await getAllProductIdThirdrow(id);
+      const thirdrowData = await getAllProductIdThirdrow(productData.id);
       setThirdrow(thirdrowData);
       thirdrowLoaded = true;
 
@@ -99,7 +99,7 @@ function Product() {
     };
 
     fetchData();
-  }, [id]);
+  }, [originalName]);
 
   const handleSalonCheckboxChange = (productId) => {
     setIsSalonChecked((prev) => !prev);
@@ -108,7 +108,6 @@ function Product() {
     } else {
       setSelectedProduct(productId);
     }
-    console.log(productId);
   };
 
   const handleTrunkCheckboxChange = (trunkId) => {

@@ -28,12 +28,13 @@ import Contacts from '../pages/Contacts';
 import About from '../pages/About';
 
 import { observer } from 'mobx-react';
+import NotFounds from '../pages/NotFounds';
 
 const routes = [
   { path: '/', Component: Home },
   { path: '/allbrands', Component: AllBrands },
-  { path: '/onebrand/:id', Component: OneBrand },
-  { path: '/productproperty/:id', Component: ProductProperty },
+  { path: '/onebrand/:name', Component: OneBrand },
+  { path: '/productproperty/:name', Component: ProductProperty },
   { path: '/basket', Component: Basket },
   { path: '/checkout', Component: Checkout },
   { path: '/login', Component: Login },
@@ -45,6 +46,7 @@ const routes = [
   { path: '/confidentiality', Component: Confidentiality },
   { path: '/contacts', Component: Contacts },
   { path: '/about', Component: About },
+  { path: '*', Component: NotFounds },
 ];
 
 const adminRoutes = [
