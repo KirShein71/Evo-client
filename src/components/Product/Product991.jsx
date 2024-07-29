@@ -152,8 +152,7 @@ function Product991() {
     organizerQuantity,
     organizerFiftyQuantity,
   ) => {
-    const selectedTrunk = trunk.length > 1 ? trunkQuantities[trunkId] : trunkQuantity; // здесь можно добавить логику для выбора правильного trunkQuantity или trunkQuantities
-    if (productId === null && trunkId === null) {
+    if (selectedProductTrunk === null && selectedProduct === null) {
       setPopupOpen(true);
     } else {
       append(
@@ -168,7 +167,7 @@ function Product991() {
         organizerId,
         organizerfiftyId,
         quantity,
-        selectedTrunk,
+        trunkQuantity,
         organizerQuantity,
         organizerFiftyQuantity,
       )

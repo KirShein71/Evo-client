@@ -2,6 +2,10 @@ import React from 'react';
 import './style.scss';
 
 function GuaranteesList() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="guaranteeslist">
       <div className="container">

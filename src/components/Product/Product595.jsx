@@ -152,8 +152,7 @@ function Product595() {
     organizerQuantity,
     organizerFiftyQuantity,
   ) => {
-    const selectedTrunk = trunk.length > 1 ? trunkQuantities[trunkId] : trunkQuantity;
-    if (productId === null && trunkId === null) {
+    if (selectedProductTrunk === null && selectedProduct === null) {
       setPopupOpen(true);
     } else {
       append(
@@ -168,7 +167,7 @@ function Product595() {
         organizerId,
         organizerfiftyId,
         quantity,
-        selectedTrunk,
+        trunkQuantity,
         organizerQuantity,
         organizerFiftyQuantity,
       )

@@ -2,6 +2,9 @@ import React from 'react';
 import './style.scss';
 
 function AboutList() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="aboutlist">
       <div className="container">

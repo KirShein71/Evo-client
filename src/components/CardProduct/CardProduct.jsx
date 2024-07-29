@@ -11,7 +11,7 @@ function CardProduct({ name, old_price, new_price, image }) {
     const formattedName = originalName.replace(/\s+/g, '-').toLowerCase(); // Форматируем имя для URL
     navigate(`/productproperty/${formattedName}`, {
       state: { from: location.pathname, originalName },
-    }); // Передаем оригинальное имя в state
+    });
   };
 
   return (

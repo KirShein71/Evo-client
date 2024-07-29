@@ -3,12 +3,16 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import './styles.scss';
 
-function CardSale({ image, name, old_price, new_price, id }) {
+function CardSale({ image, name, old_price, new_price }) {
+  const [originalName] = React.useState(name);
   const navigate = useNavigate();
   const location = useLocation();
 
   const addToOneProduct = () => {
-    navigate(`/productproperty/${id}`, { state: { from: location.pathname } });
+    const formattedName = originalName.replace(/\s+/g, '-').toLowerCase(); // Форматируем имя для URL
+    navigate(`/productproperty/${formattedName}`, {
+      state: { from: location.pathname, originalName },
+    });
   };
 
   return (
