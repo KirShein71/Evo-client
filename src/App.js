@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { AppContext } from './context/AppContext';
 import { check as checkAuth } from './http/adminApi';
 import { getAllBasketProduct, fetchBasket } from './http/basketApi'
+import { getAllFavoriteProduct } from "./http/favoriteApi";
 import axios from 'axios';
 import { observer } from 'mobx-react';
 import Loader from "./components/Loader/Loader";
@@ -15,7 +16,7 @@ import './app.scss'
 
 
 const App = observer(() => {
-    const { user, basketProduct } = React.useContext(AppContext)
+    const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
     const [loading, setLoading] = React.useState(true)
     
     React.useEffect(() => {
@@ -27,13 +28,16 @@ const App = observer(() => {
                     }
                     const basketId = basketData.id
                     getAllBasketProduct(basketId)
-                    .then((item) => basketProduct.products = item)
+                    .then((item) => basketProduct.products = item);
+
+                    getAllFavoriteProduct(basketId)
+                    .then((item) => favoriteProduct.item = item)
                 })
             )
             .finally(
                 () => setLoading(false)
             )
-    }, [user, basketProduct])
+    }, [user, basketProduct, favoriteProduct])
 
 
     if (loading) {

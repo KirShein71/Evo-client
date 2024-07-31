@@ -26,9 +26,10 @@ import Guarantees from '../pages/Guarantees';
 import Confidentiality from '../pages/Confidentiality';
 import Contacts from '../pages/Contacts';
 import About from '../pages/About';
+import NotFounds from '../pages/NotFounds';
+import Favorites from '../pages/Favorites';
 
 import { observer } from 'mobx-react';
-import NotFounds from '../pages/NotFounds';
 
 const routes = [
   { path: '/', Component: Home },
@@ -47,6 +48,7 @@ const routes = [
   { path: '/contacts', Component: Contacts },
   { path: '/about', Component: About },
   { path: '*', Component: NotFounds },
+  { path: '/favorites', Component: Favorites },
 ];
 
 const adminRoutes = [

@@ -33,17 +33,17 @@
                 width: 78%;
             }
             @media(max-width: 768px) {
-                width: 70%;
+                width: 138px;
             }
             @media(max-width: 595px) {
-                width: 56%;
+                width: 110px;
                 margin-left: 7px;
             }
             @media(max-width: 460px) {
                 width: 53%;
             }
-            @media(max-width: 420px) {
-                width: 50%;
+            @media(max-width: 400px) {
+                width: 95px;
             }
         }
     }
@@ -149,13 +149,12 @@
         }
     }
 
-
-    &__basket {
+    &__icons {
         margin-top: 14px;
         display: flex;
         position: relative;
         @media(max-width: 991px) {
-            margin-top: 20px;
+            margin-top: 17px;
         }
         @media(max-width: 768px) {
             margin-top: 16px;
@@ -163,25 +162,25 @@
         @media(max-width: 595px) {
             margin-top: 11px;
         }
-       
-        img{
-            width: 30px;
-            height: 30px;
-            @media(max-width: 991px) {
-                width: 26px;
-                height: 27px;
+    }
+
+    &__basket {
+        display: flex;
+        margin-right: 5px;
+        position: relative;
+        &-image {
+            img{
+                @media(max-width: 480px) {
+                    width: 25px;
+                    height: 25px;
+                }
+                @media(max-width: 420px) {
+                    width: 24px;
+                    height: 24px;
+                }   
             }
-            @media(max-width: 480px) {
-                width: 25px;
-                height: 25px;
-            }
-            @media(max-width: 420px) {
-                width: 24px;
-                height: 24px;
-            }
-            
-            
         }
+        
 
         &-circle {
             display: flex;
@@ -189,22 +188,23 @@
             justify-content: center;
             width: 22px; 
             height: 22px; 
-            background-color: #ff0000; 
+            background-color: #3A5BCC; 
             border-radius: 50%;
             position: absolute;
-            top: -10px;
-            right: -10px;
+            top: -7px;
+            right: -8px;
             @media(max-width: 768px) {
                 width: 20px;
                 height: 20px;
-                top: -8px;
+                
             }
             @media(max-width: 480px) {
                 width: 17px;
                 height: 17px;
+                right: -5px;
             }
             @media(max-width: 460px) {
-                top: -6px;
+                top: -4px;
             }
         }
 
@@ -221,6 +221,16 @@
             }
         }
         
+    }
+
+    &__favorite {
+        margin-top: 2px;
+
+        img {
+            @media(max-width: 460px) {
+                width: 25px;
+            }
+        }
     }
 
     //search

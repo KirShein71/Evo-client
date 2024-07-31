@@ -19,6 +19,7 @@ function ProductTable({ edging, material, product, quantity, thirdrow, id }) {
         console.error('Произошла ошибка при удалении товара:', error);
       });
   };
+
   const hadleOpenProductDeleteModal = () => {
     setOpenDeleteProductModal(true);
   };

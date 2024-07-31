@@ -2,12 +2,13 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { observer } from 'mobx-react';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Burger from '../Burger/Burger';
 
 import './styles.scss';
 
 const Header = observer(() => {
-  const { basketProduct } = React.useContext(AppContext);
+  const { basketProduct, favoriteProduct } = React.useContext(AppContext);
   const [isOpen, setOpen] = React.useState(false);
   const [query, setQuery] = React.useState('');
   const [openCatalogModal, setOpenCatalogModal] = React.useState(false);
@@ -120,17 +121,30 @@ const Header = observer(() => {
                 </div>
               </div>
             </div>
-            <Link to="/basket">
+            <div className="header__icons">
               <div className="header__basket">
-                <img src={`/img/icon_basket.png?v=${Date.now()}`} alt="icon_basket" />
+                <Link to="/basket">
+                  <div className="header__basket-image">
+                    <img src={`/img/bag.png?v=${Date.now()}`} alt="icon_basket" />
+                  </div>
+                </Link>
                 {!!basketProduct.count && (
                   <div className="header__basket-circle">
                     <div className="header__basket-count">{basketProduct.count}</div>
                   </div>
                 )}
               </div>
-            </Link>
-
+              <div className="header__favorite">
+                <Link to="/favorites">
+                  <img src={`/img/heart.png?v=${Date.now()}`} alt="favorite icon" />
+                </Link>
+                {!!favoriteProduct.count && (
+                  <div className="header__basket-circle">
+                    <div className="header__basket-count">{favoriteProduct.count}</div>
+                  </div>
+                )}
+              </div>
+            </div>
             {isOpen && (
               <>
                 <div className="overlay"></div>

@@ -21,6 +21,11 @@ export const appendHome = async (homeId, materialId, quantity) => {
     return data;
 }
 
+export const appendFavorite = async (productId) => {
+    const { data } = await guestInstance.post(`basket/appendFavorite`, { productId  });
+    return data;
+}
+
 
 export const getAllBasketProduct = async (basketId) => {
     const { data } = await guestInstance.get(`basketproduct/getall/${basketId}`)

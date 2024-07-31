@@ -1,0 +1,89 @@
+.favorite {
+    margin-top: 35px;
+    margin-bottom: 50px;
+    &__title {
+        font-size: 25px;
+        font-weight: 500;
+        color: var(--e-global-color-primary);
+        @media(max-width: 595px) {
+            font-size: 21px;
+        }
+        @media(max-width: 480px) {
+            font-size: 20px;
+        }
+    }
+
+    &__content {
+        padding-top: 25px;
+        padding-bottom: 35px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 25px;
+        justify-items: center; 
+        align-items: center;
+        @media(max-width: 1024px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media(max-width: 991px) {
+            grid-column-gap: 10px;
+        }
+        @media(max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media(max-width: 480px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+//favorite-empty
+
+.favorite-empty {
+    &__content {
+        margin-top: 50px;
+        margin-bottom: 70px;
+    }
+    &__title {
+        font-size: 25px;
+        font-weight: 500;
+        color: var(--e-global-color-primary);
+        text-align: center;
+    }
+    &__subtitle {
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--e-global-color-primary);
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    &__button {
+        display: inline-block;
+        margin: 0 auto;
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        background-color: #3A5BCC;
+        border: 2px solid #3A5BCC;
+        color: #ffffff;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        white-space: nowrap;
+        color: #ffffff;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        &:hover {
+            background-color: #ffffff;
+            color: #4949cf;
+           @media(max-width: 1024px) {
+            box-shadow: none;
+            background-color: #3A5BCC;
+            border: 2px solid #3A5BCC;
+            color: #ffffff;
+           }
+        }
+    }
+}

@@ -9,11 +9,11 @@
         margin-top: 25px;
         font-size: 25px;
         font-weight: bold;
-        color: rgb(7, 6, 6);
+        color: var(--e-global-color-primary);
         &-span {
             font-size: 25px;
             font-weight: bold;
-            color: rgb(7, 6, 6);
+            color: var(--e-global-color-primary);
             padding-right: 7px;
             @media(max-width: 595px) {
                 font-size: 21px;
@@ -79,7 +79,6 @@
         @media(max-width: 480px) {
             grid-template-columns: repeat(2, 1fr);
         }
-        
     }
 
     //modal
