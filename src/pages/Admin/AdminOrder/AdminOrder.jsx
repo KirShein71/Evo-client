@@ -7,7 +7,7 @@ import UpdateOrder from './modals/updateOrder';
 import UpdatePhone from './modals/UpdatePhone';
 import UpdateDelivery from './modals/UpdateDelivery';
 import CreateOrder from './modals/CreateOrder';
-
+import { Moment } from 'react-moment';
 import { CSVLink } from 'react-csv';
 
 import './style.scss';
@@ -299,7 +299,9 @@ const AdminOrder = () => {
                   <li>Полная стоимость заказа (без доставки): {item.order.totalamount}</li>
                 </ul>
               </td>
-
+              <td>
+                <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>
+              </td>
               <td
                 style={{
                   cursor: 'pointer',
