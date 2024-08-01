@@ -47,13 +47,13 @@ export const getAllOffices = async (cityCode) => {
   };
 
 
-  export const createOrderCdek = async (name, surname, phone, codepvz, totalamount, citycode) => {
-    const {data} = await guestInstance.post('cdek/createordercdek', {name, surname, phone, codepvz, totalamount, citycode})
+  export const createOrderCdek = async (id, name, surname, phone, codepvz, totalamount, citycode) => {
+    const {data} = await guestInstance.post('cdek/createordercdek', {id, name, surname, phone, codepvz, totalamount, citycode})
     return data
     }
 
-    export const createOrderCdekDelivery = async (name, surname, phone, totalamount, citycode, street, home, flat) => {
-        const {data} = await guestInstance.post('cdek/createordercdekdelivery', {name, surname, phone, totalamount, citycode, street, home, flat})
+    export const createOrderCdekDelivery = async (id, name, surname, phone, totalamount, citycode, street, home, flat) => {
+        const {data} = await guestInstance.post('cdek/createordercdekdelivery', {id, name, surname, phone, totalamount, citycode, street, home, flat})
         return data
         }
 

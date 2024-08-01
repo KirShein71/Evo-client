@@ -47,10 +47,10 @@ function ProductTable({ edging, material, product, quantity, thirdrow, id }) {
       </td>
       <td>
         <div className="baskettable__information">
-          <div className="baskettable__information-name">{product.name}</div>
-          <div className="baskettable__information-options">
-            Форма ячейки: Сота, Цвет материала: {material.name}, Цвет канта: {edging.name}
-          </div>
+          <div className="baskettable__information-name">Комплект ковриков для: {product.name}</div>
+          <div className="baskettable__information-options">Форма ячейки: Сота</div>
+          <div className="baskettable__information-options">Цвет материала: {material.name}</div>
+          <div className="baskettable__information-options">Цвет канта: {edging.name}</div>
         </div>
         <td>
           <div className="baskettable__information-price">

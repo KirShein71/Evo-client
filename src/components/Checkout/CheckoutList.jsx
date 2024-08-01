@@ -8,31 +8,14 @@ import Message from './Message';
 import './style.scss';
 import ModalCheckout from './modal/ModalCheckout';
 import ModalData from './modal/ModalData';
-
-const isValid = (input) => {
-  let pattern;
-  switch (input.name) {
-    case 'name':
-      pattern = /^[а-яА-Яa-zA-Z\s]+$/;
-      return pattern.test(input.value.trim());
-    case 'surname':
-      pattern = /^[а-яА-Яa-zA-Z\s]+$/;
-      return pattern.test(input.value.trim());
-    case 'phone':
-      pattern = /^[8]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/i;
-      return pattern.test(input.value.trim());
-
-    default:
-      return false;
-  }
-};
+import emailjs from '@emailjs/browser';
 
 const CheckoutList = () => {
   const [fetching, setFetching] = React.useState(true);
   const [basketProduct, setBasketProduct] = React.useState([]);
   const [order, setOrder] = React.useState();
-  const [value, setValue] = React.useState({ name: '', phone: '' });
-  const [valid, setValid] = React.useState({ name: null, phone: null });
+  const [value, setValue] = React.useState({ name: '', surname: '', phone: '' });
+  const [valid, setValid] = React.useState({ name: null, surname: null, phone: null });
   const form = React.useRef();
   const [clicked, setClicked] = React.useState(false);
   const [isBasketLoaded, setIsBasketLoaded] = React.useState(false);
@@ -46,6 +29,24 @@ const CheckoutList = () => {
   const [phone, setPhone] = React.useState('');
   const [popupOpen, setPopupOpen] = React.useState(false);
   const [popupDataOpen, setPopupDataOpen] = React.useState(false);
+
+  const isValid = (input) => {
+    let pattern;
+    switch (input.name) {
+      case 'name':
+        pattern = /^[а-яА-Яa-zA-Z\s]+$/;
+        return pattern.test(input.value.trim());
+      case 'surname':
+        pattern = /^[а-яА-Яa-zA-Z\s]+$/;
+        return pattern.test(input.value.trim());
+      case 'phone':
+        pattern = /^[8]{1}[0-9]{3}[0-9]{3}[0-9]{4}$/i;
+        return pattern.test(input.value.trim());
+
+      default:
+        return false;
+    }
+  };
 
   React.useEffect(() => {
     fetchBasket()
@@ -66,14 +67,6 @@ const CheckoutList = () => {
       setTotalAmount(parseFloat(storedTotalAmount)); // Парсим строку в число
     }
   }, []);
-
-  if (fetching) {
-    return <Spinner animation="border" />;
-  }
-
-  if (order) {
-    return <Message />;
-  }
 
   const handleChange = (event) => {
     setValue({ ...value, [event.target.name]: event.target.value });
@@ -114,56 +107,76 @@ const CheckoutList = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // Собираем данные формы
+    const newValue = {
+      name: event.target.name.value.trim(),
+      surname: event.target.surname.value.trim(),
+      phone: event.target.phone.value.trim(),
+    };
+
+    // Проверяем валидность
+    const newValid = {
+      name: isValid(event.target.name),
+      surname: isValid(event.target.surname),
+      phone: isValid(event.target.phone),
+    };
+
+    // Проверяем заполненность полей
+    const isAllInputsFilled = checkInputsFilled();
+
+    // Проверяем состояние чекбокса
     if (!checkboxConfid) {
       setPopupOpen(true);
+      return; // Если чекбокс не установлен, выходим из функции
+    }
+
+    // Устанавливаем значения и валидность в состояние
+    setValue(newValue);
+    setValid(newValid);
+
+    // Проверяем все условия для отправки
+    if (
+      isAllInputsFilled &&
+      newValid.name &&
+      newValid.surname &&
+      newValid.phone &&
+      isBasketLoaded
+    ) {
+      const body = {
+        ...newValue,
+        street: value.street,
+        home: value.home,
+        flat: value.flat,
+        delivery: selectedDelevery,
+        region: selectedRegion,
+        city: selectedCity,
+        citycode: selectedCityCode,
+        codepvz: selectedCodePVZ,
+        totalamount: totalAmount,
+        items: basketProduct,
+      };
+
+      guestCreate(body)
+        .then((data) => {
+          setOrder(data);
+          setBasketProduct(data);
+          emailjs
+            .sendForm('service_3c8bebb', 'template_4gh7irt', form.current, 'HZCzhNm3DSBzhR_n_')
+            .then(
+              (result) => {
+                console.log(result.text);
+              },
+              (error) => {
+                console.log(error.text);
+              },
+            );
+        })
+        .catch((error) => {
+          console.error('Ошибка при отправке данных:', error);
+        });
     } else {
-      setValue({
-        name: event.target.name.value.trim(),
-        surname: event.target.surname.value.trim(),
-        phone: event.target.phone.value.trim(),
-      });
-
-      setValid({
-        name: isValid(event.target.name),
-        surname: isValid(event.target.surname),
-        phone: isValid(event.target.phone),
-      });
-      const isAllInputsFilled = checkInputsFilled();
-
-      if (isAllInputsFilled && valid.name && valid.surname && valid.phone && isBasketLoaded) {
-        const body = {
-          name: value.name,
-          surname: value.surname,
-          phone: value.phone,
-          street: value.street,
-          home: value.home,
-          flat: value.flat,
-          delivery: selectedDelevery,
-          region: selectedRegion,
-          city: selectedCity,
-          citycode: selectedCityCode,
-          codepvz: selectedCodePVZ,
-          totalamount: totalAmount,
-          items: basketProduct,
-        };
-
-        guestCreate(body)
-          .then((data) => {
-            setOrder(data);
-            setBasketProduct(data);
-          })
-          .catch((error) => {
-            console.error('Ошибка при отправке данных:', error);
-          });
-      } else {
-        console.error('Данные корзины не загружены или неверные данные в форме');
-        setTimeout(() => {
-          // Задержка в 1 секунду
-          setPopupDataOpen(true);
-        }, 1000);
-      }
-      const formCheck = document.querySelector('.checkout__form');
-      formCheck.addEventListener('submit', handleSubmit);
+      console.error('Данные корзины не загружены или неверные данные в форме');
     }
   };
 
@@ -174,6 +187,14 @@ const CheckoutList = () => {
   const onClosePopupData = () => {
     setPopupDataOpen(false);
   };
+
+  if (fetching) {
+    return <Spinner animation="border" />;
+  }
+
+  if (order) {
+    return <Message />;
+  }
 
   return (
     <div className="checkout">

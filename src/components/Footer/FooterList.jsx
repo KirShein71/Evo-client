@@ -38,7 +38,7 @@ function Footer() {
             </Link>
           </div>
           <a
-            href="https://wa.me/79618080539"
+            href="https://wa.me/79112142878"
             class="whatsapp_float"
             target="_blank"
             rel="noopener noreferrer">

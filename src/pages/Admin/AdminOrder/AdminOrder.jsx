@@ -7,6 +7,8 @@ import UpdateOrder from './modals/updateOrder';
 import UpdatePhone from './modals/UpdatePhone';
 import UpdateDelivery from './modals/UpdateDelivery';
 import CreateOrder from './modals/CreateOrder';
+import Moment from 'react-moment';
+import { CSVLink } from 'react-csv';
 
 import './style.scss';
 
@@ -99,9 +101,25 @@ const AdminOrder = () => {
     }
   };
 
-  const handleOrderRegistration = async (name, surname, phone, codepvz, totalamount, citycode) => {
+  const handleOrderRegistration = async (
+    id,
+    name,
+    surname,
+    phone,
+    codepvz,
+    totalamount,
+    citycode,
+  ) => {
     try {
-      const response = await createOrderCdek(name, surname, phone, codepvz, totalamount, citycode);
+      const response = await createOrderCdek(
+        id,
+        name,
+        surname,
+        phone,
+        codepvz,
+        totalamount,
+        citycode,
+      );
       if (response && response.requests[0].state === 'ACCEPTED') {
         alert('Заказ успешно зарегистрован в Сдэк');
         setIsButtonPvzDisabled(true);
@@ -114,6 +132,7 @@ const AdminOrder = () => {
   };
 
   const handleOrderDeliveryRegistration = async (
+    id,
     name,
     surname,
     phone,
@@ -125,6 +144,7 @@ const AdminOrder = () => {
   ) => {
     try {
       const response = await createOrderCdekDelivery(
+        id,
         name,
         surname,
         phone,
@@ -144,6 +164,22 @@ const AdminOrder = () => {
       console.error('Ошибка регистрации заказа:', error);
     }
   };
+
+  const headers = [
+    { label: 'Номер заказа', key: 'id' },
+    { label: 'Название', key: 'name' },
+    { label: 'Материал', key: 'material' },
+    { label: 'Кант', key: 'edging' },
+    { label: 'Количество', key: 'quantity' },
+  ];
+
+  const flattenedOrders = orders.map((item) => ({
+    id: item.id,
+    name: item.product.name,
+    material: item.material.name,
+    edging: item.edging.name,
+    quantity: item.quantity,
+  }));
 
   if (fetching) {
     return <Spinner animation="border" />;
@@ -263,7 +299,9 @@ const AdminOrder = () => {
                   <li>Полная стоимость заказа (без доставки): {item.order.totalamount}</li>
                 </ul>
               </td>
-              <td>{item.prettyCreatedAt}</td>
+              <td>
+                <Moment format="DD.MM.YYYY">{item.createdAt}</Moment>
+              </td>
               <td
                 style={{
                   cursor: 'pointer',
@@ -292,6 +330,7 @@ const AdminOrder = () => {
                       disabled={isButtonPvzDisabled}
                       onClick={() =>
                         handleOrderRegistration(
+                          item.id,
                           item.order.name,
                           item.order.surname,
                           item.order.phone,
@@ -309,6 +348,7 @@ const AdminOrder = () => {
                       disabled={isButtonDeliveryDisabled}
                       onClick={() =>
                         handleOrderDeliveryRegistration(
+                          item.id,
                           item.order.name,
                           item.order.surname,
                           item.order.phone,
@@ -348,6 +388,9 @@ const AdminOrder = () => {
           ))}
         </tbody>
       </Table>
+      <CSVLink data={flattenedOrders} headers={headers} filename={'данные.csv'}>
+        Экспорт в CSV
+      </CSVLink>
     </Container>
   );
 };
