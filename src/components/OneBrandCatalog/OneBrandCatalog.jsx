@@ -4,12 +4,13 @@ import Loader from '../Loader/Loader';
 import { getOneBrand } from '../../http/brandApi';
 import { getAllProductByBrandId } from '../../http/productApi';
 import { getAllCarModelByBrandId } from '../../http/carModelApi';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import './styles.scss';
 
 function OneBrandCatalog() {
-  const { name } = useParams();
+  const location = useLocation();
+  const originalName = location.state?.originalName;
   const [brand, setBrand] = React.useState();
   const [products, setProducts] = React.useState([]);
   const [carModels, setCarModels] = React.useState([]);
@@ -28,7 +29,7 @@ function OneBrandCatalog() {
     let carModelsLoaded = false;
 
     const fetchData = async () => {
-      const brandData = await getOneBrand(name);
+      const brandData = await getOneBrand(originalName);
       setBrand(brandData);
       brandLoaded = true;
 
@@ -46,7 +47,7 @@ function OneBrandCatalog() {
     };
 
     fetchData();
-  }, [name]);
+  }, [originalName]);
 
   React.useEffect(() => {
     const hadleClickOutside = (e) => {

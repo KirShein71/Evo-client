@@ -10,4 +10,4 @@ Disallow: /adminmaterialrug/
 Disallow: /adminedging/
 Disallow: /adminorder/
 Disallow: /login/
-Allow: /sitemap.xml
+Sitemap: http://www.savaks.ru/sitemap.xml

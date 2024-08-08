@@ -3,11 +3,13 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './styles.scss';
 
 function CardBrand({ image, name }) {
+  const [originalName] = React.useState(name);
   const navigate = useNavigate();
   const location = useLocation();
 
   const addToOneBrandCatalog = () => {
-    navigate(`/onebrand/${name}`, { state: { from: location.pathname } });
+    const formattedName = originalName.replace(/\s+/g, '-').toLowerCase(); // Форматируем имя для URL
+    navigate(`/onebrand/${formattedName}`, { state: { from: location.pathname, originalName } });
   };
 
   return (
