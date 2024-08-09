@@ -13,6 +13,14 @@ function CardHomeProduct({ name, new_price, image, id, materials }) {
   const [isAddedToCart, setIsAddedToCart] = React.useState(false);
   const navigate = useNavigate();
 
+  const hanldeClickImage = ({ target }) => {
+    if (!document.fullscreenElement) {
+      target.requestFullscreen().catch((error) => console.log(error));
+    } else {
+      document.exitFullscreen();
+    }
+  };
+
   const clickToCart = (homeId, materialId, quantity) => {
     appendHome(homeId, materialId, quantity)
       .then((data) => {
@@ -30,7 +38,11 @@ function CardHomeProduct({ name, new_price, image, id, materials }) {
     <div className="cardhomeproduct">
       <div className="cardhomeproduct__content">
         <div className="cardhomeproduct__image">
-          <img src={process.env.REACT_APP_IMG_URL + image} alt="rug for home" />
+          <img
+            src={process.env.REACT_APP_IMG_URL + image}
+            alt="rug for home"
+            onClick={hanldeClickImage}
+          />
         </div>
       </div>
       <div className="cardhomeproduct__constructor">
