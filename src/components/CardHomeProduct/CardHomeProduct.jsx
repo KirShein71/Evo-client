@@ -1,7 +1,8 @@
 import React from 'react';
 import { appendHome } from '../../http/basketApi';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './style.scss';
+import ModalImage from './ModalImage';
 
 function CardHomeProduct({ name, new_price, image, id, materials }) {
   const [quantity, setQuantity] = React.useState(1);
@@ -11,15 +12,8 @@ function CardHomeProduct({ name, new_price, image, id, materials }) {
   const [selectedMaterialId, setSelectedMaterialId] = React.useState(28);
   const [buttonText, setButtonText] = React.useState('В корзину');
   const [isAddedToCart, setIsAddedToCart] = React.useState(false);
+  const [openModalImage, setOpenModalImage] = React.useState(false);
   const navigate = useNavigate();
-
-  const hanldeClickImage = ({ target }) => {
-    if (!document.fullscreenElement) {
-      target.requestFullscreen().catch((error) => console.log(error));
-    } else {
-      document.exitFullscreen();
-    }
-  };
 
   const clickToCart = (homeId, materialId, quantity) => {
     appendHome(homeId, materialId, quantity)
@@ -28,6 +22,14 @@ function CardHomeProduct({ name, new_price, image, id, materials }) {
         setButtonText('В корзине');
       })
       .catch((error) => alert(error.response.data.message));
+  };
+
+  const handleClickImage = () => {
+    setOpenModalImage(true);
+  };
+
+  const closedImageModal = () => {
+    setOpenModalImage(false);
   };
 
   const goToCart = () => {
@@ -41,9 +43,10 @@ function CardHomeProduct({ name, new_price, image, id, materials }) {
           <img
             src={process.env.REACT_APP_IMG_URL + image}
             alt="rug for home"
-            onClick={hanldeClickImage}
+            onClick={() => handleClickImage(image)}
           />
         </div>
+        {openModalImage && <ModalImage closedImageModal={closedImageModal} image={image} />}
       </div>
       <div className="cardhomeproduct__constructor">
         <div className="cardhomeproduct__constructor-material">
