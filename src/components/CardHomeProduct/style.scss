@@ -4,18 +4,11 @@
     padding: 10px 0px 0px 0px;
     border: 2px solid #3A5BCC26;
     cursor: pointer;
-    transition: box-shadow 0.3s;
+  
     position: relative;
-    &:hover {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        @media(max-width: 991px) {
-            box-shadow: none;
-            transform: none;
-        }
-    }
+    
     @media(max-width: 1024px) {
-        transition: none;
-        box-shadow:none;
+ 
         border: 2px solid #3A5BCC26;
     }
     @media(max-width: 440px) {
@@ -30,7 +23,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 260px;
+        overflow: hidden;
         @media(max-width: 768px) {
             height: 310px;
         }
@@ -45,14 +38,16 @@
         }
        
         img {
-            width: 80%;
+            transition: 0.5s ease; /* Добавлен переход */
+            &:hover {
+                transform: scale(1.2);
+                @media(max-width: 1200px) {
+                    transform: scale(1);
+                }
+            }
             @media(max-width: 768px) {
                 width: 75%;
-            }
-           
-           
-            
-            
+            }  
         }
     }
   
