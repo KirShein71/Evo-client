@@ -67,7 +67,7 @@ const CardProduct = observer(({ name, old_price, new_price, image, id }) => {
   };
 
   const addToOneProduct = () => {
-    const formattedName = originalName.replace(/\s+/g, '-').toLowerCase(); // Форматируем имя для URL
+    const formattedName = originalName.replace(/-+/g, '--').replace(/\s+/g, '-');
     navigate(`/productproperty/${formattedName}`, {
       state: { from: location.pathname, originalName },
     });

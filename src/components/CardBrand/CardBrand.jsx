@@ -8,7 +8,7 @@ function CardBrand({ image, name }) {
   const location = useLocation();
 
   const addToOneBrandCatalog = () => {
-    const formattedName = originalName.replace(/\s+/g, '-').toLowerCase(); // Форматируем имя для URL
+    const formattedName = originalName.replace(/\s+/g, '-'); // Форматируем имя для URL
     navigate(`/onebrand/${formattedName}`, { state: { from: location.pathname, originalName } });
   };
 

@@ -1,11 +1,10 @@
 import React from 'react';
 import OneBrandCatalog from '../components/OneBrandCatalog/OneBrandCatalog';
 import { Helmet } from 'react-helmet';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function OneBrand() {
-  const location = useLocation();
-  const originalName = location.state?.originalName;
+  const { originalName } = useParams();
   return (
     <>
       <Helmet>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getOneProduct } from '../../http/productApi';
 import { getAllProductId } from '../../http/trunkApi';
 import { getAllProductIdThirdrow } from '../../http/thirdrowApi';
@@ -19,8 +19,8 @@ import Edging from './Edging/Edging';
 import Pattern from './Pattern/Pattern';
 
 function Product() {
-  const location = useLocation();
-  const originalName = location.state?.originalName;
+  const { originalName } = useParams();
+  const modelName = originalName.replace(/(?<!-)-(?!-)/g, ' ').replace(/--/g, '-');
   const [fetching, setFetching] = React.useState(true);
   const [product, setProduct] = React.useState();
   const [materials, setMaterials] = React.useState([]);
@@ -73,7 +73,7 @@ function Product() {
     let thirdrowLoaded = false;
 
     const fetchData = async () => {
-      const productData = await getOneProduct(originalName);
+      const productData = await getOneProduct(modelName);
       setProduct(productData);
       productLoaded = true;
 
@@ -99,7 +99,7 @@ function Product() {
     };
 
     fetchData();
-  }, [originalName]);
+  }, [originalName, modelName]);
 
   const handleSalonCheckboxChange = (productId) => {
     setIsSalonChecked((prev) => !prev);

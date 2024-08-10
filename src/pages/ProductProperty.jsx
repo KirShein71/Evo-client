@@ -3,11 +3,10 @@ import Product from '../components/Product/Product';
 import Product595 from '../components/Product/Product595';
 import Product991 from '../components/Product/Product991';
 import { Helmet } from 'react-helmet';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function ProductProperty() {
-  const location = useLocation();
-  const originalName = location.state?.originalName;
+  const { originalName } = useParams();
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
@@ -24,7 +23,7 @@ function ProductProperty() {
   return (
     <>
       <Helmet>
-        <title>Коврики EVA для {originalName}</title>
+        <title>{`Коврики EVA для ${originalName}`}</title>
         <meta
           name="description"
           content="На этой странице, Вы можете выбрать опции по автомобильному коврику. Такие цвет материала и канта, дополнительно приобрести органайзер и подпятник"

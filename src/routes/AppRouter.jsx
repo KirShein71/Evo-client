@@ -34,8 +34,8 @@ import { observer } from 'mobx-react';
 const routes = [
   { path: '/', Component: Home },
   { path: '/allbrands', Component: AllBrands },
-  { path: '/onebrand/:name', Component: OneBrand },
-  { path: '/productproperty/:name', Component: ProductProperty },
+  { path: '/onebrand/:originalName', Component: OneBrand },
+  { path: '/productproperty/:originalName', Component: ProductProperty },
   { path: '/basket', Component: Basket },
   { path: '/checkout', Component: Checkout },
   { path: '/login', Component: Login },

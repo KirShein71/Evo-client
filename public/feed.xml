@@ -1,24 +1,164 @@
-<?xml version="1.0" encoding="UTF-8"?>
-   <yml_catalog date="2024-07-29 12:00">
-       <shop>
-           <name>Savaks</name>
-           <company>Savaks</company>
-           <url>https://www.savaks.ru/productproperty/audi-100-c3-1982-1991</url>
-           <currencies>
-               <currency id="RUR" rate="1"/>
-           </currencies>
-           <categories>
-               <category id="9">Audi</category>
-           </categories>
-           <offers>
-               <offer id="166" available="true">
-                   <name>EVA коврик для AUDI 100 C3 1982-1991</name>
-                   <price>2590</price>
-                   <currencyId>RUR</currencyId>
-                   <categoryId>9</categoryId>
-                   <picture>https://app.savaks.ru/dfe41318-62df-4cea-a9c4-289c45cc76c6.png</picture>
-                   <description>Автомобильные EVA коврики для AUDI 100 C3 1982-1991</description>
-               </offer>
-           </offers>
-       </shop>
-   </yml_catalog> 
+<yml_catalog date="2024-07-29 12:00">
+    <shop>
+        <name>Savaks</name>
+        <company>Savaks</company>
+        <url>https://www.savaks.ru/</url>
+        <currencies>
+            <currency id="RUR" rate="1"/>
+        </currencies>
+        <categories>
+            <category id="9">Audi</category>
+            <category id="10">BMW</category>
+            <category id="11">Acura</category>
+            <category id="69">Belgee</category>
+            <category id="78">Alfa Romeo</category>
+        </categories>
+        <offers>
+            <offer id="166" available="true">
+                <name>EVA коврик для AUDI 100 C3 1982-1991</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>9</categoryId>
+                <picture>https://app.savaks.ru/dfe41318-62df-4cea-a9c4-289c45cc76c6.png</picture>
+                <description>Автомобильные EVA коврики для AUDI 100 C3 1982-1991</description>
+                <url>https://www.savaks.ru/productproperty/audi-100-c3-1982-1991</url>
+            </offer>
+            <offer id="167" available="true">
+                <name>EVA коврик для AUDI 100 C4 1990-1994</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>9</categoryId>
+                <picture>https://app.savaks.ru/678c6f14-50df-4172-b18f-b9c7e35c77e2.png</picture>
+                <description>Автомобильные EVA коврики для AUDI 100 C4 1990-1994</description>
+                <url>https://www.savaks.ru/productproperty/audi-100-c4-1990-1994</url>
+            </offer>
+            <offer id="168" available="true">
+                <name>EVA коврик для Audi A1 2010-2018</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>9</categoryId>
+                <picture>	https://app.savaks.ru/a206a955-39fa-4914-a98e-c8b003759594.png</picture>
+                <description>Автомобильные EVA коврики для Audi A1 2010-2018</description>
+                <url>https://www.savaks.ru/productproperty/audi-a1-2010-2018</url>
+            </offer>
+            <offer id="169" available="true">
+                <name>EVA коврик для AUDI A3 (8L) 1996-2003</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>9</categoryId>
+                <picture>https://app.savaks.ru/5c1b2c58-f2e8-4961-9ec4-58dd290c8fbf.png</picture>
+                <description>Автомобильные EVA коврики для AUDI A3 (8L) 1996-2003</description>
+                <url>https://www.savaks.ru/productproperty/audi-a3-(8l)-1996-2003</url>
+            </offer>
+            <offer id="170" available="true">
+                <name>EVA коврик для Audi A3 (8P) 2004-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>9</categoryId>
+                <picture>	https://app.savaks.ru/6e3741b7-eaf1-4912-a73e-dc8b5c2f1193.png</picture>
+                <description>Автомобильные EVA коврики для Audi A3 (8P) 2004-2013</description>
+                <url>https://www.savaks.ru/productproperty/audi-a3-(8p)-2004-2013</url>
+            </offer>
+            <offer id="64" available="true">
+                <name>EVA коврик для Audi A3 (8V) 2012-2020</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>9</categoryId>
+                <picture>	https://app.savaks.ru/a206a955-39fa-4914-a98e-c8b003759594.png</picture>
+                <description>Автомобильные EVA коврики для Audi A3 (8V) 2012-2020</description>
+                <url>https://www.savaks.ru/productproperty/audi-a3-(8v)-2012-2020</url>
+            </offer>
+            <offer id="162" available="true">
+                <name>EVA коврик для ACURA MDX 2001-2006</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>11</categoryId>
+                <picture>https://app.savaks.ru/666689c5-229e-424d-9928-3af1d6b91d0b.png</picture>
+                <description>Автомобильные EVA коврики для ACURA MDX 2001-2006</description>
+                <url>https://www.savaks.ru/productproperty/acura-mdx-2001-2006</url>
+            </offer>
+            <offer id="163" available="true">
+                <name>EVA коврик для ACURA MDX 2006-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>11</categoryId>
+                <picture>https://app.savaks.ru/e4eace79-dcc9-4a87-b372-ee7a13302ef3.png</picture>
+                <description>Автомобильные EVA коврики для ACURA MDX 2006-2013</description>
+                <url>https://www.savaks.ru/productproperty/acura-mdx-2006-2013</url>
+            </offer>
+            <offer id="164" available="true">
+                <name>EVA коврик для Acura RSX I 2001-2006</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>11</categoryId>
+                <picture>https://app.savaks.ru/7607305c-1e16-4d55-8375-bd96aa52c8d9.png</picture>
+                <description>Автомобильные EVA коврики для Acura RSX I 2001-2006</description>
+                <url>https://www.savaks.ru/productproperty/acura-rsx-i-2001-2006</url>
+            </offer>
+            <offer id="165" available="true">
+                <name>EVA коврик для ALFA ROMEO 147 2000-2010 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>78</categoryId>
+                <picture>https://app.savaks.ru/e6cc2141-6070-4bbc-a1bf-2f8c28283257.png</picture>
+                <description>Автомобильные EVA коврики для ALFA ROMEO 147 2000-2010 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/onebrand/alfa-romeo</url>
+            </offer>
+            <offer id="89" available="true">
+                <name>EVA коврик для Belgee X50 2023-н.в.</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>69</categoryId>
+                <picture>https://app.savaks.ru/10b5d975-e8c0-485d-a90e-b2d9fd04d70e.png</picture>
+                <description>Автомобильные EVA коврики для Belgee X50 2023-н.в.</description>
+                <url>https://www.savaks.ru/onebrand/belgee</url>
+            </offer>
+            <offer id="191" available="true">
+                <name>EVA коврик для BMW 1 (E82) COUPE 2007-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>10</categoryId>
+                <picture>https://app.savaks.ru/9be9780e-ac2a-4e0e-a8ec-e6b32306b9e7.png</picture>
+                <description>Автомобильные EVA коврики для BMW 1 (E82) COUPE 2007-2013</description>
+                <url>https://www.savaks.ru/productproperty/bmw-1-(e82)-coupe-2007-2013</url>
+            </offer>
+            <offer id="192" available="true">
+                <name>EVA коврик для BMW 1 (E87) 2004-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>10</categoryId>
+                <picture>https://app.savaks.ru/0043693a-afa3-4455-b65f-a85ff6d9631a.png</picture>
+                <description>Автомобильные EVA коврики для BMW 1 (E87) 2004-2013</description>
+                <url>https://www.savaks.ru/productproperty/bmw-1-(e87)-2004-2013</url>
+            </offer>
+            <offer id="" available="true">
+                <name>EVA коврик для BMW 1 F20 2011-2019</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>10</categoryId>
+                <picture>https://app.savaks.ru/10b5d975-e8c0-485d-a90e-b2d9fd04d70e.png</picture>
+                <description>Автомобильные EVA коврики для BMW 1 F20 2011-2019.</description>
+                <url>https://www.savaks.ru/productproperty/bmw-1-f20-2011-2019</url>
+            </offer>
+            <offer id="" available="true">
+                <name>EVA коврик для Belgee X50 2023-н.в.</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>10</categoryId>
+                <picture>https://app.savaks.ru/10b5d975-e8c0-485d-a90e-b2d9fd04d70e.png</picture>
+                <description>Автомобильные EVA коврики для Belgee X50 2023-н.в.</description>
+                <url>https://www.savaks.ru/onebrand/belgee</url>
+            </offer>
+            <offer id="" available="true">
+                <name>EVA коврик для Belgee X50 2023-н.в.</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>10</categoryId>
+                <picture>https://app.savaks.ru/10b5d975-e8c0-485d-a90e-b2d9fd04d70e.png</picture>
+                <description>Автомобильные EVA коврики для Belgee X50 2023-н.в.</description>
+                <url>https://www.savaks.ru/onebrand/belgee</url>
+            </offer>
+        </offers>
+    </shop>
+</yml_catalog>
+
