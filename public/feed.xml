@@ -10,81 +10,143 @@
             <category id="9">Audi</category>
             <category id="10">BMW</category>
             <category id="11">Acura</category>
+            <category id="12">Chery</category>
+            <category id="13">Chevrolet</category>
+            <category id="14">Citroen</category>
+            <category id="15">Daewoo</category>
+            <category id="16">Daihatsu</category>
+            <category id="19">DONGFENG</category>
+            <category id="20">Fiat</category>
+            <category id="21">Ford</category>
+            <category id="22">Газ</category>
+            <category id="23">Geely</category>
+            <category id="24">Genesis</category>
+            <category id="25">Haima</category>
+            <category id="26">Haval</category>
+            <category id="27">Honda</category>
+            <category id="29">Hyundai</category>
+            <category id="30">Infiniti</category>
+            <category id="31">Isuzu</category>
+            <category id="32">Jac</category>
+            <category id="33">Jeep</category>
+            <category id="34">Kia</category>
+            <category id="35">Lada</category>
+            <category id="36">Lifan</category>
+            <category id="37">Luxgen</category>
+            <category id="38">Mazda</category>
+            <category id="39">Mersedes</category>
+            <category id="40">Mitsubishi</category>
+            <category id="41">Nissan</category>
+            <category id="42">Opel</category>
+            <category id="43">Peugeot</category>
+            <category id="44">Renault</category>
+            <category id="45">Scoda</category>
+            <category id="46">Ssangyong</category>
+            <category id="47">Subaru</category>
+            <category id="48">Suzuki</category>
+            <category id="49">Toyota</category>
+            <category id="50">Volkswagen</category>
+            <category id="51">Volvo</category>
+            <category id="53">Seat</category>
+            <category id="54">Lexus</category>
+            <category id="55">УАЗ</category>
+            <category id="56">Vortex</category>
+            <category id="57">Zotye</category>
+            <category id="59">Tank</category>
+            <category id="60">Tesla</category>
+            <category id="61">Zaz</category>
+            <category id="62">Иж</category>
+            <category id="64">Changan</category>
+            <category id="65">Gac</category>
+            <category id="66">Jetour</category>
+            <category id="67">Omoda</category>
+            <category id="68">Voyah</category>
             <category id="69">Belgee</category>
+            <category id="70">LiXiang</category>
+            <category id="72">Exeed</category>
+            <category id="73">Iran Khodro</category>
+            <category id="74">Jaecoo</category>
+            <category id="75">Kaiyi</category>
+            <category id="76">Москвич</category>
+            <category id="77">Faw</category>
             <category id="78">Alfa Romeo</category>
+            <category id="79">BRILLIANCE</category>
+            <category id="80">Ravon</category>
+            <category id="81">Scion</category>
+            <category id="82">Tagaz</category>
         </categories>
         <offers>
             <offer id="166" available="true">
-                <name>EVA коврик для AUDI 100 C3 1982-1991</name>
+                <name>Автомобильный EVA коврик для AUDI 100 C3 1982-1991</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>9</categoryId>
                 <picture>https://app.savaks.ru/dfe41318-62df-4cea-a9c4-289c45cc76c6.png</picture>
                 <description>Автомобильные EVA коврики для AUDI 100 C3 1982-1991</description>
-                <url>https://www.savaks.ru/productproperty/audi-100-c3-1982-1991</url>
+                <url>https://www.savaks.ru/productproperty/AUDI-100-C3-1982--1991</url>
             </offer>
             <offer id="167" available="true">
-                <name>EVA коврик для AUDI 100 C4 1990-1994</name>
+                <name>Автомобильный EVA коврик для AUDI 100 C4 1990-1994</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>9</categoryId>
                 <picture>https://app.savaks.ru/678c6f14-50df-4172-b18f-b9c7e35c77e2.png</picture>
                 <description>Автомобильные EVA коврики для AUDI 100 C4 1990-1994</description>
-                <url>https://www.savaks.ru/productproperty/audi-100-c4-1990-1994</url>
+                <url>https://www.savaks.ru/productproperty/AUDI-100-C4-1990--1994</url>
             </offer>
             <offer id="168" available="true">
-                <name>EVA коврик для Audi A1 2010-2018</name>
+                <name>Автомобильный EVA коврик для Audi A1 2010-2018</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>9</categoryId>
-                <picture>	https://app.savaks.ru/a206a955-39fa-4914-a98e-c8b003759594.png</picture>
+                <picture>https://app.savaks.ru/a206a955-39fa-4914-a98e-c8b003759594.png</picture>
                 <description>Автомобильные EVA коврики для Audi A1 2010-2018</description>
-                <url>https://www.savaks.ru/productproperty/audi-a1-2010-2018</url>
+                <url>https://www.savaks.ru/productproperty/audi-a1-2010--2018</url>
             </offer>
             <offer id="169" available="true">
-                <name>EVA коврик для AUDI A3 (8L) 1996-2003</name>
+                <name>Автомобильный EVA коврик для AUDI A3 (8L) 1996-2003</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>9</categoryId>
                 <picture>https://app.savaks.ru/5c1b2c58-f2e8-4961-9ec4-58dd290c8fbf.png</picture>
                 <description>Автомобильные EVA коврики для AUDI A3 (8L) 1996-2003</description>
-                <url>https://www.savaks.ru/productproperty/audi-a3-(8l)-1996-2003</url>
+                <url>https://www.savaks.ru/productproperty/audi-a3-(8l)-1996--2003</url>
             </offer>
             <offer id="170" available="true">
-                <name>EVA коврик для Audi A3 (8P) 2004-2013</name>
+                <name>Автомобильный EVA коврик для Audi A3 (8P) 2004-2013</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>9</categoryId>
                 <picture>	https://app.savaks.ru/6e3741b7-eaf1-4912-a73e-dc8b5c2f1193.png</picture>
                 <description>Автомобильные EVA коврики для Audi A3 (8P) 2004-2013</description>
-                <url>https://www.savaks.ru/productproperty/audi-a3-(8p)-2004-2013</url>
+                <url>https://www.savaks.ru/productproperty/audi-a3-(8p)-2004--2013</url>
             </offer>
             <offer id="64" available="true">
-                <name>EVA коврик для Audi A3 (8V) 2012-2020</name>
+                <name>Автомобильный EVA коврик для Audi A3 (8V) 2012-2020</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>9</categoryId>
                 <picture>	https://app.savaks.ru/a206a955-39fa-4914-a98e-c8b003759594.png</picture>
                 <description>Автомобильные EVA коврики для Audi A3 (8V) 2012-2020</description>
-                <url>https://www.savaks.ru/productproperty/audi-a3-(8v)-2012-2020</url>
+                <url>https://www.savaks.ru/productproperty/audi-a3-(8v)-2012--2020</url>
             </offer>
             <offer id="162" available="true">
-                <name>EVA коврик для ACURA MDX 2001-2006</name>
+                <name>Автомобильный EVA коврик для ACURA MDX 2001-2006</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>11</categoryId>
                 <picture>https://app.savaks.ru/666689c5-229e-424d-9928-3af1d6b91d0b.png</picture>
                 <description>Автомобильные EVA коврики для ACURA MDX 2001-2006</description>
-                <url>https://www.savaks.ru/productproperty/acura-mdx-2001-2006</url>
+                <url>https://www.savaks.ru/productproperty/acura-mdx-2001--2006</url>
             </offer>
             <offer id="163" available="true">
-                <name>EVA коврик для ACURA MDX 2006-2013</name>
+                <name>Автомобильный EVA коврик для ACURA MDX 2006-2013</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>11</categoryId>
                 <picture>https://app.savaks.ru/e4eace79-dcc9-4a87-b372-ee7a13302ef3.png</picture>
                 <description>Автомобильные EVA коврики для ACURA MDX 2006-2013</description>
-                <url>https://www.savaks.ru/productproperty/acura-mdx-2006-2013</url>
+                <url>https://www.savaks.ru/productproperty/acura-mdx-2006--2013</url>
             </offer>
             <offer id="164" available="true">
                 <name>EVA коврик для Acura RSX I 2001-2006</name>
@@ -93,25 +155,25 @@
                 <categoryId>11</categoryId>
                 <picture>https://app.savaks.ru/7607305c-1e16-4d55-8375-bd96aa52c8d9.png</picture>
                 <description>Автомобильные EVA коврики для Acura RSX I 2001-2006</description>
-                <url>https://www.savaks.ru/productproperty/acura-rsx-i-2001-2006</url>
+                <url>https://www.savaks.ru/productproperty/acura-rsx-i-2001--2006</url>
             </offer>
             <offer id="165" available="true">
-                <name>EVA коврик для ALFA ROMEO 147 2000-2010 ЛЕВЫЙ РУЛЬ</name>
+                <name>Автомобильный EVA коврик для ALFA ROMEO 147 2000-2010 ЛЕВЫЙ РУЛЬ</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>78</categoryId>
                 <picture>https://app.savaks.ru/e6cc2141-6070-4bbc-a1bf-2f8c28283257.png</picture>
                 <description>Автомобильные EVA коврики для ALFA ROMEO 147 2000-2010 ЛЕВЫЙ РУЛЬ</description>
-                <url>https://www.savaks.ru/onebrand/alfa-romeo</url>
+                <url>https://www.savaks.ru/productproperty/ALFA-ROMEO-147-2000--2010-%D0%9B%D0%95%D0%92%D0%AB%D0%98%CC%86-%D0%A0%D0%A3%D0%9B%D0%AC</url>
             </offer>
             <offer id="89" available="true">
-                <name>EVA коврик для Belgee X50 2023-н.в.</name>
+                <name>Автомобильный EVA коврик для Belgee X50 2023-н.в.</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>69</categoryId>
                 <picture>https://app.savaks.ru/10b5d975-e8c0-485d-a90e-b2d9fd04d70e.png</picture>
                 <description>Автомобильные EVA коврики для Belgee X50 2023-н.в.</description>
-                <url>https://www.savaks.ru/onebrand/belgee</url>
+                <url>https://www.savaks.ru/productproperty/Belgee-X50-2023--%D0%BD.%D0%B2.</url>
             </offer>
             <offer id="191" available="true">
                 <name>EVA коврик для BMW 1 (E82) COUPE 2007-2013</name>
@@ -120,43 +182,1897 @@
                 <categoryId>10</categoryId>
                 <picture>https://app.savaks.ru/9be9780e-ac2a-4e0e-a8ec-e6b32306b9e7.png</picture>
                 <description>Автомобильные EVA коврики для BMW 1 (E82) COUPE 2007-2013</description>
-                <url>https://www.savaks.ru/productproperty/bmw-1-(e82)-coupe-2007-2013</url>
+                <url>https://www.savaks.ru/productproperty/bmw-1-(e82)-coupe-2007--2013</url>
             </offer>
             <offer id="192" available="true">
-                <name>EVA коврик для BMW 1 (E87) 2004-2013</name>
+                <name>Автомобильный EVA коврик для BMW 1 (E87) 2004-2013</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>10</categoryId>
                 <picture>https://app.savaks.ru/0043693a-afa3-4455-b65f-a85ff6d9631a.png</picture>
                 <description>Автомобильные EVA коврики для BMW 1 (E87) 2004-2013</description>
-                <url>https://www.savaks.ru/productproperty/bmw-1-(e87)-2004-2013</url>
+                <url>https://www.savaks.ru/productproperty/bmw-1-(e87)-2004--2013</url>
             </offer>
-            <offer id="" available="true">
-                <name>EVA коврик для BMW 1 F20 2011-2019</name>
+            <offer id="193" available="true">
+                <name>Автомобильный EVA коврик для BMW 1 F20 2011-2019</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>10</categoryId>
                 <picture>https://app.savaks.ru/10b5d975-e8c0-485d-a90e-b2d9fd04d70e.png</picture>
                 <description>Автомобильные EVA коврики для BMW 1 F20 2011-2019.</description>
-                <url>https://www.savaks.ru/productproperty/bmw-1-f20-2011-2019</url>
+                <url>https://www.savaks.ru/productproperty/bmw-1-f20-2011--2019</url>
             </offer>
-            <offer id="" available="true">
-                <name>EVA коврик для Belgee X50 2023-н.в.</name>
+            <offer id="194" available="true">
+                <name>Автомобильный EVA коврик для BMW 1 F21 2011-2019</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>10</categoryId>
-                <picture>https://app.savaks.ru/10b5d975-e8c0-485d-a90e-b2d9fd04d70e.png</picture>
-                <description>Автомобильные EVA коврики для Belgee X50 2023-н.в.</description>
-                <url>https://www.savaks.ru/onebrand/belgee</url>
+                <picture>https://app.savaks.ru/f3fe3702-de39-4877-8a54-589a120d8cfe.png</picture>
+                <description>Автомобильные EVA коврики для BMW 1 F21 2011-2019</description>
+                <url>https://www.savaks.ru/productproperty/BMW-1-F21-2011--2019</url>
             </offer>
-            <offer id="" available="true">
-                <name>EVA коврик для Belgee X50 2023-н.в.</name>
+            <offer id="66" available="true">
+                <name>Автомобильный EVA коврик для BMW 2 F22 2014-2021 Coupe</name>
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>10</categoryId>
-                <picture>https://app.savaks.ru/10b5d975-e8c0-485d-a90e-b2d9fd04d70e.png</picture>
-                <description>Автомобильные EVA коврики для Belgee X50 2023-н.в.</description>
-                <url>https://www.savaks.ru/onebrand/belgee</url>
+                <picture>https://app.savaks.ru/b47d6b2e-f1c7-460c-a4eb-0376c2cd051e.png</picture>
+                <description>Автомобильные EVA коврики для BMW 2 F22 2014-2021 Coupe</description>
+                <url>https://www.savaks.ru/productproperty/BMW-2-F22-2014--2021-Coupe</url>
+            </offer>
+            <offer id="200" available="true">
+                <name>Автомобильный EVA коврик для BRILLIANCE V5 2011-2022</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>79</categoryId>
+                <picture>https://app.savaks.ru/fdfec7ee-430d-4820-84c8-0edc58da3647.png</picture>
+                <description>Автомобильные EVA коврики для BRILLIANCE V5 2011-2022</description>
+                <url>https://www.savaks.ru/productproperty/BRILLIANCE-V5-2011--2022</url>
+            </offer>
+            <offer id="92" available="true">
+                <name>Автомобильный EVA коврик для Changan Alsvin 2018-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>64</categoryId>
+                <picture>https://app.savaks.ru/cb25cb8a-56b8-4ae9-8c71-fc1ad2c444ee.png</picture>
+                <description>Автомобильные EVA коврики для Changan Alsvin 2018-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Changan-Alsvin-2018--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="93" available="true">
+                <name>Автомобильный EVA коврик для Changan CS35PLUS 2018-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>64</categoryId>
+                <picture>https://app.savaks.ru/76a42c1f-551c-4cca-9e95-43baa2e0c98c.png</picture>
+                <description>Автомобильные EVA коврики для Changan CS35PLUS 2018-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Changan-CS35PLUS-2018--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="94" available="true">
+                <name>Автомобильный EVA коврик для Changan CS55PLUS 2019-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>64</categoryId>
+                <picture>https://app.savaks.ru/a201864b-122b-436f-b48d-1282a26c3a9a.png</picture>
+                <description>Автомобильные EVA коврики для Changan CS55PLUS 2019-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Changan-CS55PLUS-2019--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="95" available="true">
+                <name>Автомобильный EVA коврик для Changan CS75 2018-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>64</categoryId>
+                <picture>https://app.savaks.ru/930e6cab-d210-41fb-8079-23eb6dbcc23d.png</picture>
+                <description>Автомобильные EVA коврики для Changan CS75 2018-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Changan-CS75-2018--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="68" available="true">
+                <name>Автомобильный EVA коврик для Changan Hunter Plus 2023-н.в</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>64</categoryId>
+                <picture>https://app.savaks.ru/e391de94-cd8f-440d-9f3e-3967e306ff61.png</picture>
+                <description>Автомобильные EVA коврики для Changan Hunter Plus 2023-н.в</description>
+                <url>https://www.savaks.ru/productproperty/Changan-Hunter-Plus-2023--%D0%BD.%D0%B2</url>
+            </offer>
+            <offer id="201" available="true">
+                <name>Автомобильный EVA коврик для Chery A13(Bonus, Very) 2011-2014</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>12</categoryId>
+                <picture>https://app.savaks.ru/e7e3e4c9-eab7-4640-ab03-f82d87803c11.png</picture>
+                <description>Автомобильные EVA коврики для Chery A13(Bonus, Very) 2011-2014</description>
+                <url>https://www.savaks.ru/productproperty/Chery-A13(Bonus,-Very)-2011--2014</url>
+            </offer>
+            <offer id="202" available="true">
+                <name>Автомобильный EVA коврик для Chery Amulet</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>12</categoryId>
+                <picture>https://app.savaks.ru/f3e42c99-4f65-4970-9b18-01a44ee9eae2.png</picture>
+                <description>Автомобильные EVA коврики для Chery Amulet</description>
+                <url>https://www.savaks.ru/productproperty/Chery-Amulet</url>
+            </offer>
+            <offer id="203" available="true">
+                <name>Автомобильный EVA коврик для Changan Hunter Plus 2023-н.в</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>12</categoryId>
+                <picture>https://app.savaks.ru/0da7e251-ccbe-48c2-8ca9-0ce5860db46b.png</picture>
+                <description>Автомобильные EVA коврики для Changan Hunter Plus 2023-н.в</description>
+                <url>https://www.savaks.ru/productproperty/Chery-Arrizo-7-2013--2018</url>
+            </offer>
+            <offer id="97" available="true">
+                <name>Автомобильный EVA коврик для Chery Arrizo 8 2022-н.в.</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>12</categoryId>
+                <picture>https://app.savaks.ru/75c560be-1fed-42bf-8af3-1466a439c53b.png</picture>
+                <description>Автомобильные EVA коврики для Chery Arrizo 8 2022-н.в.</description>
+                <url>https://www.savaks.ru/productproperty/Chery-Arrizo-8-2022--%D0%BD.%D0%B2.</url>
+            </offer>
+            <offer id="204" available="true">
+                <name>Автомобильный EVA коврик для Chery Bonus 3(A19) 2014-2017</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>12</categoryId>
+                <picture>https://app.savaks.ru/403facca-7cf0-4282-99ec-e53ffeeea719.png</picture>
+                <description>Автомобильные EVA коврики для Chery Bonus 3(A19) 2014-2017</description>
+                <url>https://www.savaks.ru/productproperty/Chery-Bonus-3(A19)-2014--2017</url>
+            </offer>
+            <offer id="252" available="true">
+                <name>Автомобильный EVA коврик для Chevrolet Epica 2006-2012</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>13</categoryId>
+                <picture>https://app.savaks.ru/4285cfa0-e176-4db7-acaa-202aa20eeb2c.png</picture>
+                <description>Автомобильные EVA коврики для Chevrolet Epica 2006-2012</description>
+                <url>https://www.savaks.ru/productproperty/Chevrolet-Epica-2006--2012</url>
+            </offer>
+            <offer id="253" available="true">
+                <name>Автомобильный EVA коврик для Chevrolet Lacetti</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>13</categoryId>
+                <picture>https://app.savaks.ru/cf48266f-ef01-47e5-825a-1b275eb09f45.png</picture>
+                <description>Автомобильные EVA коврики для Chevrolet Lacetti</description>
+                <url>https://www.savaks.ru/productproperty/Chevrolet-Lacetti</url>
+            </offer>
+            <offer id="254" available="true">
+                <name>Автомобильный EVA коврик для CHEVROLET LANOS 2002-2009</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>13</categoryId>
+                <picture>https://app.savaks.ru/477b43dc-2111-4559-9ef3-b1c8e31f9475.png</picture>
+                <description>Автомобильные EVA коврики для CHEVROLET LANOS 2002-2009</description>
+                <url>https://www.savaks.ru/productproperty/CHEVROLET-LANOS-2002--2009</url>
+            </offer>
+            <offer id="255" available="true">
+                <name>Автомобильный EVA коврик для CHEVROLET MALIBU 8 2011-2016</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>13</categoryId>
+                <picture>https://app.savaks.ru/caadc018-b367-4783-8897-5c195968d5e8.png</picture>
+                <description>Автомобильные EVA коврики для CHEVROLET MALIBU 8 2011-2016</description>
+                <url>https://www.savaks.ru/productproperty/CHEVROLET-MALIBU-8-2011--2016</url>
+            </offer>
+            <offer id="921" available="true">
+                <name>Автомобильный EVA коврик для Chevrolet Malibu 9 2015-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>13</categoryId>
+                <picture>https://app.savaks.ru/fd4d02dc-bacf-4d41-a448-688a89a4993f.png</picture>
+                <description>Автомобильные EVA коврики для Chevrolet Malibu 9 2015-</description>
+                <url>https://www.savaks.ru/productproperty/Chevrolet-Malibu-9-2015--</url>
+            </offer>
+            <offer id="214" available="true">
+                <name>Автомобильный EVA коврик для CITROEN BERLINGO 2 2008--</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>14</categoryId>
+                <picture>https://app.savaks.ru/c7620b52-97d8-4267-886f-7649eb8be95b.png</picture>
+                <description>Автомобильные EVA коврики для CITROEN BERLINGO 2 2008--</description>
+                <url>https://www.savaks.ru/productproperty/CITROEN-BERLINGO-2-2008--</url>
+            </offer>
+            <offer id="215" available="true">
+                <name>Автомобильный EVA коврик для Citroen Berlingo I 2002-2012-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>14</categoryId>
+                <picture>https://app.savaks.ru/61f61ad3-d993-481c-9f79-0408c1c3506d.png</picture>
+                <description>Автомобильные EVA коврики для Citroen Berlingo I 2002-2012-</description>
+                <url>https://www.savaks.ru/productproperty/Citroen-Berlingo-I-2002--2012</url>
+            </offer>
+            <offer id="216" available="true">
+                <name>Автомобильный EVA коврик для CITROEN C1 2005-2014</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>14</categoryId>
+                <picture>https://app.savaks.ru/8bec95d5-2a04-44db-bbea-7e2db916417f.png</picture>
+                <description>Автомобильные EVA коврики для CITROEN C1 2005-2014</description>
+                <url>https://www.savaks.ru/productproperty/CITROEN-C1-2005--2014</url>
+            </offer>
+            <offer id="217" available="true">
+                <name>Автомобильный EVA коврик для CITROEN C3 1 2002-2010-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>14</categoryId>
+                <picture>https://app.savaks.ru/fb411993-ccac-44a3-9fc2-ea1d5e525312.png</picture>
+                <description>Автомобильные EVA коврики для CITROEN C3 1 2002-2010-</description>
+                <url>https://www.savaks.ru/productproperty/CITROEN-C3-1-2002--2010-</url>
+            </offer>
+            <offer id="218" available="true">
+                <name>Автомобильный EVA коврик для CITROEN C4 2 2010-2023 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>14</categoryId>
+                <picture>https://app.savaks.ru/783e651d-fd79-4358-8596-24f90281cdf4.png</picture>
+                <description>Автомобильные EVA коврики для CITROEN C4 2 2010-2023 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/CITROEN-C4-2-2010--2023-%D0%9B%D0%95%D0%92%D0%AB%D0%98%CC%86-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="231" available="true">
+                <name>Автомобильный EVA коврик для DAEWOO GENTRA 2013-2015</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>15</categoryId>
+                <picture>https://app.savaks.ru/51e1a8fa-19b9-4aa1-8bc1-a900a6562d9a.png</picture>
+                <description>Автомобильные EVA коврики для DAEWOO GENTRA 2013-2015</description>
+                <url>https://www.savaks.ru/productproperty/DAEWOO-GENTRA-2013--2015</url>
+            </offer>
+            <offer id="232" available="true">
+                <name>Автомобильный EVA коврик для Daewoo Lanos</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>15</categoryId>
+                <picture>https://app.savaks.ru/440c95bc-4c73-472b-a515-be5c1b02305e.png</picture>
+                <description>Автомобильные EVA коврики для Daewoo Lanos</description>
+                <url>https://www.savaks.ru/productproperty/Daewoo-Lanos</url>
+            </offer>
+            <offer id="233" available="true">
+                <name>Автомобильный EVA коврик для Daewoo Matiz</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>15</categoryId>
+                <picture>https://app.savaks.ru/8a4904d7-3fea-4b48-ad68-8c723ef42847.png</picture>
+                <description>Автомобильные EVA коврики для Daewoo Matiz</description>
+                <url>https://www.savaks.ru/productproperty/Daewoo-Matiz</url>
+            </offer>
+            <offer id="234" available="true">
+                <name>Автомобильный EVA коврик для Daewoo Nexia</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>15</categoryId>
+                <picture>https://app.savaks.ru/2e48fb88-b686-433d-af7e-9236f9fd3ca2.png</picture>
+                <description>Автомобильные EVA коврики для Daewoo Nexia</description>
+                <url>https://www.savaks.ru/productproperty/Daewoo-Nexia</url>
+            </offer>
+            <offer id="235" available="true">
+                <name>Автомобильный EVA коврик для Daihatsu Be-Go 2006-2016 правый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>16</categoryId>
+                <picture>https://app.savaks.ru/79a4ccb9-11fa-4a26-b2dc-6ce1927e336d.png</picture>
+                <description>Автомобильные EVA коврики для Daihatsu Be-Go 2006-2016 правый рульa</description>
+                <url>https://www.savaks.ru/productproperty/Daihatsu-Be--Go-2006--2016-%D0%BF%D1%80%D0%B0%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="236" available="true">
+                <name>Автомобильный EVA коврик для DAIHATSU BOON 2004-2010 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>16</categoryId>
+                <picture>https://app.savaks.ru/09de5b94-f914-4fbe-8117-4c5209e3b3ac.png</picture>
+                <description>Автомобильные EVA коврики для DAIHATSU BOON 2004-2010 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/DAIHATSU-BOON-2004--2010-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%98%CC%86-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="279" available="true">
+                <name>Автомобильный EVA коврик для DAIHATSU BOON 2010-2014 2WD Правый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>16</categoryId>
+                <picture>https://app.savaks.ru/c1bf96fb-97b1-4a8a-ab55-d2d0c9b4ef9a.png</picture>
+                <description>Автомобильные EVA коврики для DAIHATSU BOON 2010-2014 2WD Правый руль</description>
+                <url>https://www.savaks.ru/productproperty/DAIHATSU-BOON-2010--2014-2WD-%D0%9F%D1%80%D0%B0%D0%B2%D1%8B%D0%B9-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="280" available="true">
+                <name>Автомобильный EVA коврик для DAIHATSU BOON 2014-2016 4WD Рестайлинг Правый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>16</categoryId>
+                <picture>https://app.savaks.ru/95013207-334b-49d1-a9b2-1c9af3148b3b.png</picture>
+                <description>Автомобильные EVA коврики для DAIHATSU BOON 2014-2016 4WD Рестайлинг Правый рульa</description>
+                <url>https://www.savaks.ru/productproperty/DAIHATSU-BOON-2014--2016-4WD-%D0%A0%D0%B5%D1%81%D1%82%D0%B0%D0%B9%D0%BB%D0%B8%D0%BD%D0%B3-%D0%9F%D1%80%D0%B0%D0%B2%D1%8B%D0%B9-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="237" available="true">
+                <name>Автомобильный EVA коврик для DAIHATSU COO 2006-2013 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>16</categoryId>
+                <picture>https://app.savaks.ru/43c76d6f-682c-44c6-9ce7-4b0970f8c36e.png</picture>
+                <description>Автомобильные EVA коврики для DAIHATSU COO 2006-2013 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/DAIHATSU-COO-2006--2013-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%98%CC%86-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="243" available="true">
+                <name>Автомобильный EVA коврик для DongFeng AX7 2015-2019</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>19</categoryId>
+                <picture>https://app.savaks.ru/1498c1fa-49a1-47ee-a22b-2410dfb6081e.png</picture>
+                <description>Автомобильные EVA коврики для DongFeng AX7 2015-2019</description>
+                <url>https://www.savaks.ru/productproperty/DongFeng-AX7-2015--2019</url>
+            </offer>
+            <offer id="100" available="true">
+                <name>Автомобильный EVA коврик для Exeed LX 2019-н.в. Левый руль9</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>72</categoryId>
+                <picture>https://app.savaks.ru/c88272de-bf75-48d6-a8cd-610f1aaab47a.png</picture>
+                <description>Автомобильные EVA коврики для Exeed LX 2019-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Exeed-LX-2019--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="101" available="true">
+                <name>Автомобильный EVA коврик для Exeed RX 2023-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>72</categoryId>
+                <picture>https://app.savaks.ru/f66a5388-4298-4abb-9dd1-d8ff80b8b3dd.png</picture>
+                <description>Автомобильные EVA коврики для Exeed RX 2023-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Exeed-RX-2023--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="251" available="true">
+                <name>Автомобильный EVA коврик для Exeed TXL 2019-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>72</categoryId>
+                <picture>https://app.savaks.ru/e50eedb6-bd76-4c3d-8f03-c1ee43ee532a.png</picture>
+                <description>Автомобильные EVA коврики для Exeed TXL 2019-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Exeed-TXL-2019--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="102" available="true">
+                <name>Автомобильный EVA коврик для Exeed VX 2021-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>72</categoryId>
+                <picture>https://app.savaks.ru/e6db3602-be4d-48b1-9f52-83fd3821cefd.png</picture>
+                <description>Автомобильные EVA коврики для Exeed VX 2021-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Exeed-VX-2021--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="127" available="true">
+                <name>Автомобильный EVA коврик для FAW Bestune T77 2018-н.в. ЛР</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>77</categoryId>
+                <picture>https://app.savaks.ru/7e4330c1-b081-43f0-b129-d6f1359253b1.png</picture>
+                <description>Автомобильные EVA коврики для FAW Bestune T77 2018-н.в. ЛР</description>
+                <url>https://www.savaks.ru/productproperty/FAW-Bestune-T77-2018--%D0%BD.%D0%B2.-%D0%9B%D0%A0</url>
+            </offer>
+            <offer id="244" available="true">
+                <name>Автомобильный EVA коврик для FIAT 500 2 2007-2023 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>20</categoryId>
+                <picture>https://app.savaks.ru/ba8a2065-e519-464f-993b-55f06b1897a7.png</picture>
+                <description>Автомобильные EVA коврики для FIAT 500 2 2007-2023 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/FIAT-500-2-2007--2023-%D0%9B%D0%95%D0%92%D0%AB%D0%98%CC%86-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="245" available="true">
+                <name>Автомобильный EVA коврик для FIAT ALBEA 2002-2012 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>20</categoryId>
+                <picture>https://app.savaks.ru/a31a3aed-6a5c-466a-a723-86a988135aee.png</picture>
+                <description>Автомобильные EVA коврики для FIAT ALBEA 2002-2012 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/FIAT-ALBEA-2002--2012-%D0%9B%D0%95%D0%92%D0%AB%D0%98%CC%86-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="246" available="true">
+                <name>Автомобильный EVA коврик для FIAT DOBLO 2 2009-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>20</categoryId>
+                <picture>https://app.savaks.ru/f2c067b1-2d67-473f-81fe-0588e4b8273a.png</picture>
+                <description>Автомобильные EVA коврики для FIAT DOBLO 2 2009-</description>
+                <url>https://www.savaks.ru/productproperty/FIAT-DOBLO-2-2009--</url>
+            </offer>
+            <offer id="247" available="true">
+                <name>Автомобильный EVA коврик для FORD C-MAX 2003-2010</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>21</categoryId>
+                <picture>https://app.savaks.ru/7828f674-caea-4a12-a73d-cc8f6807028d.png</picture>
+                <description>Автомобильные EVA коврики для FIAT DOBLO 2 2009-</description>
+                <url>https://www.savaks.ru/productproperty/FORD-C--MAX-2003--2010</url>
+            </offer>
+            <offer id="248" available="true">
+                <name>Автомобильный EVA коврик для FORD ESCAPE 2007-2012 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>21</categoryId>
+                <picture>https://app.savaks.ru/41450129-f517-45d8-a625-5994cda55824.png</picture>
+                <description>Автомобильные EVA коврики для FORD ESCAPE 2007-2012 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/FORD-ESCAPE-2007--2012-%D0%9B%D0%95%D0%92%D0%AB%D0%98%CC%86-%D0%A0%D0%A3%D0%9B%D0%AC0</url>
+            </offer>
+            <offer id="249" available="true">
+                <name>Автомобильный EVA коврик для FORD FIESTA MK5 2002-2008</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>21</categoryId>
+                <picture>https://app.savaks.ru/ec3df4bf-ca06-4062-933a-3c81e91d74dd.png</picture>
+                <description>Автомобильные EVA коврики для FORD FIESTA MK5 2002-2008</description>
+                <url>https://www.savaks.ru/productproperty/FORD-FIESTA-MK5-2002--2008</url>
+            </offer>
+            <offer id="263" available="true">
+                <name>Автомобильный EVA коврик для FORD FIESTA MK6 2008-2019</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>21</categoryId>
+                <picture>https://app.savaks.ru/5b60467e-f0e4-4614-92fe-9cb6247feb50.png</picture>
+                <description>Автомобильные EVA коврики для FORD FIESTA MK6 2008-2019</description>
+                <url>https://www.savaks.ru/productproperty/FORD-FIESTA-MK6-2008--2019</url>
+            </offer>
+            <offer id="264" available="true">
+                <name>Автомобильный EVA коврик для FORD FOCUS 1 1998-2005 АМЕРИКАНСКАЯ СБОРКА</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>21</categoryId>
+                <picture>https://app.savaks.ru/57cd31ca-54a9-49b9-9682-3830edb265ab.png</picture>
+                <description>Автомобильные EVA коврики для FORD FOCUS 1 1998-2005 АМЕРИКАНСКАЯ СБОРКА</description>
+                <url>https://www.savaks.ru/productproperty/FORD-FOCUS-1-1998--2005-%D0%90%D0%9C%D0%95%D0%A0%D0%98%D0%9A%D0%90%D0%9D%D0%A1%D0%9A%D0%90%D0%AF-%D0%A1%D0%91%D0%9E%D0%A0%D0%9A%D0%90</url>
+            </offer>
+            <offer id="70" available="true">
+                <name>Автомобильный EVA коврик для GAC GS8 2 2021-нв</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>65</categoryId>
+                <picture>https://app.savaks.ru/8f6b56ea-c242-49ed-a9b4-7d35b2f6a709.png</picture>
+                <description>Автомобильные EVA коврики для GAC GS8 2 2021-нв</description>
+                <url>https://www.savaks.ru/productproperty/GAC-GS8-2-2021--%D0%BD%D0%B2</url>
+            </offer>
+             <offer id="103" available="true">
+                <name>Автомобильный EVA коврик для Geely Atlas Pro 2021-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>23</categoryId>
+                <picture>https://app.savaks.ru/d9941a72-171d-4be5-a7a4-f881fc56a328.png</picture>
+                <description>Автомобильные EVA коврики для Geely Atlas Pro 2021-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Geely-Atlas-Pro-2021--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+             <offer id="286" available="true">
+                <name>Автомобильный EVA коврик для GEELY CK 2008-2016</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>23</categoryId>
+                <picture>https://app.savaks.ru/420c2c27-6257-4a20-8331-79896142599d.png</picture>
+                <description>Автомобильные EVA коврики для GEELY CK 2008-2016</description>
+                <url>https://www.savaks.ru/productproperty/GEELY-CK-2008--2016</url>
+            </offer>
+             <offer id="287" available="true">
+                <name>Автомобильный EVA коврик для GEELY COOLRAY 2019-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>23</categoryId>
+                <picture>https://app.savaks.ru/b5da722b-ca6f-42dc-aa21-6a694ab9a82e.png</picture>
+                <description>Автомобильные EVA коврики для GEELY COOLRAY 2019-</description>
+                <url>https://www.savaks.ru/productproperty/GEELY-COOLRAY-2019--</url>
+            </offer>
+             <offer id="288" available="true">
+                <name>Автомобильный EVA коврик для GEELY EMGRAND 7 2016-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>23</categoryId>
+                <picture>https://app.savaks.ru/6b741d1c-da56-40e4-b6a3-a9d70e4726c0.png</picture>
+                <description>Автомобильные EVA коврики для GEELY EMGRAND 7 2016-</description>
+                <url>https://www.savaks.ru/productproperty/GEELY-EMGRAND-7-2016--</url>
+            </offer>
+             <offer id="289" available="true">
+                <name>Автомобильный EVA коврик для GEELY EMGRAND X7 2018-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>23</categoryId>
+                <picture>https://app.savaks.ru/e6325523-6cb9-4be5-a880-94b9a1eb2300.png</picture>
+                <description>Автомобильные EVA коврики для GEELY EMGRAND X7 2018-</description>
+                <url>https://www.savaks.ru/productproperty/GEELY-EMGRAND-X7-2018--</url>
+            </offer>
+            <offer id="292" available="true">
+                <name>Автомобильный EVA коврик для GENESIS G70 4WD 2017-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>24</categoryId>
+                <picture>https://app.savaks.ru/640fdf4a-c3f1-46e2-8fef-0e8c984ceca6.png</picture>
+                <description>Автомобильные EVA коврики для GENESIS G70 4WD 2017--</description>
+                <url>https://www.savaks.ru/productproperty/GENESIS-G70-4WD-2017--</url>
+            </offer>
+            <offer id="71" available="true">
+                <name>Автомобильный EVA коврик для Genesis G80 2016-2020</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>24</categoryId>
+                <picture>https://app.savaks.ru/8d121a38-9fca-46fe-b401-96d3fb764e42.png</picture>
+                <description>Автомобильные EVA коврики для Genesis G80 2016-2020</description>
+                <url>https://www.savaks.ru/productproperty/Genesis-G80-2016--2020</url>
+            </offer>
+            <offer id="293" available="true">
+                <name>Автомобильный EVA коврик для GENESIS G90 (1 поколение) 2016-2022</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>24</categoryId>
+                <picture>https://app.savaks.ru/d0c575db-f823-41a5-83a6-66e5b29645af.png</picture>
+                <description>Автомобильные EVA коврики для GENESIS G90 (1 поколение) 2016-2022</description>
+                <url>https://www.savaks.ru/productproperty/GENESIS-G90-(1-%D0%BF%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5)-2016--2022</url>
+            </offer>
+            <offer id="294" available="true">
+                <name>Автомобильный EVA коврик для HAIMA M3 2014-2017</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>25</categoryId>
+                <picture>https://app.savaks.ru/41182560-f872-468b-bf52-6c1d4e92453f.png</picture>
+                <description>Автомобильные EVA коврики для HAIMA M3 2014-2017</description>
+                <url>https://www.savaks.ru/productproperty/HAIMA-M3-2014--2017</url>
+            </offer>
+            <offer id="104" available="true">
+                <name>Автомобильный EVA коврик для Haval Dargo 2022-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>26</categoryId>
+                <picture>https://app.savaks.ru/8bbf5c9f-6528-4004-b88f-aede9bd27eab.png</picture>
+                <description>Автомобильные EVA коврики для Haval Dargo 2022-</description>
+                <url>https://www.savaks.ru/productproperty/Haval-Dargo-2022--</url>
+            </offer>
+            <offer id="295" available="true">
+                <name>Автомобильный EVA коврик для HAVAL F7 2019-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>26</categoryId>
+                <picture>https://app.savaks.ru/db1d167c-2346-4b7b-89ed-e8318b3646c4.png</picture>
+                <description>Автомобильные EVA коврики для HAVAL F7 2019-</description>
+                <url>https://www.savaks.ru/productproperty/HAVAL-F7-2019--</url>
+            </offer>
+            <offer id="296" available="true">
+                <name>Автомобильный EVA коврик для HAVAL H6 2014-2020 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>26</categoryId>
+                <picture>https://app.savaks.ru/5c795979-2b0f-48db-b781-a3e4b4d9da0d.png</picture>
+                <description>Автомобильные EVA коврики для HAVAL H6 2014-2020 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/HAVAL-H6-2014--2020-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="72" available="true">
+                <name>Автомобильный EVA коврик для Haval H6 3 2020-нв</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>26</categoryId>
+                <picture>https://app.savaks.ru/c6eda9dd-af00-4a7c-9ede-b0d2790e5a60.png</picture>
+                <description>Автомобильные EVA коврики для Haval H6 3 2020-нв</description>
+                <url>https://www.savaks.ru/productproperty/Haval-H6-3-2020--%D0%BD%D0%B2</url>
+            </offer>
+            <offer id="297" available="true">
+                <name>Автомобильный EVA коврик для HAVAL H8 2014-2017</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>26</categoryId>
+                <picture>https://app.savaks.ru/97575373-41d4-4ef3-b144-ed38b4b3ece6.png</picture>
+                <description>Автомобильные EVA коврики для HAVAL H8 2014-20177</description>
+                <url>https://www.savaks.ru/productproperty/HAVAL-H8-2014--2017</url>
+            </offer>
+            <offer id="298" available="true">
+                <name>Автомобильный EVA коврик для HONDA ACCORD 5 1993-1998 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>27</categoryId>
+                <picture>https://app.savaks.ru/60f0c6e1-4466-4bc8-bad8-e839005e8b1e.png</picture>
+                <description>Автомобильные EVA коврики для HONDA ACCORD 5 1993-1998 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/HONDA-ACCORD-5-1993--1998-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="299" available="true">
+                <name>Автомобильный EVA коврик для HONDA ACCORD 6 1997-2002 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>27</categoryId>
+                <picture>https://app.savaks.ru/f4cbf300-0692-49aa-80c1-e6e72b55fed8.png</picture>
+                <description>Автомобильные EVA коврики для HONDA ACCORD 6 1997-2002 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/HONDA-ACCORD-6-1997--2002-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="300" available="true">
+                <name>Автомобильный EVA коврик для HONDA ACCORD 7 2002-2008 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>27</categoryId>
+                <picture>https://app.savaks.ru/be59c5a7-cdaf-41d2-8cd7-62507fae2f3c.png</picture>
+                <description>Автомобильные EVA коврики для HONDA ACCORD 7 2002-2008 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/HONDA-ACCORD-7-2002--2008-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="301" available="true">
+                <name>Автомобильный EVA коврик для HONDA ACCORD 8 2007-2015 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>27</categoryId>
+                <picture>https://app.savaks.ru/49d71580-3033-4567-b041-6ef8e799c13f.png</picture>
+                <description>Автомобильные EVA коврики для HONDA ACCORD 8 2007-2015 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/HONDA-ACCORD-8-2007--2015-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="302" available="true">
+                <name>Автомобильный EVA коврик для HONDA ACCORD 9 2012-2019 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>27</categoryId>
+                <picture>https://app.savaks.ru/819bccd8-805f-4842-96c3-88937c26633d.png</picture>
+                <description>Автомобильные EVA коврики для HONDA ACCORD 9 2012-2019 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/HONDA-ACCORD-9-2012--2019-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="341" available="true">
+                <name>Автомобильный EVA коврик для HYUNDAI ACCENT 2 TAGAZ 1999-2012 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>29</categoryId>
+                <picture>https://app.savaks.ru/808a3e66-0cdb-4a52-8d26-615f790bfde5.png</picture>
+                <description>Автомобильные EVA коврики для HYUNDAI ACCENT 2 TAGAZ 1999-2012 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/HYUNDAI-ACCENT-2-TAGAZ-1999--2012-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="342" available="true">
+                <name>Автомобильный EVA коврик для HYUNDAI CRETA 1 2016-2021 ЛЕВЫЙ РУЛЬ/name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>29</categoryId>
+                <picture>https://app.savaks.ru/bb1c3c7a-a988-49d3-8cc6-a800c1d44b58.png</picture>
+                <description>Автомобильные EVA коврики для HYUNDAI CRETA 1 2016-2021 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/HYUNDAI-CRETA-1-2016--2021-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="343" available="true">
+                <name>Автомобильный EVA коврик для HYUNDAI ELANTRA 3 (XD) TAGAZ 2000-2010 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>29</categoryId>
+                <picture>https://app.savaks.ru/61148e13-1157-40e1-b3b1-a27d44bdadee.png</picture>
+                <description>Автомобильные EVA коврики для HYUNDAI ELANTRA 3 (XD) TAGAZ 2000-2010 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/HYUNDAI-ELANTRA-3-(XD)-TAGAZ-2000--2010-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="344" available="true">
+                <name>Автомобильный EVA коврик для HYUNDAI ELANTRA 4 (HD) 2006-2011</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>29</categoryId>
+                <picture>https://app.savaks.ru/d740e89c-08c7-40f4-b149-8208ad580228.png</picture>
+                <description>Автомобильные EVA коврики для HYUNDAI ELANTRA 4 (HD) 2006-2011</description>
+                <url>https://www.savaks.ru/productproperty/HYUNDAI-ELANTRA-4-(HD)-2006--2011</url>
+            </offer>
+            <offer id="345" available="true">
+                <name>Автомобильный EVA коврик для HYUNDAI ELANTRA 6 (AD) 2015-2020</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>29</categoryId>
+                <picture>https://app.savaks.ru/40ac6b42-f185-4a10-95ff-e0e7f152c571.png</picture>
+                <description>Автомобильные EVA коврики для HYUNDAI ELANTRA 6 (AD) 2015-2020</description>
+                <url>https://www.savaks.ru/productproperty/HYUNDAI-ELANTRA-6-(AD)-2015--2020</url>
+            </offer>
+            <offer id="375" available="true">
+                <name>Автомобильный EVA коврик для INFINITI EX 2007-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>30</categoryId>
+                <picture>https://app.savaks.ru/603a8022-637f-4805-9bbf-3a825f950876.png</picture>
+                <description>Автомобильные EVA коврики для INFINITI EX 2007-2013</description>
+                <url>https://www.savaks.ru/productproperty/INFINITI-EX-2007--2013</url>
+            </offer>
+            <offer id="376" available="true">
+                <name>Автомобильный EVA коврик для INFINITI FX (S51) 2008-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>30</categoryId>
+                <picture>https://app.savaks.ru/ad9c8594-0acb-4216-a094-94a508ba1b55.png</picture>
+                <description>Автомобильные EVA коврики для INFINITI FX (S51) 2008-2013</description>
+                <url>https://www.savaks.ru/productproperty/INFINITI-FX-(S51)-2008--2013</url>
+            </offer>
+            <offer id="377" available="true">
+                <name>Автомобильный EVA коврик для INFINITI G 2006-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>30</categoryId>
+                <picture>https://app.savaks.ru/676fa3a1-efb1-4997-a46e-22e4eb0e49a3.png</picture>
+                <description>Автомобильные EVA коврики для INFINITI G 2006-2013</description>
+                <url>https://www.savaks.ru/productproperty/INFINITI-G-2006--2013</url>
+            </offer>
+            <offer id="378" available="true">
+                <name>Автомобильный EVA коврик для INFINITI QX56 2004-2010</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>30</categoryId>
+                <picture>https://app.savaks.ru/4febe551-a29d-4dac-9bab-53fbd8e23cc7.png</picture>
+                <description>Автомобильные EVA коврики для INFINITI QX56 2004-2010</description>
+                <url>https://www.savaks.ru/productproperty/INFINITI-QX56-2004--2010</url>
+            </offer>
+            <offer id="379" available="true">
+                <name>Автомобильный EVA коврик для INFINITI QX70 2013-2017</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>30</categoryId>
+                <picture>https://app.savaks.ru/fc0dc4b5-ce12-4e26-9358-95450dbbf966.png</picture>
+                <description>Автомобильные EVA коврики для INFINITI QX70 2013-2017</description>
+                <url>https://www.savaks.ru/productproperty/INFINITI-QX70-2013--2017</url>
+            </offer>
+            <offer id="108" available="true">
+                <name>Автомобильный EVA коврик для Iran Khodro Samand 2002-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>73</categoryId>
+                <picture>https://app.savaks.ru/8d767196-4140-43bb-a472-553c7fe84ec4.png</picture>
+                <description>Автомобильные EVA коврики для Iran Khodro Samand 2002-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Iran-Khodro-Samand-2002--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="380" available="true">
+                <name>Автомобильный EVA коврик для ISUZU BIGHORN 2 1991-2002 5 дверей</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>31</categoryId>
+                <picture>https://app.savaks.ru/89940f40-efc3-4db7-8f57-220ac7bfe24a.png</picture>
+                <description>Автомобильные EVA коврики для ISUZU BIGHORN 2 1991-2002 5 дверей</description>
+                <url>https://www.savaks.ru/productproperty/ISUZU-BIGHORN-2-1991--2002-5%D0%B4%D0%B2%D0%B5%D1%80%D0%B5%D0%B9</url>
+            </offer>
+            <offer id="381" available="true">
+                <name>Автомобильный EVA коврик для JAC REIN 2007-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>32</categoryId>
+                <picture>https://app.savaks.ru/ec830677-845f-4116-ae54-29729ccf8812.png</picture>
+                <description>Автомобильные EVA коврики для JAC REIN 2007-2013</description>
+                <url>https://www.savaks.ru/productproperty/JAC-REIN-2007--2013</url>
+            </offer>
+            <offer id="382" available="true">
+                <name>Автомобильный EVA коврик для JAC S3 2014-2022</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>32</categoryId>
+                <picture>https://app.savaks.ru/258d9c28-09ea-4dca-b35f-3674e7c559bf.png</picture>
+                <description>Автомобильные EVA коврики для JAC S3 2014-2022</description>
+                <url>https://www.savaks.ru/productproperty/JAC-S3-2014--2022</url>
+            </offer>
+            <offer id="109" available="true">
+                <name>Автомобильный EVA коврик для JAC S5 2013-2019 Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>32</categoryId>
+                <picture>https://app.savaks.ru/a962c347-6ad7-4970-9893-7e0409f48480.png</picture>
+                <description>Автомобильные EVA коврики для JAC S5 2013-2019 Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/JAC-S5-2013--2019-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="110" available="true">
+                <name>Автомобильный EVA коврик для JAC S7 2020-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>32</categoryId>
+                <picture>https://app.savaks.ru/48bbdfe9-dbfe-4722-982f-f82ec21094d1.png</picture>
+                <description>Автомобильные EVA коврики для JAC S7 2020-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/JAC-S7-2020--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="383" available="true">
+                <name>Автомобильный EVA коврик для JAC T6 2015-2022</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>32</categoryId>
+                <picture>https://app.savaks.ru/43b608ba-26b7-4eb4-924a-eeccb98da7f8.png</picture>
+                <description>Автомобильные EVA коврики для JAC T6 2015-2022</description>
+                <url>https://www.savaks.ru/productproperty/JAC-T6-2015--2022</url>
+            </offer>
+            <offer id="111" available="true">
+                <name>Автомобильный EVA коврик для Jaecoo J7 2023-н.в.</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>74</categoryId>
+                <picture>https://app.savaks.ru/e729936e-2f6b-4971-baeb-782dcb68d700.png</picture>
+                <description>Автомобильные EVA коврики для Jaecoo J7 2023-н.в.</description>
+                <url>https://www.savaks.ru/productproperty/Jaecoo-J7-2023--%D0%BD.%D0%B2.</url>
+            </offer>
+            <offer id="112" available="true">
+                <name>Автомобильный EVA коврик для JEEP CHEROKEE 4 (KK) 2007-12</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>33</categoryId>
+                <picture>https://app.savaks.ru/7bd33673-8fd9-4f5d-9124-2861c6493bcb.png</picture>
+                <description>Автомобильные EVA коврики для JEEP CHEROKEE 4 (KK) 2007-12</description>
+                <url>https://www.savaks.ru/productproperty/JEEP-CHEROKEE-4-(KK)-2007--12</url>
+            </offer>
+            <offer id="384" available="true">
+                <name>Автомобильный EVA коврик для JEEP CHEROKEE 5 (KL) 2013-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>33</categoryId>
+                <picture>https://app.savaks.ru/225ce9c9-5589-48ed-8ab9-0c14ddaa126b.png</picture>
+                <description>Автомобильные EVA коврики для JEEP CHEROKEE 5 (KL) 2013-</description>
+                <url>https://www.savaks.ru/productproperty/JEEP-CHEROKEE-5-(KL)-2013--</url>
+            </offer>
+            <offer id="385" available="true">
+                <name>Автомобильный EVA коврик для JEEP COMMANDER 2005-2010</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>33</categoryId>
+                <picture>https://app.savaks.ru/a8dc7b29-3352-47a0-b61e-84448a6288a5.png</picture>
+                <description>Автомобильные EVA коврики для JEEP COMMANDER 2005-2010</description>
+                <url>https://www.savaks.ru/productproperty/JEEP-COMMANDER-2005--2010.</url>
+            </offer>
+            <offer id="386" available="true">
+                <name>Автомобильный EVA коврик для JEEP COMPASS 2006-2010</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>33</categoryId>
+                <picture>https://app.savaks.ru/8af32a8f-67c1-4f83-b501-d830450ab776.png</picture>
+                <description>Автомобильные EVA коврики для JEEP COMPASS 2006-2010</description>
+                <url>https://www.savaks.ru/productproperty/JEEP-COMPASS-2006--2010</url>
+            </offer>
+            <offer id="387" available="true">
+                <name>Автомобильный EVA коврик для JEEP GRAND CHEROKEE 1 (ZJ) 1992-1998</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>33</categoryId>
+                <picture>https://app.savaks.ru/d513e7b3-f885-4cab-837a-a07691239a7f.png</picture>
+                <description>Автомобильные EVA коврики для JEEP GRAND CHEROKEE 1 (ZJ) 1992-1998</description>
+                <url>https://www.savaks.ru/productproperty/JEEP-GRAND-CHEROKEE-1-(ZJ)-1992--1998</url>
+            </offer>
+            <offer id="74" available="true">
+                <name>Автомобильный EVA коврик для Jetour Dashing 2022-нв</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>66</categoryId>
+                <picture>https://app.savaks.ru/8ffdfe51-ad1e-44c0-beb6-f1fbf88518c9.png</picture>
+                <description>Автомобильные EVA коврики для Jetour Dashing 2022-нв</description>
+                <url>https://www.savaks.ru/productproperty/Jetour-Dashing-2022--%D0%BD%D0%B2</url>
+            </offer>
+            <offer id="113" available="true">
+                <name>Автомобильный EVA коврик для Jetour X70 2018-н.в. ЛР</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>66</categoryId>
+                <picture>https://app.savaks.ru/9e85c4e4-4746-4bdf-90ec-37b73e1cf597.png</picture>
+                <description>Автомобильные EVA коврики для Jetour X70 2018-н.в. ЛР</description>
+                <url>https://www.savaks.ru/productproperty/Jetour-X70-2018--%D0%BD.%D0%B2.-%D0%9B%D0%A0</url>
+            </offer>
+            <offer id="75" available="true">
+                <name>Автомобильный EVA коврик для Jetour X90 PLUS 2021-н.в.</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>66</categoryId>
+                <picture>https://app.savaks.ru/f505202d-71fd-441e-ad33-023f2dfb020e.png</picture>
+                <description>Автомобильные EVA коврики для Jetour X90 PLUS 2021-н.в.</description>
+                <url>https://www.savaks.ru/productproperty/Jetour-X90-PLUS-2021--%D0%BD.%D0%B2.</url>
+            </offer>
+            <offer id="114" available="true">
+                <name>Автомобильный EVA коврик для Kaiyi E5 2021-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>75</categoryId>
+                <picture>https://app.savaks.ru/ced3300a-a6b2-4711-9a52-68ae9b06f4ee.png</picture>
+                <description>Автомобильные EVA коврики для Kaiyi E5 2021-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Kaiyi-E5-2021--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="389" available="true">
+                <name>Автомобильный EVA коврик для KIA CARENS 2006-2012</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>34</categoryId>
+                <picture>https://app.savaks.ru/48538e52-a37f-4691-ba32-907ea79537ec.png</picture>
+                <description>Автомобильные EVA коврики для KIA CARENS 2006-2012</description>
+                <url>https://www.savaks.ru/productproperty/KIA-CARENS-2006--2012</url>
+            </offer>
+            <offer id="390" available="true">
+                <name>Автомобильный EVA коврик для KIA CEED 2006-2010 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>34</categoryId>
+                <picture>https://app.savaks.ru/54024acb-f1d2-42fc-9c1e-e5559d150649.png</picture>
+                <description>Автомобильные EVA коврики для KIA CEED 2006-2010 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/KIA-CEED-2006--2010-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="391" available="true">
+                <name>Автомобильный EVA коврик для KIA CEED 2018-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>34</categoryId>
+                <picture>https://app.savaks.ru/9e78c249-5807-45e9-b070-499417917be4.png</picture>
+                <description>Автомобильные EVA коврики для KIA CEED 2018-</description>
+                <url>https://www.savaks.ru/productproperty/KIA-CEED-2018--</url>
+            </offer>
+            <offer id="392" available="true">
+                <name>Автомобильный EVA коврик для KIA CERATO 1 2003-2009</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>34</categoryId>
+                <picture>https://app.savaks.ru/c2af5735-0c2e-424a-9136-b5fe0377d5ad.png</picture>
+                <description>Автомобильные EVA коврики для KIA CERATO 1 2003-2009ь</description>
+                <url>https://www.savaks.ru/productproperty/KIA-CERATO-1-2003--2009</url>
+            </offer>
+            <offer id="393" available="true">
+                <name>Автомобильный EVA коврик для KIA CERATO 2 2008-2013 KOUP</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>34</categoryId>
+                <picture>https://app.savaks.ru/fc87a944-9cb4-4e9f-ac3f-3b6b27e0d0ca.png</picture>
+                <description>Автомобильные EVA коврики для KIA CERATO 2 2008-2013 KOUP</description>
+                <url>https://www.savaks.ru/productproperty/KIA-CERATO-2-2008--2013-KOUP</url>
+            </offer>
+            <offer id="423" available="true">
+                <name>Автомобильный EVA коврик для LADA (VAZ) 1111 OKA 1988-2008</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>35</categoryId>
+                <picture>https://app.savaks.ru/e148525f-318d-442b-9ab1-401395c705bc.png</picture>
+                <description>Автомобильные EVA коврики для LADA (VAZ) 1111 OKA 1988-2008</description>
+                <url>https://www.savaks.ru/productproperty/LADA-(VAZ)-1111-OKA-1988--2008</url>
+            </offer>
+            <offer id="424" available="true">
+                <name>Автомобильный EVA коврик для LADA (VAZ) 2101-2107</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>35</categoryId>
+                <picture>https://app.savaks.ru/9e687570-7d2f-43aa-a548-0263eb716dad.png</picture>
+                <description>Автомобильные EVA коврики для LADA (VAZ) 2101-2107</description>
+                <url>https://www.savaks.ru/productproperty/LADA-(VAZ)-2101--2107</url>
+            </offer>
+            <offer id="425" available="true">
+                <name>Автомобильный EVA коврик для LADA (VAZ) 2108-2115</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>35</categoryId>
+                <picture>https://app.savaks.ru/0fe3f961-d789-46e2-bec2-76f9e11858c4.png</picture>
+                <description>Автомобильные EVA коврики для LADA (VAZ) 2108-2115</description>
+                <url>https://www.savaks.ru/productproperty/LADA-(VAZ)-2108--2115</url>
+            </offer>
+            <offer id="426" available="true">
+                <name>Автомобильный EVA коврик для LADA (VAZ) 2110-2112</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>35</categoryId>
+                <picture>https://app.savaks.ru/7ad4d43b-4efe-4aca-b7a7-b4a3ff9131b8.png</picture>
+                <description>Автомобильные EVA коврики для LADA (VAZ) 2110-2112</description>
+                <url>https://www.savaks.ru/productproperty/LADA-(VAZ)-2110--2112</url>
+            </offer>
+            <offer id="427" available="true">
+                <name>Автомобильный EVA коврик для LADA (VAZ) KALINA 2004-2018</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>35</categoryId>
+                <picture>https://app.savaks.ru/78410e09-a386-46ed-8d58-73638353a6d5.png</picture>
+                <description>Автомобильные EVA коврики для LADA (VAZ) KALINA 2004-2018</description>
+                <url>https://www.savaks.ru/productproperty/LADA-(VAZ)-KALINA-2004--2018</url>
+            </offer>
+            <offer id="435" available="true">
+                <name>Автомобильный EVA коврик для LEXUS HS250H 2009-2017 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>54</categoryId>
+                <picture>https://app.savaks.ru/e6e56f18-7541-43ec-ab28-6889ea941e60.png</picture>
+                <description>Автомобильные EVA коврики для LEXUS HS250H 2009-2017 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/LEXUS-HS250H-2009--2017-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="51" available="true">
+                <name>Автомобильный EVA коврик для LEXUS LX570 2012-2023 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>54</categoryId>
+                <picture>https://app.savaks.ru/f969eee3-93e7-43e0-89a5-676a391c71e5.png</picture>
+                <description>Автомобильные EVA коврики для LEXUS LX570 2012-2023 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/LEXUS-LX570-2012--2023-%D0%9B%D0%95%D0%92%D0%AB%D0%98%CC%86-%D0%A0</url>
+            </offer>
+             <offer id="436" available="true">
+                <name>Автомобильный EVA коврик для LIFAN SMILY 2008-2018 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>36</categoryId>
+                <picture>https://app.savaks.ru/553b09fd-b70b-4aae-a722-31187cd0bf50.png</picture>
+                <description>Автомобильные EVA коврики для LIFAN SMILY 2008-2018 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/LIFAN-SMILY-2008--2018-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+             <offer id="437" available="true">
+                <name>Автомобильный EVA коврик для LIFAN SOLANO 2008-2016 (620, 630) ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>36</categoryId>
+                <picture>https://app.savaks.ru/2f8d07fa-75a2-4d57-913b-c23f3e6eb776.png</picture>
+                <description>Автомобильные EVA коврики для LIFAN SOLANO 2008-2016 (620, 630) ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/LIFAN-SOLANO-2008--2016-(620,-630)-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+             <offer id="438" available="true">
+                <name>Автомобильный EVA коврик для LIFAN X60 2011-2023</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>36</categoryId>
+                <picture>https://app.savaks.ru/5d1e4e85-ecf1-41d4-9089-f587ad26df5e.png</picture>
+                <description>Автомобильные EVA коврики для LIFAN X60 2011-2023</description>
+                <url>https://www.savaks.ru/productproperty/LIFAN-X60-2011--2023</url>
+            </offer>
+            <offer id="90" available="true">
+                <name>Автомобильный EVA коврик для LiXiang L7 2023-н.в. ЛР</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>70</categoryId>
+                <picture>https://app.savaks.ru/fdfc0cf6-a24a-4551-8389-7b0d163d3f12.png</picture>
+                <description>Автомобильные EVA коврики для LiXiang L7 2023-н.в. ЛР</description>
+                <url>https://www.savaks.ru/productproperty/LiXiang-L7-2023--%D0%BD.%D0%B2.-%D0%9B%D0%A0</url>
+            </offer>
+            <offer id="439" available="true">
+                <name>Автомобильный EVA коврик для LUXGEN SUV 2013-2017</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>70</categoryId>
+                <picture>https://app.savaks.ru/9930560d-1ad1-46e4-ae34-5b6ca694dec6.png</picture>
+                <description>Автомобильные EVA коврики для LUXGEN SUV 2013-2017</description>
+                <url>https://www.savaks.ru/productproperty/LUXGEN-SUV-2013--2017</url>
+            </offer>
+            <offer id="440" available="true">
+                <name>Автомобильный EVA коврик для MAZDA 3 BK 2003-2009 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>38</categoryId>
+                <picture>https://app.savaks.ru/4e1ac637-4be0-49fe-b6f5-b26ca2180877.png</picture>
+                <description>Автомобильные EVA коврики для MAZDA 3 BK 2003-2009 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/MAZDA-3-BK-2003--2009-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="441" available="true">
+                <name>Автомобильный EVA коврик для MAZDA 3 BL 2008-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>38</categoryId>
+                <picture>https://app.savaks.ru/1f02367f-08c2-4013-8e2a-790b0be18485.png</picture>
+                <description>Автомобильные EVA коврики для MAZDA 3 BL 2008-2013</description>
+                <url>https://www.savaks.ru/productproperty/MAZDA-3-BL-2008--2013</url>
+            </offer>
+            <offer id="47" available="true">
+                <name>Автомобильный EVA коврик для MAZDA 3 BM 2013-2019 Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>38</categoryId>
+                <picture>https://app.savaks.ru/7de796e1-6566-4f9f-93c3-41ef3c1b75b9.png</picture>
+                <description>Автомобильные EVA коврики для MAZDA 3 BM 2013-2019 Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/MAZDA-3-BM-2013--2019-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="185" available="true">
+                <name>Автомобильный EVA коврик для Mazda 3 BP 2019-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>38</categoryId>
+                <picture>https://app.savaks.ru/d9ed8bec-9e06-40f3-b97c-bd15c720bf75.png</picture>
+                <description>Автомобильные EVA коврики для Mazda 3 BP 2019-</description>
+                <url>https://www.savaks.ru/productproperty/Mazda-3-BP-2019--7</url>
+            </offer>
+            <offer id="442" available="true">
+                <name>Автомобильный EVA коврик для MAZDA 5 CR 2005-2010 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>38</categoryId>
+                <picture>https://app.savaks.ru/9a12120c-3ee9-493f-b13c-eda641440e2a.png</picture>
+                <description>Автомобильные EVA коврики для MAZDA 5 CR 2005-2010 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/MAZDA-5-CR-2005--2010-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="456" available="true">
+                <name>Автомобильный EVA коврик для MERCEDES-BENZ A-CLASS (W168) 1997-2004 (Короткая версия) ЛЕВЫЙ РУЛЬ-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>39</categoryId>
+                <picture>https://app.savaks.ru/1d2d5fe4-d815-4426-ba98-47573b44e279.png</picture>
+                <description>Автомобильные EVA коврики для MERCEDES-BENZ A-CLASS (W168) 1997-2004 (Короткая версия) ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/MERCEDES--BENZ-A--CLASS-(W168)-1997--2004-(%D0%9A%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%B0%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F)-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="457" available="true">
+                <name>Автомобильный EVA коврик для MERCEDES-BENZ A-CLASS (W168) 1997-2004 (Удлиненная версия) ЛЕВЫЙ РУЛЬ-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>39</categoryId>
+                <picture>https://app.savaks.ru/653b5ab4-c651-4e9e-a2a3-f78e61d8894e.png</picture>
+                <description>Автомобильные EVA коврики для MERCEDES-BENZ A-CLASS (W168) 1997-2004 (Удлиненная версия) ЛЕВЫЙ РУЛЬ-</description>
+                <url>https://www.savaks.ru/productproperty/MERCEDES--BENZ-A--CLASS-(W168)-1997--2004-(%D0%A3%D0%B4%D0%BB%D0%B8%D0%BD%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F-%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F)-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="458" available="true">
+                <name>Автомобильный EVA коврик для MERCEDES-BENZ A-CLASS (W176) 2012-2018</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>39</categoryId>
+                <picture>https://app.savaks.ru/b40eaec1-fcda-4b59-8c39-f2d55473c0e1.png</picture>
+                <description>Автомобильные EVA коврики для MERCEDES-BENZ A-CLASS (W176) 2012-2018</description>
+                <url>https://www.savaks.ru/productproperty/MERCEDES--BENZ-A--CLASS-(W176)-2012--2018</url>
+            </offer>
+            <offer id="459" available="true">
+                <name>Автомобильный EVA коврик для MERCEDES-BENZ A-CLASS (W177) 2018-2023 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>39</categoryId>
+                <picture>https://app.savaks.ru/427d7f5d-cfcb-4a10-a1f5-1dbdc4256108.png</picture>
+                <description>Автомобильные EVA коврики для MERCEDES-BENZ A-CLASS (W177) 2018-2023 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/MERCEDES--BENZ-A--CLASS-(W177)-2018--2023-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="460" available="true">
+                <name>Автомобильный EVA коврик для MERCEDES-BENZ C-CLASS (W203) 2000-2008</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>39</categoryId>
+                <picture>https://app.savaks.ru/07045591-1c0f-41c2-97e8-8e160e97df3a.png</picture>
+                <description>Автомобильные EVA коврики для MERCEDES-BENZ C-CLASS (W203) 2000-2008</description>
+                <url>https://www.savaks.ru/productproperty/MERCEDES--BENZ-C--CLASS-(W203)-2000--2008</url>
+            </offer>
+            <offer id="480" available="true">
+                <name>Автомобильный EVA коврик для MITSUBISHI AIRTREK 2001-2008(Без воздуховодов) ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>40</categoryId>
+                <picture>https://app.savaks.ru/b27d4f0d-2d2c-4b1a-9279-89f2e7b01dae.png</picture>
+                <description>Автомобильные EVA коврики для MITSUBISHI AIRTREK 2001-2008(Без воздуховодов) ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/MITSUBISHI-AIRTREK-2001--2008(%D0%91%D0%B5%D0%B7-%D0%B2%D0%BE%D0%B7%D0%B4%D1%83%D1%85%D0%BE%D0%B2%D0%BE%D0%B4%D0%BE%D0%B2)-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="481" available="true">
+                <name>Автомобильный EVA коврик для MITSUBISHI AIRTREK 2001-2008(С воздуховодами) ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>40</categoryId>
+                <picture>https://app.savaks.ru/d421baa9-5d3c-4657-afcd-8b84dd8f49c9.png</picture>
+                <description>Автомобильные EVA коврики для MITSUBISHI AIRTREK 2001-2008(С воздуховодами) ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/MITSUBISHI-AIRTREK-2001--2008(%D0%A1-%D0%B2%D0%BE%D0%B7%D0%B4%D1%83%D1%85%D0%BE%D0%B2%D0%BE%D0%B4%D0%B0%D0%BC%D0%B8)-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="482" available="true">
+                <name>Автомобильный EVA коврик для MITSUBISHI ASX 2010-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>40</categoryId>
+                <picture>https://app.savaks.ru/35df6d44-37e2-4318-ae0f-368540249cc0.png</picture>
+                <description>Автомобильные EVA коврики для MITSUBISHI ASX 2010-</description>
+                <url>https://www.savaks.ru/productproperty/MITSUBISHI-ASX-2010--</url>
+            </offer>
+            <offer id="483" available="true">
+                <name>Автомобильный EVA коврик для MITSUBISHI CARISMA 1995-2004</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>40</categoryId>
+                <picture>https://app.savaks.ru/5226b83b-989d-42f6-8360-5326af0a9897.png</picture>
+                <description>Автомобильные EVA коврики для MITSUBISHI CARISMA 1995-2004</description>
+                <url>https://www.savaks.ru/productproperty/MITSUBISHI-CARISMA-1995--2004</url>
+            </offer>
+            <offer id="484" available="true">
+                <name>Автомобильный EVA коврик для MITSUBISHI CHALLENGER 1998-2009 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>40</categoryId>
+                <picture>https://app.savaks.ru/17ce861c-f878-4b92-b2dd-5eca05ed6cdd.png</picture>
+                <description>Автомобильные EVA коврики для MITSUBISHI CHALLENGER 1998-2009 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/MITSUBISHI-CHALLENGER-1998--2009-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="517" available="true">
+                <name>Автомобильный EVA коврик для NISSAN AD 2 (Y11) 1999-2008 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>41</categoryId>
+                <picture>https://app.savaks.ru/59f405a4-7c9c-44d2-8dca-82f0c6f9f0a1.png</picture>
+                <description>Автомобильные EVA коврики для NISSAN AD 2 (Y11) 1999-2008 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/NISSAN-AD-2-(Y11)-1999--2008-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="518" available="true">
+                <name>Автомобильный EVA коврик для NISSAN AD 3 (Y12) 2006-2016 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>41</categoryId>
+                <picture>https://app.savaks.ru/21a91cf1-ca14-4a85-945d-76be62df0a04.png</picture>
+                <description>Автомобильные EVA коврики для NISSAN AD 3 (Y12) 2006-2016 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/NISSAN-AD-3-(Y12)-2006--2016-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="519" available="true">
+                <name>Автомобильный EVA коврик для NISSAN ALMERA CLASSIC 2006-2013 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>41</categoryId>
+                <picture>https://app.savaks.ru/cdea6608-aa16-4039-a0f2-ee5e44664ca3.png</picture>
+                <description>Автомобильные EVA коврики для NISSAN ALMERA CLASSIC 2006-2013 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/NISSAN-ALMERA-CLASSIC-2006--2013-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="520" available="true">
+                <name>Автомобильный EVA коврик для NISSAN ALMERA G15 2012-2018 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>41</categoryId>
+                <picture>https://app.savaks.ru/a279b868-1f5d-4de8-9286-bbd666f9f7e5.png</picture>
+                <description>Автомобильные EVA коврики для NISSAN ALMERA G15 2012-2018 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/NISSAN-ALMERA-G15-2012--2018-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="521" available="true">
+                <name>Автомобильный EVA коврик для NISSAN ALMERA N16 2000-2006 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>41</categoryId>
+                <picture>https://app.savaks.ru/1f05f655-4d5a-4ce6-bc79-eee666c1876f.png</picture>
+                <description>Автомобильные EVA коврики для NISSAN ALMERA N16 2000-2006 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/NISSAN-ALMERA-N16-2000--2006-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="116" available="true">
+                <name>Автомобильный EVA коврик для Omoda C5 2022-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>67</categoryId>
+                <picture>https://app.savaks.ru/5b21c38c-1926-4a3e-a0b8-e1d3d003e741.png</picture>
+                <description>Автомобильные EVA коврики для Omoda C5 2022-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Omoda-C5-2022--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="80" available="true">
+                <name>Автомобильный EVA коврик для Omoda S5 2022-н.в. Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>67</categoryId>
+                <picture>https://app.savaks.ru/f8cc34a8-f37c-44aa-8103-331e030b95bf.png</picture>
+                <description>Автомобильные EVA коврики для Omoda S5 2022-н.в. Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Omoda-S5-2022--%D0%BD.%D0%B2.-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B8%CC%86-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="583" available="true">
+                <name>Автомобильный EVA коврик для OPEL ASTRA G 1998-2009 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>42</categoryId>
+                <picture>https://app.savaks.ru/f706cfc8-1924-4ebc-a239-4b2f77478e0c.png</picture>
+                <description>Автомобильные EVA коврики для OPEL ASTRA G 1998-2009 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/OPEL-ASTRA-G-1998--2009-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="585" available="true">
+                <name>Автомобильный EVA коврик для OPEL ASTRA H 2004-2014 GTC для АКПП ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>42</categoryId>
+                <picture>https://app.savaks.ru/d8b79e91-7ddb-453d-958b-8b28e7ffc628.png</picture>
+                <description>Автомобильные EVA коврики для OPEL ASTRA H 2004-2014 GTC для АКПП ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/OPEL-ASTRA-H-2004--2014-GTC-%D0%B4%D0%BB%D1%8F-%D0%90%D0%9A%D0%9F%D0%9F-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="584" available="true">
+                <name>Автомобильный EVA коврик для Opel Astra H 2004-2014 GTS МКПП Левый руль</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>42</categoryId>
+                <picture>https://app.savaks.ru/d8b79e91-7ddb-453d-958b-8b28e7ffc628.png</picture>
+                <description>Автомобильные EVA коврики для Opel Astra H 2004-2014 GTS МКПП Левый руль</description>
+                <url>https://www.savaks.ru/productproperty/Opel-Astra-H-2004--2014-GTS-%D0%9C%D0%9A%D0%9F%D0%9F-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B9-%D1%80%D1%83%D0%BB%D1%8C</url>
+            </offer>
+            <offer id="586" available="true">
+                <name>Автомобильный EVA коврик для OPEL ASTRA H 2004-2014 Хэтчбэк для АКПП ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>42</categoryId>
+                <picture>https://app.savaks.ru/5ba8a380-f56d-4db0-b41e-95eb48f58c65.png</picture>
+                <description>Автомобильные EVA коврики для OPEL ASTRA H 2004-2014 Хэтчбэк для АКПП ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/OPEL-ASTRA-H-2004--2014-%D0%A5%D1%8D%D1%82%D1%87%D0%B1%D1%8D%D0%BA-%D0%B4%D0%BB%D1%8F-%D0%90%D0%9A%D0%9F%D0%9F-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="587" available="true">
+                <name>Автомобильный EVA коврик для OPEL ASTRA H 2004-2014 Хэтчбэк для МКПП ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>42</categoryId>
+                <picture>https://app.savaks.ru/3fdcfa02-b503-4367-9d91-af37c6c0c792.png</picture>
+                <description>Автомобильные EVA коврики для OPEL ASTRA H 2004-2014 Хэтчбэк для МКПП ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/OPEL-ASTRA-H-2004--2014-%D0%A5%D1%8D%D1%82%D1%87%D0%B1%D1%8D%D0%BA-%D0%B4%D0%BB%D1%8F-%D0%9C%D0%9A%D0%9F%D0%9F-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="598" available="true">
+                <name>Автомобильный EVA коврик для PEUGEOT 107 2005-2014</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>43</categoryId>
+                <picture>https://app.savaks.ru/66b338f3-1406-455e-a776-c9a1bdc0ddb9.png</picture>
+                <description>Автомобильные EVA коврики для PEUGEOT 107 2005-2014</description>
+                <url>https://www.savaks.ru/productproperty/PEUGEOT-107-2005--2014</url>
+            </offer>
+            <offer id="599" available="true">
+                <name>Автомобильный EVA коврик для PEUGEOT 206 1998-2012 для МКПП</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>43</categoryId>
+                <picture>https://app.savaks.ru/0d301eb6-cba8-4c47-a89c-fdaaf9e7ba14.png</picture>
+                <description>Автомобильные EVA коврики для PEUGEOT 206 1998-2012 для МКПП</description>
+                <url>https://www.savaks.ru/productproperty/PEUGEOT-206-1998--2012-%D0%B4%D0%BB%D1%8F-%D0%9C%D0%9A%D0%9F%D0%9F</url>
+            </offer>
+            <offer id="600" available="true">
+                <name>Автомобильный EVA коврик для PEUGEOT 308 2 2013-2021 SW CROSS</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>43</categoryId>
+                <picture>https://app.savaks.ru/c25d4686-5dad-475e-ae43-e0c8c239fe72.png</picture>
+                <description>Автомобильные EVA коврики для PEUGEOT 308 2 2013-2021 SW CROSS</description>
+                <url>https://www.savaks.ru/productproperty/PEUGEOT-308-2-2013--2021-SW-CROSS</url>
+            </offer>
+            <offer id="606" available="true">
+                <name>Автомобильный EVA коврик для PEUGEOT 3008 2 2016-2023</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>43</categoryId>
+                <picture>https://app.savaks.ru/318705bf-c29a-4d4b-8dd6-b0e35a32b32f.png</picture>
+                <description>Автомобильные EVA коврики для PEUGEOT 3008 2 2016-2023</description>
+                <url>https://www.savaks.ru/productproperty/PEUGEOT-3008-2-2016--2023</url>
+            </offer>
+            <offer id="601" available="true">
+                <name>Автомобильный EVA коврик для PEUGEOT 307 2001-2008</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>43</categoryId>
+                <picture>https://app.savaks.ru/5b59d55b-9d44-491b-b033-e715f588a39a.png</picture>
+                <description>Автомобильные EVA коврики для PEUGEOT 307 2001-2008</description>
+                <url>https://www.savaks.ru/productproperty/PEUGEOT-307-2001--2008</url>
+            </offer>
+            <offer id="611" available="true">
+                <name>Автомобильный EVA коврик для RAVON GENTRA 2015-2018</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>80</categoryId>
+                <picture>https://app.savaks.ru/1039071d-36c9-4e5e-b0aa-7d6474ae6268.png</picture>
+                <description>Автомобильные EVA коврики для RAVON GENTRA 2015-2018</description>
+                <url>https://www.savaks.ru/productproperty/RAVON-GENTRA-2015--2018</url>
+            </offer>
+            <offer id="612" available="true">
+                <name>Автомобильный EVA коврик для Ravon R2 2016-2020</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>80</categoryId>
+                <picture>https://app.savaks.ru/5b73deef-6534-4c7d-909e-9b6cc96608e5.png</picture>
+                <description>Автомобильные EVA коврики для Ravon R2 2016-2020</description>
+                <url>https://www.savaks.ru/productproperty/Ravon-R2-2016--2020</url>
+            </offer>
+            <offer id="613" available="true">
+                <name>Автомобильный EVA коврик для RAVON R3 NEXIA 2015-2020</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>80</categoryId>
+                <picture>https://app.savaks.ru/dd1fcac8-9cad-4bc4-8384-9078ac3d4920.png</picture>
+                <description>Автомобильные EVA коврики для RAVON R3 NEXIA 2015-2020</description>
+                <url>https://www.savaks.ru/productproperty/RAVON-R3-NEXIA-2015--2020</url>
+            </offer>
+            <offer id="614" available="true">
+                <name>Автомобильный EVA коврик для RAVON R4 2016-2020</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>80</categoryId>
+                <picture>https://app.savaks.ru/e31a6eda-1d44-4654-9712-a1dc13aef223.png</picture>
+                <description>Автомобильные EVA коврики для RAVON R4 2016-2020</description>
+                <url>https://www.savaks.ru/productproperty/RAVON-R4-2016--2020</url>
+            </offer>
+            <offer id="615" available="true">
+                <name>Автомобильный EVA коврик для RENAULT ARKANA 2019-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>44</categoryId>
+                <picture>https://app.savaks.ru/ff60f38f-1c8e-4a85-a6e9-ee4c6a002c9e.png</picture>
+                <description>Автомобильные EVA коврики для RENAULT ARKANA 2019-</description>
+                <url>https://www.savaks.ru/productproperty/RENAULT-ARKANA-2019--</url>
+            </offer>
+            <offer id="616" available="true">
+                <name>Автомобильный EVA коврик для RENAULT DOKKER 2012-2022</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>44</categoryId>
+                <picture>https://app.savaks.ru/f31bd8f8-86bb-44b8-8d00-aaff1c3b7078.png</picture>
+                <description>Автомобильные EVA коврики для RENAULT DOKKER 2012-2022</description>
+                <url>https://www.savaks.ru/productproperty/RENAULT-DOKKER-2012--2022</url>
+            </offer>
+            <offer id="618" available="true">
+                <name>Автомобильный EVA коврик для RENAULT DUSTER 2010-2015 4WD</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>44</categoryId>
+                <picture>https://app.savaks.ru/ca2b3760-8c5b-434d-a724-fad659296b40.png</picture>
+                <description>Автомобильные EVA коврики для RENAULT DUSTER 2010-2015 4WD</description>
+                <url>https://www.savaks.ru/productproperty/RENAULT-DUSTER-2010--2015-4WD</url>
+            </offer>
+            <offer id="619" available="true">
+                <name>Автомобильный EVA коврик для RENAULT DUSTER 2014-2021 РЕСТАЙЛИНГ ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>44</categoryId>
+                <picture>https://app.savaks.ru/b4108321-e059-43c9-ad1b-d221f5c43cf8.png</picture>
+                <description>Автомобильные EVA коврики для RENAULT DUSTER 2014-2021 РЕСТАЙЛИНГ ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/RENAULT-DUSTER-2014--2021-%D0%A0%D0%95%D0%A1%D0%A2%D0%90%D0%99%D0%9B%D0%98%D0%9D%D0%93-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="620" available="true">
+                <name>Автомобильный EVA коврик для RENAULT ESPACE 3 1996-2002</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>44</categoryId>
+                <picture>https://app.savaks.ru/921f92cb-08ff-4e5e-abc4-369aa80026ef.png</picture>
+                <description>Автомобильные EVA коврики для RENAULT ESPACE 3 1996-2002</description>
+                <url>https://www.savaks.ru/productproperty/RENAULT-ESPACE-3-1996--2002</url>
+            </offer>
+            <offer id="641" available="true">
+                <name>Автомобильный EVA коврик для SCION XA 2003-2006</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>81</categoryId>
+                <picture>https://app.savaks.ru/0f346b63-0c71-4e7b-82ce-11c3f033fe26.png</picture>
+                <description>Автомобильные EVA коврики для SCION XA 2003-2006</description>
+                <url>https://www.savaks.ru/productproperty/SCION-XA-2003--2006</url>
+            </offer>
+            <offer id="646" available="true">
+                <name>Автомобильный EVA коврик для SKODA FABIA 1999-2007</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>45</categoryId>
+                <picture>https://app.savaks.ru/c0f9b910-eb5b-4a00-96c6-69d7fe1cd387.png</picture>
+                <description>Автомобильные EVA коврики для SKODA FABIA 1999-2007</description>
+                <url>https://www.savaks.ru/productproperty/SKODA-FABIA-1999--2007</url>
+            </offer>
+            <offer id="647" available="true">
+                <name>Автомобильный EVA коврик для SKODA FABIA 2007-2014</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>45</categoryId>
+                <picture>https://app.savaks.ru/e33dc87f-b06d-4f18-8ec7-1b9a10b0ed34.png</picture>
+                <description>Автомобильные EVA коврики для SKODA FABIA 2007-2014</description>
+                <url>https://www.savaks.ru/productproperty/SKODA-FABIA-2007--20146</url>
+            </offer>
+            <offer id="648" available="true">
+                <name>Автомобильный EVA коврик для SKODA KAROQ 2017-2023</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>45</categoryId>
+                <picture>https://app.savaks.ru/cc37ecd8-1d91-4b73-8598-7e161b22a335.png</picture>
+                <description>Автомобильные EVA коврики для SKODA KAROQ 2017-2023</description>
+                <url>https://www.savaks.ru/productproperty/SKODA-KAROQ-2017--2023</url>
+            </offer>
+            <offer id="649" available="true">
+                <name>Автомобильный EVA коврик для SKODA KODIAQ 2016-2023</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>45</categoryId>
+                <picture>https://app.savaks.ru/7a6b85b6-c7e5-4146-8b80-77bdae2b2175.png</picture>
+                <description>Автомобильные EVA коврики для SKODA KODIAQ 2016-2023</description>
+                <url>hhttps://www.savaks.ru/productproperty/SKODA-KODIAQ-2016--2023</url>
+            </offer>
+            <offer id="650" available="true">
+                <name>Автомобильный EVA коврик для SKODA OCTAVIA A5 2004-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>45</categoryId>
+                <picture>https://app.savaks.ru/34104a5e-b63d-4e19-bfeb-32f37c9414ae.png</picture>
+                <description>Автомобильные EVA коврики для SKODA OCTAVIA A5 2004-2013</description>
+                <url>https://www.savaks.ru/productproperty/SKODA-OCTAVIA-A5-2004--2013</url>
+            </offer>
+            <offer id="642" available="true">
+                <name>Автомобильный EVA коврик для SEAT ALTEA 2004-2015</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>53</categoryId>
+                <picture>https://app.savaks.ru/efef8112-bc1b-47bc-bbfa-830c75e8e7cc.png</picture>
+                <description>Автомобильные EVA коврики для SEAT ALTEA 2004-2015</description>
+                <url>https://www.savaks.ru/productproperty/SEAT-ALTEA-2004--2015</url>
+            </offer>
+            <offer id="643" available="true">
+                <name>Автомобильный EVA коврик для SEAT CORDOBA 2003-2009 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>53</categoryId>
+                <picture>https://app.savaks.ru/35ef6628-875c-4405-b84b-919973e204aa.png</picture>
+                <description>Автомобильные EVA коврики для SEAT CORDOBA 2003-2009 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SEAT-CORDOBA-2003--2009-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="119" available="true">
+                <name>Автомобильный EVA коврик для SEAT IBIZA 2008-2017 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>53</categoryId>
+                <picture>https://app.savaks.ru/77148246-9a54-4d2d-93ae-d64d2a17ca4e.png</picture>
+                <description>Автомобильные EVA коврики для SEAT IBIZA 2008-2017 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SEAT-IBIZA-2008--2017-%D0%9B%D0%95%D0%92%D0%AB%D0%98%CC%86-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="644" available="true">
+                <name>Автомобильный EVA коврик для SEAT LEON 1 1999-2006</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>53</categoryId>
+                <picture>https://app.savaks.ru/78cb51e9-4dd2-42dc-be4f-9975f30caa9a.png</picture>
+                <description>Автомобильные EVA коврики для SEAT LEON 1 1999-2006</description>
+                <url>https://www.savaks.ru/productproperty/SEAT-LEON-1-1999--2006</url>
+            </offer>
+            <offer id="645" available="true">
+                <name>Автомобильный EVA коврик для SEAT LEON 2 2005-2012</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>53</categoryId>
+                <picture>https://app.savaks.ru/fa935bf8-5986-4b0d-bb96-b90a9165d991.png</picture>
+                <description>Автомобильные EVA коврики для SEAT LEON 2 2005-2012</description>
+                <url>https://www.savaks.ru/productproperty/SEAT-LEON-2-2005--2012</url>
+            </offer>
+            <offer id="659" available="true">
+                <name>Автомобильный EVA коврик для SSANGYONG ACTYON 1 2005-2011</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>46</categoryId>
+                <picture>https://app.savaks.ru/0b25aebb-7a6c-45c1-b44f-4dff792af625.png</picture>
+                <description>Автомобильные EVA коврики для SSANGYONG ACTYON 1 2005-2011</description>
+                <url>https://www.savaks.ru/productproperty/SSANGYONG-ACTYON-1-2005--2011</url>
+            </offer>
+            <offer id="660" available="true">
+                <name>Автомобильный EVA коврик для SSANGYONG KYRON 2005-2015 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>46</categoryId>
+                <picture>https://app.savaks.ru/069e227f-d0b2-42f6-a3a0-711145da2905.png</picture>
+                <description>Автомобильные EVA коврики для SSANGYONG KYRON 2005-2015 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SSANGYONG-KYRON-2005--2015-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="230" available="true">
+                <name>Автомобильный EVA коврик для SsangYong New Actyon 2 2010-н.в.</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>46</categoryId>
+                <picture>https://app.savaks.ru/f02c134c-c23b-4a14-9a2c-74d5cd73e0e1.png</picture>
+                <description>Автомобильные EVA коврики для SsangYong New Actyon 2 2010-н.в.</description>
+                <url>https://www.savaks.ru/productproperty/SsangYong-New-Actyon-2-2010--%D0%BD.%D0%B2.</url>
+            </offer>
+            <offer id="661" available="true">
+                <name>Автомобильный EVA коврик для SSANGYONG REXTON 2 2006-2012</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>46</categoryId>
+                <picture>https://app.savaks.ru/2bbb4072-1949-4ee4-8bf4-8fa21c99fa2a.png</picture>
+                <description>Автомобильные EVA коврики для SSANGYONG REXTON 2 2006-2012</description>
+                <url>https://www.savaks.ru/productproperty/SSANGYONG-REXTON-2-2006--2012</url>
+            </offer>
+            <offer id="662" available="true">
+                <name>Автомобильный EVA коврик для SUBARU EXIGA 2008-2018 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>47</categoryId>
+                <picture>https://app.savaks.ru/e50ef954-f5d0-4ab5-b9c0-6c4710fb7353.png</picture>
+                <description>Автомобильные EVA коврики для SUBARU EXIGA 2008-2018 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SUBARU-EXIGA-2008--2018-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="663" available="true">
+                <name>Автомобильный EVA коврик для SUBARU FORESTER 1 SF 1997-2002 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>47</categoryId>
+                <picture>https://app.savaks.ru/d2744185-0102-4dff-87e3-4fb88561cf5a.png</picture>
+                <description>Автомобильные EVA коврики для SUBARU FORESTER 1 SF 1997-2002 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SUBARU-FORESTER-1-SF-1997--2002-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="664" available="true">
+                <name>Автомобильный EVA коврик для SUBARU FORESTER 1 SF 1997-2002 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>47</categoryId>
+                <picture>https://app.savaks.ru/73dab9c8-0bf2-402f-a59c-1888180d27c1.png</picture>
+                <description>Автомобильные EVA коврики для SUBARU FORESTER 1 SF 1997-2002 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SUBARU-FORESTER-1-SF-1997--2002-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="665" available="true">
+                <name>Автомобильный EVA коврик для SUBARU FORESTER 2 SG 2002-2008 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>47</categoryId>
+                <picture>https://app.savaks.ru/9947d986-37dc-470b-8c26-81955ff37330.png</picture>
+                <description>Автомобильные EVA коврики для SUBARU FORESTER 2 SG 2002-2008 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SUBARU-FORESTER-2-SG-2002--2008-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="666" available="true">
+                <name>Автомобильный EVA коврик для SUBARU FORESTER 2 SG 2002-2008 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>47</categoryId>
+                <picture>https://app.savaks.ru/908f0347-83d0-469f-a144-53c50135f963.png</picture>
+                <description>Автомобильные EVA коврики для SUBARU FORESTER 2 SG 2002-2008 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SUBARU-FORESTER-2-SG-2002--2008-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+             <offer id="681" available="true">
+                <name>Автомобильный EVA коврик для SUZUKI ESCUDO 1988-1998 5дверей ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>48</categoryId>
+                <picture>https://app.savaks.ru/f8b2dbac-fd04-439d-a218-137bbbfd59b8.png</picture>
+                <description>Автомобильные EVA коврики для SUZUKI ESCUDO 1988-1998 5дверей ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SUZUKI-ESCUDO-1988--1998-5%D0%B4%D0%B2%D0%B5%D1%80%D0%B5%D0%B9-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+             <offer id="682" available="true">
+                <name>Автомобильный EVA коврик для SUZUKI ESCUDO 1997-2005 3двери ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>48</categoryId>
+                <picture>https://app.savaks.ru/d5336343-1693-49ba-812c-37f89a04282b.png</picture>
+                <description>Автомобильные EVA коврики для SUZUKI ESCUDO 1997-2005 3двери ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SUZUKI-ESCUDO-1997--2005-3%D0%B4%D0%B2%D0%B5%D1%80%D0%B8-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+             <offer id="683" available="true">
+                <name>Автомобильный EVA коврик для SUZUKI ESCUDO 1997-2005 5дверей ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>48</categoryId>
+                <picture>https://app.savaks.ru/ecf67143-8c6c-4496-b206-93b7df031742.png</picture>
+                <description>Автомобильные EVA коврики для SUZUKI ESCUDO 1997-2005 5дверей ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SUZUKI-ESCUDO-1997--2005-5%D0%B4%D0%B2%D0%B5%D1%80%D0%B5%D0%B9-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+             <offer id="684" available="true">
+                <name>Автомобильный EVA коврик для SUZUKI ESCUDO 2005-2017 5дверей ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>48</categoryId>
+                <picture>https://app.savaks.ru/7eeecda3-fa0a-4736-a24f-319c7a7d5a46.png</picture>
+                <description>Автомобильные EVA коврики для SUZUKI ESCUDO 2005-2017 5дверей ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SUZUKI-ESCUDO-2005--2017-5%D0%B4%D0%B2%D0%B5%D1%80%D0%B5%D0%B9-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+             <offer id="685" available="true">
+                <name>Автомобильный EVA коврик для SUZUKI ESCUDO 2015-2023 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>48</categoryId>
+                <picture>https://app.savaks.ru/78c57eff-cbd9-45b5-8244-d367e841a122.png</picture>
+                <description>Автомобильные EVA коврики для SUZUKI ESCUDO 2015-2023 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/SUZUKI-ESCUDO-2015--2023-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="695" available="true">
+                <name>Автомобильный EVA коврик для TAGAZ C190 2011-2013</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>82</categoryId>
+                <picture>https://app.savaks.ru/19973d0a-da5b-48eb-90f7-39098220da32.png</picture>
+                <description>Автомобильные EVA коврики для TAGAZ C190 2011-2013</description>
+                <url>https://www.savaks.ru/productproperty/TAGAZ-C190-2011--2013</url>
+            </offer>
+            <offer id="696" available="true">
+                <name>Автомобильный EVA коврик для TAGAZ TAGER 2008-2012 3двери</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>82</categoryId>
+                <picture>https://app.savaks.ru/7b8bccb8-c0fb-4b45-9b2d-a328e404931b.png</picture>
+                <description>Автомобильные EVA коврики для TAGAZ TAGER 2008-2012 3двери</description>
+                <url>https://www.savaks.ru/productproperty/TAGAZ-TAGER-2008--2012-3%D0%B4%D0%B2%D0%B5%D1%80%D0%B8</url>
+            </offer>
+            <offer id="61" available="true">
+                <name>Автомобильный EVA коврик для Tank 300 Левый Руль 2021-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>59</categoryId>
+                <picture>https://app.savaks.ru/f53b3829-0dab-4197-bb4d-d4c88235cbc3.png</picture>
+                <description>Автомобильные EVA коврики для Tank 300 Левый Руль 2021-</description>
+                <url>https://www.savaks.ru/productproperty/Tank-300-%D0%9B%D0%B5%D0%B2%D1%8B%D0%B9-%D0%A0%D1%83%D0%BB%D1%8C-2021--</url>
+            </offer>
+            <offer id="130" available="true">
+                <name>Автомобильный EVA коврик для TESLA MODEL S 2012-2023 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>60</categoryId>
+                <picture>https://app.savaks.ru/ea3365bc-f16f-4888-b4a4-95d64b739e51.png</picture>
+                <description>Автомобильные EVA коврики для TESLA MODEL S 2012-2023 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/TESLA-MODEL-S-2012--2023-%D0%9B%D0%95%D0%92%D0%AB%D0%98%CC%86-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="698" available="true">
+                <name>Автомобильный EVA коврик для TOYOTA 4RUNNER 2 1987-1995 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>49</categoryId>
+                <picture>https://app.savaks.ru/184fdd45-5af0-4003-837c-db3ef61e9585.png</picture>
+                <description>Автомобильные EVA коврики для TOYOTA 4RUNNER 2 1987-1995 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/TOYOTA-4RUNNER-2-1987--1995-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="699" available="true">
+                <name>Автомобильный EVA коврик дляTOYOTA 4RUNNER 3 1995-2003 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>49</categoryId>
+                <picture>https://app.savaks.ru/5ec8bb35-355e-44e4-b0e3-b4bee0ed168d.png</picture>
+                <description>Автомобильные EVA коврики для TOYOTA 4RUNNER 3 1995-2003 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/TOYOTA-4RUNNER-3-1995--2003-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="700" available="true">
+                <name>Автомобильный EVA коврик для TOYOTA 4RUNNER 4 2002-2009 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>49</categoryId>
+                <picture>https://app.savaks.ru/0a539f9f-2ed0-43d1-804a-89fcea54ebb7.png</picture>
+                <description>Автомобильные EVA коврики для TOYOTA 4RUNNER 4 2002-2009 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/TOYOTA-4RUNNER-4-2002--2009-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="701" available="true">
+                <name>Автомобильный EVA коврик для TOYOTA ALLION T240 2001-2007 ПРАВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>49</categoryId>
+                <picture>https://app.savaks.ru/68988d0c-d878-423f-b705-7dc1b1975e70.png</picture>
+                <description>Автомобильные EVA коврики для TOYOTA ALLION T240 2001-2007 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/TOYOTA-ALLION-T240-2001--2007-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="702" available="true">
+                <name>Автомобильный EVA коврик для TOYOTA ALLION T260-265 2007-2010 ПРАВЫЙ РУЛЬ.</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>49</categoryId>
+                <picture>https://app.savaks.ru/1c5fc9fe-50ed-4348-8fa3-eacef9793e26.png</picture>
+                <description>Автомобильные EVA коврики для TOYOTA ALLION T260-265 2007-2010 ПРАВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/TOYOTA-ALLION-T260--265-2007--2010-%D0%9F%D0%A0%D0%90%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="895" available="true">
+                <name>Автомобильный EVA коврик для VOLKSWAGEN PASSAT B6 2005-2010 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>50</categoryId>
+                <picture>https://app.savaks.ru/3db7782b-1e3c-42fe-a2b5-9839f52e72e3.png</picture>
+                <description>Автомобильные EVA коврики для VOLKSWAGEN PASSAT B6 2005-2010 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/VOLKSWAGEN-PASSAT-B6-2005--2010-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="899" available="true">
+                <name>Автомобильный EVA коврик для VOLKSWAGEN POLO 2009-2020 Седан ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>50</categoryId>
+                <picture>https://app.savaks.ru/76e98d33-3da3-4621-a80d-eecbb9e9e04b.png</picture>
+                <description>Автомобильные EVA коврики для VOLKSWAGEN POLO 2009-2020 Седан ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/VOLKSWAGEN-POLO-2009--2020-%D0%A1%D0%B5%D0%B4%D0%B0%D0%BD-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="905" available="true">
+                <name>Автомобильный EVA коврик для VOLKSWAGEN TOUAREG 1 2002-2010 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>50</categoryId>
+                <picture>https://app.savaks.ru/f720203b-6d4e-45b9-80b9-e04cc415f75b.png</picture>
+                <description>Автомобильные EVA коврики для VOLKSWAGEN TOUAREG 1 2002-2010 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/VOLKSWAGEN-TOUAREG-1-2002--2010-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="887" available="true">
+                <name>Автомобильный EVA коврик для VOLKSWAGEN GOLF 6 2008-2012</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>50</categoryId>
+                <picture>https://app.savaks.ru/5138fa45-826e-401b-b6a2-f6dae66057c0.png</picture>
+                <description>Автомобильные EVA коврики для VOLKSWAGEN GOLF 6 2008-2012</description>
+                <url>https://www.savaks.ru/productproperty/VOLKSWAGEN-GOLF-6-2008--2012</url>
+            </offer>
+            <offer id="131" available="true">
+                <name>Автомобильный EVA коврик для VOLVO S40 1 1995-2004 ЛР</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>51</categoryId>
+                <picture>https://app.savaks.ru/1177c6bd-acdc-4c63-88f4-6686f4458ee3.png</picture>
+                <description>Автомобильные EVA коврики для VOLVO S40 1 1995-2004 ЛР</description>
+                <url>https://www.savaks.ru/productproperty/VOLVO-S40-1-1995--2004-%D0%9B%D0%A0</url>
+            </offer>
+            <offer id="909" available="true">
+                <name>Автомобильный EVA коврик для VOLVO S40 2 2004-2012 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>51</categoryId>
+                <picture>https://app.savaks.ru/4775b94a-fce7-4125-8801-7dc58e3d8b81.png</picture>
+                <description>Автомобильные EVA коврики для VOLVO S40 2 2004-2012 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/VOLVO-S40-2-2004--2012-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="132" available="true">
+                <name>Автомобильный EVA коврик для VOLVO S60 1 2000-2009</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>51</categoryId>
+                <picture>https://app.savaks.ru/3fd5b244-ac96-4bfa-8386-06bff0fc7bef.png</picture>
+                <description>Автомобильные EVA коврики для VOLVO S60 1 2000-2009</description>
+                <url>https://www.savaks.ru/productproperty/VOLVO-S60-1-2000--2009</url>
+            </offer>
+            <offer id="155" available="true">
+                <name>Автомобильный EVA коврик для VOLVO S60 2 2010-2018</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>51</categoryId>
+                <picture>https://app.savaks.ru/7faefc2f-63ba-411f-a27b-ace7ba4b218f.png</picture>
+                <description>Автомобильные EVA коврики для VOLVO S60 2 2010-2018</description>
+                <url>https://www.savaks.ru/productproperty/VOLVO-S60-2-2010--2018</url>
+            </offer>
+            <offer id="910" available="true">
+                <name>Автомобильный EVA коврик для VOLVO S60 3 2018-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>51</categoryId>
+                <picture>https://app.savaks.ru/dead3840-f089-4f5c-8ba2-2849a514476e.png</picture>
+                <description>Автомобильные EVA коврики для VOLVO S60 3 2018-</description>
+                <url>https://www.savaks.ru/productproperty/VOLVO-S60-3-2018--</url>
+            </offer>
+            <offer id="917" available="true">
+                <name>Автомобильный EVA коврик для VORTEX CORDA 2010-2012 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>56</categoryId>
+                <picture>https://app.savaks.ru/644600c2-f3cd-4229-9021-68c214446a8f.png</picture>
+                <description>Автомобильные EVA коврики для VORTEX CORDA 2010-2012 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/VORTEX-CORDA-2010--2012-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="918" available="true">
+                <name>Автомобильный EVA коврик для VORTEX TINGO 2010-2014 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>56</categoryId>
+                <picture>https://app.savaks.ru/d51a66e3-aacc-49b3-9f3e-edf2d3a18feb.png</picture>
+                <description>Автомобильные EVA коврики для VORTEX TINGO 2010-2014 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/VORTEX-TINGO-2010--2014-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="88" available="true">
+                <name>Автомобильный EVA коврик для Voyah Free 2021-н.в. ЛР</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>68</categoryId>
+                <picture>https://app.savaks.ru/3a7ef174-22d2-4d34-b2d7-b6f4d1d08e8d.png</picture>
+                <description>Автомобильные EVA коврики для Voyah Free 2021-н.в. ЛР</description>
+                <url>https://www.savaks.ru/productproperty/Voyah-Free-2021--%D0%BD.%D0%B2.-%D0%9B%D0%A0</url>
+            </offer>
+            <offer id="919" available="true">
+                <name>Автомобильный EVA коврик для ZAZ SENS 2004-2017</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>61</categoryId>
+                <picture>https://app.savaks.ru/a21f0437-1041-4c9a-8c06-189a2fb381e1.png</picture>
+                <description>Автомобильные EVA коврики для ZAZ SENS 2004-2017</description>
+                <url>https://www.savaks.ru/productproperty/ZAZ-SENS-2004--2017</url>
+            </offer>
+            <offer id="920" available="true">
+                <name>Автомобильный EVA коврик для ZOTYE T600 2013-2023 ЛЕВЫЙ РУЛЬ</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>57</categoryId>
+                <picture>https://app.savaks.ru/10ee5555-0f93-42b3-b3b7-ce6e5a545a82.png</picture>
+                <description>Автомобильные EVA коврики для ZOTYE T600 2013-2023 ЛЕВЫЙ РУЛЬ</description>
+                <url>https://www.savaks.ru/productproperty/ZOTYE-T600-2013--2023-%D0%9B%D0%95%D0%92%D0%AB%D0%99-%D0%A0%D0%A3%D0%9B%D0%AC</url>
+            </offer>
+            <offer id="281" available="true">
+                <name>Автомобильный EVA коврик для Волга 3102 1982-2009</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>22</categoryId>
+                <picture>https://app.savaks.ru/ee882b08-0afb-483e-812d-787b3cf2ccfa.png</picture>
+                <description>Автомобильные EVA коврики для Волга 3102 1982-2009</description>
+                <url>https://www.savaks.ru/productproperty/%D0%92%D0%BE%D0%BB%D0%B3%D0%B0-3102-1982--2009</url>
+            </offer>
+            <offer id="282" available="true">
+                <name>Автомобильный EVA коврик для Волга 3110 1997-2008</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>22</categoryId>
+                <picture>https://app.savaks.ru/e1a5a403-2a87-448a-b21d-6d0561a98c57.png</picture>
+                <description>Автомобильные EVA коврики для Волга 3110 1997-2008</description>
+                <url>https://www.savaks.ru/productproperty/%D0%92%D0%BE%D0%BB%D0%B3%D0%B0-3110-1997--2008</url>
+            </offer>
+            <offer id="283" available="true">
+                <name>Автомобильный EVA коврик для Волга Siber 2008-2010</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>22</categoryId>
+                <picture>https://app.savaks.ru/a9a53e35-b8d2-4668-abda-36a009a954d7.png</picture>
+                <description>Автомобильные EVA коврики для Волга Siber 2008-2010</description>
+                <url>https://www.savaks.ru/productproperty/%D0%92%D0%BE%D0%BB%D0%B3%D0%B0-Siber-2008--2010</url>
+            </offer>
+            <offer id="284" available="true">
+                <name>Автомобильный EVA коврик для GAZ ГАЗель NEXT ручка КПП в полу 2013-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>22</categoryId>
+                <picture>https://app.savaks.ru/8d6c21bb-0fda-459c-98b2-e03c3520f33f.png</picture>
+                <description>Автомобильные EVA коврики для GAZ ГАЗель NEXT ручка КПП в полу 2013-</description>
+                <url>https://www.savaks.ru/productproperty/GAZ-%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C-NEXT-%D1%80%D1%83%D1%87%D0%BA%D0%B0-%D0%9A%D0%9F%D0%9F-%D0%B2-%D0%BF%D0%BE%D0%BB%D1%83-2013--</url>
+            </offer>
+            <offer id="285" available="true">
+                <name>Автомобильный EVA коврик для GAZ ГАЗель NEXT ручка КПП на панели 2013-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>22</categoryId>
+                <picture>https://app.savaks.ru/54ed7b47-31e7-478e-beac-4d62b5d1ce10.png</picture>
+                <description>Автомобильные EVA коврики для GAZ ГАЗель NEXT ручка КПП на панели 2013-</description>
+                <url>https://www.savaks.ru/productproperty/GAZ-%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C-NEXT-%D1%80%D1%83%D1%87%D0%BA%D0%B0-%D0%9A%D0%9F%D0%9F-%D0%BD%D0%B0-%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D0%B8-2013--</url>
+            </offer>
+            <offer id="159" available="true">
+                <name>Автомобильный EVA коврик для ИЖ 2126 ОРБИТА (1977-2005)</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>62</categoryId>
+                <picture>https://app.savaks.ru/f3b8cf9f-b170-4e9e-971a-5fdc24acdca4.png</picture>
+                <description>Автомобильные EVA коврики для ИЖ 2126 ОРБИТА (1977-2005)</description>
+                <url>https://www.savaks.ru/productproperty/GAZ-%D0%93%D0%90%D0%97%D0%B5%D0%BB%D1%8C-NEXT-%D1%80%D1%83%D1%87%D0%BA%D0%B0-%D0%9A%D0%9F%D0%9F-%D0%BD%D0%B0-%D0%BF%D0%B0%D0%BD%D0%B5%D0%BB%D0%B8-2013--</url>
+            </offer>
+            <offer id="123" available="true">
+                <name>Автомобильный EVA коврик для Москвич 3 2022-н.в.</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>76</categoryId>
+                <picture>https://app.savaks.ru/bbb31726-5f69-4481-9bd1-bb2ddc7f2342.png</picture>
+                <description>Автомобильные EVA коврики для Москвич 3 2022-н.в.</description>
+                <url>https://www.savaks.ru/productproperty/%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B8%D1%87-3-2022--%D0%BD.%D0%B2.</url>
+            </offer>
+             <offer id="873" available="true">
+                <name>Автомобильный EVA коврик для UAZ PATRIOT 2005-2014</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>76</categoryId>
+                <picture>https://app.savaks.ru/5c051ef3-25ea-46b1-8909-f9b1af3dc910.png</picture>
+                <description>Автомобильные EVA коврики для UAZ PATRIOT 2005-2014</description>
+                <url>https://www.savaks.ru/productproperty/UAZ-PATRIOT-2005--2014</url>
+            </offer>
+             <offer id="874" available="true">
+                <name>Автомобильный EVA коврик для UAZ Patriot 2014-</name>
+                <price>2590</price>
+                <currencyId>RUR</currencyId>
+                <categoryId>76</categoryId>
+                <picture>https://app.savaks.ru/797cd75a-a4bf-48fd-9cab-33f9918899d3.png</picture>
+                <description>Автомобильные EVA коврики для UAZ Patriot 2014-</description>
+                <url>https://www.savaks.ru/productproperty/UAZ-Patriot-2014--</url>
             </offer>
         </offers>
     </shop>
