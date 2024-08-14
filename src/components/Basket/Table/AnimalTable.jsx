@@ -28,9 +28,9 @@ function AnimalTable({ material, animal, quantity, id, change, setChange, materi
       <td>
         {animal.animal_images
           .filter((imageAnimal) => imageAnimal.materialId === materialId)
-          .map((imageHome) => (
+          .map((imageAnimal) => (
             <div className="baskettable__animalimage">
-              <img src={process.env.REACT_APP_IMG_URL + imageHome.image} alt="animal rug image" />
+              <img src={process.env.REACT_APP_IMG_URL + imageAnimal.image} alt="animal rug image" />
             </div>
           ))}
       </td>
