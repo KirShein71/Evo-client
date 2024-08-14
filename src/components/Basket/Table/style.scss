@@ -21,11 +21,12 @@
         }
     }
 
-    &__homeimage {
+    &__homeimage, &__animalimage {
         img {
             width: 130px;
         }
     }
+
 
     &__information {
         &-name {

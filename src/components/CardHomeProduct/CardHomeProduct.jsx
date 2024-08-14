@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './style.scss';
 import ModalImage from './ModalImage';
 
-function CardHomeProduct({ name, new_price, image, id, materials, home_images }) {
+function CardHomeProduct({ name, new_price, id, materials, home_images }) {
   const [quantity, setQuantity] = React.useState(1);
   const isCountDisabled = quantity <= 1;
   const [selectedMaterial, setSelectedMaterial] = React.useState('blacksota');

@@ -16,7 +16,6 @@ import Basket from '../pages/Basket';
 import Checkout from '../pages/Checkout';
 import Login from '../pages/Login';
 import Animals from '../pages/Animals';
-import AnimalsProperty from '../pages/AnimalsProperty';
 import AdminAnimal from '../pages/Admin/AdminAnimal/AdminAnimal';
 import HomeProduct from '../pages/HomeProduct';
 import AdminHome from '../pages/Admin/AdminHome/AdminHome';
@@ -40,7 +39,6 @@ const routes = [
   { path: '/checkout', Component: Checkout },
   { path: '/login', Component: Login },
   { path: '/animals', Component: Animals },
-  { path: '/animalsproperty/:id', Component: AnimalsProperty },
   { path: '/homeproduct', Component: HomeProduct },
   { path: '/result', Component: Result },
   { path: '/guarantees', Component: Guarantees },

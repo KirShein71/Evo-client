@@ -1,11 +1,12 @@
 .animalslist {
+    margin-top: 25px;
     margin-bottom: 50px;
     &__title {
         font-size: 24px;
         font-weight: 500;
-        color: rgb(7,7,7);
+        color: var(--e-global-color-primary);
         @media(max-width: 480px) {
-            font-size: 18px;
+            font-size: 20px;
         }
 
     }
@@ -13,7 +14,7 @@
     &__text {
         font-size: 25px;
         font-weight: 500;
-        color: rgb(7, 6, 6);
+        color: var(--e-global-color-primary);
         text-align: center;
         margin-top: 55px;
         margin-bottom: 70px;

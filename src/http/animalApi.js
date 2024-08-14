@@ -11,6 +11,16 @@ export const createAnimal = async (animal) => {
     return data
 }
 
+export const createAnimalImage = async (animalimage) => {
+    const { data } = await authInstance.post('animalimage/create', animalimage)
+    return data
+}
+
+export const deleteAnimalImage = async (id) => {
+    const { data } = await authInstance.delete(`animalimage/delete/${id}`)
+    return data
+}
+
 
 export const getOneAnimal = async (id) => {
     const { data } = await guestInstance.get(`animal/getone/${id}`)

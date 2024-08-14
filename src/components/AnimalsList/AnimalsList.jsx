@@ -1,27 +1,38 @@
 import React from 'react';
 import { getAllAnimal } from '../../http/animalApi';
+import { getAllMaterialForAnimal } from '../../http/materailRugApi';
 import CardAnimal from '../CardAnimal/CardAnimal';
 import './style.scss';
 import LoaderAnimal from '../LoaderAnimal/LoaderAnimal';
 
 function AnimalsList() {
   const [animals, setAnimals] = React.useState([]);
+  const [materials, setMaterials] = React.useState([]);
   const [fetching, setFetching] = React.useState(true);
 
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    let animalProductLoaded = false;
+    let materialLoaded = false;
+
+    const fetchData = async () => {
+      const animalProductData = await getAllAnimal();
+      setAnimals(animalProductData);
+      animalProductLoaded = true;
+
+      const MaterialData = await getAllMaterialForAnimal();
+      setMaterials(MaterialData);
+      materialLoaded = true;
+
+      if (animalProductLoaded && materialLoaded) {
+        setFetching(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   React.useEffect(() => {
-    getAllAnimal()
-      .then((data) => {
-        setAnimals(data);
-        setFetching(false);
-      })
-      .catch((error) => {
-        console.error('Произошла ошибка при загрузке данных:', error);
-        setFetching(false);
-      });
+    window.scrollTo(0, 0);
   }, []);
 
   if (fetching) {
@@ -42,7 +53,7 @@ function AnimalsList() {
             <div className="animalslist__title">Коврики для животных</div>
             <div className="animalslist__content">
               {animals.map((animal) => (
-                <CardAnimal key={animal.id} {...animal} />
+                <CardAnimal key={animal.id} {...animal} materials={materials} />
               ))}
             </div>
           </>

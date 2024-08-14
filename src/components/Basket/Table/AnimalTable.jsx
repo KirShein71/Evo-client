@@ -2,7 +2,7 @@ import React from 'react';
 import { deleteBasketProduct } from '../../../http/basketApi';
 import ModalBasket from '../modal/ModalBasket';
 
-function AnimalTable({ material, animal, quantity, id, change, setChange }) {
+function AnimalTable({ material, animal, quantity, id, change, setChange, materialId }) {
   const [openDeleteAnimalModal, setOpenDeleteAnimalModal] = React.useState(false);
 
   const handleRemoveAnimal = (id) => {
@@ -25,7 +25,15 @@ function AnimalTable({ material, animal, quantity, id, change, setChange }) {
 
   return (
     <>
-      <td></td>
+      <td>
+        {animal.animal_images
+          .filter((imageAnimal) => imageAnimal.materialId === materialId)
+          .map((imageHome) => (
+            <div className="baskettable__animalimage">
+              <img src={process.env.REACT_APP_IMG_URL + imageHome.image} alt="animal rug image" />
+            </div>
+          ))}
+      </td>
       <td>
         <div className="baskettable__information">
           <div className="baskettable__information-name">{animal.name}</div>

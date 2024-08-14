@@ -4,7 +4,7 @@
     &__title {
         font-size: 24px;
         font-weight: 500;
-        color: rgb(7,7,7);
+        color: var(--e-global-color-primary);
         @media(max-width: 480px) {
             font-size: 20px;
         }
@@ -14,7 +14,7 @@
         margin-top: 10px;
         font-size: 17px;
         font-weight: 400;
-        color: #1d1c1c;
+        color: var(--e-global-color-primary);
         @media(max-width: 595px) {
             font-size: 16px;
         }

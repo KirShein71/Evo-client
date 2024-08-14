@@ -1,17 +1,19 @@
 import React from 'react';
-import { getAllAnimal, deleteAnimal } from '../../../http/animalApi';
+import { getAllAnimal, deleteAnimal, deleteAnimalImage } from '../../../http/animalApi';
 import CreateAnimal from './modals/CreateAnimal';
 import UpdateAnimalProudct from './modals/UpdateAnimalProduct';
 import UpdateAnimalPrice from './modals/UpdateAnimalPrice';
+import CreateAnimalImage from './modals/CreateAnimalImage';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 
 const AdminAnimal = () => {
   const [animals, setAnimals] = React.useState([]);
-  const [animalProductId, setAnimalProductId] = React.useState(null);
+  const [animalId, setAnimalId] = React.useState(null);
   const [fetching, setFetching] = React.useState(true);
   const [createAnimalModal, setCreateAnimalModal] = React.useState(false);
   const [updateAnimalProductModal, setUpdateAnimalProudctModal] = React.useState(false);
   const [updateAnimalPriceModal, setUpdateAnimalPriceModal] = React.useState(false);
+  const [createAnimalImageModal, setCreateAnimalImageModal] = React.useState(false);
   const [change, setChange] = React.useState(true);
 
   React.useEffect(() => {
@@ -21,13 +23,18 @@ const AdminAnimal = () => {
   }, [change]);
 
   const handleUpdateAnimalProduct = (id) => {
-    setAnimalProductId(id);
+    setAnimalId(id);
     setUpdateAnimalProudctModal(true);
   };
 
   const handeUpdateAnimalPrice = (id) => {
-    setAnimalProductId(id);
+    setAnimalId(id);
     setUpdateAnimalPriceModal(true);
+  };
+
+  const handleCreateAnimalImage = (id) => {
+    setAnimalId(id);
+    setCreateAnimalImageModal(true);
   };
 
   const handleDeleteAnimalProduct = (id) => {
@@ -36,6 +43,17 @@ const AdminAnimal = () => {
       deleteAnimal(id)
         .then(() => {
           alert('Карточка товара удалена');
+        })
+        .catch((error) => alert(error.response.data.message));
+    }
+  };
+
+  const handleDeleteAnimalImage = (id) => {
+    const confirmed = window.confirm('Вы уверены, что хотите удалить картинку?');
+    if (confirmed) {
+      deleteAnimalImage(id)
+        .then(() => {
+          alert('Картинка товара удалена');
         })
         .catch((error) => alert(error.response.data.message));
     }
@@ -50,17 +68,23 @@ const AdminAnimal = () => {
       <h1>Товары</h1>
       <Button onClick={() => setCreateAnimalModal(true)}>Создать карточку товара</Button>
       <CreateAnimal show={createAnimalModal} setShow={setCreateAnimalModal} setChange={setChange} />
+      <CreateAnimalImage
+        show={createAnimalImageModal}
+        setShow={setCreateAnimalImageModal}
+        setChange={setChange}
+        animalId={animalId}
+      />
       <UpdateAnimalProudct
         show={updateAnimalProductModal}
         setShow={setUpdateAnimalProudctModal}
         setChange={setChange}
-        id={animalProductId}
+        id={animalId}
       />
       <UpdateAnimalPrice
         show={updateAnimalPriceModal}
         setShow={setUpdateAnimalPriceModal}
         setChange={setChange}
-        id={animalProductId}
+        id={animalId}
       />
       <div>
         <Table bordered hover size="sm" className="mt-3">
@@ -78,14 +102,33 @@ const AdminAnimal = () => {
               <tr key={animal.id}>
                 <td>{animal.name}</td>
                 <td>
-                  {animal.image && (
-                    <a
-                      href={process.env.REACT_APP_IMG_URL + animal.image}
-                      target="_blank"
-                      rel="noreferrer">
-                      фото
-                    </a>
-                  )}
+                  {animal.animal_images.map((img) => (
+                    <div style={{ display: 'flex', marginTop: '10px' }}>
+                      <div style={{ marginRight: '15px' }}>
+                        {img.materialId === 28
+                          ? 'Черный'
+                          : img.materialId === 29
+                          ? 'Серый'
+                          : img.materialId === 30
+                          ? 'Коричневый'
+                          : img.materialId === 31
+                          ? 'Бежевый'
+                          : ''}
+                      </div>
+                      <Button
+                        size="sm"
+                        variant="danger"
+                        onClick={() => handleDeleteAnimalImage(img.id)}>
+                        удалить
+                      </Button>
+                    </div>
+                  ))}
+                  <Button
+                    size="sm"
+                    className="mt-3"
+                    onClick={() => handleCreateAnimalImage(animal.id)}>
+                    Добавить изображения
+                  </Button>
                 </td>
                 <td>
                   <Button

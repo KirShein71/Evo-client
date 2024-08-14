@@ -21,7 +21,6 @@ const UpdateAnimalProduct = (props) => {
   const { id, show, setShow, setChange } = props;
   const [value, setValue] = React.useState(defaultValue);
   const [valid, setValid] = React.useState(defaultValid);
-  const [image, setImage] = React.useState(null);
 
   React.useEffect(() => {
     if (id) {
@@ -43,10 +42,6 @@ const UpdateAnimalProduct = (props) => {
     setValid(isValid(data));
   };
 
-  const handleImageChange = (event) => {
-    setImage(event.target.files[0]);
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const correct = isValid(value);
@@ -55,10 +50,9 @@ const UpdateAnimalProduct = (props) => {
       const data = new FormData();
       data.append('name', value.name.trim());
       data.append('new_price', value.new_price.trim());
-      if (image) data.append('image', image, image.name);
+
       updateAnimal(id, data)
         .then((data) => {
-          event.target.image.value = '';
           const prod = {
             name: data.name,
           };
@@ -100,15 +94,6 @@ const UpdateAnimalProduct = (props) => {
               />
             </Col>
           </Row>
-          <Col className="mb-3">
-            <div>Фотография товара</div>
-            <Form.Control
-              name="image"
-              type="file"
-              onChange={(e) => handleImageChange(e)}
-              placeholder="Фото товара..."
-            />
-          </Col>
           <Row className="mt-3">
             <Col>
               <Button type="submit">Сохранить</Button>
