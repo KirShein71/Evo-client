@@ -27,16 +27,11 @@ const CreateHomeProduct = (props) => {
   const { show, setShow, setChange } = props;
   const [value, setValue] = React.useState(defaultValue);
   const [valid, setValid] = React.useState(defaultValid);
-  const [image, setImage] = React.useState(null);
 
   const handleInputChange = (event) => {
     const data = { ...value, [event.target.name]: event.target.value };
     setValue(data);
     setValid(isValid(data));
-  };
-
-  const handleImageChange = (event) => {
-    setImage(event.target.files[0]);
   };
 
   const handleSubmit = (event) => {
@@ -48,11 +43,9 @@ const CreateHomeProduct = (props) => {
       data.append('name', value.name.trim());
       data.append('old_price', value.old_price.trim());
       data.append('new_price', value.new_price.trim());
-      data.append('image', image, image.name);
 
       createHome(data)
         .then((data) => {
-          event.target.image.value = '';
           setValue(defaultValue);
           setValid(defaultValid);
           setShow(false);
@@ -106,14 +99,6 @@ const CreateHomeProduct = (props) => {
               />
             </Col>
           </Row>
-          <Col className="mb-3">
-            <Form.Control
-              name="image"
-              type="file"
-              onChange={(e) => handleImageChange(e)}
-              placeholder="Фото товара..."
-            />
-          </Col>
           <Row>
             <Col>
               <Button type="submit">Сохранить</Button>

@@ -4,50 +4,29 @@
     padding: 10px 0px 0px 0px;
     border: 2px solid #3A5BCC26;
     cursor: pointer;
-  
     position: relative;
-    
     @media(max-width: 1024px) {
- 
         border: 2px solid #3A5BCC26;
     }
     @media(max-width: 440px) {
         padding-top: 5px;
     }
  
-    
-
-    
-  
     &__image {
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        @media(max-width: 768px) {
-            height: 310px;
-        }
-        @media(max-width: 595px) {
-            height: 230px;
-        }
-        @media(max-width: 480px) {
-            height: 180px;
-        }
-        @media(max-width: 420px) {
-            height: 160px;
-        }
-       
+        
         img {
             transition: 0.5s ease; /* Добавлен переход */
+            width: 100%;
             &:hover {
                 transform: scale(1.2);
                 @media(max-width: 1200px) {
                     transform: scale(1);
                 }
             }
-            @media(max-width: 768px) {
-                width: 75%;
-            }  
         }
     }
   
@@ -131,10 +110,7 @@
                 @media(max-width: 595px) {
                     padding-right: 7px;
                 }
-                @media(max-width: 385px) {
-                    width: 40px;
-                    height: 40px;
-                }
+                
             }
         }
     }

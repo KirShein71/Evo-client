@@ -11,6 +11,16 @@ export const createHome = async (home) => {
     return data
 }
 
+export const createHomeImage = async (homeimage) => {
+    const { data } = await authInstance.post('homeimage/create', homeimage)
+    return data
+}
+
+export const deleteHomeImage = async (id) => {
+    const { data } = await authInstance.delete(`homeimage/delete/${id}`)
+    return data
+}
+
 
 export const getOneHome = async (id) => {
     const { data } = await guestInstance.get(`home/getone/${id}`)

@@ -21,6 +21,12 @@
         }
     }
 
+    &__homeimage {
+        img {
+            width: 130px;
+        }
+    }
+
     &__information {
         &-name {
             font-size: 18px;

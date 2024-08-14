@@ -2,7 +2,7 @@ import React from 'react';
 import { deleteBasketProduct } from '../../../http/basketApi';
 import ModalBasket from '../modal/ModalBasket';
 
-function HomeTable({ material, home, quantity, id, change, setChange }) {
+function HomeTable({ material, home, quantity, id, change, setChange, materialId }) {
   const [openDeleteHomeModal, setOpenDeleteHomeModal] = React.useState(false);
 
   const handleRemoveHome = (id) => {
@@ -25,7 +25,15 @@ function HomeTable({ material, home, quantity, id, change, setChange }) {
 
   return (
     <>
-      <td></td>
+      <td>
+        {home.home_images
+          .filter((imageHome) => imageHome.materialId === materialId)
+          .map((imageHome) => (
+            <div className="baskettable__homeimage">
+              <img src={process.env.REACT_APP_IMG_URL + imageHome.image} alt="edging__image" />
+            </div>
+          ))}
+      </td>
       <td>
         <div className="baskettable__information">
           <div className="baskettable__information-name">{home.name}</div>

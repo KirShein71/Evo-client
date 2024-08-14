@@ -1,15 +1,17 @@
 import React from 'react';
-import { getAllHome, deleteHome } from '../../../http/homeApi';
+import { getAllHome, deleteHome, deleteHomeImage } from '../../../http/homeApi';
 import CreateHomeProduct from './modals/CreateHomeProduct';
+import CreateHomeImage from './modals/CreateHomeImage';
 import UpdateHomeProduct from './modals/UpdateHomeProduct';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import UpdateHomePrice from './modals/UpdateHomePrice';
 
 const AdminHome = () => {
   const [homeProducts, setHomeProducts] = React.useState([]);
-  const [homeProductId, setHomeProductId] = React.useState(null);
+  const [homeId, setHomeId] = React.useState(null);
   const [fetching, setFetching] = React.useState(true);
   const [createHomeModal, setCreateHomeModal] = React.useState(false);
+  const [createHomeImageModal, setCreateHomeImageModal] = React.useState(false);
   const [updateHomeModal, setUpdateHomeModal] = React.useState(false);
   const [updateHomePriceModal, setUpdateHomePriceModal] = React.useState(false);
   const [change, setChange] = React.useState(true);
@@ -21,13 +23,18 @@ const AdminHome = () => {
   }, [change]);
 
   const handleUpdateHomeProduct = (id) => {
-    setHomeProductId(id);
+    setHomeId(id);
     setUpdateHomeModal(true);
   };
 
   const handleUpdateHomePrice = (id) => {
-    setHomeProductId(id);
+    setHomeId(id);
     setUpdateHomePriceModal(true);
+  };
+
+  const handleCreateHomeImage = (id) => {
+    setHomeId(id);
+    setCreateHomeImageModal(true);
   };
 
   const handleDeleteHomeProduct = (id) => {
@@ -36,6 +43,17 @@ const AdminHome = () => {
       deleteHome(id)
         .then(() => {
           alert('Карточка товара удалена');
+        })
+        .catch((error) => alert(error.response.data.message));
+    }
+  };
+
+  const handleDeleteHomeImage = (id) => {
+    const confirmed = window.confirm('Вы уверены, что хотите удалить картинку?');
+    if (confirmed) {
+      deleteHomeImage(id)
+        .then(() => {
+          alert('Картинка товара удалена');
         })
         .catch((error) => alert(error.response.data.message));
     }
@@ -54,17 +72,23 @@ const AdminHome = () => {
         setShow={setCreateHomeModal}
         setChange={setChange}
       />
+      <CreateHomeImage
+        show={createHomeImageModal}
+        setShow={setCreateHomeImageModal}
+        setChange={setChange}
+        homeId={homeId}
+      />
       <UpdateHomeProduct
         show={updateHomeModal}
         setShow={setUpdateHomeModal}
         setChange={setChange}
-        id={homeProductId}
+        id={homeId}
       />
       <UpdateHomePrice
         show={updateHomePriceModal}
         setShow={setUpdateHomePriceModal}
         setChange={setChange}
-        id={homeProductId}
+        id={homeId}
       />
       <div>
         <Table bordered hover size="sm" className="mt-3">
@@ -82,14 +106,33 @@ const AdminHome = () => {
               <tr key={homeProduct.id}>
                 <td>{homeProduct.name}</td>
                 <td>
-                  {homeProduct.image && (
-                    <a
-                      href={process.env.REACT_APP_IMG_URL + homeProduct.image}
-                      target="_blank"
-                      rel="noreferrer">
-                      фото
-                    </a>
-                  )}
+                  {homeProduct.home_images.map((img) => (
+                    <div style={{ display: 'flex', marginTop: '10px' }}>
+                      <div style={{ marginRight: '15px' }}>
+                        {img.materialId === 28
+                          ? 'Черный'
+                          : img.materialId === 29
+                          ? 'Серый'
+                          : img.materialId === 30
+                          ? 'Коричневый'
+                          : img.materialId === 31
+                          ? 'Бежевый'
+                          : ''}
+                      </div>
+                      <Button
+                        size="sm"
+                        variant="danger"
+                        onClick={() => handleDeleteHomeImage(img.id)}>
+                        удалить
+                      </Button>
+                    </div>
+                  ))}
+                  <Button
+                    size="sm"
+                    className="mt-3"
+                    onClick={() => handleCreateHomeImage(homeProduct.id)}>
+                    Добавить изображения
+                  </Button>
                 </td>
                 <td>
                   <Button

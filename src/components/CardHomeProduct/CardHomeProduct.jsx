@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './style.scss';
 import ModalImage from './ModalImage';
 
-function CardHomeProduct({ name, new_price, image, id, materials }) {
+function CardHomeProduct({ name, new_price, image, id, materials, home_images }) {
   const [quantity, setQuantity] = React.useState(1);
   const isCountDisabled = quantity <= 1;
   const [selectedMaterial, setSelectedMaterial] = React.useState('blacksota');
@@ -40,13 +40,30 @@ function CardHomeProduct({ name, new_price, image, id, materials }) {
     <div className="cardhomeproduct">
       <div className="cardhomeproduct__content">
         <div className="cardhomeproduct__image">
-          <img
-            src={process.env.REACT_APP_IMG_URL + image}
-            alt="rug for home"
-            onClick={() => handleClickImage(image)}
-          />
+          {home_images.map((icon) => {
+            return (
+              <div
+                key={icon.id}
+                style={{
+                  display: icon.materialId === selectedMaterialId ? 'block' : 'none',
+                }}>
+                <img
+                  src={process.env.REACT_APP_IMG_URL + icon.image}
+                  alt="rug for home"
+                  onClick={() => handleClickImage(icon.image)}
+                />
+              </div>
+            );
+          })}
         </div>
-        {openModalImage && <ModalImage closedImageModal={closedImageModal} image={image} />}
+        {openModalImage && (
+          <ModalImage
+            closedImageModal={closedImageModal}
+            image={
+              home_images.find((imageItem) => imageItem.materialId === selectedMaterialId)?.image
+            }
+          />
+        )}
       </div>
       <div className="cardhomeproduct__constructor">
         <div className="cardhomeproduct__constructor-material">
