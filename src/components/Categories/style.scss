@@ -37,7 +37,7 @@
                 &:hover {
                     filter: brightness(100%);
                     @media(max-width: 1200px) {
-                        filter: none;
+                        filter: brightness(30%);
                     }
                 }
                 @media(max-width: 1200px) {
