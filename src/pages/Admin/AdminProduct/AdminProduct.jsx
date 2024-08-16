@@ -13,6 +13,7 @@ import UpdateProduct from './modals/UpdateProduct';
 import CreateProductTrunk from './modals/CreateProductTrunk';
 import UpdateProductTrunk from './modals/UpdateProductTrunk';
 import UpdatePrice from './modals/UpdatePrice';
+import UpdateName from './modals/UpdateName';
 import CreateProductThirdrow from './modals/CreateProductThirdrow';
 import UpdateProductThirdrow from './modals/UpdateProductThirdrow';
 import { deleteProductThirdrow } from '../../../http/thirdrowApi';
@@ -33,6 +34,7 @@ const AdminProduct = () => {
   const [filteredProducts, setFilteredProducts] = React.useState([]);
   const [saleProductChechbox, setSaleProductCheckbox] = React.useState(false);
   const [updatePriceModal, setUpdatePriceModal] = React.useState(false);
+  const [updateNameModal, setUpdateNameModal] = React.useState(false);
   const [brands, setBrands] = React.useState([]);
   const [selectedBrand, setSelectedBrand] = React.useState(11);
   const [openBrandModal, setOpenBrandModal] = React.useState(false);
@@ -77,6 +79,11 @@ const AdminProduct = () => {
   const handleUpdatePrice = (id) => {
     setProductId(id);
     setUpdatePriceModal(true);
+  };
+
+  const handleUpdateName = (id) => {
+    setProductId(id);
+    setUpdateNameModal(true);
   };
 
   const handleDeleteClick = (id) => {
@@ -174,6 +181,12 @@ const AdminProduct = () => {
       <UpdatePrice
         show={updatePriceModal}
         setShow={setUpdatePriceModal}
+        setChange={setChange}
+        id={productId}
+      />
+      <UpdateName
+        show={updateNameModal}
+        setShow={setUpdateNameModal}
         setChange={setChange}
         id={productId}
       />
@@ -281,7 +294,7 @@ const AdminProduct = () => {
               ?.filter((product) => selectedBrand === null || product.brandId === selectedBrand)
               .map((product) => (
                 <tr key={product.id}>
-                  <td>{product.name}</td>
+                  <td onClick={() => handleUpdateName(product.id)}>{product.name}</td>
                   <td>
                     <Button
                       variant="success"

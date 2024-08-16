@@ -45,6 +45,11 @@ export const updatePrice = async (id, product) => {
     return data
 }
 
+export const updateName = async (id, product) => {
+    const { data } = await authInstance.put(`product/updateName/${id}`, product)
+    return data
+}
+
 export const deleteProduct = async (id) => {
     const { data } = await guestInstance.delete(`product/delete/${id}`)
     return data
