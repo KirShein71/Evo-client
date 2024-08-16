@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { appendFavorite } from '../../http/basketApi';
@@ -10,8 +10,6 @@ import { observer } from 'mobx-react';
 
 const CardProduct = observer(({ name, old_price, new_price, image, id }) => {
   const [originalName] = React.useState(name);
-  const navigate = useNavigate();
-  const location = useLocation();
   const { favoriteProduct } = React.useContext(AppContext);
 
   const [isAddedToFavorite, setIsAddedToFavorite] = React.useState(false);
@@ -23,7 +21,6 @@ const CardProduct = observer(({ name, old_price, new_price, image, id }) => {
     if (storedFavorites !== null) {
       favorites = JSON.parse(storedFavorites); // Преобразуем только если localStorage не пустой
     }
-    console.log(favorites);
     return favorites.includes(id);
   };
 
@@ -66,12 +63,7 @@ const CardProduct = observer(({ name, old_price, new_price, image, id }) => {
       .catch((error) => alert(error.response.data.message));
   };
 
-  const addToOneProduct = () => {
-    const formattedName = originalName.replace(/-+/g, '--').replace(/\s+/g, '-');
-    navigate(`/productproperty/${formattedName}`, {
-      state: { from: location.pathname, originalName },
-    });
-  };
+  const formattedName = originalName.replace(/-+/g, '--').replace(/\s+/g, '-');
 
   return (
     <div className="cardproduct">
@@ -84,7 +76,7 @@ const CardProduct = observer(({ name, old_price, new_price, image, id }) => {
           )}
         </div>
       </div>
-      <div className="cardproduct__content" onClick={addToOneProduct}>
+      <Link to={`/productproperty/${formattedName}`} className="cardproduct__content">
         <div className="cardproduct__image">
           <img src={process.env.REACT_APP_IMG_URL + image} alt="image_car" />
         </div>
@@ -95,7 +87,7 @@ const CardProduct = observer(({ name, old_price, new_price, image, id }) => {
             {new_price} Р
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 });

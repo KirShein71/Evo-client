@@ -21,7 +21,7 @@ const UpdateName = (props) => {
   const [valid, setValid] = React.useState(defaultValid);
 
   React.useEffect(() => {
-    if (id) {
+    if (show && id) {
       getOneProduct(id)
         .then((data) => {
           const prod = {
@@ -30,9 +30,9 @@ const UpdateName = (props) => {
           setValue(prod);
           setValid(isValid(prod));
         })
-        .catch((error) => alert(error.response.data.message));
+        .catch((error) => console.log(error.response.data.message));
     }
-  }, [id]);
+  }, [show, id]);
 
   const handleInputChange = (event) => {
     const data = { ...value, [event.target.name]: event.target.value };

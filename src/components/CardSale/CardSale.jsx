@@ -1,23 +1,15 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './styles.scss';
 
 function CardSale({ image, name, old_price, new_price }) {
   const [originalName] = React.useState(name);
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const addToOneProduct = () => {
-    const formattedName = originalName.replace(/-+/g, '--').replace(/\s+/g, '-');
-    navigate(`/productproperty/${formattedName}`, {
-      state: { from: location.pathname, originalName },
-    });
-  };
+  const formattedName = originalName.replace(/-+/g, '--').replace(/\s+/g, '-');
 
   return (
     <div class="cardsale">
-      <div className="cardsale__content" onClick={addToOneProduct}>
+      <Link to={`/productproperty/${formattedName}`} className="cardsale__content">
         <div class="cardsale__image">
           <img src={process.env.REACT_APP_IMG_URL + image} alt="image_car" />
         </div>
@@ -28,7 +20,7 @@ function CardSale({ image, name, old_price, new_price }) {
             {new_price} Р
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }

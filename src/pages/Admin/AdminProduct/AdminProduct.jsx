@@ -84,6 +84,7 @@ const AdminProduct = () => {
   const handleUpdateName = (id) => {
     setProductId(id);
     setUpdateNameModal(true);
+    console.log(id);
   };
 
   const handleDeleteClick = (id) => {

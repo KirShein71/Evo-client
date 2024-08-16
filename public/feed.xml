@@ -1,4 +1,4 @@
-<yml_catalog date="2024-07-29 12:00">
+<yml_catalog date="2024-08-15 12:00">
     <shop>
         <name>Savaks</name>
         <company>Savaks</company>
@@ -117,7 +117,7 @@
                 <price>2590</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>9</categoryId>
-                <picture>	https://app.savaks.ru/6e3741b7-eaf1-4912-a73e-dc8b5c2f1193.png</picture>
+                <picture>https://app.savaks.ru/6e3741b7-eaf1-4912-a73e-dc8b5c2f1193.png</picture>
                 <description>Автомобильные EVA коврики для Audi A3 (8P) 2004-2013</description>
                 <url>https://www.savaks.ru/productproperty/audi-a3-(8p)-2004--2013</url>
             </offer>
@@ -1604,7 +1604,7 @@
                 <categoryId>45</categoryId>
                 <picture>https://app.savaks.ru/7a6b85b6-c7e5-4146-8b80-77bdae2b2175.png</picture>
                 <description>Автомобильные EVA коврики для SKODA KODIAQ 2016-2023</description>
-                <url>hhttps://www.savaks.ru/productproperty/SKODA-KODIAQ-2016--2023</url>
+                <url>https://www.savaks.ru/productproperty/SKODA-KODIAQ-2016--2023</url>
             </offer>
             <offer id="650" available="true">
                 <name>Автомобильный EVA коврик для SKODA OCTAVIA A5 2004-2013</name>
