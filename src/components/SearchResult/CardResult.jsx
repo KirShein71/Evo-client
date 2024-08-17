@@ -1,22 +1,80 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { AppContext } from '../../context/AppContext';
+import { deleteFavoriteProduct } from '../../http/favoriteApi';
 import './style.scss';
 
 function CardResult({ name, old_price, new_price, image }) {
   const [originalName] = React.useState(name);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const { favoriteProduct } = React.useContext(AppContext);
+  const [isAddedToFavorite, setIsAddedToFavorite] = React.useState(false);
 
-  const addToOneProduct = () => {
-    const formattedName = originalName.replace(/\s+/g, '-').toLowerCase();
-    navigate(`/productproperty/${formattedName}`, {
-      state: { from: location.pathname, originalName },
-    });
+  // Используйте MobX для обновления состояния
+  const checkIfFavorite = () => {
+    const storedFavorites = localStorage.getItem('favoriteProducts');
+    let favorites = []; // Инициализируем favorites как пустой массив
+    if (storedFavorites !== null) {
+      favorites = JSON.parse(storedFavorites); // Преобразуем только если localStorage не пустой
+    }
+    return favorites.includes(id);
   };
+
+  // Используйте MobX для обновления состояния
+  React.useEffect(() => {
+    setIsAddedToFavorite(checkIfFavorite());
+    console.log('chek', checkIfFavorite);
+  }, [favoriteProduct.items]);
+
+  // Функция для обновления localStorage
+  const updateLocalStorage = (favorites) => {
+    localStorage.setItem('favoriteProducts', JSON.stringify(favorites));
+  };
+
+  const clickToFavorite = (productId) => {
+    appendFavorite(productId)
+      .then(() => {
+        favoriteProduct.addToFavorites(productId);
+        const favorites = JSON.parse(localStorage.getItem('favoriteProducts')) || [];
+        favorites.push(productId);
+        console.log(favorites);
+        updateLocalStorage(favorites); // Обновляем localStorage
+
+        setIsAddedToFavorite(true);
+      })
+      .catch((error) => alert(error.response.data.message));
+  };
+
+  const handleDeleteFavoriteProduct = (productId) => {
+    deleteFavoriteProduct(productId)
+      .then(() => {
+        favoriteProduct.removeFromFavorites(productId);
+        const favorites = JSON.parse(localStorage.getItem('favoriteProducts')) || [];
+        const updatedFavorites = favorites.filter((favId) => favId !== productId);
+        console.log('delete', favorites);
+        updateLocalStorage(updatedFavorites); // Обновляем localStorage
+
+        setIsAddedToFavorite(false);
+      })
+      .catch((error) => alert(error.response.data.message));
+  };
+
+  const formattedName = originalName.replace(/-+/g, '--').replace(/\s+/g, '-');
 
   return (
     <div className="cardresult">
-      <div className="cardresult__content" onClick={addToOneProduct}>
+      <div className="cardresult__favorite">
+        <div style={{ position: 'absolute' }}>
+          {checkIfFavorite() ? (
+            <FavoriteIcon fontSize="small" onClick={() => handleDeleteFavoriteProduct(id)} />
+          ) : (
+            <FavoriteBorderIcon fontSize="small" onClick={() => clickToFavorite(id)} />
+          )}
+        </div>
+      </div>
+      <Link
+        to={`/productproperty/${formattedName}`}
+        className="cardresult__content"
+        onClick={addToOneProduct}>
         <div className="cardresult__image">
           <img src={process.env.REACT_APP_IMG_URL + image} alt="image_car" />
         </div>
@@ -27,7 +85,7 @@ function CardResult({ name, old_price, new_price, image }) {
             {new_price} Р
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }

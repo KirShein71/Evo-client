@@ -77,6 +77,12 @@
         border: 2px solid #dfdfdf;
        
     }
+
+    &__favorite {
+        display: flex;
+        justify-content: right;
+        margin-right: 10px;
+    }
  
 
     

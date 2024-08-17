@@ -11,7 +11,6 @@ import { observer } from 'mobx-react';
 const CardProduct = observer(({ name, old_price, new_price, image, id }) => {
   const [originalName] = React.useState(name);
   const { favoriteProduct } = React.useContext(AppContext);
-
   const [isAddedToFavorite, setIsAddedToFavorite] = React.useState(false);
 
   // Используйте MobX для обновления состояния
