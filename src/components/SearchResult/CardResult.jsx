@@ -2,9 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { deleteFavoriteProduct } from '../../http/favoriteApi';
+import { appendFavorite } from '../../http/basketApi';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import './style.scss';
 
-function CardResult({ name, old_price, new_price, image }) {
+function CardResult({ name, old_price, new_price, image, id }) {
   const [originalName] = React.useState(name);
   const { favoriteProduct } = React.useContext(AppContext);
   const [isAddedToFavorite, setIsAddedToFavorite] = React.useState(false);
@@ -71,10 +74,7 @@ function CardResult({ name, old_price, new_price, image }) {
           )}
         </div>
       </div>
-      <Link
-        to={`/productproperty/${formattedName}`}
-        className="cardresult__content"
-        onClick={addToOneProduct}>
+      <Link to={`/productproperty/${formattedName}`} className="cardresult__content">
         <div className="cardresult__image">
           <img src={process.env.REACT_APP_IMG_URL + image} alt="image_car" />
         </div>
