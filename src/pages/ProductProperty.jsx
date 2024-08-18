@@ -32,6 +32,17 @@ function ProductProperty() {
           name="keywords"
           content="автомобильные коврики, коврики для автомобилей, автомобильные коврики EVA"
         />
+        <meta property="og:title" content={`Коврики EVA для ${originalName}`} />
+        <meta
+          property="og:description"
+          content="На этой странице, Вы можете выбрать опции по автомобильному коврику. Такие цвет материала и канта, дополнительно приобрести органайзер и подпятник"
+        />
+        <meta property="og:url" content={`https://www.savaks.ru/productproperty/${originalName}`} />
+        <meta
+          property="og:image"
+          content="https://www.savaks.ru/img/savaks%20(1)%20(1).png?v=1723972401637"
+        />
+        <meta property="og:type" content="website" />
       </Helmet>
       {windowWidth < 600 ? <Product595 /> : windowWidth < 992 ? <Product991 /> : <Product />}
     </>

@@ -4,7 +4,7 @@ import './styles.scss';
 
 function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="footer__content">
         <div className="footer__title">
           <Link to="/">
@@ -47,7 +47,7 @@ function Footer() {
         </div>
         <div className="footer__information"></div>
       </div>
-    </div>
+    </footer>
   );
 }
 

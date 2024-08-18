@@ -62,7 +62,7 @@ const Header = observer(() => {
   });
 
   return (
-    <div className="header">
+    <header className="header">
       <div className="container">
         <div className="header__content">
           <div className="header__left">
@@ -183,7 +183,7 @@ const Header = observer(() => {
         <div
           className={window.location.pathname === '/' ? 'header__hidden' : 'header__border'}></div>
       </div>
-    </div>
+    </header>
   );
 });
 
