@@ -157,239 +157,243 @@ const AdminProduct = () => {
   }
 
   return (
-    <Container>
-      <h1>Товары</h1>
-      <Button onClick={() => setCreateShow(true)}>Создать карточку товара</Button>
-      <Col className="mt-3" sm={2}>
-        <Form className="d-flex">
-          <Form.Control
-            type="search"
-            placeholder="Поиск..."
-            value={searchQuery}
-            onChange={handleSearch}
-            className="mb-3"
-            aria-label="Search"
-          />
-        </Form>
-      </Col>
-      <CreateProduct show={createShow} setShow={setCreateShow} setChange={setChange} />
-      <UpdateProduct
-        show={updateShow}
-        setShow={setUpdateShow}
-        setChange={setChange}
-        id={productId}
-      />
-      <UpdatePrice
-        show={updatePriceModal}
-        setShow={setUpdatePriceModal}
-        setChange={setChange}
-        id={productId}
-      />
-      <UpdateName
-        show={updateNameModal}
-        setShow={setUpdateNameModal}
-        setChange={setChange}
-        id={productId}
-      />
-      <CreateProductTrunk
-        show={createTrunk}
-        setShow={setCreateTrunk}
-        setChange={setChange}
-        productId={productId}
-      />
-      <UpdateProductTrunk
-        show={updateTrunk}
-        setShow={setUpdateTrunk}
-        setChange={setChange}
-        productId={productId}
-        trunkId={trunkId}
-      />
-      <CreateProductThirdrow
-        show={createThirdrow}
-        setShow={setCreateThirdrow}
-        setChange={setChange}
-        productId={productId}
-      />
-      <UpdateProductThirdrow
-        show={updateThirdrow}
-        setShow={setUpdateThirdrow}
-        setChange={setChange}
-        productId={productId}
-        thirdrowId={thirdrowId}
-      />
-      <div className="checkbox" style={{ display: 'flex' }}>
-        <div class="cntr">
-          <label for="cbxSale" class="label-cbx">
-            <input
-              id="cbxSale"
-              type="checkbox"
-              class="invisible"
-              checked={saleProductChechbox}
-              onChange={() => {
-                handleSaleCheckboxChange();
-              }}
+    <>
+      <Container>
+        <h1>Товары</h1>
+        <Button onClick={() => setCreateShow(true)}>Создать карточку товара</Button>
+        <Col className="mt-3" sm={2}>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Поиск..."
+              value={searchQuery}
+              onChange={handleSearch}
+              className="mb-3"
+              aria-label="Search"
             />
-            <div class="checkbox">
-              <svg width="20px" height="20px" viewBox="0 0 20 20">
-                <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
-                <polyline points="4 11 8 15 16 6"></polyline>
-              </svg>
-            </div>
-          </label>
-        </div>{' '}
-        <span>Товары в акции</span>
-      </div>
-      <div className="brand">
-        <div className="brand__title" onClick={hadleOpenBrandModal}>
-          Марка:{' '}
-          <span>
-            {selectedBrand
-              ? selectedBrand && brands.find((brand) => brand.id === selectedBrand)?.name
-              : ''}
-          </span>
+          </Form>
+        </Col>
+        <CreateProduct show={createShow} setShow={setCreateShow} setChange={setChange} />
+        <UpdateProduct
+          show={updateShow}
+          setShow={setUpdateShow}
+          setChange={setChange}
+          id={productId}
+        />
+        <UpdatePrice
+          show={updatePriceModal}
+          setShow={setUpdatePriceModal}
+          setChange={setChange}
+          id={productId}
+        />
+        <UpdateName
+          show={updateNameModal}
+          setShow={setUpdateNameModal}
+          setChange={setChange}
+          id={productId}
+        />
+        <CreateProductTrunk
+          show={createTrunk}
+          setShow={setCreateTrunk}
+          setChange={setChange}
+          productId={productId}
+        />
+        <UpdateProductTrunk
+          show={updateTrunk}
+          setShow={setUpdateTrunk}
+          setChange={setChange}
+          productId={productId}
+          trunkId={trunkId}
+        />
+        <CreateProductThirdrow
+          show={createThirdrow}
+          setShow={setCreateThirdrow}
+          setChange={setChange}
+          productId={productId}
+        />
+        <UpdateProductThirdrow
+          show={updateThirdrow}
+          setShow={setUpdateThirdrow}
+          setChange={setChange}
+          productId={productId}
+          thirdrowId={thirdrowId}
+        />
+        <div className="checkbox" style={{ display: 'flex' }}>
+          <div class="cntr">
+            <label for="cbxSale" class="label-cbx">
+              <input
+                id="cbxSale"
+                type="checkbox"
+                class="invisible"
+                checked={saleProductChechbox}
+                onChange={() => {
+                  handleSaleCheckboxChange();
+                }}
+              />
+              <div class="checkbox">
+                <svg width="20px" height="20px" viewBox="0 0 20 20">
+                  <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                  <polyline points="4 11 8 15 16 6"></polyline>
+                </svg>
+              </div>
+            </label>
+          </div>{' '}
+          <span>Товары в акции</span>
         </div>
-        {openBrandModal && (
-          <div className="brand__modal">
-            <div className="brand__modal-content">
-              <div
-                className="brand__modal-item"
-                onClick={() => {
-                  setSelectedBrand(null);
-                  setOpenBrandModal(false);
-                }}></div>
-              {brands.map((brandName) => (
-                <div key={brandName.id}>
-                  <div
-                    className="brand__modal-item"
-                    onClick={() => {
-                      setSelectedBrand(brandName.id);
-                      setOpenBrandModal(false);
-                    }}>
-                    {brandName.name}
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="brand">
+          <div className="brand__title" onClick={hadleOpenBrandModal}>
+            Марка:{' '}
+            <span>
+              {selectedBrand
+                ? selectedBrand && brands.find((brand) => brand.id === selectedBrand)?.name
+                : ''}
+            </span>
           </div>
-        )}
-      </div>
-      <div>
-        <Table bordered hover size="sm" className="mt-3">
-          <thead>
-            <tr>
-              <th>Название</th>
-              <th>Редактировать</th>
-              <th>Стоимость</th>
-              <th>Удалить</th>
-              <th>Добавить коврик для багажника</th>
-              <th>Редактировать коврик для багажника</th>
-              <th>Удалить коврик для багажника</th>
-              <th>Добавить третий ряд ковриков</th>
-              <th>Редактировать третий ряд ковриков</th>
-              <th>Удалить третий ряд ковриков</th>
-              <th>Добавить товар в акции</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredProducts
-              ?.filter((product) => selectedBrand === null || product.brandId === selectedBrand)
-              .map((product) => (
-                <tr key={product.id}>
-                  <td onClick={() => handleUpdateName(product.id)}>{product.name}</td>
-                  <td>
-                    <Button
-                      variant="success"
-                      size="sm"
-                      onClick={() => handleUpdateProduct(product.id)}>
-                      Редактировать
-                    </Button>
-                  </td>
-                  <td style={{ cursor: 'pointer' }} onClick={() => handleUpdatePrice(product.id)}>
-                    {product.old_price}/{product.new_price}
-                  </td>
-                  <td>
-                    <Button
-                      variant="danger"
-                      size="sm"
-                      onClick={() => handleDeleteClick(product.id)}>
-                      Удалить
-                    </Button>
-                  </td>
-                  <td>
-                    <Button
-                      variant="success"
-                      size="sm"
-                      onClick={() => hadleCreateTrunk(product.id)}>
-                      Добавить
-                    </Button>
-                  </td>
-                  <td>
-                    {product.trunks.length > 0 && product.trunks[0].id ? (
+          {openBrandModal && (
+            <div className="brand__modal">
+              <div className="brand__modal-content">
+                <div
+                  className="brand__modal-item"
+                  onClick={() => {
+                    setSelectedBrand(null);
+                    setOpenBrandModal(false);
+                  }}></div>
+                {brands.map((brandName) => (
+                  <div key={brandName.id}>
+                    <div
+                      className="brand__modal-item"
+                      onClick={() => {
+                        setSelectedBrand(brandName.id);
+                        setOpenBrandModal(false);
+                      }}>
+                      {brandName.name}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+        <div>
+          <Table bordered hover size="sm" className="mt-3">
+            <thead>
+              <tr>
+                <th>Название</th>
+                <th>Редактировать</th>
+                <th>Стоимость</th>
+                <th>Удалить</th>
+                <th>Добавить коврик для багажника</th>
+                <th>Редактировать коврик для багажника</th>
+                <th>Удалить коврик для багажника</th>
+                <th>Добавить третий ряд ковриков</th>
+                <th>Редактировать третий ряд ковриков</th>
+                <th>Удалить третий ряд ковриков</th>
+                <th>Добавить товар в акции</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredProducts
+                ?.filter((product) => selectedBrand === null || product.brandId === selectedBrand)
+                .map((product) => (
+                  <tr key={product.id}>
+                    <td onClick={() => handleUpdateName(product.id)}>{product.name}</td>
+                    <td>
                       <Button
                         variant="success"
                         size="sm"
-                        onClick={() => handleUpdateTrunk(product.trunks[0].id, product.id)}>
-                        Редакатировать
+                        onClick={() => handleUpdateProduct(product.id)}>
+                        Редактировать
                       </Button>
-                    ) : (
-                      ''
-                    )}
-                  </td>
-                  <td>
-                    <Button
-                      variant="danger"
-                      size="sm"
-                      onClick={() => handleDeleteTrunk(product.trunks[0].id)}>
-                      Удалить
-                    </Button>
-                  </td>
-                  <td>
-                    {product.thirdrows.length > 0 && product.thirdrows[0].id ? (
-                      'Добавлен'
-                    ) : (
+                    </td>
+                    <td style={{ cursor: 'pointer' }} onClick={() => handleUpdatePrice(product.id)}>
+                      {product.old_price}/{product.new_price}
+                    </td>
+                    <td>
+                      <Button
+                        variant="danger"
+                        size="sm"
+                        onClick={() => handleDeleteClick(product.id)}>
+                        Удалить
+                      </Button>
+                    </td>
+                    <td>
                       <Button
                         variant="success"
                         size="sm"
-                        onClick={() => handleCreateThirdrow(product.id)}>
+                        onClick={() => hadleCreateTrunk(product.id)}>
                         Добавить
                       </Button>
-                    )}
-                  </td>
-                  <td>
-                    {product.thirdrows.length > 0 && product.thirdrows[0].id ? (
+                    </td>
+                    <td>
+                      {product.trunks.length > 0 && product.trunks[0].id ? (
+                        <Button
+                          variant="success"
+                          size="sm"
+                          onClick={() => handleUpdateTrunk(product.trunks[0].id, product.id)}>
+                          Редакатировать
+                        </Button>
+                      ) : (
+                        ''
+                      )}
+                    </td>
+                    <td>
                       <Button
-                        variant="success"
+                        variant="danger"
                         size="sm"
-                        onClick={() => handleUpdateThirdrow(product.thirdrows[0].id, product.id)}>
-                        Редакатировать
+                        onClick={() => handleDeleteTrunk(product.trunks[0].id)}>
+                        Удалить
                       </Button>
-                    ) : (
-                      ''
-                    )}
-                  </td>
-                  <td>
-                    <Button
-                      variant="danger"
-                      size="sm"
-                      onClick={() => handleDeleteThirdrow(product.thirdrows[0].id)}>
-                      Удалить
-                    </Button>
-                  </td>
-                  <td>
-                    {product.sale === null ? (
-                      <Button onClick={() => handleSaleCreate(product.id)}>Добавить в акции</Button>
-                    ) : (
-                      <Button onClick={() => handleDeleteSaleProduct(product.id)}>
-                        Удалить из акции
+                    </td>
+                    <td>
+                      {product.thirdrows.length > 0 && product.thirdrows[0].id ? (
+                        'Добавлен'
+                      ) : (
+                        <Button
+                          variant="success"
+                          size="sm"
+                          onClick={() => handleCreateThirdrow(product.id)}>
+                          Добавить
+                        </Button>
+                      )}
+                    </td>
+                    <td>
+                      {product.thirdrows.length > 0 && product.thirdrows[0].id ? (
+                        <Button
+                          variant="success"
+                          size="sm"
+                          onClick={() => handleUpdateThirdrow(product.thirdrows[0].id, product.id)}>
+                          Редакатировать
+                        </Button>
+                      ) : (
+                        ''
+                      )}
+                    </td>
+                    <td>
+                      <Button
+                        variant="danger"
+                        size="sm"
+                        onClick={() => handleDeleteThirdrow(product.thirdrows[0].id)}>
+                        Удалить
                       </Button>
-                    )}
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </Table>
-      </div>
-    </Container>
+                    </td>
+                    <td>
+                      {product.sale === null ? (
+                        <Button onClick={() => handleSaleCreate(product.id)}>
+                          Добавить в акции
+                        </Button>
+                      ) : (
+                        <Button onClick={() => handleDeleteSaleProduct(product.id)}>
+                          Удалить из акции
+                        </Button>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </Table>
+        </div>
+      </Container>
+    </>
   );
 };
 
