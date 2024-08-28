@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import Home from '../pages/Home';
@@ -27,7 +27,7 @@ import Contacts from '../pages/Contacts';
 import About from '../pages/About';
 import NotFounds from '../pages/NotFounds';
 import Favorites from '../pages/Favorites';
-
+import LoginUser from '../pages/LoginUser';
 import { observer } from 'mobx-react';
 
 const routes = [
@@ -47,6 +47,7 @@ const routes = [
   { path: '/about', Component: About },
   { path: '*', Component: NotFounds },
   { path: '/favorites', Component: Favorites },
+  { path: '/loginuser', Component: LoginUser },
 ];
 
 const adminRoutes = [

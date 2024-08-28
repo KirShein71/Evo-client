@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { observer } from 'mobx-react';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Burger from '../Burger/Burger';
 
 import './styles.scss';
@@ -122,6 +121,16 @@ const Header = observer(() => {
               </div>
             </div>
             <div className="header__icons">
+              <div className="header__favorite">
+                <Link to="/favorites">
+                  <img src={`/img/heart.png?v=${Date.now()}`} alt="favorite icon" />
+                </Link>
+                {!!favoriteProduct.count && (
+                  <div className="header__basket-circle">
+                    <div className="header__basket-count">{favoriteProduct.count}</div>
+                  </div>
+                )}
+              </div>
               <div className="header__basket">
                 <Link to="/basket">
                   <div className="header__basket-image">
@@ -131,16 +140,6 @@ const Header = observer(() => {
                 {!!basketProduct.count && (
                   <div className="header__basket-circle">
                     <div className="header__basket-count">{basketProduct.count}</div>
-                  </div>
-                )}
-              </div>
-              <div className="header__favorite">
-                <Link to="/favorites">
-                  <img src={`/img/heart.png?v=${Date.now()}`} alt="favorite icon" />
-                </Link>
-                {!!favoriteProduct.count && (
-                  <div className="header__basket-circle">
-                    <div className="header__basket-count">{favoriteProduct.count}</div>
                   </div>
                 )}
               </div>
