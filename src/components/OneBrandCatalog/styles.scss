@@ -25,16 +25,16 @@
                 }
             }
             @media(max-width: 768px) {
-                font-size: 13px;
+                font-size: 14px;
             }
             &__active {
                 color: #3A5BCC;
                 font-size: 19px;
                 font-weight: 500;
-            }
-            @media(max-width: 768px) {
-                font-size: 13px;
-            }
+                @media(max-width: 768px) {
+                    font-size: 14px;
+                }
+            } 
         }
     }
   
