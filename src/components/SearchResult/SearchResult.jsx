@@ -35,6 +35,7 @@ function SearchResult({ query }) {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="searchresult__crumbs-item">Главная</div>
             </Link>
+            <img className="searchresult__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <div className="searchresult__crumbs-item__active">Результаты поиска</div>
           </div>
         </div>

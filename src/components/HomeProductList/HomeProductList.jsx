@@ -49,6 +49,7 @@ function HomeProductList() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="homeproductlist__crumbs-item">Главная</div>
             </Link>
+            <img className="homeproductlist__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <div className="homeproductlist__crumbs-item__active">EVA коврики для дома</div>
           </div>
         </div>

@@ -31,6 +31,7 @@ function CatalogBrands() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="catalogbrands__crumbs-item">Главная</div>
             </Link>
+            <img className="catalogbrands__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <div className="catalogbrands__crumbs-item__active">Каталог</div>
           </div>
         </div>

@@ -80,9 +80,11 @@ function OneBrandCatalog() {
               <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
                 <div className="onebrandcatalog__crumbs-item">Главная</div>
               </Link>
+              <img className="onebrandcatalog__crumbs-icon" src="../img/arrow.png" alt="arrow" />
               <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/allbrands">
                 <div className="onebrandcatalog__crumbs-item">Каталог</div>
               </Link>
+              <img className="onebrandcatalog__crumbs-icon" src="../img/arrow.png" alt="arrow" />
               <div className="onebrandcatalog__crumbs-item__active">{brand?.name}</div>
             </div>
           </div>

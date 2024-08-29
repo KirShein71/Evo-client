@@ -47,6 +47,7 @@ const Favorite = observer(() => {
                 <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
                   <div className="favorite__crumbs-item">Главная</div>
                 </Link>
+                <img className="favorite__crumbs-icon" src="../img/arrow.png" alt="arrow" />
                 <div className="favorite__crumbs-item__active">Избранное</div>
               </div>
             </div>

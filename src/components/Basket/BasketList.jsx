@@ -89,6 +89,7 @@ const BasketList = observer(() => {
                 <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
                   <div className="basketlist__crumbs-item">Главная</div>
                 </Link>
+                <img className="basketlist__crumbs-icon" src="../img/arrow.png" alt="arrow" />
                 <div className="basketlist__crumbs-item__active">Корзина</div>
               </div>
             </div>

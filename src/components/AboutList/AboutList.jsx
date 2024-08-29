@@ -14,6 +14,7 @@ function AboutList() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="aboutlist__crumbs-item">Главная</div>
             </Link>
+            <img className="aboutlist__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <div className="aboutlist__crumbs-item__active">О компании</div>
           </div>
         </div>

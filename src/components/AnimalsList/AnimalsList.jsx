@@ -48,6 +48,7 @@ function AnimalsList() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="animalslist__crumbs-item">Главная</div>
             </Link>
+            <img className="animalslist__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <div className="animalslist__crumbs-item__active">EVA коврики для животных</div>
           </div>
         </div>

@@ -12,6 +12,7 @@ function ContactList() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="contactlist__crumbs-item">Главная</div>
             </Link>
+            <img className="contaclist__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <div className="contactlist__crumbs-item__active">Контакты</div>
           </div>
         </div>

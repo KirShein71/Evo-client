@@ -197,14 +197,17 @@ function Product() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="product__crumbs-item">Главная</div>
             </Link>
+            <img className="product__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/allbrands">
               <div className="product__crumbs-item">Каталог</div>
             </Link>
+            <img className="product__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <Link
               style={{ textDecoration: 'inherit', color: 'inherit' }}
               to={`/onebrand/${product.brand.name}`}>
               <div className="product__crumbs-item">{product.brand.name}</div>
             </Link>
+            <img className="product__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <div className="product__crumbs-item__active">{product.name}</div>
           </div>
         </div>

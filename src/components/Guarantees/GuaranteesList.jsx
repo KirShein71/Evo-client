@@ -15,6 +15,7 @@ function GuaranteesList() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="guaranteeslist__crumbs-item">Главная</div>
             </Link>
+            <img className="guaranteeslist__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <div className="guaranteeslist__crumbs-item__active">Гарантии</div>
           </div>
         </div>

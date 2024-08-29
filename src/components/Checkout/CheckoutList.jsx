@@ -204,9 +204,11 @@ const CheckoutList = () => {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="checkout__crumbs-item">Главная</div>
             </Link>
+            <img className="checkout__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/basket">
               <div className="checkout__crumbs-item">Корзина</div>
             </Link>
+            <img className="onebrandcatalog__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <div className="checkout__crumbs-item__active">Оформление заказа</div>
           </div>
         </div>
