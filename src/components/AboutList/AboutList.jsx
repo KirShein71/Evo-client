@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 function AboutList() {
@@ -7,6 +8,16 @@ function AboutList() {
   }, []);
   return (
     <div className="aboutlist">
+      <div className="aboutlist__crumbs">
+        <div className="container">
+          <div className="aboutlist__crumbs-content">
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+              <div className="aboutlist__crumbs-item">Главная</div>
+            </Link>
+            <div className="aboutlist__crumbs-item__active">О компании</div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         <div className="aboutlist__content">
           <div className="aboutlist__title">

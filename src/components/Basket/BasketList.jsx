@@ -1,6 +1,6 @@
 import React from 'react';
 import { fetchBasket, getAllBasketProduct } from '../../http/basketApi';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import CartEmpty from './CartEmpty';
 import Loader from '../Loader/Loader';
@@ -83,6 +83,16 @@ const BasketList = observer(() => {
     <>
       {basketProduct.products.length > 0 ? (
         <div className="basketlist">
+          <div className="basketlist__crumbs">
+            <div className="container">
+              <div className="basketlist__crumbs-content">
+                <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+                  <div className="basketlist__crumbs-item">Главная</div>
+                </Link>
+                <div className="basketlist__crumbs-item__active">Корзина</div>
+              </div>
+            </div>
+          </div>
           <div className="container">
             <h1 className="basketlist__title">Корзина</h1>
             <div className="basketlist">

@@ -4,7 +4,7 @@ import Loader from '../Loader/Loader';
 import { getOneBrand } from '../../http/brandApi';
 import { getAllProductByBrandId } from '../../http/productApi';
 import { getAllCarModelByBrandId } from '../../http/carModelApi';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import './styles.scss';
 
@@ -74,6 +74,19 @@ function OneBrandCatalog() {
   return (
     <>
       <div className="onebrandcatalog">
+        <div className="onebrandcatalog__crumbs">
+          <div className="container">
+            <div className="onebrandcatalog__crumbs-content">
+              <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+                <div className="onebrandcatalog__crumbs-item">Главная</div>
+              </Link>
+              <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/allbrands">
+                <div className="onebrandcatalog__crumbs-item">Каталог</div>
+              </Link>
+              <div className="onebrandcatalog__crumbs-item__active">{brand?.name}</div>
+            </div>
+          </div>
+        </div>
         <div className="container">
           {products.length === 0 ? (
             <div className="onebrandcatalog__text">

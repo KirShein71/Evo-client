@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import { getOneProduct } from '../../http/productApi';
 import { getAllProductId } from '../../http/trunkApi';
 import { getAllProductIdThirdrow } from '../../http/thirdrowApi';
@@ -191,6 +191,24 @@ function Product() {
 
   return (
     <div className="product">
+      <div className="product__crumbs">
+        <div className="container">
+          <div className="product__crumbs-content">
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+              <div className="product__crumbs-item">Главная</div>
+            </Link>
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/allbrands">
+              <div className="product__crumbs-item">Каталог</div>
+            </Link>
+            <Link
+              style={{ textDecoration: 'inherit', color: 'inherit' }}
+              to={`/onebrand/${product.brand.name}`}>
+              <div className="product__crumbs-item">{product.brand.name}</div>
+            </Link>
+            <div className="product__crumbs-item__active">{product.name}</div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         <h1 className="product__title">{product?.name}</h1>
         <div className="product__content">

@@ -1,7 +1,7 @@
 .catalogbrands {
     padding-bottom: 50px;
     &__content {
-        padding-top: 50px;
+        padding-top: 25px;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: 1fr;
@@ -18,6 +18,41 @@
         }
         @media(max-width: 480px) {
             grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__crumbs {
+        padding: 15px 0px;
+        background-color: #3A5BCC26;
+        @media(max-width: 768px) {
+            padding: 5px 0px;
+        }
+        &-content {
+            display: flex;
+        }
+        
+        &-item {
+            font-size: 19px;
+            font-weight: 500;
+            color: var(--e-global-color-primary);
+            margin-right: 20px;
+            &:hover {
+                color: #3A5BCC;
+                @media(max-width: 991px) {
+                    color: var(--e-global-color-primary);
+                }
+            }
+            @media(max-width: 768px) {
+                font-size: 13px;
+            }
+            &__active {
+                color: #3A5BCC;
+                font-size: 19px;
+                font-weight: 500;
+            }
+            @media(max-width: 768px) {
+                font-size: 13px;
+            }
         }
     }
 }

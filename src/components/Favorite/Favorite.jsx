@@ -4,6 +4,7 @@ import { fetchBasket } from '../../http/basketApi';
 import CardFavorite from './CardFavorite/CardFavorite';
 import { AppContext } from '../../context/AppContext';
 import Loader from '../Loader/Loader';
+import { Link } from 'react-router-dom';
 
 import './style.scss';
 import { observer } from 'mobx-react';
@@ -40,6 +41,16 @@ const Favorite = observer(() => {
     <>
       {favoriteProduct.items.length > 0 ? (
         <div className="favorite">
+          <div className="favorite__crumbs">
+            <div className="container">
+              <div className="favorite__crumbs-content">
+                <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+                  <div className="favorite__crumbs-item">Главная</div>
+                </Link>
+                <div className="favorite__crumbs-item__active">Избранное</div>
+              </div>
+            </div>
+          </div>
           <div className="container">
             <h2 className="favorite__title">Избранное</h2>
             <div className="favorite__content">

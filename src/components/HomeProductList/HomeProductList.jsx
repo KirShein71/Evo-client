@@ -2,6 +2,7 @@ import React from 'react';
 import CardHomeProduct from '../CardHomeProduct/CardHomeProduct';
 import { getAllHome } from '../../http/homeApi';
 import { getAllMaterialForAnimal } from '../../http/materailRugApi';
+import { Link } from 'react-router-dom';
 import LoaderAnimal from '../LoaderAnimal/LoaderAnimal';
 
 import './style.scss';
@@ -42,6 +43,16 @@ function HomeProductList() {
 
   return (
     <div className="homeproductlist">
+      <div className="homeproductlist__crumbs">
+        <div className="container">
+          <div className="homeproductlist__crumbs-content">
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+              <div className="homeproductlist__crumbs-item">Главная</div>
+            </Link>
+            <div className="homeproductlist__crumbs-item__active">EVA коврики для дома</div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         <div className="homeproductlist__title">Коврики для дома</div>
         <div className="homeproductlist__subtitle">

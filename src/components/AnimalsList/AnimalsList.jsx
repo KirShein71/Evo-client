@@ -4,6 +4,7 @@ import { getAllMaterialForAnimal } from '../../http/materailRugApi';
 import CardAnimal from '../CardAnimal/CardAnimal';
 import './style.scss';
 import LoaderAnimal from '../LoaderAnimal/LoaderAnimal';
+import { Link } from 'react-router-dom';
 
 function AnimalsList() {
   const [animals, setAnimals] = React.useState([]);
@@ -41,6 +42,16 @@ function AnimalsList() {
 
   return (
     <div className="animalslist">
+      <div className="animalslist__crumbs">
+        <div className="container">
+          <div className="animalslist__crumbs-content">
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+              <div className="animalslist__crumbs-item">Главная</div>
+            </Link>
+            <div className="animalslist__crumbs-item__active">EVA коврики для животных</div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         {animals.length === 0 ? (
           <div className="animalslist__text">

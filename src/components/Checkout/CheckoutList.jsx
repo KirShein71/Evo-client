@@ -198,6 +198,19 @@ const CheckoutList = () => {
 
   return (
     <div className="checkout">
+      <div className="checkout__crumbs">
+        <div className="container">
+          <div className="checkout__crumbs-content">
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+              <div className="checkout__crumbs-item">Главная</div>
+            </Link>
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/basket">
+              <div className="checkout__crumbs-item">Корзина</div>
+            </Link>
+            <div className="checkout__crumbs-item__active">Оформление заказа</div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         <h1 className="checkout__title">Оформление заказа</h1>
         <h3 className="checkout__subtitle">Введите Ваши данные</h3>

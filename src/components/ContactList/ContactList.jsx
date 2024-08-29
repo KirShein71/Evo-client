@@ -1,10 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import YMap from './YMap';
 import './style.scss';
 
 function ContactList() {
   return (
     <div className="contactlist">
+      <div className="contactlist__crumbs">
+        <div className="container">
+          <div className="contactlist__crumbs-content">
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+              <div className="contactlist__crumbs-item">Главная</div>
+            </Link>
+            <div className="contactlist__crumbs-item__active">Контакты</div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         <div className="contactlist__title">Контакты</div>
         <div className="contactlist__content">
@@ -20,8 +31,8 @@ function ContactList() {
             </div>
             <div className="contactlist__information-item">
               Телефон:
-              <a className="contactlist__phone" href="tel:+79618080539">
-                8-961-808-0539
+              <a className="contactlist__phone" href="tel:8122202909">
+                8-812-220-29-09
               </a>
             </div>
             <div className="contactlist__information-footnote">

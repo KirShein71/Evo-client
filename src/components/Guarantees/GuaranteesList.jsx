@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 function GuaranteesList() {
@@ -8,6 +9,16 @@ function GuaranteesList() {
 
   return (
     <div className="guaranteeslist">
+      <div className="guaranteeslist__crumbs">
+        <div className="container">
+          <div className="guaranteeslist__crumbs-content">
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+              <div className="guaranteeslist__crumbs-item">Главная</div>
+            </Link>
+            <div className="guaranteeslist__crumbs-item__active">Гарантии</div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         <div className="guaranteeslist__title">Гарантии</div>
         <div className="guaranteeslist__content">
