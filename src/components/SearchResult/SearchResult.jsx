@@ -2,6 +2,7 @@ import React from 'react';
 import CardResult from './CardResult';
 import { getAllProduct } from '../../http/productApi';
 import Loader from '../Loader/Loader';
+import { Link } from 'react-router-dom';
 
 import './style.scss';
 
@@ -28,6 +29,16 @@ function SearchResult({ query }) {
 
   return (
     <div className="searchresult">
+      <div className="searchresult__crumbs">
+        <div className="container">
+          <div className="searchresult__crumbs-content">
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+              <div className="searchresult__crumbs-item">Главная</div>
+            </Link>
+            <div className="searchresult__crumbs-item__active">Результаты поиска</div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         {filteredProducts.length > 0 ? (
           <>

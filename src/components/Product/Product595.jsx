@@ -207,8 +207,8 @@ function Product595() {
               to={`/onebrand/${product.brand.name}`}>
               <div className="product__crumbs-item">{product.brand.name}</div>
             </Link>
-            <div className="product__crumbs-item__active">{product.name}</div>
           </div>
+          <div className="product__crumbs-item__active">{product.name}</div>
         </div>
       </div>
       <div className="container">
