@@ -167,6 +167,9 @@ const Header = observer(() => {
                     <Link to="/animals" onClick={() => setOpen(false)}>
                       <div className="burger-menu__items">Коврики для животных</div>
                     </Link>
+                    <Link to="/accessories" onClick={() => setOpen(false)}>
+                      <div className="burger-menu__items">Автоаксессуары</div>
+                    </Link>
                     <Link to="/about" onClick={() => setOpen(false)}>
                       <div className="burger-menu__items">О нас</div>
                     </Link>
