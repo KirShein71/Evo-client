@@ -26,7 +26,7 @@ function HomeTable({ material, home, quantity, id, change, setChange, materialId
   return (
     <>
       <td>
-        {home.home_images
+        {home?.home_images
           .filter((imageHome) => imageHome.materialId === materialId)
           .map((imageHome) => (
             <div className="baskettable__homeimage">
@@ -36,13 +36,13 @@ function HomeTable({ material, home, quantity, id, change, setChange, materialId
       </td>
       <td>
         <div className="baskettable__information">
-          <div className="baskettable__information-name">{home.name}</div>
+          <div className="baskettable__information-name">{home?.name}</div>
           <div className="baskettable__information-options">
             Форма ячейки: Сота, Цвет материала: {material.name}
           </div>
         </div>
         <td>
-          <div className="baskettable__information-price">Цена: {home.new_price}</div>
+          <div className="baskettable__information-price">Цена: {home?.new_price}</div>
         </td>
         <div className="baskettable__information-quantity">Количество: {quantity}</div>
       </td>
@@ -50,10 +50,10 @@ function HomeTable({ material, home, quantity, id, change, setChange, materialId
         <div className="baskettable__quantity">{quantity}</div>
       </td>
       <td>
-        <div className="baskettable__price">{home.new_price}</div>
+        <div className="baskettable__price">{home?.new_price}</div>
       </td>
       <td>
-        <div className="baskettable__total">{home.new_price * quantity}</div>
+        <div className="baskettable__total">{home?.new_price * quantity}</div>
       </td>
       <td>
         {openDeleteHomeModal && (

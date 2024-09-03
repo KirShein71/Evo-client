@@ -174,9 +174,9 @@ const AdminOrder = () => {
 
   const flattenedOrders = orders.map((item) => ({
     id: item.id,
-    name: item.product.name,
+    name: item.product?.name || item.animal?.name || item.home?.name || item.bag?.name,
     material: item.material.name,
-    edging: item.edging.name,
+    edging: item.edging && item.edging.name ? item.edging.name : '',
     quantity: item.quantity,
   }));
 
@@ -269,6 +269,8 @@ const AdminOrder = () => {
                   ? item.home.name
                   : item.animal && item.animal.name
                   ? item.animal.name
+                  : item.bag && item.bag.name
+                  ? item.bag.name
                   : ''}
               </td>
               <td
@@ -277,9 +279,24 @@ const AdminOrder = () => {
                 <ul>
                   <li>Материал: {item.material?.name}</li>
                   <li>{item.edging ? <span>Кант: {item.edging.name}</span> : null}</li>
-                  <li>
-                    Количество: {item.quantity} шт {item.thirdrow ? '3 ряда' : ''}
-                  </li>
+                  {item.bag === null ? (
+                    <li>
+                      Количество: {item.quantity} шт {item.thirdrow ? '3 ряда' : ''}
+                    </li>
+                  ) : (
+                    <>
+                      <li>
+                        {item.bagfourtyId ? (
+                          <span>Органайзер 40см: {item.quantity_bagfourty} (количество)</span>
+                        ) : null}
+                      </li>
+                      <li>
+                        {item.bagfiftyId ? (
+                          <span>Органайзер 50см: {item.quantity_bagfifty} (количество)</span>
+                        ) : null}
+                      </li>
+                    </>
+                  )}
                   <li>{item.trunk ? <span>Багажник: {item.quantity_trunk} шт</span> : null}</li>
                   <li>
                     {item.steel ? <span>{item.steel.name}</span> : null}{' '}

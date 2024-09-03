@@ -14,6 +14,8 @@ import OrganizerFiftyTable from './Table/OrganizerFifty';
 import SteelTable from './Table/SteelTable';
 import AnimalTable from './Table/AnimalTable';
 import HomeTable from './Table/HomeTable';
+import BagFourtyTable from './Table/BagFourtyTable';
+import BagFiftyTable from './Table/BagFiftyTable';
 
 const BasketList = observer(() => {
   const { basketProduct } = React.useContext(AppContext);
@@ -54,6 +56,8 @@ const BasketList = observer(() => {
     const organizerFiftyPrice = basketproduct.organizerfifty
       ? basketproduct.organizerfifty.new_price
       : 0;
+    const bagFourtyPrice = basketproduct.bagfourty ? basketproduct.bagfourty.price : 0;
+    const bagFiftyPrice = basketproduct.bagfifty ? basketproduct.bagfifty.price : 0;
     totalAmount +=
       trunkPrice * basketproduct.quantity_trunk +
       (thirdrowPrice === 0
@@ -64,7 +68,9 @@ const BasketList = observer(() => {
       saddlePrice +
       steelPrice +
       organizerPrice * basketproduct.quantity_organizer +
-      organizerFiftyPrice * basketproduct.quantity_organizerfifty;
+      organizerFiftyPrice * basketproduct.quantity_organizerfifty +
+      bagFourtyPrice * basketproduct.quantity_bagfourty +
+      bagFiftyPrice * basketproduct.quantity_bagfifty;
   });
 
   const handleCheckout = () => {
@@ -173,6 +179,20 @@ const BasketList = observer(() => {
                           {obj.home !== null ? (
                             <tr>
                               <HomeTable {...obj} change={change} setChange={setChange} />
+                            </tr>
+                          ) : (
+                            ''
+                          )}
+                          {obj.bagfourty !== null ? (
+                            <tr>
+                              <BagFourtyTable {...obj} change={change} setChange={setChange} />
+                            </tr>
+                          ) : (
+                            ''
+                          )}
+                          {obj.bagfifty !== null ? (
+                            <tr>
+                              <BagFiftyTable {...obj} change={change} setChange={setChange} />
                             </tr>
                           ) : (
                             ''

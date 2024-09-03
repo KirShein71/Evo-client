@@ -21,6 +21,11 @@ export const appendHome = async (homeId, materialId, quantity) => {
     return data;
 }
 
+export const appendBag = async (bagId, bagmaterialId, bagfourtyId, bagfiftyId, quantity_bagfourty, quantity_bagfifty) => {
+    const { data } = await guestInstance.post(`basket/appendBag`, { bagId, bagmaterialId, bagfourtyId, bagfiftyId, quantity_bagfourty, quantity_bagfifty  });
+    return data;
+}
+
 export const appendFavorite = async (productId) => {
     const { data } = await guestInstance.post(`basket/appendFavorite`, { productId  });
     return data;
@@ -59,6 +64,16 @@ export const deleteSteel = async (id) => {
 
 export const deleteSaddle = async (id) => {
     const { data } = await guestInstance.delete(`basketproduct/deleteSaddle/${id}`);
+    return data;
+};
+
+export const deleteBagFourty = async (id) => {
+    const { data } = await guestInstance.delete(`basketproduct/deleteBagFourty/${id}`);
+    return data;
+};
+
+export const deleteBagFifty = async (id) => {
+    const { data } = await guestInstance.delete(`basketproduct/deleteBagFifty/${id}`);
     return data;
 };
 

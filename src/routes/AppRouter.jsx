@@ -28,6 +28,9 @@ import About from '../pages/About';
 import NotFounds from '../pages/NotFounds';
 import Favorites from '../pages/Favorites';
 import LoginUser from '../pages/LoginUser';
+import Accessories from '../pages/Accessories';
+import AdminBag from '../pages/Admin/AdminBag/AdminBag';
+import Organizer from '../pages/Organizer';
 import { observer } from 'mobx-react';
 
 const routes = [
@@ -48,6 +51,8 @@ const routes = [
   { path: '*', Component: NotFounds },
   { path: '/favorites', Component: Favorites },
   { path: '/loginuser', Component: LoginUser },
+  { path: '/accessories', Component: Accessories },
+  { path: '/organizer/:originalName', Component: Organizer },
 ];
 
 const adminRoutes = [
@@ -61,6 +66,7 @@ const adminRoutes = [
   { path: '/adminanimal', Component: AdminAnimal },
   { path: '/adminhome', Component: AdminHome },
   { path: '/adminorganizer', Component: AdminOrganizer },
+  { path: '/adminbag', Component: AdminBag },
 ];
 
 const AppRouter = observer(() => {

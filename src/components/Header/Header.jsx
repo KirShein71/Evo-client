@@ -88,6 +88,9 @@ const Header = observer(() => {
                   <Link to="/animals">
                     <div className="catalog-modal__item">Коврики для животных</div>
                   </Link>
+                  <Link to="/accessories">
+                    <div className="catalog-modal__item">Автоаксессуары</div>
+                  </Link>
                 </div>
               </div>
             )}

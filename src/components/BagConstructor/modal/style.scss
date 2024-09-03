@@ -1,0 +1,48 @@
+.modalbag {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 350px;
+    height: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px 25px;
+    
+  
+  
+  &__text {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--e-global-color-primary);
+    margin-bottom: 15px;
+    
+  }
+  &__button {
+    display: block;
+    margin: 0 auto;
+    background-color: #3A5BCC;
+    border: 2px solid #3A5BCC;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px;
+
+  }
+}
+
+.overlay__modalbag {
+    position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+  z-index: 10;
+}

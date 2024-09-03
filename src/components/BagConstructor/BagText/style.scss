@@ -1,0 +1,23 @@
+.bagtext {
+    margin-top: 35px;
+
+   
+
+    &__item {
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--e-global-color-primary); 
+        line-height: 1.2;
+        @media(max-width: 460px) {
+            font-size: 16px;
+        }
+        span {
+            font-weight: 600;
+            font-size: 19px;
+            color: var(--e-global-color-primary); 
+            @media(max-width: 460px) {
+                font-size: 17px;
+            }
+        }
+    }
+}
