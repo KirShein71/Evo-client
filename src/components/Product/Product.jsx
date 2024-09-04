@@ -6,6 +6,7 @@ import { getAllProductIdThirdrow } from '../../http/thirdrowApi';
 import { getAllMaterialRug } from '../../http/materailRugApi';
 import { getAllEdging } from '../../http/edgingApi';
 import { append } from '../../http/basketApi';
+import { getAllBag, getAllBagFifty, getAllBagFourty, getAllBagMaterial } from '../../http/bagApi';
 import Saddle from './Saddle/Saddle';
 import './styles.scss';
 import Organizer from './Organizer/Organizer';
@@ -17,6 +18,7 @@ import Cellshape from './Cellshape/Cellshape';
 import Materials from './Materials/Materials';
 import Edging from './Edging/Edging';
 import Pattern from './Pattern/Pattern';
+import Bag from './Bag/Bag';
 
 function Product() {
   const { originalName } = useParams();
@@ -61,6 +63,25 @@ function Product() {
   const [organizerFiftyQuantity, setOrganizerFiftyQuantity] = React.useState(1);
   const isCountOrganizerFiftyDisabled = organizerFiftyQuantity <= 1;
 
+  const [bags, setBags] = React.useState([]);
+  const [selectedBagId, setSelectedBagId] = React.useState(6);
+  const [bagFourty, setBagFourty] = React.useState([]);
+  const [bagFifty, setBagFifty] = React.useState([]);
+  const [bagFourtyChecked, setBagFourtyChecked] = React.useState(false);
+  const [bagFiftyChecked, setBagFiftyChecked] = React.useState(false);
+  const [selectedBagFourty, setSelectedBagFourty] = React.useState(null);
+  const [selectedBagFifty, setSelectedBagFifty] = React.useState(null);
+  const [bagmaterials, setBagmaterials] = React.useState([]);
+  const [selectedBagmaterial, setSelectedBagmaterial] = React.useState('blacksota');
+  const [selectedBagmaterialId, setSelectedBagmaterialId] = React.useState(1);
+  const [selectedBagmaterialName, setSelectedBagmaterialName] = React.useState('Черный');
+
+  const [bagFourtyQuantity, setBagFourtyQuantity] = React.useState(1);
+  const isCountBagFourtyDisabled = bagFourtyQuantity <= 1;
+
+  const [bagFiftyQuantity, setBagFiftyQuantity] = React.useState(1);
+  const isCountBagFiftyDisabled = bagFiftyQuantity <= 1;
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -71,6 +92,10 @@ function Product() {
     let edgingLoaded = false;
     let trunkLoaded = false;
     let thirdrowLoaded = false;
+    let bagLoaded = false;
+    let bagMaterialLoaded = false;
+    let bagFourtyLoaded = false;
+    let bagFiftyLoaded = false;
 
     const fetchData = async () => {
       const productData = await getOneProduct(modelName);
@@ -93,7 +118,33 @@ function Product() {
       setThirdrow(thirdrowData);
       thirdrowLoaded = true;
 
-      if (productLoaded && materialLoaded && edgingLoaded && trunkLoaded && thirdrowLoaded) {
+      const bagData = await getAllBag();
+      setBags(bagData);
+      bagLoaded = true;
+
+      const bagMaterialData = await getAllBagMaterial();
+      setBagmaterials(bagMaterialData);
+      bagMaterialLoaded = true;
+
+      const bagFourtyData = await getAllBagFourty();
+      setBagFourty(bagFourtyData);
+      bagFourtyLoaded = true;
+
+      const BagFiftyData = await getAllBagFifty();
+      setBagFifty(BagFiftyData);
+      bagFiftyLoaded = true;
+
+      if (
+        productLoaded &&
+        materialLoaded &&
+        edgingLoaded &&
+        trunkLoaded &&
+        thirdrowLoaded &&
+        bagLoaded &&
+        bagFourtyLoaded &&
+        bagFiftyLoaded &&
+        bagMaterialLoaded
+      ) {
         setFetching(false);
       }
     };
@@ -134,6 +185,24 @@ function Product() {
     setSelectedProductThirdrow(thirdrowId);
   };
 
+  const handleBagFourtyChange = (bagfourtyId) => {
+    setBagFourtyChecked((prev) => !prev);
+    if (bagFourtyChecked) {
+      setSelectedBagFourty(null);
+    } else {
+      setSelectedBagFourty(bagfourtyId);
+    }
+  };
+
+  const handleBagFiftyChange = (bagfiftyId) => {
+    setBagFiftyChecked((prev) => !prev);
+    if (bagFiftyChecked) {
+      setSelectedBagFifty(null);
+    } else {
+      setSelectedBagFifty(bagfiftyId);
+    }
+  };
+
   const clickToCart = (
     productId,
     materialId,
@@ -149,6 +218,12 @@ function Product() {
     trunkQuantity,
     organizerQuantity,
     organizerFiftyQuantity,
+    bagId,
+    bagmaterialId,
+    bagfourtyId,
+    bagfiftyId,
+    bagFourtyQuantity,
+    bagFiftyQuantity,
   ) => {
     if (selectedProductTrunk === null && selectedProduct === null) {
       setPopupOpen(true);
@@ -168,6 +243,12 @@ function Product() {
         trunkQuantity,
         organizerQuantity,
         organizerFiftyQuantity,
+        bagId,
+        bagmaterialId,
+        bagfourtyId,
+        bagfiftyId,
+        bagFourtyQuantity,
+        bagFiftyQuantity,
       )
         .then((data) => {
           setIsAddedToCart(true);
@@ -285,6 +366,31 @@ function Product() {
             />
           </div>
         </div>
+        {/* <div className="product__bag">
+          <Bag
+            selectedBagmaterialId={selectedBagmaterialId}
+            bags={bags}
+            setSelectedBagId={setSelectedBagId}
+            bagmaterials={bagmaterials}
+            selectedBagmaterialName={selectedBagmaterialName}
+            setSelectedBagmaterialName={setSelectedBagmaterialName}
+            selectedBagmaterial={selectedBagmaterial}
+            setSelectedBagmaterial={setSelectedBagmaterial}
+            setSelectedBagmaterialId={setSelectedBagmaterialId}
+            handleBagFourtyChange={handleBagFourtyChange}
+            bagFourtyChecked={bagFourtyChecked}
+            bagFourtyQuantity={bagFourtyQuantity}
+            setBagFourtyQuantity={setBagFourtyQuantity}
+            bagFourty={bagFourty}
+            isCountBagFourtyDisabled={isCountBagFourtyDisabled}
+            handleBagFiftyChange={handleBagFiftyChange}
+            bagFiftyChecked={bagFiftyChecked}
+            bagFiftyQuantity={bagFiftyQuantity}
+            bagFifty={bagFifty}
+            isCountBagFiftyDisabled={isCountBagFiftyDisabled}
+            setBagFiftyQuantity={setBagFiftyQuantity}
+          />
+        </div> */}
         {popupOpen && <ModalRug onClosePopup={onClosePopup} />}
         <button
           onClick={() => {
@@ -305,6 +411,12 @@ function Product() {
                 trunkQuantity,
                 organizerQuantity,
                 organizerFiftyQuantity,
+                selectedBagId,
+                selectedBagmaterialId,
+                selectedBagFourty,
+                selectedBagFifty,
+                bagFourtyQuantity,
+                bagFiftyQuantity,
               );
             }
           }}

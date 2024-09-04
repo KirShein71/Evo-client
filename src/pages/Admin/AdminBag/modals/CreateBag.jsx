@@ -24,11 +24,16 @@ const CreateBag = (props) => {
   const { show, setShow, setChange } = props;
   const [value, setValue] = React.useState(defaultValue);
   const [valid, setValid] = React.useState(defaultValid);
+  const [image, setImage] = React.useState(null);
 
   const handleInputChange = (event) => {
     const data = { ...value, [event.target.name]: event.target.value };
     setValue(data);
     setValid(isValid(data));
+  };
+
+  const handleImageChange = (event) => {
+    setImage(event.target.files[0]);
   };
 
   const handleSubmit = (event) => {
@@ -39,9 +44,11 @@ const CreateBag = (props) => {
       const data = new FormData();
       data.append('name', value.name.trim());
       data.append('new_price', value.new_price.trim());
+      data.append('image', image, image.name);
 
       createBag(data)
         .then((data) => {
+          event.target.image.value = '';
           setValue(defaultValue);
           setValid(defaultValid);
           setShow(false);
@@ -81,6 +88,17 @@ const CreateBag = (props) => {
                 isInvalid={valid.new_price === false}
                 placeholder="Новая цена"
                 className="mb-3"
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col className="mb-3">
+              <div>Фотография товара</div>
+              <Form.Control
+                name="image"
+                type="file"
+                onChange={(e) => handleImageChange(e)}
+                placeholder="Фото товара..."
               />
             </Col>
           </Row>

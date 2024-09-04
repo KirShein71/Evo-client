@@ -21,6 +21,9 @@ function Footer() {
           <Link to="/animals">
             <div className="footer__item">Коврики для животных</div>
           </Link>
+          <Link to="/accessories">
+            <div className="footer__item">Автоаксессуары</div>
+          </Link>
         </div>
         <div className="footer__menu">
           <Link to="/about">
