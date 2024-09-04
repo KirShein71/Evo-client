@@ -64,7 +64,7 @@ function Product() {
   const isCountOrganizerFiftyDisabled = organizerFiftyQuantity <= 1;
 
   const [bags, setBags] = React.useState([]);
-  const [selectedBagId, setSelectedBagId] = React.useState(6);
+  const [selectedBagId, setSelectedBagId] = React.useState(3);
   const [bagFourty, setBagFourty] = React.useState([]);
   const [bagFifty, setBagFifty] = React.useState([]);
   const [bagFourtyChecked, setBagFourtyChecked] = React.useState(false);
@@ -304,7 +304,7 @@ function Product() {
               selectedEdging={selectedEdging}
             />
             <Saddle setSelectedSaddle={setSelectedSaddle} setSelectedSteel={setSelectedSteel} />
-            <Organizer
+            {/* <Organizer
               setSelectedOrganizer={setSelectedOrganizer}
               setSelectedOrganizerFifty={setSelectedOrganizerFifty}
               organizerQuantity={organizerQuantity}
@@ -313,7 +313,7 @@ function Product() {
               organizerFiftyQuantity={organizerFiftyQuantity}
               setOrganizerFiftyQuantity={setOrganizerFiftyQuantity}
               isCountOrganizerFiftyDisabled={isCountOrganizerFiftyDisabled}
-            />
+            /> */}
           </div>
           <div className="product__content-center">
             <Cellshape />
@@ -366,7 +366,7 @@ function Product() {
             />
           </div>
         </div>
-        {/* <div className="product__bag">
+        <div className="product__bag">
           <Bag
             selectedBagmaterialId={selectedBagmaterialId}
             bags={bags}
@@ -390,8 +390,9 @@ function Product() {
             isCountBagFiftyDisabled={isCountBagFiftyDisabled}
             setBagFiftyQuantity={setBagFiftyQuantity}
           />
-        </div> */}
+        </div>
         {popupOpen && <ModalRug onClosePopup={onClosePopup} />}
+
         <button
           onClick={() => {
             if (isAddedToCart) {

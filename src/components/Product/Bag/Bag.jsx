@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
-import BagMaterials from '../../BagConstructor/BagMaterials/BagMaterials';
-import BagSize from '../../BagConstructor/BagSize/BagSize';
+import BagMaterial from './BagMaterials/BagMaterial';
+import BagSizes from './BagSize/BagSizes';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -47,40 +47,42 @@ function Bag({
       <div className="bag__content">
         <div className="bag__card">
           <div className="bag__card-content">
-            {/* <div className="bag__controls">
-            <div className="bag__arrow" onClick={() => sliderRef?.slickPrev()}>
-              <img src="../img/left.png" alt="arrow_left" />
-            </div>
-            <div className="bag__arrow" onClick={() => sliderRef?.slickNext()}>
-              <img src="../img/right.png" alt="arrow_right" />
-            </div>
-          </div> */}
-            <div className="bag__card-product">
-              <Slider ref={setSliderRef} {...settings}>
-                {bags.map((bag) => (
-                  <div key={bag.id}>
-                    <div className="bag__card-product__image">
-                      {bag.bag_images.map((bagImage) => (
-                        <div
-                          key={bagImage.id}
-                          style={{
-                            display:
-                              bagImage.bagmaterialId === selectedBagmaterialId ? 'block' : 'none',
-                          }}>
-                          <img
-                            src={process.env.REACT_APP_IMG_URL + bagImage.image}
-                            alt="image bag"
-                          />
-                        </div>
-                      ))}
+            <div style={{ display: 'flex', marginRight: '45px' }}>
+              <div className="bag__card-arrow" onClick={() => sliderRef?.slickPrev()}>
+                <img src="../img/left.png" alt="arrow_left" />
+              </div>
+              <div className="bag__card-product">
+                <Slider ref={setSliderRef} {...settings}>
+                  {bags.map((bag) => (
+                    <div key={bag.id}>
+                      <div className="bag__card-product__image">
+                        {bag.bag_images.map((bagImage) => (
+                          <div
+                            key={bagImage.id}
+                            style={{
+                              display:
+                                bagImage.bagmaterialId === selectedBagmaterialId ? 'block' : 'none',
+                            }}>
+                            <img
+                              src={process.env.REACT_APP_IMG_URL + bagImage.image}
+                              alt="image bag"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      <div className="bag__card-product__title">{bag.name}</div>
                     </div>
-                    <div className="bag__card-product__title">{bag.name}</div>
-                  </div>
-                ))}
-              </Slider>
+                  ))}
+                </Slider>
+              </div>
+              <div>
+                <div className="bag__card-arrow" onClick={() => sliderRef?.slickNext()}>
+                  <img src="../img/right.png" alt="arrow_right" />
+                </div>
+              </div>
             </div>
             <div className="bag__card-construtor">
-              <BagMaterials
+              <BagMaterial
                 bagmaterials={bagmaterials}
                 selectedBagmaterialName={selectedBagmaterialName}
                 setSelectedBagmaterialName={setSelectedBagmaterialName}
@@ -88,7 +90,7 @@ function Bag({
                 setSelectedBagmaterial={setSelectedBagmaterial}
                 setSelectedBagmaterialId={setSelectedBagmaterialId}
               />
-              <BagSize
+              <BagSizes
                 handleBagFourtyChange={handleBagFourtyChange}
                 bagFourtyChecked={bagFourtyChecked}
                 bagFourtyQuantity={bagFourtyQuantity}

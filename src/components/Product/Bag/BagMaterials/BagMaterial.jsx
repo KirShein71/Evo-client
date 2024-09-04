@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-function BagMaterials({
+function BagMaterial({
   bagmaterials,
   selectedBagmaterialName,
   setSelectedBagmaterial,
@@ -10,9 +10,9 @@ function BagMaterials({
   setSelectedBagmaterialId,
 }) {
   return (
-    <div className="bagmaterials">
-      <div className="bagmaterials__title">Цвет материала: {selectedBagmaterialName}</div>
-      <div className="bagmaterials__content">
+    <div className="bag-materials">
+      <div className="bag-materials__title">Цвет материала: {selectedBagmaterialName}</div>
+      <div className="bag-materials__content">
         {bagmaterials.map((bagmaterial) => (
           <div
             key={bagmaterial.id}
@@ -22,7 +22,7 @@ function BagMaterials({
               setSelectedBagmaterialId(bagmaterial.id);
             }}>
             <div
-              className={`materials__content-item ${bagmaterial.color} ${
+              className={`bag-materials__content-item ${bagmaterial.color} ${
                 selectedBagmaterial === bagmaterial.color ? 'active' : ''
               }`}
               style={{ backgroundColor: bagmaterial.color }}></div>
@@ -33,4 +33,4 @@ function BagMaterials({
   );
 }
 
-export default BagMaterials;
+export default BagMaterial;
