@@ -1,7 +1,8 @@
 import React from 'react';
-import { getAllBag, deleteBag, deleteBagImage } from '../../../http/bagApi';
+import { getAllBag, deleteBag, deleteBagImage, deleteBagPicture } from '../../../http/bagApi';
 import CreateBag from './modals/CreateBag';
 import CreateBagImage from './modals/CreateBagImage';
+import CreateBagPicture from './modals/CreateBagPicture';
 import UpdateBag from './modals/UpdateBag';
 import UpdateBagPrice from './modals/UpdateBagPrice';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
@@ -12,6 +13,7 @@ const AdminBag = () => {
   const [fetching, setFetching] = React.useState(true);
   const [createBagModal, setCreateBagModal] = React.useState(false);
   const [createBagImageModal, setCreateBagImageModal] = React.useState(false);
+  const [createBagPictureModal, setCreateBagPictureModal] = React.useState(false);
   const [updateBagModal, setUpdateBagModal] = React.useState(false);
   const [updateBagPriceModal, setUpdateBagPriceModal] = React.useState(false);
   const [change, setChange] = React.useState(true);
@@ -37,6 +39,11 @@ const AdminBag = () => {
     setCreateBagImageModal(true);
   };
 
+  const handleCreateBagPicture = (id) => {
+    setBagId(id);
+    setCreateBagPictureModal(true);
+  };
+
   const handleDeleteBag = (id) => {
     const confirmed = window.confirm('Вы уверены, что хотите удалить карточку?');
     if (confirmed) {
@@ -59,6 +66,17 @@ const AdminBag = () => {
     }
   };
 
+  const handleDeleteBagPicture = (id) => {
+    const confirmed = window.confirm('Вы уверены, что хотите удалить картинку?');
+    if (confirmed) {
+      deleteBagPicture(id)
+        .then(() => {
+          alert('Картинка товара удалена');
+        })
+        .catch((error) => alert(error.response.data.message));
+    }
+  };
+
   if (fetching) {
     return <Spinner animation="border" />;
   }
@@ -71,6 +89,12 @@ const AdminBag = () => {
       <CreateBagImage
         show={createBagImageModal}
         setShow={setCreateBagImageModal}
+        setChange={setChange}
+        bagId={bagId}
+      />
+      <CreateBagPicture
+        show={createBagPictureModal}
+        setShow={setCreateBagPictureModal}
         setChange={setChange}
         bagId={bagId}
       />
@@ -91,7 +115,8 @@ const AdminBag = () => {
           <thead>
             <tr>
               <th>Название</th>
-              <th>Картинка</th>
+              <th>Картинка основаная</th>
+              <th>Картинки внизу</th>
               <th>Редактировать</th>
               <th>Стоимость</th>
               <th>Удалить</th>
@@ -105,15 +130,18 @@ const AdminBag = () => {
                   {bag.bag_images.map((img) => (
                     <div style={{ display: 'flex', marginTop: '10px' }}>
                       <div style={{ marginRight: '15px' }}>
-                        {img.materialId === 28
+                        {img.bagmaterialId === 1
                           ? 'Черный'
-                          : img.materialId === 29
-                          ? 'Серый'
-                          : img.materialId === 30
-                          ? 'Коричневый'
-                          : img.materialId === 31
-                          ? 'Бежевый'
+                          : img.bagmaterialId === 2
+                          ? 'Белый'
+                          : img.bagmaterialId === 3
+                          ? 'Красный'
+                          : img.bagmaterialId === 4
+                          ? 'Синий'
                           : ''}
+                      </div>
+                      <div>
+                        {img.bagsizeId === 1 ? '40 см' : img.bagsizeId === 2 ? '50 см' : ''}
                       </div>
                       <Button
                         size="sm"
@@ -124,6 +152,35 @@ const AdminBag = () => {
                     </div>
                   ))}
                   <Button size="sm" className="mt-3" onClick={() => handleCreateBagImage(bag.id)}>
+                    Добавить изображения
+                  </Button>
+                </td>
+                <td>
+                  {bag.bag_pictures.map((picture) => (
+                    <div style={{ display: 'flex', marginTop: '10px' }}>
+                      <div style={{ marginRight: '15px' }}>
+                        {picture.bagmaterialId === 1
+                          ? 'Черный'
+                          : picture.bagmaterialId === 2
+                          ? 'Белый'
+                          : picture.bagmaterialId === 3
+                          ? 'Красный'
+                          : picture.bagmaterialId === 4
+                          ? 'Синий'
+                          : ''}
+                      </div>
+                      <div>
+                        {picture.bagsizeId === 1 ? '40 см' : picture.bagsizeId === 2 ? '50 см' : ''}
+                      </div>
+                      <Button
+                        size="sm"
+                        variant="danger"
+                        onClick={() => handleDeleteBagPicture(picture.id)}>
+                        удалить
+                      </Button>
+                    </div>
+                  ))}
+                  <Button size="sm" className="mt-3" onClick={() => handleCreateBagPicture(bag.id)}>
                     Добавить изображения
                   </Button>
                 </td>

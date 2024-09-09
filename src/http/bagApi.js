@@ -21,6 +21,16 @@ export const deleteBagImage = async (id) => {
     return data
 }
 
+export const createBagPicture = async (bagpicture) => {
+    const { data } = await authInstance.post('bagpicture/create', bagpicture)
+    return data
+}
+
+export const deleteBagPicture = async (id) => {
+    const { data } = await authInstance.delete(`bagpicture/delete/${id}`)
+    return data
+}
+
 
 export const getOneBag = async (originalName) => {
     const { data } = await guestInstance.get(`bag/getone/${originalName}`)
@@ -42,13 +52,8 @@ export const deleteBag = async (id) => {
     return data
 }
 
-export const getAllBagFourty = async () => {
-    const {data} = await guestInstance.get('bag/getAllBagFourty')
-    return data
-}
-
-export const getAllBagFifty = async () => {
-    const {data} = await guestInstance.get('bag/getAllBagFifty')
+export const getAllBagSize = async () => {
+    const {data} = await guestInstance.get('bag/getAllBagSize')
     return data
 }
 

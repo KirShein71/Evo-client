@@ -1,15 +1,16 @@
 import React from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
-import { getOneBag, getAllBagFifty, getAllBagFourty, getAllBagMaterial } from '../../http/bagApi';
+import { getOneBag, getAllBagSize, getAllBagMaterial } from '../../http/bagApi';
 import { appendBag } from '../../http/basketApi';
 import Loader from '../Loader/Loader';
 import BagImage from './BagImage/BagImage';
+import BagPicture from './BagPicture/BagPicture';
 import BagMaterials from './BagMaterials/BagMaterials';
 import ModalBag from './modal/ModalBag';
-
-import './style.scss';
 import BagSize from './BagSize/BagSize';
 import BagText from './BagText/BagText';
+
+import './style.scss';
 
 function BagConstructor() {
   const { originalName } = useParams();
@@ -20,22 +21,14 @@ function BagConstructor() {
   const [selectedBagmaterial, setSelectedBagmaterial] = React.useState('blacksota');
   const [selectedBagmaterialId, setSelectedBagmaterialId] = React.useState(1);
   const [selectedBagmaterialName, setSelectedBagmaterialName] = React.useState('Черный');
-  const [bagFourty, setBagFourty] = React.useState([]);
-  const [bagFifty, setBagFifty] = React.useState([]);
-  const [bagFourtyChecked, setBagFourtyChecked] = React.useState(false);
-  const [bagFiftyChecked, setBagFiftyChecked] = React.useState(false);
-  const [selectedBagFourty, setSelectedBagFourty] = React.useState(null);
-  const [selectedBagFifty, setSelectedBagFifty] = React.useState(null);
+  const [bagsizes, setBagsizes] = React.useState([]);
+  const [bagSizeChecked, setBagSizeChecked] = React.useState(false);
+  const [selectedBagSize, setSelectedBagSize] = React.useState(1);
   const navigate = useNavigate();
-  const [buttonText, setButtonText] = React.useState('В корзину');
-  const [isAddedToCart, setIsAddedToCart] = React.useState(false);
   const [modalOpen, setModalOpen] = React.useState(false);
 
-  const [bagFourtyQuantity, setBagFourtyQuantity] = React.useState(1);
-  const isCountBagFourtyDisabled = bagFourtyQuantity <= 1;
-
-  const [bagFiftyQuantity, setBagFiftyQuantity] = React.useState(1);
-  const isCountBagFiftyDisabled = bagFiftyQuantity <= 1;
+  const [quantity, setQuantity] = React.useState(1);
+  const isCountBagSizeDisabled = quantity <= 1;
 
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
@@ -58,8 +51,7 @@ function BagConstructor() {
   React.useEffect(() => {
     let bagLoaded = false;
     let materialLoaded = false;
-    let bagFourtyLoaded = false;
-    let bagFiftyLoaded = false;
+    let bagSizeLoaded = false;
 
     const fetchData = async () => {
       const bagData = await getOneBag(bagName);
@@ -70,15 +62,11 @@ function BagConstructor() {
       setBagmaterials(MaterialData);
       materialLoaded = true;
 
-      const bagFourtyData = await getAllBagFourty();
-      setBagFourty(bagFourtyData);
-      bagFourtyLoaded = true;
+      const bagSizeData = await getAllBagSize();
+      setBagsizes(bagSizeData);
+      bagSizeLoaded = true;
 
-      const BagFiftyData = await getAllBagFifty();
-      setBagFifty(BagFiftyData);
-      bagFiftyLoaded = true;
-
-      if (bagLoaded && materialLoaded && bagFourtyLoaded && bagFiftyLoaded) {
+      if (bagLoaded && materialLoaded && bagSizeLoaded) {
         setFetching(false);
       }
     };
@@ -86,45 +74,24 @@ function BagConstructor() {
     fetchData();
   }, [originalName, bagName]);
 
-  const handleBagFourtyChange = (bagfourtyId) => {
-    setBagFourtyChecked((prev) => !prev);
-    if (bagFourtyChecked) {
-      setSelectedBagFourty(null);
+  const handleBagSazeChange = (bagsizeId) => {
+    setBagSizeChecked((prev) => !prev);
+    if (bagSizeChecked) {
+      setSelectedBagSize(null);
     } else {
-      setSelectedBagFourty(bagfourtyId);
+      setSelectedBagSize(bagsizeId);
     }
   };
 
-  const handleBagFiftyChange = (bagfiftyId) => {
-    setBagFiftyChecked((prev) => !prev);
-    if (bagFiftyChecked) {
-      setSelectedBagFifty(null);
-    } else {
-      setSelectedBagFifty(bagfiftyId);
-    }
+  const clickToCart = (bagId, bagmaterialId, bagsizeId, quantity) => {
+    appendBag(bagId, bagmaterialId, bagsizeId, quantity)
+      .then((data) => {
+        setModalOpen(true);
+      })
+      .catch((error) => alert(error.response.data.message));
   };
 
-  const clickToCart = (
-    bagId,
-    bagmaterialId,
-    bagfourtyId,
-    bagfiftyId,
-    bagFourtyQuantity,
-    bagFiftyQuantity,
-  ) => {
-    if (selectedBagFourty === null && selectedBagFifty === null) {
-      setModalOpen(true);
-    } else {
-      appendBag(bagId, bagmaterialId, bagfourtyId, bagfiftyId, bagFourtyQuantity, bagFiftyQuantity)
-        .then((data) => {
-          setIsAddedToCart(true);
-          setButtonText('В корзине');
-        })
-        .catch((error) => alert(error.response.data.message));
-    }
-  };
-
-  const onClosePopup = () => {
+  const closedBagModal = () => {
     setModalOpen(false);
   };
 
@@ -166,7 +133,16 @@ function BagConstructor() {
         <h1 className="bagconstructor__title">{bag?.name}</h1>
         <div className="bagconstructor__content">
           <div className="bagconstructor__content-left">
-            <BagImage selectedBagmaterialId={selectedBagmaterialId} bag={bag} />
+            <BagImage
+              selectedBagmaterialId={selectedBagmaterialId}
+              bag={bag}
+              selectedBagSize={selectedBagSize}
+            />
+            <BagPicture
+              selectedBagmaterialId={selectedBagmaterialId}
+              bag={bag}
+              selectedBagSize={selectedBagSize}
+            />
           </div>
           <div className="bagconstructor__content-right">
             <BagMaterials
@@ -178,40 +154,35 @@ function BagConstructor() {
               setSelectedBagmaterialId={setSelectedBagmaterialId}
             />
             <BagSize
-              handleBagFourtyChange={handleBagFourtyChange}
-              bagFourtyChecked={bagFourtyChecked}
-              bagFourtyQuantity={bagFourtyQuantity}
-              setBagFourtyQuantity={setBagFourtyQuantity}
-              bagFourty={bagFourty}
-              isCountBagFourtyDisabled={isCountBagFourtyDisabled}
-              handleBagFiftyChange={handleBagFiftyChange}
-              bagFiftyChecked={bagFiftyChecked}
-              bagFiftyQuantity={bagFiftyQuantity}
-              bagFifty={bagFifty}
-              isCountBagFiftyDisabled={isCountBagFiftyDisabled}
-              setBagFiftyQuantity={setBagFiftyQuantity}
+              bagsizes={bagsizes}
+              handleBagSazeChange={handleBagSazeChange}
+              selectedBagSize={selectedBagSize}
+              setSelectedBagSize={setSelectedBagSize}
+              bagSizeChecked={bagSizeChecked}
+              bagSizeQuantity={quantity}
+              setBagSizeQuantity={setQuantity}
+              isCountBagSizeDisabled={isCountBagSizeDisabled}
             />
-            {modalOpen && <ModalBag onClosePopup={onClosePopup} />}
+            {modalOpen && (
+              <ModalBag
+                closedBagModal={closedBagModal}
+                bag={bag}
+                selectedBagSize={selectedBagSize}
+                selectedBagmaterialId={selectedBagmaterialId}
+                quantity={quantity}
+                bagmaterials={bagmaterials}
+                bagsizes={bagsizes}
+                goToCart={goToCart}
+              />
+            )}
             <div className="bagconstructor__content-right__bottom">
               <button
-                onClick={() => {
-                  if (isAddedToCart) {
-                    goToCart();
-                  } else {
-                    clickToCart(
-                      bag.id,
-                      selectedBagmaterialId,
-                      selectedBagFourty,
-                      selectedBagFifty,
-                      bagFourtyQuantity,
-                      bagFiftyQuantity,
-                    );
-                  }
-                }}
+                onClick={() =>
+                  clickToCart(bag.id, selectedBagmaterialId, selectedBagSize, quantity)
+                }
                 type="button"
-                id="bagconstructor__button"
-                className={isAddedToCart ? 'added' : ''}>
-                {buttonText}
+                id="bagconstructor__button">
+                В корзину
               </button>
             </div>
           </div>

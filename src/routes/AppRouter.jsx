@@ -19,7 +19,6 @@ import Animals from '../pages/Animals';
 import AdminAnimal from '../pages/Admin/AdminAnimal/AdminAnimal';
 import HomeProduct from '../pages/HomeProduct';
 import AdminHome from '../pages/Admin/AdminHome/AdminHome';
-import AdminOrganizer from '../pages/Admin/AdminOrganizer/AdminOrganizer';
 import Result from '../pages/Result';
 import Guarantees from '../pages/Guarantees';
 import Confidentiality from '../pages/Confidentiality';
@@ -65,7 +64,6 @@ const adminRoutes = [
   { path: '/adminorder', Component: AdminOrder },
   { path: '/adminanimal', Component: AdminAnimal },
   { path: '/adminhome', Component: AdminHome },
-  { path: '/adminorganizer', Component: AdminOrganizer },
   { path: '/adminbag', Component: AdminBag },
 ];
 

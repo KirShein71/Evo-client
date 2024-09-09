@@ -6,10 +6,8 @@ import { getAllProductIdThirdrow } from '../../http/thirdrowApi';
 import { getAllMaterialRug } from '../../http/materailRugApi';
 import { getAllEdging } from '../../http/edgingApi';
 import { append } from '../../http/basketApi';
-import { getAllBag, getAllBagFifty, getAllBagFourty, getAllBagMaterial } from '../../http/bagApi';
 import Saddle from './Saddle/Saddle';
 import './styles.scss';
-import Organizer from './Organizer/Organizer';
 import Loader from '../Loader/Loader';
 import ModalRug from './modal/ModalRug';
 import Carmat from './Carmat/Carmat';
@@ -18,7 +16,7 @@ import Cellshape from './Cellshape/Cellshape';
 import Materials from './Materials/Materials';
 import Edging from './Edging/Edging';
 import Pattern from './Pattern/Pattern';
-import Bag from './Bag/Bag';
+import BottomSale from './BottomSale/BottomSale';
 
 function Product() {
   const { originalName } = useParams();
@@ -35,8 +33,6 @@ function Product() {
   const [selectedEdgingId, setSelectedEdgingId] = React.useState(13);
   const [selectedSteel, setSelectedSteel] = React.useState(null);
   const [selectedSaddle, setSelectedSaddle] = React.useState(null);
-  const [selectedOrganizer, setSelectedOrganizer] = React.useState(null);
-  const [selectedOrganizerFifty, setSelectedOrganizerFifty] = React.useState(null);
   const navigate = useNavigate();
   const [buttonText, setButtonText] = React.useState('В корзину');
   const [isAddedToCart, setIsAddedToCart] = React.useState(false);
@@ -57,31 +53,6 @@ function Product() {
   const [trunkQuantity, setTrunkQuantity] = React.useState(1);
   const isCountTrunkDisabled = trunkQuantity <= 1;
 
-  const [organizerQuantity, setOrganizerQuantity] = React.useState(1);
-  const isCountOrganizerDisabled = organizerQuantity <= 1;
-
-  const [organizerFiftyQuantity, setOrganizerFiftyQuantity] = React.useState(1);
-  const isCountOrganizerFiftyDisabled = organizerFiftyQuantity <= 1;
-
-  const [bags, setBags] = React.useState([]);
-  const [selectedBagId, setSelectedBagId] = React.useState(3);
-  const [bagFourty, setBagFourty] = React.useState([]);
-  const [bagFifty, setBagFifty] = React.useState([]);
-  const [bagFourtyChecked, setBagFourtyChecked] = React.useState(false);
-  const [bagFiftyChecked, setBagFiftyChecked] = React.useState(false);
-  const [selectedBagFourty, setSelectedBagFourty] = React.useState(null);
-  const [selectedBagFifty, setSelectedBagFifty] = React.useState(null);
-  const [bagmaterials, setBagmaterials] = React.useState([]);
-  const [selectedBagmaterial, setSelectedBagmaterial] = React.useState('blacksota');
-  const [selectedBagmaterialId, setSelectedBagmaterialId] = React.useState(1);
-  const [selectedBagmaterialName, setSelectedBagmaterialName] = React.useState('Черный');
-
-  const [bagFourtyQuantity, setBagFourtyQuantity] = React.useState(1);
-  const isCountBagFourtyDisabled = bagFourtyQuantity <= 1;
-
-  const [bagFiftyQuantity, setBagFiftyQuantity] = React.useState(1);
-  const isCountBagFiftyDisabled = bagFiftyQuantity <= 1;
-
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -92,10 +63,6 @@ function Product() {
     let edgingLoaded = false;
     let trunkLoaded = false;
     let thirdrowLoaded = false;
-    let bagLoaded = false;
-    let bagMaterialLoaded = false;
-    let bagFourtyLoaded = false;
-    let bagFiftyLoaded = false;
 
     const fetchData = async () => {
       const productData = await getOneProduct(modelName);
@@ -118,33 +85,7 @@ function Product() {
       setThirdrow(thirdrowData);
       thirdrowLoaded = true;
 
-      const bagData = await getAllBag();
-      setBags(bagData);
-      bagLoaded = true;
-
-      const bagMaterialData = await getAllBagMaterial();
-      setBagmaterials(bagMaterialData);
-      bagMaterialLoaded = true;
-
-      const bagFourtyData = await getAllBagFourty();
-      setBagFourty(bagFourtyData);
-      bagFourtyLoaded = true;
-
-      const BagFiftyData = await getAllBagFifty();
-      setBagFifty(BagFiftyData);
-      bagFiftyLoaded = true;
-
-      if (
-        productLoaded &&
-        materialLoaded &&
-        edgingLoaded &&
-        trunkLoaded &&
-        thirdrowLoaded &&
-        bagLoaded &&
-        bagFourtyLoaded &&
-        bagFiftyLoaded &&
-        bagMaterialLoaded
-      ) {
+      if (productLoaded && materialLoaded && edgingLoaded && trunkLoaded && thirdrowLoaded) {
         setFetching(false);
       }
     };
@@ -185,24 +126,6 @@ function Product() {
     setSelectedProductThirdrow(thirdrowId);
   };
 
-  const handleBagFourtyChange = (bagfourtyId) => {
-    setBagFourtyChecked((prev) => !prev);
-    if (bagFourtyChecked) {
-      setSelectedBagFourty(null);
-    } else {
-      setSelectedBagFourty(bagfourtyId);
-    }
-  };
-
-  const handleBagFiftyChange = (bagfiftyId) => {
-    setBagFiftyChecked((prev) => !prev);
-    if (bagFiftyChecked) {
-      setSelectedBagFifty(null);
-    } else {
-      setSelectedBagFifty(bagfiftyId);
-    }
-  };
-
   const clickToCart = (
     productId,
     materialId,
@@ -212,18 +135,8 @@ function Product() {
     thirdrowId,
     saddleId,
     steelId,
-    organizerId,
-    organizerfiftyId,
     quantity,
     trunkQuantity,
-    organizerQuantity,
-    organizerFiftyQuantity,
-    bagId,
-    bagmaterialId,
-    bagfourtyId,
-    bagfiftyId,
-    bagFourtyQuantity,
-    bagFiftyQuantity,
   ) => {
     if (selectedProductTrunk === null && selectedProduct === null) {
       setPopupOpen(true);
@@ -237,18 +150,8 @@ function Product() {
         thirdrowId,
         saddleId,
         steelId,
-        organizerId,
-        organizerfiftyId,
         quantity,
         trunkQuantity,
-        organizerQuantity,
-        organizerFiftyQuantity,
-        bagId,
-        bagmaterialId,
-        bagfourtyId,
-        bagfiftyId,
-        bagFourtyQuantity,
-        bagFiftyQuantity,
       )
         .then((data) => {
           setIsAddedToCart(true);
@@ -304,16 +207,6 @@ function Product() {
               selectedEdging={selectedEdging}
             />
             <Saddle setSelectedSaddle={setSelectedSaddle} setSelectedSteel={setSelectedSteel} />
-            {/* <Organizer
-              setSelectedOrganizer={setSelectedOrganizer}
-              setSelectedOrganizerFifty={setSelectedOrganizerFifty}
-              organizerQuantity={organizerQuantity}
-              setOrganizerQuantity={setOrganizerQuantity}
-              isCountOrganizerDisabled={isCountOrganizerDisabled}
-              organizerFiftyQuantity={organizerFiftyQuantity}
-              setOrganizerFiftyQuantity={setOrganizerFiftyQuantity}
-              isCountOrganizerFiftyDisabled={isCountOrganizerFiftyDisabled}
-            /> */}
           </div>
           <div className="product__content-center">
             <Cellshape />
@@ -366,33 +259,7 @@ function Product() {
             />
           </div>
         </div>
-        <div className="product__bag">
-          <Bag
-            selectedBagmaterialId={selectedBagmaterialId}
-            bags={bags}
-            setSelectedBagId={setSelectedBagId}
-            bagmaterials={bagmaterials}
-            selectedBagmaterialName={selectedBagmaterialName}
-            setSelectedBagmaterialName={setSelectedBagmaterialName}
-            selectedBagmaterial={selectedBagmaterial}
-            setSelectedBagmaterial={setSelectedBagmaterial}
-            setSelectedBagmaterialId={setSelectedBagmaterialId}
-            handleBagFourtyChange={handleBagFourtyChange}
-            bagFourtyChecked={bagFourtyChecked}
-            bagFourtyQuantity={bagFourtyQuantity}
-            setBagFourtyQuantity={setBagFourtyQuantity}
-            bagFourty={bagFourty}
-            isCountBagFourtyDisabled={isCountBagFourtyDisabled}
-            handleBagFiftyChange={handleBagFiftyChange}
-            bagFiftyChecked={bagFiftyChecked}
-            bagFiftyQuantity={bagFiftyQuantity}
-            bagFifty={bagFifty}
-            isCountBagFiftyDisabled={isCountBagFiftyDisabled}
-            setBagFiftyQuantity={setBagFiftyQuantity}
-          />
-        </div>
         {popupOpen && <ModalRug onClosePopup={onClosePopup} />}
-
         <button
           onClick={() => {
             if (isAddedToCart) {
@@ -406,18 +273,8 @@ function Product() {
                 selectedProductThirdrow,
                 selectedSaddle,
                 selectedSteel,
-                selectedOrganizer,
-                selectedOrganizerFifty,
                 quantity,
                 trunkQuantity,
-                organizerQuantity,
-                organizerFiftyQuantity,
-                selectedBagId,
-                selectedBagmaterialId,
-                selectedBagFourty,
-                selectedBagFifty,
-                bagFourtyQuantity,
-                bagFiftyQuantity,
               );
             }
           }}
@@ -426,6 +283,7 @@ function Product() {
           className={isAddedToCart ? 'added' : ''}>
           {buttonText}
         </button>
+        <BottomSale />
       </div>
     </div>
   );

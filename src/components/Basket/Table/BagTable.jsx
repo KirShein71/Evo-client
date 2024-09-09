@@ -1,21 +1,22 @@
 import React from 'react';
-import { deleteBagFifty } from '../../../http/basketApi';
+import { deleteBasketProduct } from '../../../http/basketApi';
 import ModalBasket from '../modal/ModalBasket';
 
-function BagFiftyTable({
+function BagTable({
   bagmaterial,
   bag,
   id,
   change,
   setChange,
   bagmaterialId,
-  bagfifty,
-  quantity_bagfifty,
+  bagsizeId,
+  bagsize,
+  quantity,
 }) {
   const [openDeleteBagModal, setOpenDeleteBagModal] = React.useState(false);
 
-  const handleRemoveBagFifty = (id) => {
-    deleteBagFifty(id)
+  const handleRemoveBag = (id) => {
+    deleteBasketProduct(id)
       .then(() => {
         setChange(!change);
         setOpenDeleteBagModal(false);
@@ -36,7 +37,10 @@ function BagFiftyTable({
     <>
       <td>
         {bag.bag_images
-          .filter((imageBag) => imageBag.bagmaterialId === bagmaterialId)
+          .filter(
+            (imageBag) =>
+              imageBag.bagmaterialId === bagmaterialId && imageBag.bagsizeId === bagsizeId,
+          )
           .map((imageBag) => (
             <div className="baskettable__animalimage">
               <img src={process.env.REACT_APP_IMG_URL + imageBag.image} alt="bag image" />
@@ -47,25 +51,25 @@ function BagFiftyTable({
         <div className="baskettable__information">
           <div className="baskettable__information-name">{bag.name}</div>
           <div className="baskettable__information-options">Цвет материала: {bagmaterial.name}</div>
-          <div className="baskettable__information-options">Размер: {bagfifty.size} см</div>
+          <div className="baskettable__information-options">Размер: {bagsize.size} см</div>
         </div>
         <td>
-          <div className="baskettable__information-price">Цена: {bagfifty.price}</div>
+          <div className="baskettable__information-price">Цена: {bagsize.price}</div>
         </td>
       </td>
       <td>
-        <div className="baskettable__quantity">{quantity_bagfifty}</div>
+        <div className="baskettable__quantity">{quantity}</div>
       </td>
       <td>
-        <div className="baskettable__price">{bagfifty.price}</div>
+        <div className="baskettable__price">{bagsize.price}</div>
       </td>
       <td>
-        <div className="baskettable__total">{bagfifty.price * quantity_bagfifty}</div>
+        <div className="baskettable__total">{bagsize.price * quantity}</div>
       </td>
       <td>
         {openDeleteBagModal && (
           <ModalBasket
-            remove={handleRemoveBagFifty}
+            remove={handleRemoveBag}
             id={id}
             handleCloseDeleteModal={handleCloseBagDeleteModal}
           />
@@ -78,4 +82,4 @@ function BagFiftyTable({
   );
 }
 
-export default BagFiftyTable;
+export default BagTable;

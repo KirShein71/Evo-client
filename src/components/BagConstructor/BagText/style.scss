@@ -1,5 +1,9 @@
 .bagtext {
     margin-top: 35px;
+    @media(max-width: 595px) {
+        margin-left: 25px;
+        margin-top: 25px;
+    }
 
    
 

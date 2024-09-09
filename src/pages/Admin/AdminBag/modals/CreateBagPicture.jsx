@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
-import { createBagImage, getAllBagMaterial, getAllBagSize } from '../../../../http/bagApi';
+import { createBagPicture, getAllBagMaterial, getAllBagSize } from '../../../../http/bagApi';
 
 const defaultValue = {
   bagmaterial: '',
@@ -11,7 +11,7 @@ const defaultValid = {
   bagsize: null,
 };
 
-const CreateBagImage = (props) => {
+const CreateBagPicture = (props) => {
   const { show, setShow, setChange, bagId } = props;
   const [value, setValue] = React.useState(defaultValue);
   const [valid, setValid] = React.useState(defaultValid);
@@ -75,7 +75,7 @@ const CreateBagImage = (props) => {
       return formData;
     });
 
-    Promise.all(data.map(createBagImage))
+    Promise.all(data.map(createBagPicture))
       .then(() => {
         setSelectedImages([]);
         setShow(false);
@@ -184,4 +184,4 @@ const CreateBagImage = (props) => {
   );
 };
 
-export default CreateBagImage;
+export default CreateBagPicture;

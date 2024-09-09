@@ -1,17 +1,20 @@
 .bagimage {
-    @media(max-width: 460px) {
+    @media(max-width: 595px) {
         display: flex;
         justify-content: center;
     }
     &__image{
         img {
             width: 470px;
-           @media(max-width: 768px) {
-            width: 400px;
-           }
-           @media(max-width: 460px) {
-            width: 300px;
-           }
+            @media(max-width: 1024px) {
+                width: 350px;
+            }
+            @media(max-width: 595px) {
+                width: 300px;
+            }
+            @media(max-width: 460px) {
+                width: 250px;
+            }
         }
     }
 }

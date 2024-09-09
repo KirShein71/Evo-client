@@ -9,7 +9,6 @@ import { append } from '../../http/basketApi';
 import { useNavigate, Link } from 'react-router-dom';
 import Saddle from './Saddle/Saddle';
 import './styles.scss';
-import Organizer from './Organizer/Organizer';
 import Loader from '../Loader/Loader';
 import ModalRug from './modal/ModalRug';
 import Carmat from './Carmat/Carmat';
@@ -18,6 +17,7 @@ import Cellshape from './Cellshape/Cellshape';
 import Materials from './Materials/Materials';
 import Edging from './Edging/Edging';
 import Pattern from './Pattern/Pattern';
+import BottomSale from './BottomSale/BottomSale';
 
 function Product595() {
   const { originalName } = useParams();
@@ -34,8 +34,6 @@ function Product595() {
   const [selectedEdgingId, setSelectedEdgingId] = React.useState(13);
   const [selectedSteel, setSelectedSteel] = React.useState(null);
   const [selectedSaddle, setSelectedSaddle] = React.useState(null);
-  const [selectedOrganizer, setSelectedOrganizer] = React.useState(null);
-  const [selectedOrganizerFifty, setSelectedOrganizerFifty] = React.useState(null);
   const navigate = useNavigate();
   const [buttonText, setButtonText] = React.useState('В корзину');
   const [isAddedToCart, setIsAddedToCart] = React.useState(false);
@@ -56,12 +54,6 @@ function Product595() {
 
   const [trunkQuantity, setTrunkQuantity] = React.useState(1);
   const isCountTrunkDisabled = trunkQuantity <= 1;
-
-  const [organizerQuantity, setOrganizerQuantity] = React.useState(1);
-  const isCountOrganizerDisabled = organizerQuantity <= 1;
-
-  const [organizerFiftyQuantity, setOrganizerFiftyQuantity] = React.useState(1);
-  const isCountOrganizerFiftyDisabled = organizerFiftyQuantity <= 1;
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -145,12 +137,8 @@ function Product595() {
     thirdrowId,
     saddleId,
     steelId,
-    organizerId,
-    organizerfiftyId,
     quantity,
     trunkQuantity,
-    organizerQuantity,
-    organizerFiftyQuantity,
   ) => {
     if (selectedProductTrunk === null && selectedProduct === null) {
       setPopupOpen(true);
@@ -164,12 +152,8 @@ function Product595() {
         thirdrowId,
         saddleId,
         steelId,
-        organizerId,
-        organizerfiftyId,
         quantity,
         trunkQuantity,
-        organizerQuantity,
-        organizerFiftyQuantity,
       )
         .then((data) => {
           setIsAddedToCart(true);
@@ -277,16 +261,6 @@ function Product595() {
             selectedProductTrunk={selectedProductTrunk}
           />
           <Saddle setSelectedSaddle={setSelectedSaddle} setSelectedSteel={setSelectedSteel} />
-          <Organizer
-            setSelectedOrganizer={setSelectedOrganizer}
-            setSelectedOrganizerFifty={setSelectedOrganizerFifty}
-            organizerQuantity={organizerQuantity}
-            setOrganizerQuantity={setOrganizerQuantity}
-            isCountOrganizerDisabled={isCountOrganizerDisabled}
-            organizerFiftyQuantity={organizerFiftyQuantity}
-            setOrganizerFiftyQuantity={setOrganizerFiftyQuantity}
-            isCountOrganizerFiftyDisabled={isCountOrganizerFiftyDisabled}
-          />
         </div>
         {popupOpen && <ModalRug onClosePopup={onClosePopup} />}
         <button
@@ -302,12 +276,8 @@ function Product595() {
                 selectedProductThirdrow,
                 selectedSaddle,
                 selectedSteel,
-                selectedOrganizer,
-                selectedOrganizerFifty,
                 quantity,
                 trunkQuantity,
-                organizerQuantity,
-                organizerFiftyQuantity,
               );
             }
           }}
@@ -316,6 +286,7 @@ function Product595() {
           className={isAddedToCart ? 'added' : ''}>
           {buttonText}
         </button>
+        <BottomSale />
       </div>
     </div>
   );

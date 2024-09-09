@@ -1,0 +1,74 @@
+.bagpicture { 
+    &__image{
+        display: flex;
+        justify-content: space-between;
+        @media(max-width: 595px) {
+            justify-content: center;
+        }
+        img {
+            width: 135px;
+            cursor: pointer;
+            @media(max-width: 768px) {
+                width: 100px;
+            }
+            @media(max-width: 450px) {
+                width: 75px;
+            }
+        }
+    }
+}
+
+
+.overlay__modalpicture {
+    position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+  z-index: 10;
+}
+
+
+
+//modalpicture
+.modalpicture {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background: #ffffff;
+
+
+&__content {
+    padding: 15px 25px;
+    display: flex;
+}
+
+
+&__close {
+    display: flex;
+    justify-content: right;
+   
+}
+
+&__image {
+    
+    width: 400px;
+    @media(max-width: 450px) {
+        width: 250px;
+    }
+    
+
+   
+}
+
+&__arrow {
+    cursor: pointer;
+    display: flex; 
+    align-items: center;
+  
+}
+
+}

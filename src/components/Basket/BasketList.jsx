@@ -9,13 +9,10 @@ import { Table } from 'react-bootstrap';
 import ProductTable from './Table/ProductTable';
 import TrunkTable from './Table/TrunkTable';
 import SaddleTable from './Table/SaddleTable';
-import OrganizerTable from './Table/OrganizerTable';
-import OrganizerFiftyTable from './Table/OrganizerFifty';
 import SteelTable from './Table/SteelTable';
 import AnimalTable from './Table/AnimalTable';
 import HomeTable from './Table/HomeTable';
-import BagFourtyTable from './Table/BagFourtyTable';
-import BagFiftyTable from './Table/BagFiftyTable';
+import BagTable from './Table/BagTable';
 
 const BasketList = observer(() => {
   const { basketProduct } = React.useContext(AppContext);
@@ -52,12 +49,8 @@ const BasketList = observer(() => {
     const homePrice = basketproduct.home ? basketproduct.home.new_price : 0;
     const saddlePrice = basketproduct.saddle ? basketproduct.saddle.new_price : 0;
     const steelPrice = basketproduct.steel ? basketproduct.steel.new_price : 0;
-    const organizerPrice = basketproduct.organizer ? basketproduct.organizer.new_price : 0;
-    const organizerFiftyPrice = basketproduct.organizerfifty
-      ? basketproduct.organizerfifty.new_price
-      : 0;
-    const bagFourtyPrice = basketproduct.bagfourty ? basketproduct.bagfourty.price : 0;
-    const bagFiftyPrice = basketproduct.bagfifty ? basketproduct.bagfifty.price : 0;
+    const bagPrice = basketproduct.bagsize ? basketproduct.bagsize.price : 0;
+
     totalAmount +=
       trunkPrice * basketproduct.quantity_trunk +
       (thirdrowPrice === 0
@@ -67,10 +60,7 @@ const BasketList = observer(() => {
       homePrice * basketproduct.quantity +
       saddlePrice +
       steelPrice +
-      organizerPrice * basketproduct.quantity_organizer +
-      organizerFiftyPrice * basketproduct.quantity_organizerfifty +
-      bagFourtyPrice * basketproduct.quantity_bagfourty +
-      bagFiftyPrice * basketproduct.quantity_bagfifty;
+      bagPrice * basketproduct.quantity;
   });
 
   const handleCheckout = () => {
@@ -141,20 +131,6 @@ const BasketList = observer(() => {
                           ) : (
                             ''
                           )}
-                          {obj.organizer !== null ? (
-                            <tr>
-                              <OrganizerTable {...obj} change={change} setChange={setChange} />
-                            </tr>
-                          ) : (
-                            ''
-                          )}
-                          {obj.organizerfifty !== null ? (
-                            <tr>
-                              <OrganizerFiftyTable {...obj} change={change} setChange={setChange} />
-                            </tr>
-                          ) : (
-                            ''
-                          )}
                           {obj.saddle !== null ? (
                             <tr>
                               <SaddleTable {...obj} change={change} setChange={setChange} />
@@ -183,16 +159,9 @@ const BasketList = observer(() => {
                           ) : (
                             ''
                           )}
-                          {obj.bagfourty !== null ? (
+                          {obj.bag !== null ? (
                             <tr>
-                              <BagFourtyTable {...obj} change={change} setChange={setChange} />
-                            </tr>
-                          ) : (
-                            ''
-                          )}
-                          {obj.bagfifty !== null ? (
-                            <tr>
-                              <BagFiftyTable {...obj} change={change} setChange={setChange} />
+                              <BagTable {...obj} change={change} setChange={setChange} />
                             </tr>
                           ) : (
                             ''

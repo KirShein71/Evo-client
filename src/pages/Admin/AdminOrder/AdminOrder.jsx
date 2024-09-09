@@ -175,7 +175,9 @@ const AdminOrder = () => {
   const flattenedOrders = orders.map((item) => ({
     id: item.id,
     name: item.product?.name || item.animal?.name || item.home?.name || item.bag?.name,
-    material: item.material.name,
+    material: item.material?.name,
+    bagmaterial: item.bagmaterial?.name,
+    bagsize: item.bagsize?.size,
     edging: item.edging && item.edging.name ? item.edging.name : '',
     quantity: item.quantity,
   }));
@@ -277,40 +279,22 @@ const AdminOrder = () => {
                 style={{ cursor: 'pointer' }}
                 onClick={() => handleUpdateOrder(item.id, item.productId)}>
                 <ul>
-                  <li>Материал: {item.material?.name}</li>
+                  <li>
+                    Материал: {item.material?.name} || {item.bagmaterial?.name}
+                  </li>
+                  {item.bag !== null ? <li>Размер: {item.bagsize?.size}</li> : ''}
                   <li>{item.edging ? <span>Кант: {item.edging.name}</span> : null}</li>
                   {item.bag === null ? (
                     <li>
                       Количество: {item.quantity} шт {item.thirdrow ? '3 ряда' : ''}
                     </li>
                   ) : (
-                    <>
-                      <li>
-                        {item.bagfourtyId ? (
-                          <span>Органайзер 40см: {item.quantity_bagfourty} (количество)</span>
-                        ) : null}
-                      </li>
-                      <li>
-                        {item.bagfiftyId ? (
-                          <span>Органайзер 50см: {item.quantity_bagfifty} (количество)</span>
-                        ) : null}
-                      </li>
-                    </>
+                    ''
                   )}
                   <li>{item.trunk ? <span>Багажник: {item.quantity_trunk} шт</span> : null}</li>
                   <li>
                     {item.steel ? <span>{item.steel.name}</span> : null}{' '}
                     {item.saddle ? <span>{item.saddle.name}</span> : null}
-                  </li>
-                  <li>
-                    {item.organizer ? (
-                      <span>Органайзер 40см: {item.quantity_organizer}</span>
-                    ) : null}
-                  </li>
-                  <li>
-                    {item.organizerfifty ? (
-                      <span>Органайзер 50см: {item.quantity_organizerfifty}</span>
-                    ) : null}
                   </li>
                   <li>Полная стоимость заказа (без доставки): {item.order.totalamount}</li>
                 </ul>

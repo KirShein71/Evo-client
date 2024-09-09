@@ -21,10 +21,6 @@ const defaultValue = {
   thirdrow: '',
   quantity: '',
   quantity_trunk: '',
-  organizer: '',
-  organizerfifty: '',
-  quantity_organizer: '',
-  quantity_organizerfifty: '',
   saddle: '',
   steel: '',
 };
@@ -42,10 +38,6 @@ const defaultValid = {
   thirdrow: null,
   quantity: null,
   quantity_trunk: null,
-  organizer: null,
-  organizerfifty: null,
-  quantity_organizer: null,
-  quantity_organizerfifty: null,
   saddle: null,
   steel: null,
 };
@@ -65,11 +57,6 @@ const isValid = (value) => {
     if (key === 'thirdrow') result.thirdrow = value.thirdrow;
     if (key === 'saddle') result.saddle = value.saddle;
     if (key === 'steel') result.steel = value.steel;
-    if (key === 'organizer') result.organizer = value.organizer;
-    if (key === 'organizerfifty') result.organizerfifty = value.organizerfifty;
-    if (key === 'quantity_organizer') result.quantity_organizer = value.quantity_organizer;
-    if (key === 'quantity_organizerfifty')
-      result.quantity_organizerfifty = value.quantity_organizerfifty;
     if (key === 'quantity') result.quantity = value.quantity;
     if (key === 'quantity_trunk') result.quantity_trunk = value.quantity_trunk;
   }
@@ -126,22 +113,6 @@ const CreateOrder = (props) => {
     setValue((prevValue) => ({
       ...prevValue,
       saddle: isChecked ? 1 : '',
-    }));
-  };
-
-  const handleOrganizerChange = (e) => {
-    const isChecked = e.target.checked;
-    setValue((prevValue) => ({
-      ...prevValue,
-      organizer: isChecked ? 1 : '',
-    }));
-  };
-
-  const handleOrganizerFiftyChange = (e) => {
-    const isChecked = e.target.checked;
-    setValue((prevValue) => ({
-      ...prevValue,
-      organizerfifty: isChecked ? 1 : '',
     }));
   };
 
@@ -213,21 +184,12 @@ const CreateOrder = (props) => {
       data.append('materialId', value.material);
       data.append('cellshapeId', 2);
       data.append('edgingId', value.edging);
-      data.append('organizerId', value.organizer === '' ? 0 : 1);
-      data.append('organizerfiftyId', value.organizerfifty === '' ? 0 : 1);
       data.append('saddleId', value.saddle === '' ? 0 : 1);
       data.append('steelId', value.steel === '' ? 0 : 1);
       data.append('trunkId', value.trunk === '' ? 0 : value.trunk);
       data.append('thirdrowId', value.thirdrow === '' ? 0 : value.thirdrow);
       data.append('quantity_trunk', value.quantity_trunk === '' ? 0 : value.quantity_trunk);
-      data.append(
-        'quantity_organizer',
-        value.quantity_organizer === '' ? 0 : value.quantity_organizer,
-      );
-      data.append(
-        'quantity_organizerfifty',
-        value.quantity_organizerfifty === '' ? 0 : value.quantity_organizerfifty,
-      );
+
       data.append('quantity', value.quantity);
 
       adminCreate(data)
@@ -335,62 +297,6 @@ const CreateOrder = (props) => {
                 isValid={valid.steel === true}
                 isInvalid={valid.steel === false}
                 onChange={(e) => handleSteelChange(e)}
-              />
-            </Col>
-          </Row>
-          <Row className="mb-3">
-            <Col>
-              <Form.Check
-                name="organizer"
-                type="switch"
-                id="organizer-switch"
-                label="Органайзер 40см"
-                checked={value.organizer === 1}
-                isValid={valid.organizer === true}
-                isInvalid={valid.organizer === false}
-                onChange={(e) => handleOrganizerChange(e)}
-              />
-            </Col>
-          </Row>
-          <div>Количество штук органайзера 40 см</div>
-          <Row className="mb-3">
-            <Col>
-              <Form.Control
-                name="quantity_organizer"
-                value={value.quantity_organizer}
-                onChange={(e) => handleInputChange(e)}
-                isValid={valid.quantity_organizer === true}
-                isInvalid={valid.quantity_organizer === false}
-                placeholder="Количество"
-                className="mb-3"
-              />
-            </Col>
-          </Row>
-          <Row className="mb-3">
-            <Col>
-              <Form.Check
-                name="organizerfifty"
-                type="switch"
-                id="organizerfifty-switch"
-                label="Органайзер 60см"
-                checked={value.organizerfifty === 1}
-                isValid={valid.organizerfifty === true}
-                isInvalid={valid.organizerfifty === false}
-                onChange={(e) => handleOrganizerFiftyChange(e)}
-              />
-            </Col>
-          </Row>
-          <div>Количество штук органайзера 60 см</div>
-          <Row className="mb-3">
-            <Col>
-              <Form.Control
-                name="quantity_organizerfifty"
-                value={value.quantity_organizerfifty}
-                onChange={(e) => handleInputChange(e)}
-                isValid={valid.quantity_organizerfifty === true}
-                isInvalid={valid.quantity_organizerfifty === false}
-                placeholder="Количество"
-                className="mb-3"
               />
             </Col>
           </Row>

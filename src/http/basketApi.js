@@ -6,8 +6,8 @@ export const fetchBasket = async () => {
     return data
 }
 
-export const append = async (productId, materialId, edgingId, trunkId, thirdrowId, saddleId, steelId, organizerId, organizerfiftyId, quantity, quantity_trunk, quantity_organizer, quantity_organizerfifty, bagId, bagmaterialId, bagfourtyId, bagfiftyId, quantity_bagfourty, quantity_bagfifty) => {
-    const { data } = await guestInstance.post(`basket/append`, {materialId, productId, edgingId, trunkId, thirdrowId, saddleId, steelId, organizerId, organizerfiftyId, quantity, quantity_trunk, quantity_organizer, quantity_organizerfifty, bagId, bagmaterialId, bagfourtyId, bagfiftyId, quantity_bagfourty, quantity_bagfifty});
+export const append = async (productId, materialId, edgingId, trunkId, thirdrowId, saddleId, steelId, quantity, quantity_trunk) => {
+    const { data } = await guestInstance.post(`basket/append`, {materialId, productId, edgingId, trunkId, thirdrowId, saddleId, steelId, quantity, quantity_trunk});
     return data;
 }
 
@@ -21,8 +21,8 @@ export const appendHome = async (homeId, materialId, quantity) => {
     return data;
 }
 
-export const appendBag = async (bagId, bagmaterialId, bagfourtyId, bagfiftyId, quantity_bagfourty, quantity_bagfifty) => {
-    const { data } = await guestInstance.post(`basket/appendBag`, { bagId, bagmaterialId, bagfourtyId, bagfiftyId, quantity_bagfourty, quantity_bagfifty  });
+export const appendBag = async (bagId, bagmaterialId, bagsizeId, quantity) => {
+    const { data } = await guestInstance.post(`basket/appendBag`, { bagId, bagmaterialId, bagsizeId, quantity});
     return data;
 }
 
@@ -47,15 +47,6 @@ export const deleteTrunk = async (id) => {
     return data;
 };
 
-export const deleteOrganizer = async (id) => {
-    const { data } = await guestInstance.delete(`basketproduct/deleteOrganizer/${id}`);
-    return data;
-};
-
-export const deleteOrganizerFifty = async (id) => {
-    const { data } = await guestInstance.delete(`basketproduct/deleteOrganizerFifty/${id}`);
-    return data;
-};
 
 export const deleteSteel = async (id) => {
     const { data } = await guestInstance.delete(`basketproduct/deleteSteel/${id}`);
@@ -67,13 +58,5 @@ export const deleteSaddle = async (id) => {
     return data;
 };
 
-export const deleteBagFourty = async (id) => {
-    const { data } = await guestInstance.delete(`basketproduct/deleteBagFourty/${id}`);
-    return data;
-};
 
-export const deleteBagFifty = async (id) => {
-    const { data } = await guestInstance.delete(`basketproduct/deleteBagFifty/${id}`);
-    return data;
-};
 
