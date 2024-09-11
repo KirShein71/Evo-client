@@ -1,43 +1,70 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 function CarouselBanner() {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const sliderRef = React.useRef(null);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+  };
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if (sliderRef.current) {
+        sliderRef.current.slickNext();
+      }
+    }, settings.autoplaySpeed);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="banner">
-      <div>
-        <Carousel>
-          <Carousel.Item>
+      <div style={{ width: '90%' }}>
+        <Slider {...settings} ref={sliderRef}>
+          <div className="banner__slide">
             <Link to="/allbrands">
               <img
-                className="banner__image"
-                src="./img/rug.png"
+                className="banner-image"
+                src="./img/rug.jpg"
                 text="Second slide"
                 alt="image_slider"
               />
             </Link>
-          </Carousel.Item>
-          <Carousel.Item>
-            <Link to="/accessories">
+          </div>
+          <div className="banner__slide">
+            <Link to="/homeproduct">
               <img
-                className="banner__image"
-                src="./img/bag.png"
+                className="banner-image"
+                src="./img/bag.jpg"
                 text="Second slide"
                 alt="image_slider"
               />
             </Link>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="banner__image"
-              src="./img/delivery.png"
-              text="Third slide"
-              alt="image_slider"
-            />
-          </Carousel.Item>
-        </Carousel>
+          </div>
+          <div className="banner__slide">
+            <Link to="/homeproduct">
+              <img
+                className="banner-image"
+                src="./img/delivery.jpg"
+                text="Second slide"
+                alt="image_slider"
+              />
+            </Link>
+          </div>
+        </Slider>
       </div>
     </div>
   );
