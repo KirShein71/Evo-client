@@ -125,11 +125,11 @@ const Header = observer(() => {
             </div>
             <div className="header__icons">
               <div className="header__basket">
-                {/* <Link to="/basket">
+                <Link to="/basket">
                   <div className="header__basket-image">
-                    <img src={`/img/bag.png?v=${Date.now()}`} alt="icon_basket" />
+                    <img src={`/img/cart.png?v=${Date.now()}`} alt="icon_basket" />
                   </div>
-                </Link> */}
+                </Link>
                 {!!basketProduct.count && (
                   <div className="header__basket-circle">
                     <div className="header__basket-count">{basketProduct.count}</div>
