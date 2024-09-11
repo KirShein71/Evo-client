@@ -38,7 +38,7 @@ function CarouselBanner() {
             <Link to="/allbrands">
               <img
                 className="banner-image"
-                src="./img/rug.jpg"
+                src="./img/rug.png"
                 text="Second slide"
                 alt="image_slider"
               />
@@ -48,7 +48,7 @@ function CarouselBanner() {
             <Link to="/homeproduct">
               <img
                 className="banner-image"
-                src="./img/bag.jpg"
+                src="./img/bag.png"
                 text="Second slide"
                 alt="image_slider"
               />
@@ -58,7 +58,7 @@ function CarouselBanner() {
             <Link to="/homeproduct">
               <img
                 className="banner-image"
-                src="./img/delivery.jpg"
+                src="./img/delivery.png"
                 text="Second slide"
                 alt="image_slider"
               />
