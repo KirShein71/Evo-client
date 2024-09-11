@@ -13,7 +13,7 @@ function CarouselBanner() {
             <Link to="/allbrands">
               <img
                 className="banner__image"
-                src="./img/rug.jpg"
+                src="./img/rug.png"
                 text="Second slide"
                 alt="image_slider"
               />
@@ -23,7 +23,7 @@ function CarouselBanner() {
             <Link to="/accessories">
               <img
                 className="banner__image"
-                src="./img/bag.jpg"
+                src="./img/bag.png"
                 text="Second slide"
                 alt="image_slider"
               />
@@ -32,7 +32,7 @@ function CarouselBanner() {
           <Carousel.Item>
             <img
               className="banner__image"
-              src="./img/delivery.jpg"
+              src="./img/delivery.png"
               text="Third slide"
               alt="image_slider"
             />
