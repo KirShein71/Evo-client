@@ -3,10 +3,10 @@ import Promo from './Promo/Promo';
 import Sale from './Sale/Sale';
 import SearchSection from './SearchSection/SearchSection';
 import CarouselSlider from './CarouselSlider';
-import Banner from './Banner';
 import Track from './Track/Track';
 import Categories from './Categories/Categories';
 import CompanyAdvantages from './CompanyAdvantages/CompanyAdvantages';
+import CarouselBanner from '../components/CarouselBanner/CarouselBanner';
 
 function HomeContent() {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
@@ -30,7 +30,7 @@ function HomeContent() {
     <>
       {windowWidth < 480 ? (
         <>
-          {windowWidth < 600 ? <CarouselSlider /> : <Banner />}
+          {windowWidth < 600 ? <CarouselSlider /> : <CarouselBanner />}
           <Track />
           <SearchSection />
           <Sale />
@@ -40,7 +40,7 @@ function HomeContent() {
         </>
       ) : (
         <>
-          {windowWidth < 600 ? <CarouselSlider /> : <Banner />}
+          {windowWidth < 600 ? <CarouselSlider /> : <CarouselBanner />}
           <Track />
           <SearchSection />
           <CompanyAdvantages />
