@@ -6,32 +6,22 @@ function CarouselSlider() {
     <Carousel>
       <Carousel.Item>
         <Link to="/allbrands">
-          <img
-            className="carousel-image"
-            src="./img/rung.png"
-            text="Second slide"
-            alt="image_slider"
-          />
+          <img className="carousel-image" src="./img/rug-mob.png" alt="image_slider" />
         </Link>
       </Carousel.Item>
       <Carousel.Item>
         <Link to="/homeproduct">
-          <img
-            className="carousel-image"
-            src="./img/home.png"
-            text="Second slide"
-            alt="image_slider"
-          />
+          <img className="carousel-image" src="./img/bag-mob.png" alt="image_slider" />
         </Link>
       </Carousel.Item>
       <Carousel.Item>
         <Link to="/animals">
-          <img
-            className="carousel-image"
-            src="./img/animal.png"
-            text="Third slide"
-            alt="image_slider"
-          />
+          <img className="carousel-image" src="./img/universal-mob.jpg" alt="image_slider" />
+        </Link>
+      </Carousel.Item>
+      <Carousel.Item>
+        <Link to="/animals">
+          <img className="carousel-image" src="./img/delivery-mob.png" alt="image_slider" />
         </Link>
       </Carousel.Item>
     </Carousel>

@@ -11,13 +11,9 @@
     border-radius: 100% !important;
     background-color: #2e528f !important;
     @media(max-width: 600px) {
-        display: inline-block !important;
-        width: 2rem !important;
-        height: 2rem !important;
-        background-repeat: no-repeat !important;
-        background-position: 50% !important;
-        background-size: 100% 100% !important;
-        background-color: transparent !important;
+        width: 30px !important;
+        height: 30px !important;
+        background-size: 15px 15px !important;
     }
 
 }
@@ -25,7 +21,7 @@
 .carousel-indicators {
     top: 102% !important;
     @media(max-width: 600px) {
-        top: auto !important;
+        top: 100% !important;
     }
 }
 
@@ -34,12 +30,7 @@
     height: 15px !important;
     border-radius: 100% !important;
     background-color: #2e528f !important;
-    @media(max-width: 600px) {
-        width: 30px !important;
-        height: 3px !important;
-        border-radius: 0% !important;
-        background-color: #fff !important;
-    }
+   
 }
 
 .banner {
