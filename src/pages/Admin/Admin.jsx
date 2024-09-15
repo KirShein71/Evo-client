@@ -31,9 +31,6 @@ function Admin() {
         <Link to="/adminhome">
           <li>Создание карточки товара для дома</li>
         </Link>
-        <Link to="/adminanimal">
-          <li>Создание карточки товара для животных</li>
-        </Link>
         <Link to="/adminbag">
           <li>Создание карточки сумки</li>
         </Link>

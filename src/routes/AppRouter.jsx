@@ -15,8 +15,6 @@ import AdminEdging from '../pages/Admin/AdminEdging/AdminEdging';
 import Basket from '../pages/Basket';
 import Checkout from '../pages/Checkout';
 import Login from '../pages/Login';
-import Animals from '../pages/Animals';
-import AdminAnimal from '../pages/Admin/AdminAnimal/AdminAnimal';
 import HomeProduct from '../pages/HomeProduct';
 import AdminHome from '../pages/Admin/AdminHome/AdminHome';
 import Result from '../pages/Result';
@@ -40,7 +38,6 @@ const routes = [
   { path: '/basket', Component: Basket },
   { path: '/checkout', Component: Checkout },
   { path: '/login', Component: Login },
-  { path: '/animals', Component: Animals },
   { path: '/homeproduct', Component: HomeProduct },
   { path: '/result', Component: Result },
   { path: '/guarantees', Component: Guarantees },
@@ -62,7 +59,6 @@ const adminRoutes = [
   { path: '/adminmaterialrug', Component: AdminMaterialRug },
   { path: '/adminedging', Component: AdminEdging },
   { path: '/adminorder', Component: AdminOrder },
-  { path: '/adminanimal', Component: AdminAnimal },
   { path: '/adminhome', Component: AdminHome },
   { path: '/adminbag', Component: AdminBag },
 ];

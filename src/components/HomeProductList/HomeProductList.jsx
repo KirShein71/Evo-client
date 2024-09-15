@@ -3,7 +3,7 @@ import CardHomeProduct from '../CardHomeProduct/CardHomeProduct';
 import { getAllHome } from '../../http/homeApi';
 import { getAllMaterialForAnimal } from '../../http/materailRugApi';
 import { Link } from 'react-router-dom';
-import LoaderAnimal from '../LoaderAnimal/LoaderAnimal';
+import Loader from '../Loader/Loader';
 
 import './style.scss';
 
@@ -38,7 +38,7 @@ function HomeProductList() {
   }, []);
 
   if (fetching) {
-    return <LoaderAnimal />;
+    return <Loader />;
   }
 
   return (

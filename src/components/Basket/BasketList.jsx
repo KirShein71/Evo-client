@@ -10,7 +10,6 @@ import ProductTable from './Table/ProductTable';
 import TrunkTable from './Table/TrunkTable';
 import SaddleTable from './Table/SaddleTable';
 import SteelTable from './Table/SteelTable';
-import AnimalTable from './Table/AnimalTable';
 import HomeTable from './Table/HomeTable';
 import BagTable from './Table/BagTable';
 
@@ -45,7 +44,6 @@ const BasketList = observer(() => {
     const trunkPrice = basketproduct.trunk ? basketproduct.trunk.new_price : 0;
     const thirdrowPrice = basketproduct.thirdrow ? basketproduct.thirdrow.new_price : 0;
     const productPrice = basketproduct.product ? basketproduct.product.new_price : 0;
-    const animalPrice = basketproduct.animal ? basketproduct.animal.new_price : 0;
     const homePrice = basketproduct.home ? basketproduct.home.new_price : 0;
     const saddlePrice = basketproduct.saddle ? basketproduct.saddle.new_price : 0;
     const steelPrice = basketproduct.steel ? basketproduct.steel.new_price : 0;
@@ -56,7 +54,6 @@ const BasketList = observer(() => {
       (thirdrowPrice === 0
         ? productPrice * basketproduct.quantity
         : thirdrowPrice * basketproduct.quantity) +
-      animalPrice * basketproduct.quantity +
       homePrice * basketproduct.quantity +
       saddlePrice +
       steelPrice +
@@ -141,13 +138,6 @@ const BasketList = observer(() => {
                           {obj.steel !== null ? (
                             <tr>
                               <SteelTable {...obj} change={change} setChange={setChange} />
-                            </tr>
-                          ) : (
-                            ''
-                          )}
-                          {obj.animal !== null ? (
-                            <tr>
-                              <AnimalTable {...obj} change={change} setChange={setChange} />
                             </tr>
                           ) : (
                             ''

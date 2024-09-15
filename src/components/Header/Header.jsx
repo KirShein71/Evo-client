@@ -85,9 +85,6 @@ const Header = observer(() => {
                   <Link to="/homeproduct">
                     <div className="catalog-modal__item">Коврики для дома</div>
                   </Link>
-                  <Link to="/animals">
-                    <div className="catalog-modal__item">Коврики для животных</div>
-                  </Link>
                   <Link to="/accessories">
                     <div className="catalog-modal__item">Автоаксессуары</div>
                   </Link>
@@ -163,9 +160,6 @@ const Header = observer(() => {
                     </Link>
                     <Link to="/homeproduct" onClick={() => setOpen(false)}>
                       <div className="burger-menu__items">Коврики для дома</div>
-                    </Link>
-                    <Link to="/animals" onClick={() => setOpen(false)}>
-                      <div className="burger-menu__items">Коврики для животных</div>
                     </Link>
                     <Link to="/accessories" onClick={() => setOpen(false)}>
                       <div className="burger-menu__items">Автоаксессуары</div>
