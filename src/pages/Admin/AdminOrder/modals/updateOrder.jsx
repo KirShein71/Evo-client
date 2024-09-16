@@ -179,24 +179,7 @@ const UpdateOrder = (props) => {
       <Modal.Body>
         <Form noValidate onSubmit={handleSubmit}>
           <Row className="mb-3">
-            <Col>
-              <Form.Select
-                name="edgingId"
-                value={value.edgingId}
-                onChange={(e) => handleInputChange(e)}
-                isValid={valid.edgingId === true}
-                isInvalid={valid.edgingId === false}>
-                <option value="">Цвет канта</option>
-                {edgings &&
-                  edgings.map((edging) => (
-                    <option key={edging.id} value={edging.id}>
-                      {edging.name}
-                    </option>
-                  ))}
-              </Form.Select>
-            </Col>
-          </Row>
-          <Row className="mb-3">
+            <div>Цвет материала</div>
             <Col>
               <Form.Select
                 name="materialId"
@@ -209,6 +192,25 @@ const UpdateOrder = (props) => {
                   materials.map((material) => (
                     <option key={material.id} value={material.id}>
                       {material.name}
+                    </option>
+                  ))}
+              </Form.Select>
+            </Col>
+          </Row>
+          <Row className="mb-3">
+            <div>Цвет канта</div>
+            <Col>
+              <Form.Select
+                name="edgingId"
+                value={value.edgingId}
+                onChange={(e) => handleInputChange(e)}
+                isValid={valid.edgingId === true}
+                isInvalid={valid.edgingId === false}>
+                <option value="">Цвет канта</option>
+                {edgings &&
+                  edgings.map((edging) => (
+                    <option key={edging.id} value={edging.id}>
+                      {edging.name}
                     </option>
                   ))}
               </Form.Select>
