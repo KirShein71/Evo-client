@@ -6,7 +6,7 @@ function Categories() {
   const catalogs = [
     { img: './img/rug-category.jpg', title: 'Автомобильные EVA коврики', url: '/allbrands' },
     { img: './img/home-category.jpg', title: 'EVA коврики для дома', url: '/homeproduct' },
-    { img: './img/bag-category.jpg', title: 'Автоаксессуары', url: '/homeproduct' },
+    { img: './img/bag-category.jpg', title: 'Автоаксессуары', url: '/accessories' },
   ];
   return (
     <div className="categories">
