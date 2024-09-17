@@ -4,9 +4,9 @@ import './style.scss';
 
 function Categories() {
   const catalogs = [
-    { img: './img/rug_category.webp', title: 'Автомобильные EVA коврики', url: '/allbrands' },
-    { img: './img/home_category.jpg', title: 'EVA коврики для дома', url: '/homeproduct' },
-    { img: './img/animal_category.jpg', title: 'EVA коврики для животных', url: '/homeproduct' },
+    { img: './img/rug-category.jpg', title: 'Автомобильные EVA коврики', url: '/allbrands' },
+    { img: './img/home-category.jpg', title: 'EVA коврики для дома', url: '/homeproduct' },
+    { img: './img/bag-category.jpg', title: 'Автоаксессуары', url: '/homeproduct' },
   ];
   return (
     <div className="categories">

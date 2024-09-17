@@ -31,8 +31,9 @@
         &-image {
             cursor: pointer;
             img {
-                width: 100%;
-                filter: brightness(30%);
+                width: 400px;
+                height: 400px;
+                filter: brightness(20%);
                 border-radius: 10px;
                 &:hover {
                     filter: brightness(100%);
@@ -42,10 +43,10 @@
                 }
                 @media(max-width: 1200px) {
                     width: 96%;
+                    height: auto;
                 }
                 @media(max-width: 480px) {
                     width: 100%;
-                    height: auto;
                 }
             }
 

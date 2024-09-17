@@ -1,6 +1,6 @@
 import React from 'react';
 import CardBrand from '../CardBrand/CardBrand';
-import { getAllBrand } from '../../http/brandApi';
+import { getBrandToPromo } from '../../http/brandApi';
 import { Link } from 'react-router-dom';
 
 import './styles.scss';
@@ -9,7 +9,7 @@ function Promo() {
   const [brands, setBrands] = React.useState([]);
 
   React.useEffect(() => {
-    getAllBrand().then((data) => setBrands(data.slice(0, 15)));
+    getBrandToPromo().then((data) => setBrands(data.slice(0, 15)));
   }, []);
 
   return (

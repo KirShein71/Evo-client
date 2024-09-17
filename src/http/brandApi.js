@@ -5,6 +5,11 @@ export const getAllBrand = async () => {
     return data
 }
 
+export const getBrandToPromo = async () => {
+    const {data} = await guestInstance.get('brand/getBrandToPromo')
+    return data
+}
+
 export const createBrand = async (brand) => {
     const { data } = await authInstance.post('brand/create', brand)
     return data
