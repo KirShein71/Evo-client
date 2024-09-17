@@ -32,6 +32,11 @@ export const updateStatus = async(id, order) => {
     return data
 }
 
+export const createNote = async(id, order) => {
+    const {data} = await guestInstance.put(`order/createNote/${id}`, order)
+    return data
+}
+
 export const updateOrder = async(id, order) => {
     const {data} = await guestInstance.put(`order/updateOrder/${id}`, order)
     return data

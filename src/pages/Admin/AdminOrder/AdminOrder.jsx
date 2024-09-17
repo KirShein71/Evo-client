@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllOrders, deleteOrder } from '../../../http/orderApi';
+import { getAllOrders, deleteOrder, createNote } from '../../../http/orderApi';
 import { createOrderCdek, createOrderCdekDelivery } from '../../../http/cdekApi';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import UpdateStatus from './modals/UpdateStatus';
@@ -7,6 +7,7 @@ import UpdateOrder from './modals/updateOrder';
 import UpdatePhone from './modals/UpdatePhone';
 import UpdateDelivery from './modals/UpdateDelivery';
 import CreateOrder from './modals/CreateOrder';
+import CreateNote from './modals/createNote';
 import { CSVLink } from 'react-csv';
 
 import './style.scss';
@@ -16,7 +17,7 @@ const AdminOrder = () => {
   const [fetching, setFetching] = React.useState(true);
   const [show, setShow] = React.useState(false);
   const [change, setChange] = React.useState(true);
-  const [ordetId, setOrderId] = React.useState(null);
+  const [orderId, setOrderId] = React.useState(null);
   const [openModal, setOpenModal] = React.useState(false);
   const status = [{ name: 'Новый' }, { name: 'В работе' }, { name: 'Закрыт' }];
   const [selectedStatus, setSelectedStatus] = React.useState(null);
@@ -29,6 +30,8 @@ const AdminOrder = () => {
   const [openCreateOrder, setOpenCreateOrder] = React.useState(false);
   const [isButtonPvzDisabled, setIsButtonPvzDisabled] = React.useState(false);
   const [isButtonDeliveryDisabled, setIsButtonDeliveryDisabled] = React.useState(false);
+  const [modalCreateNote, setModalCreateNote] = React.useState(false);
+  const [isExpanded, setIsExpanded] = React.useState(false);
   const modalRef = React.useRef();
 
   React.useEffect(() => {
@@ -70,6 +73,15 @@ const AdminOrder = () => {
   const handleUpdateStatus = (id) => {
     setOrderId(id);
     setShow(true);
+  };
+
+  const handleOpenModalCreateNote = (id) => {
+    setOrderId(id);
+    setModalCreateNote(true);
+  };
+
+  const handleToggleText = () => {
+    setIsExpanded(!isExpanded);
   };
 
   const handleUpdateOrder = (id, productId) => {
@@ -189,15 +201,15 @@ const AdminOrder = () => {
   return (
     <Container>
       <h1>Все заказы</h1>
-      <UpdateStatus id={ordetId} show={show} setShow={setShow} setChange={setChange} />
+      <UpdateStatus id={orderId} show={show} setShow={setShow} setChange={setChange} />
       <UpdatePhone
-        id={ordetId}
+        id={orderId}
         show={openModalPhone}
         setShow={setOpenModalPhone}
         setChange={setChange}
       />
       <UpdateDelivery
-        id={ordetId}
+        id={orderId}
         show={openModalDelivery}
         setShow={setOpenModalDelivery}
         setChange={setChange}
@@ -207,6 +219,12 @@ const AdminOrder = () => {
         productId={productId}
         show={updateOrderModal}
         setShow={setUpdateOrderModal}
+        setChange={setChange}
+      />
+      <CreateNote
+        id={orderId}
+        show={modalCreateNote}
+        setShow={setModalCreateNote}
         setChange={setChange}
       />
       <CreateOrder show={openCreateOrder} setShow={setOpenCreateOrder} setChange={setChange} />
@@ -255,6 +273,7 @@ const AdminOrder = () => {
             <th>Статус</th>
             <th>Покупатель</th>
             <th>Доставка</th>
+            <th>Комментарии</th>
             <th></th>
           </tr>
         </thead>
@@ -378,7 +397,33 @@ const AdminOrder = () => {
                   </div>
                 </td>
               )}
-
+              <td>
+                <div className="note">
+                  <div className="note__content">
+                    <p
+                      className="note__field"
+                      onClick={() => handleOpenModalCreateNote(item.order.id)}>
+                      {isExpanded
+                        ? item.order.note
+                        : item.order.note && item.order.note.slice(0, 250)}
+                    </p>
+                    {item.order.note && item.order.note.length > 250 && (
+                      <div className="note__show" onClick={handleToggleText}>
+                        {isExpanded ? 'Скрыть' : 'Показать все...'}
+                      </div>
+                    )}
+                  </div>
+                  {item.order.note === null ? (
+                    <div style={{ display: 'flex', justifyContent: 'center' }}>
+                      <Button size="sm" onClick={() => handleOpenModalCreateNote(item.order.id)}>
+                        Добавить
+                      </Button>
+                    </div>
+                  ) : (
+                    ''
+                  )}
+                </div>
+              </td>
               <td>
                 <Button onClick={() => handleDeleteOrder(item.order.id)}>Удалить</Button>
               </td>
