@@ -248,7 +248,7 @@ function Equipment({
                       </div>
                     </label>
                   </div>{' '}
-                  <span>Коврик в багажник</span>
+                  {trunk.name === null ? <span>Коврик в багажник</span> : <span>{trunk.name}</span>}
                 </div>
                 <div className="equipment__price">
                   <div className="equipment__oldPrice">{trunk.old_price * trunkQuantity} Р</div>
