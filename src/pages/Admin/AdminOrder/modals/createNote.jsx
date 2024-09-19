@@ -25,7 +25,7 @@ const CreateNote = (props) => {
       getOne(id)
         .then((data) => {
           const prod = {
-            note: data.note.toString(),
+            note: data.note !== null ? data.note.toString() : '',
           };
           setValue(prod);
           setValid(isValid(prod));
@@ -57,7 +57,7 @@ const CreateNote = (props) => {
       createNote(id, data)
         .then((data) => {
           const prod = {
-            note: data.note.toString(),
+            note: data.note !== null ? data.note.toString() : '',
           };
           setValue(prod);
           setValid(isValid(prod));

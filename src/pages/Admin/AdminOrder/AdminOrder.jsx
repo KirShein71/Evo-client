@@ -20,7 +20,7 @@ const AdminOrder = () => {
   const [orderId, setOrderId] = React.useState(null);
   const [openModal, setOpenModal] = React.useState(false);
   const status = [{ name: 'Новый' }, { name: 'В работе' }, { name: 'Закрыт' }];
-  const [selectedStatus, setSelectedStatus] = React.useState(null);
+  const [selectedStatus, setSelectedStatus] = React.useState('Новый');
   const [filteredOrders, setFilteredOrders] = React.useState([]);
   const [orderItem, setOrderItem] = React.useState(null);
   const [updateOrderModal, setUpdateOrderModal] = React.useState(false);
@@ -38,7 +38,7 @@ const AdminOrder = () => {
     getAllOrders()
       .then((data) => {
         setOrders(data);
-        filterOrdersByStatus('Новый', data);
+        filterOrdersByStatus(selectedStatus, data);
       })
       .finally(() => setFetching(false));
   }, [change]);
@@ -402,6 +402,7 @@ const AdminOrder = () => {
                   <div className="note__content">
                     <p
                       className="note__field"
+                      style={{ cursor: 'pointer' }}
                       onClick={() => handleOpenModalCreateNote(item.order.id)}>
                       {isExpanded
                         ? item.order.note
