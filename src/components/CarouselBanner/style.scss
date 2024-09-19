@@ -30,6 +30,10 @@
     height: 15px !important;
     border-radius: 100% !important;
     background-color: #2e528f !important;
+    @media(max-width: 460px) {
+        width: 10px !important;
+        height: 10px !important;
+    }
    
 }
 

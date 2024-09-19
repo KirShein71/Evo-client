@@ -43,6 +43,9 @@ function Admin() {
         <Link to="/adminorder">
           <li>Заказы клиентов</li>
         </Link>
+        <Link to="/adminfeedback">
+          <li>Запросы клиентов</li>
+        </Link>
       </ul>
       <div style={{ cursor: 'pointer' }} onClick={handleLogout}>
         Выйти

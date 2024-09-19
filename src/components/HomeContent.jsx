@@ -7,6 +7,7 @@ import Track from './Track/Track';
 import Categories from './Categories/Categories';
 import CompanyAdvantages from './CompanyAdvantages/CompanyAdvantages';
 import CarouselBanner from '../components/CarouselBanner/CarouselBanner';
+import Feedback from './Feedback/Feedback';
 
 function HomeContent() {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
@@ -37,6 +38,7 @@ function HomeContent() {
           <Promo />
           <Categories />
           <CompanyAdvantages />
+          <Feedback />
         </>
       ) : (
         <>
@@ -47,6 +49,7 @@ function HomeContent() {
           <Promo />
           <Categories />
           <Sale />
+          <Feedback />
         </>
       )}
     </>

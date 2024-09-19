@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllOrders, deleteOrder, createNote } from '../../../http/orderApi';
+import { getAllOrders, deleteOrder } from '../../../http/orderApi';
 import { createOrderCdek, createOrderCdekDelivery } from '../../../http/cdekApi';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import UpdateStatus from './modals/UpdateStatus';

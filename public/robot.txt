@@ -9,5 +9,7 @@ Disallow: /adminorganizer/
 Disallow: /adminmaterialrug/
 Disallow: /adminedging/
 Disallow: /adminorder/
+Disallow: /adminbag/
+Disallow: /adminfeedback/
 Disallow: /login/
 Sitemap: http://www.savaks.ru/sitemap.xml
