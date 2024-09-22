@@ -23,6 +23,10 @@
             font-size: 17px;
             font-weight: 400;
             color: var(--e-global-color-primary);
+            width: 300px;
+            @media(max-width: 460px) {
+                width: 100%;
+            }
         }
     }
 

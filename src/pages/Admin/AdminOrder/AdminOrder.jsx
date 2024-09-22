@@ -41,7 +41,7 @@ const AdminOrder = () => {
         filterOrdersByStatus(selectedStatus, data);
       })
       .finally(() => setFetching(false));
-  }, [change]);
+  }, [change, selectedStatus]);
 
   const filterOrdersByStatus = (status, ordersData) => {
     if (status === 'Все') {

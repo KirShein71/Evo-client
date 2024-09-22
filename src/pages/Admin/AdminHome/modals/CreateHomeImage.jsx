@@ -10,14 +10,6 @@ const defaultValid = {
   material: null,
 };
 
-const isValid = (value) => {
-  const result = {};
-  for (let key in value) {
-    if (key === 'material') result.material = value.material.trim() !== '';
-  }
-  return result;
-};
-
 const CreateHomeImage = (props) => {
   const { show, setShow, setChange, homeId } = props;
   const [value, setValue] = React.useState(defaultValue);

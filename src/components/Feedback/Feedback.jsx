@@ -84,7 +84,7 @@ function Feedback() {
   };
 
   return (
-    <div className="feedback">
+    <div className="feedback" id="feedback">
       <div className="container">
         <div className="feedback__content">
           <div className="feedback__card">

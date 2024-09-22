@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { observer } from 'mobx-react';
 import Burger from '../Burger/Burger';
@@ -14,6 +14,8 @@ const Header = observer(() => {
   const catalogRef = React.useRef();
   const initialQuery = '';
   const navigate = useNavigate();
+  const navigateToFeedback = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setOpen(!isOpen);
@@ -59,6 +61,26 @@ const Header = observer(() => {
       document.body.removeEventListener('click', hadleClickOutside);
     };
   });
+
+  const handleClickScroll = () => {
+    const element = document.getElementById('feedback');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleClickFeedback = () => {
+    if (location.pathname !== '/') {
+      navigateToFeedback('/');
+      setTimeout(() => {
+        handleClickScroll();
+      }, 100);
+    } else {
+      setTimeout(() => {
+        handleClickScroll();
+      }, 100);
+    }
+  };
 
   return (
     <header className="header">
@@ -114,13 +136,18 @@ const Header = observer(() => {
                   8-812-220-29-09
                 </a>
               </div>
-              <div className="header__information-operating">
+              {/* <div className="header__information-operating">
                 <div className="header__information-operating__time">
                   С 09-00 до 18-00 без выходных
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="header__icons">
+              <div className="header__feedback">
+                <div className="header__feedback" onClick={handleClickFeedback}>
+                  <img src={`/img/feedback.png?v=${Date.now()}`} alt="icon_feedback" />
+                </div>
+              </div>
               <div className="header__basket">
                 <Link to="/basket">
                   <div className="header__basket-image">

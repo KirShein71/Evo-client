@@ -1,4 +1,8 @@
 .pattern {
+    height: 600px;
+    @media(max-width: 768px) {
+        height: auto;
+    }
     &__car {
         display: flex;
         justify-content: center;
@@ -31,6 +35,10 @@
                 font-size: 16px;
                 text-align: center;
                 color: #9b9999; 
+                width: 300px;
+                @media(max-width: 595px) {
+                    width: 100%;
+                }
             }
             
         }

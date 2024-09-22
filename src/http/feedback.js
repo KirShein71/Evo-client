@@ -1,7 +1,7 @@
 import { guestInstance, authInstance } from './index'
 
 export const getAllFeedback = async () => {
-    const { data } = await authInstance.get('feedback/getall')
+    const { data } = await guestInstance.get('feedback/getall')
     return data
 }
 
