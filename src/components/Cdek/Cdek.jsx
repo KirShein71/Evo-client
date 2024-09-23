@@ -211,22 +211,24 @@ function Cdek({
         </div>
         {selectedCityCode ? (
           <div className="cdek__bottom">
-            {[rates].map((rate) => (
-              <div key={rate.id}>
-                {dataLoadedRates ? (
-                  <>
-                    <div className="cdek__bottom-days">
-                      Срок доставки: {rate?.calendar_min}-{rate?.calendar_max} дней
-                    </div>
-                    <div className="cdek__bottom-price">
-                      Стоимость доставки: {rate?.total_sum + 100} рублей
-                    </div>
-                  </>
-                ) : (
-                  ''
-                )}
-              </div>
-            ))}
+            {rates && rates.length > 0
+              ? rates.map((rate) => (
+                  <div key={rate.id}>
+                    {dataLoadedRates ? (
+                      <>
+                        <div className="cdek__bottom-days">
+                          Срок доставки: {rate?.calendar_min}-{rate?.calendar_max} дней
+                        </div>
+                        <div className="cdek__bottom-price">
+                          Стоимость доставки: {rate?.total_sum + 100} рублей
+                        </div>
+                      </>
+                    ) : (
+                      ''
+                    )}
+                  </div>
+                ))
+              : ''}
           </div>
         ) : (
           ''
