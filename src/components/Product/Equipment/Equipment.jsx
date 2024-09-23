@@ -208,7 +208,7 @@ function Equipment({
               ))}
               <div className="equipment__price">
                 <div className="equipment__oldPrice">{2390 * trunkQuantity} Р</div>
-                <div className="equipment__newPrice">{2190 * trunkQuantity} Р</div>
+                <div className="equipment__newPrice">{2090 * trunkQuantity} Р</div>
               </div>
               <div className="equipment__quantity">
                 <button
