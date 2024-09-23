@@ -89,20 +89,25 @@ function CardHomeProduct({ name, new_price, id, materials, home_images }) {
           </div>
         </div>
       </div>
-      <div className="cardhomeproduct__equipment">
-        <div className="cardhomeproduct__equipment-quantity">
-          <button
-            className="minus"
-            onClick={() => setQuantity(quantity - 1)}
-            disabled={isCountDisabled}>
-            <img src="../img/minus.png" alt="minus" />
-          </button>
-          <div className="cardhomeproduct__equipment-total">{quantity}</div>
-          <button className="plus" onClick={() => setQuantity(quantity + 1)}>
-            <img src="../img/plus.png" alt="plus" />
-          </button>
+      {id === 50 ? (
+        ''
+      ) : (
+        <div className="cardhomeproduct__equipment">
+          <div className="cardhomeproduct__equipment-quantity">
+            <button
+              className="minus"
+              onClick={() => setQuantity(quantity - 1)}
+              disabled={isCountDisabled}>
+              <img src="../img/minus.png" alt="minus" />
+            </button>
+            <div className="cardhomeproduct__equipment-total">{quantity}</div>
+            <button className="plus" onClick={() => setQuantity(quantity + 1)}>
+              <img src="../img/plus.png" alt="plus" />
+            </button>
+          </div>
         </div>
-      </div>
+      )}
+
       <div class="cardhomeproduct__bottom">
         <h4 class="cardhomeproduct__title">{name}</h4>
         <div class="cardhomeproduct__price">{new_price * quantity} Р</div>

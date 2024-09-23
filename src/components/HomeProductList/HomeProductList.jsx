@@ -11,6 +11,7 @@ function HomeProductList() {
   const [homeProducts, setHomeProducts] = React.useState([]);
   const [fetching, setFetching] = React.useState(true);
   const [materials, setMaterials] = React.useState([]);
+  const order = [43, 44, 45, 38, 39, 40, 41, 42, 47, 48, 50];
 
   React.useEffect(() => {
     let homeProductLoaded = false;
@@ -32,6 +33,10 @@ function HomeProductList() {
 
     fetchData();
   }, []);
+
+  const sortedHomeProducts = homeProducts.sort((a, b) => {
+    return order.indexOf(a.id) - order.indexOf(b.id);
+  });
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -60,7 +65,7 @@ function HomeProductList() {
           *Можем изготовить коврик по вашим индивидуальным размерам, звоните или пишите нам
         </div>
         <div className="homeproductlist__content">
-          {homeProducts.map((homeProduct) => (
+          {sortedHomeProducts.map((homeProduct) => (
             <CardHomeProduct key={homeProduct.id} {...homeProduct} materials={materials} />
           ))}
         </div>
