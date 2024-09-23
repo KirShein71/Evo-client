@@ -93,11 +93,13 @@ function Cdek({
         getRatesPvz(selectedCityCode).then((data) => {
           setRates(data);
           setDataLoadedRates(true);
+          console.log(setDataLoadedRates);
         });
       } else {
         getRatesDelivery(selectedCityCode).then((data) => {
           setRates(data);
           setDataLoadedRates(true);
+          console.log(setDataLoadedRates);
         });
       }
     }
@@ -211,24 +213,29 @@ function Cdek({
         </div>
         {selectedCityCode ? (
           <div className="cdek__bottom">
-            {rates && rates.length > 0
-              ? rates.map((rate) => (
-                  <div key={rate.id}>
-                    {dataLoadedRates ? (
-                      <>
-                        <div className="cdek__bottom-days">
-                          Срок доставки: {rate?.calendar_min}-{rate?.calendar_max} дней
-                        </div>
-                        <div className="cdek__bottom-price">
-                          Стоимость доставки: {rate?.total_sum + 100} рублей
-                        </div>
-                      </>
-                    ) : (
-                      ''
-                    )}
-                  </div>
-                ))
-              : ''}
+            {rates !== null ? (
+              [rates].map((rate) => (
+                <div key={rate.id}>
+                  {dataLoadedRates ? (
+                    <>
+                      <div className="cdek__bottom-days">
+                        Срок доставки: {rate?.calendar_min}-{rate?.calendar_max} дней
+                      </div>
+                      <div className="cdek__bottom-price">
+                        Стоимость доставки: {rate?.total_sum + 100} рублей
+                      </div>
+                    </>
+                  ) : (
+                    ''
+                  )}
+                </div>
+              ))
+            ) : (
+              <>
+                <div className="cdek__bottom-days">Срок доставки: от 3 дней</div>
+                <div className="cdek__bottom-price">Стоимость доставки: от 400 рублей</div>
+              </>
+            )}
           </div>
         ) : (
           ''
