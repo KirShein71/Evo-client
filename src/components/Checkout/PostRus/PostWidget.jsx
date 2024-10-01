@@ -2,6 +2,7 @@ import React from 'react';
 
 const PostWidget = () => {
   const callbackPostRus = (data) => {
+    console.log(data);
     const paramsContainer = document.querySelector('.map__params');
     if (!paramsContainer) return;
 
@@ -29,8 +30,6 @@ const PostWidget = () => {
       paramsContainer.appendChild(item);
     });
   };
-
-  console.log(callbackPostRus);
 
   React.useEffect(() => {
     const loadScript = () => {
