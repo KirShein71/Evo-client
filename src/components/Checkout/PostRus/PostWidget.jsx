@@ -18,6 +18,7 @@ const PostWidget = () => {
 
       item.appendChild(valueSpan);
       paramsContainer.appendChild(item);
+      console.log(paramsContainer);
     });
   };
   React.useEffect(() => {
