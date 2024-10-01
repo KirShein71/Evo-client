@@ -1,8 +1,6 @@
 import React from 'react';
 
-const PostWidget = () => {
-  const [adress, setAdress] = React.useState(''); // Создаем состояние для адреса
-
+const PostWidget = ({ setSelectedAdress }) => {
   React.useEffect(() => {
     const loadScript = () => {
       const script = document.createElement('script');
@@ -36,7 +34,6 @@ const PostWidget = () => {
   }, []);
 
   const callbackPostRus = (data) => {
-    console.log(data);
     const paramsContainer = document.querySelector('.map__params');
     if (!paramsContainer) return;
 
@@ -45,8 +42,7 @@ const PostWidget = () => {
 
     // Извлечение значений
     const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Используем шаблонные строки
-    setAdress(addressInfo); // Обновляем состояние adress
-    console.log('Address Info:', addressInfo); // Логируем адрес
+    setSelectedAdress(addressInfo); // Обновляем состояние adress
 
     Object.keys(data).forEach((key) => {
       const item = document.createElement('div');
@@ -65,7 +61,6 @@ const PostWidget = () => {
     <div>
       <div id="ecom-widget"></div>
       <div className="map__params"></div>
-      <div>Адрес: {adress}</div> {/* Отображаем адрес на странице */}
     </div>
   );
 };

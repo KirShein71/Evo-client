@@ -29,6 +29,7 @@ const CheckoutList = () => {
   const [phone, setPhone] = React.useState('');
   const [popupOpen, setPopupOpen] = React.useState(false);
   const [popupDataOpen, setPopupDataOpen] = React.useState(false);
+  const [selectedAdress, setSelectedAdress] = React.useState('');
 
   const isValid = (input) => {
     let pattern;
@@ -154,6 +155,7 @@ const CheckoutList = () => {
         citycode: selectedCityCode,
         codepvz: selectedCodePVZ,
         totalamount: totalAmount,
+        adress: selectedAdress,
         items: basketProduct,
       };
 
@@ -258,6 +260,7 @@ const CheckoutList = () => {
             setSelectedCodePVZ={setSelectedCodePVZ}
             selectedCityCode={selectedCityCode}
             setSelectedCityCode={setSelectedCityCode}
+            setSelectedAdress={setSelectedAdress}
             value={value}
             valid={valid}
             handleChange={handleChange}

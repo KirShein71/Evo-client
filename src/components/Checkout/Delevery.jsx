@@ -3,6 +3,7 @@ import regions from '../../region.json';
 import cites from '../../cites.json';
 import './style.scss';
 import Cdek from '../Cdek/Cdek';
+import PostWidget from './PostRus/PostWidget';
 
 function Delevery({
   selectedDelevery,
@@ -15,6 +16,7 @@ function Delevery({
   setSelectedCodePVZ,
   selectedCityCode,
   setSelectedCityCode,
+  setSelectedAdress,
   value,
   valid,
   handleChange,
@@ -77,47 +79,6 @@ function Delevery({
           </div>
         ))}
       </div>
-      {selectedDelevery === 3 ? (
-        <div className="delevery__region">
-          <div className="delevery__region-content">
-            <div className="delevery__region-items">
-              <div className="delevery__region-title">Выберите ваш регион:</div>
-              <select
-                id="regionSelect"
-                className="delevery__region-form"
-                value={selectedRegion}
-                onChange={handleRegionChange}>
-                <option value="">Выберите регион</option>
-                {regions.map((region) => (
-                  <React.Fragment key={region.id}>
-                    <option value={region.name}>{region.name}</option>
-                  </React.Fragment>
-                ))}
-              </select>
-            </div>
-            <div>
-              <div className="delevery__region-title">Выберите город:</div>
-              <select
-                id="cytiSelect"
-                className="delevery__region-form"
-                value={selectedCity}
-                onChange={handleCityChange}
-                disabled={!selectedRegion}>
-                <option value="">Выберите город</option>
-                {cites
-                  .filter((city) => city.region_id === selectedRegionId)
-                  .map((city) => (
-                    <React.Fragment>
-                      <option value={city.name}>{city.name}</option>
-                    </React.Fragment>
-                  ))}
-              </select>
-            </div>
-          </div>
-        </div>
-      ) : (
-        ''
-      )}
       {selectedDelevery === 2 ? (
         <Cdek
           selectedCodePVZ={selectedCodePVZ}
@@ -131,6 +92,7 @@ function Delevery({
       ) : (
         ''
       )}
+      {selectedDelevery === 3 ? <PostWidget setSelectedAdress={setSelectedAdress} /> : ''}
     </div>
   );
 }
