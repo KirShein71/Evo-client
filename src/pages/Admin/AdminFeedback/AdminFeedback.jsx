@@ -11,6 +11,7 @@ const AdminFeedback = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [change, setChange] = React.useState(true);
   const [feedbackId, setFeedbackId] = React.useState(null);
+  const [selectedAdress, setSelectedAdress] = React.useState(null);
 
   React.useEffect(() => {
     getAllFeedback()
@@ -91,7 +92,7 @@ const AdminFeedback = () => {
           </tbody>
         </Table>
       </div>
-      <PostWidget />
+      <PostWidget adress={selectedAdress} />
     </Container>
   );
 };

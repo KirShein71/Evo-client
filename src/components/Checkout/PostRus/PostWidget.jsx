@@ -1,31 +1,7 @@
 import React from 'react';
 
 const PostWidget = () => {
-  const callbackPostRus = (data) => {
-    console.log(data);
-    const paramsContainer = document.querySelector('.map__params');
-    if (!paramsContainer) return;
-
-    // Очистка предыдущих данных
-    paramsContainer.innerHTML = '';
-
-    // Извлечение значений
-    const adress = `${(data.addressTo, data.cityTo, data.regionTo)}`;
-
-    console.log(adress); // Выводим объект adress в консоль
-
-    Object.keys(data).forEach((key) => {
-      const item = document.createElement('div');
-      item.className = 'map__params-item';
-      item.textContent = `${key}: `; // Исправлено на шаблонную строку
-
-      const valueSpan = document.createElement('span');
-      valueSpan.textContent = typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key];
-
-      item.appendChild(valueSpan);
-      paramsContainer.appendChild(item);
-    });
-  };
+  const [adress, setAdress] = React.useState(''); // Создаем состояние для адреса
 
   React.useEffect(() => {
     const loadScript = () => {
@@ -33,7 +9,6 @@ const PostWidget = () => {
       script.src = 'https://widget.pochta.ru/map/widget/widget.js';
       script.async = true;
       script.onload = () => {
-        // Проверяем наличие функции
         if (window.ecomStartWidget) {
           window.ecomStartWidget({
             id: 51711,
@@ -60,7 +35,39 @@ const PostWidget = () => {
     };
   }, []);
 
-  return <div id="ecom-widget" style={{ height: '500px' }}></div>;
+  const callbackPostRus = (data) => {
+    console.log(data);
+    const paramsContainer = document.querySelector('.map__params');
+    if (!paramsContainer) return;
+
+    // Очистка предыдущих данных
+    paramsContainer.innerHTML = '';
+
+    // Извлечение значений
+    const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Используем шаблонные строки
+    setAdress(addressInfo); // Обновляем состояние adress
+    console.log('Address Info:', addressInfo); // Логируем адрес
+
+    Object.keys(data).forEach((key) => {
+      const item = document.createElement('div');
+      item.className = 'map__params-item';
+      item.textContent = `${key}: `;
+
+      const valueSpan = document.createElement('span');
+      valueSpan.textContent = typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key];
+
+      item.appendChild(valueSpan);
+      paramsContainer.appendChild(item);
+    });
+  };
+
+  return (
+    <div>
+      <div id="ecom-widget"></div>
+      <div className="map__params"></div>
+      <div>Адрес: {adress}</div> {/* Отображаем адрес на странице */}
+    </div>
+  );
 };
 
 export default PostWidget;
