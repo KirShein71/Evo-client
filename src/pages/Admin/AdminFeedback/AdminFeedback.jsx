@@ -2,6 +2,7 @@ import React from 'react';
 import { getAllFeedback } from '../../../http/feedback';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import CreateNoteAdmin from './modals/createAdminNote';
+import PostWidget from '../../../components/Checkout/PostRus/PostWidget';
 
 const AdminFeedback = () => {
   const [feedbacks, setFeedbaks] = React.useState([]);
@@ -90,6 +91,7 @@ const AdminFeedback = () => {
           </tbody>
         </Table>
       </div>
+      <PostWidget />
     </Container>
   );
 };
