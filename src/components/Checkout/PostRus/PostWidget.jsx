@@ -11,7 +11,7 @@ const PostWidget = () => {
         if (window.ecomStartWidget) {
           window.ecomStartWidget({
             id: 51711,
-            callbackFunction: null,
+            callbackFunction: callbackPostRus,
             containerId: 'ecom-widget',
           });
         } else {
