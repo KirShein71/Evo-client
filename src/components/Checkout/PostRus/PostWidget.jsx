@@ -30,6 +30,8 @@ const PostWidget = () => {
     });
   };
 
+  console.log(callbackPostRus);
+
   React.useEffect(() => {
     const loadScript = () => {
       const script = document.createElement('script');
