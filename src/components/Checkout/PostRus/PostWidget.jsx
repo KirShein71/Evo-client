@@ -1,6 +1,25 @@
 import React from 'react';
 
 const PostWidget = () => {
+  const callbackPostRus = (data) => {
+    const paramsContainer = document.querySelector('.map__params');
+    if (!paramsContainer) return;
+
+    // Очистка предыдущих данных
+    paramsContainer.innerHTML = '';
+
+    Object.keys(data).forEach((key) => {
+      const item = document.createElement('div');
+      item.className = 'map__params-item';
+      item.textContent = `${key}: `;
+
+      const valueSpan = document.createElement('span');
+      valueSpan.textContent = typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key];
+
+      item.appendChild(valueSpan);
+      paramsContainer.appendChild(item);
+    });
+  };
   React.useEffect(() => {
     const loadScript = () => {
       const script = document.createElement('script');
