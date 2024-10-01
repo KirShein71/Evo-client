@@ -10,11 +10,7 @@ const PostWidget = () => {
     paramsContainer.innerHTML = '';
 
     // Извлечение значений
-    const adress = {
-      addressTo: data.addressTo,
-      cityTo: data.cityTo,
-      indexTo: data.indexTo,
-    };
+    const adress = `${(data.addressTo, data.cityTo, data.regionTo)}`;
 
     console.log(adress); // Выводим объект adress в консоль
 
