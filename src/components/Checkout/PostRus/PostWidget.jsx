@@ -3,6 +3,7 @@ import './style.scss';
 
 const PostWidget = ({ setSelectedAdress }) => {
   const [adress, setAdress] = React.useState('');
+  console.log(adress);
 
   React.useEffect(() => {
     const loadScript = () => {
@@ -46,7 +47,7 @@ const PostWidget = ({ setSelectedAdress }) => {
     // Извлечение значений
     const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Используем шаблонные строки
     setAdress(addressInfo); // Обновляем состояние adress
-
+    console.log(addressInfo);
     Object.keys(data).forEach((key) => {
       const item = document.createElement('div');
       item.className = 'map__params-item';
@@ -64,7 +65,7 @@ const PostWidget = ({ setSelectedAdress }) => {
     <div>
       <div id="ecom-widget" className="post__widget">
         <div className="post__widget-text">Вы выбрали пункта выдачи по адресу:</div>
-        <div className="post-widget-city">{adress}</div>
+        <div className="post-widget-city">Город: {adress}</div>
       </div>
     </div>
   );
