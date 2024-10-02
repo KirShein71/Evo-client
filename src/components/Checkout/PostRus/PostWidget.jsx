@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.js';
+import './style.scss';
 
 const PostWidget = ({ setSelectedAdress }) => {
   const [adress, setAdress] = React.useState('');
