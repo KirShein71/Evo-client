@@ -67,6 +67,7 @@ const PostWidget = () => {
   return (
     <div>
       <div id="ecom-widget" className="post__widget"></div>
+      <div className="map__params"></div>
       <div className="post__widget-text">Вы выбрали пункт выдачи</div>
       <div className="post__widget-adress">Адрес: {adress}</div>
       <button className="post__widget-button" onClick={() => resetPvz}>
