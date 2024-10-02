@@ -46,7 +46,7 @@ const PostWidget = () => {
     // Извлечение значений
     const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Используем шаблонные строки
     setAdress(addressInfo); // Обновляем состояние adress
-
+    console.log('Address Info:', addressInfo);
     Object.keys(data).forEach((key) => {
       const item = document.createElement('div');
       item.className = 'map__params-item';
