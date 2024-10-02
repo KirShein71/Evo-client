@@ -37,7 +37,6 @@ const PostWidget = () => {
   }, []);
 
   const callbackPostRus = (data) => {
-    console.log(data);
     const paramsContainer = document.querySelector('.map__params');
     if (!paramsContainer) return;
 
@@ -47,7 +46,6 @@ const PostWidget = () => {
     // Извлечение значений
     const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Используем шаблонные строки
     setAdress(addressInfo); // Обновляем состояние adress
-    console.log('Address Info:', addressInfo); // Логируем адрес
 
     Object.keys(data).forEach((key) => {
       const item = document.createElement('div');
@@ -62,11 +60,18 @@ const PostWidget = () => {
     });
   };
 
+  const resetPvz = () => {
+    resetSelectedPlacemarkInEcomWidget();
+  };
+
   return (
     <div>
-      <div id="ecom-widget"></div>
-      <div className="map__params"></div>
-      <div>Адрес: {adress}</div> {/* Отображаем адрес на странице */}
+      <div id="ecom-widget" className="post__widget"></div>
+      <div className="post__widget-text">Вы выбрали пункт выдачи</div>
+      <div className="post__widget-adress">Адрес: {adress}</div>
+      <button className="post__widget-button" onClick={() => resetPvz}>
+        Изменить
+      </button>
     </div>
   );
 };
