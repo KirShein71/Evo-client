@@ -22,6 +22,7 @@ const AdminOrder = () => {
   const status = [
     { name: 'Новый' },
     { name: 'В работе' },
+    { name: 'Закрыт' },
     { name: 'Выкуплен' },
     { name: 'Не выкуплен' },
   ];
