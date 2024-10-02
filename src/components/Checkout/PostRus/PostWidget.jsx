@@ -45,6 +45,7 @@ const PostWidget = () => {
 
   const resetPvz = () => {
     resetSelectedPlacemarkInEcomWidget();
+    setAdress('');
   };
 
   return (
