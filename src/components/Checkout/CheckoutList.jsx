@@ -20,7 +20,7 @@ const CheckoutList = () => {
   const [clicked, setClicked] = React.useState(false);
   const [isBasketLoaded, setIsBasketLoaded] = React.useState(false);
   const [selectedRegion, setSelectedRegion] = React.useState(null);
-  const [selectedCity, setSelectedCity] = React.useState(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(null);
   const [selectedDelevery, setSelectedDelevery] = React.useState(1);
   const [selectedCodePVZ, setSelectedCodePVZ] = React.useState(null);
   const [selectedCityCode, setSelectedCityCode] = React.useState(null);
@@ -150,7 +150,7 @@ const CheckoutList = () => {
         flat: value.flat,
         delivery: selectedDelevery,
         region: selectedRegion,
-        city: selectedCity,
+        city: selectedIndex,
         citycode: selectedCityCode,
         codepvz: selectedCodePVZ,
         totalamount: totalAmount,
@@ -250,8 +250,8 @@ const CheckoutList = () => {
           <Delevery
             selectedDelevery={selectedDelevery}
             setSelectedDelevery={setSelectedDelevery}
-            selectedCity={selectedCity}
-            setSelectedCity={setSelectedCity}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setSelectedIndex}
             selectedRegion={selectedRegion}
             setSelectedRegion={setSelectedRegion}
             selectedCodePVZ={selectedCodePVZ}

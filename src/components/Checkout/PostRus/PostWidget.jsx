@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-const PostWidget = () => {
+const PostWidget = ({ setSelectedIndex, setSelectedRegion }) => {
   const [adress, setAdress] = React.useState(''); // Создаем состояние для адреса
 
   React.useEffect(() => {
@@ -40,7 +40,8 @@ const PostWidget = () => {
     // Извлечение значений
     const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Исправлено на шаблонные строки
     setAdress(addressInfo); // Обновляем состояние adress
-    console.log('Address Info:', addressInfo);
+    setSelectedRegion(addressInfo);
+    setSelectedIndex(data.indexTo);
   };
 
   const resetPvz = () => {
