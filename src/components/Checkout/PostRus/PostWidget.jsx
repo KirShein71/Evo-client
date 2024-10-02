@@ -1,6 +1,7 @@
 import React from 'react';
 
 const PostWidget = ({ setSelectedAdress }) => {
+  const [adress, setAdress] = React.useState('');
   React.useEffect(() => {
     const loadScript = () => {
       const script = document.createElement('script');
@@ -42,7 +43,7 @@ const PostWidget = ({ setSelectedAdress }) => {
 
     // Извлечение значений
     const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Используем шаблонные строки
-    setSelectedAdress(addressInfo); // Обновляем состояние adress
+    setAdress(addressInfo); // Обновляем состояние adress
 
     Object.keys(data).forEach((key) => {
       const item = document.createElement('div');
