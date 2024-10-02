@@ -37,27 +37,10 @@ const PostWidget = () => {
   }, []);
 
   const callbackPostRus = (data) => {
-    const paramsContainer = document.querySelector('.map__params');
-    if (!paramsContainer) return;
-
-    // Очистка предыдущих данных
-    paramsContainer.innerHTML = '';
-
     // Извлечение значений
-    const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Используем шаблонные строки
+    const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Исправлено на шаблонные строки
     setAdress(addressInfo); // Обновляем состояние adress
     console.log('Address Info:', addressInfo);
-    Object.keys(data).forEach((key) => {
-      const item = document.createElement('div');
-      item.className = 'map__params-item';
-      item.textContent = `${key}: `;
-
-      const valueSpan = document.createElement('span');
-      valueSpan.textContent = typeof data[key] === 'object' ? JSON.stringify(data[key]) : data[key];
-
-      item.appendChild(valueSpan);
-      paramsContainer.appendChild(item);
-    });
   };
 
   const resetPvz = () => {
@@ -67,10 +50,9 @@ const PostWidget = () => {
   return (
     <div>
       <div id="ecom-widget" className="post__widget"></div>
-      <div className="map__params"></div>
       <div className="post__widget-text">Вы выбрали пункт выдачи</div>
       <div className="post__widget-adress">Адрес: {adress}</div>
-      <button className="post__widget-button" onClick={() => resetPvz}>
+      <button className="post__widget-button" onClick={resetPvz}>
         Изменить
       </button>
     </div>
