@@ -19,7 +19,12 @@ const AdminOrder = () => {
   const [change, setChange] = React.useState(true);
   const [orderId, setOrderId] = React.useState(null);
   const [openModal, setOpenModal] = React.useState(false);
-  const status = [{ name: 'Новый' }, { name: 'В работе' }, { name: 'Закрыт' }];
+  const status = [
+    { name: 'Новый' },
+    { name: 'В работе' },
+    { name: 'Выкуплен' },
+    { name: 'Не выкуплен' },
+  ];
   const [selectedStatus, setSelectedStatus] = React.useState('Новый');
   const [filteredOrders, setFilteredOrders] = React.useState([]);
   const [orderItem, setOrderItem] = React.useState(null);
