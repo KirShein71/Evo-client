@@ -2,14 +2,21 @@
     height: 450px;
 
     &-text {
+        margin-top: 25px;
         font-size: 19px;
         font-weight: 400;
-        color: #504f4f;
+        color: var(--e-global-color-primary);
     }
 
     &-adress {
         font-size: 19px;
         font-weight: 400;
-        color: #504f4f;
+        color: var(--e-global-color-primary);
+    }
+
+    &-reset {
+        font-size: 19px;
+        font-weight: 400;
+        color: #3A5BCC;
     }
 }
