@@ -51,17 +51,20 @@ const PostWidget = () => {
   return (
     <div>
       <div id="ecom-widget" className="post__widget"></div>
-      <div className="post__widget-text">Вы выбрали пункт выдачи:</div>
-      <div style={{ display: 'flex' }}>
-        <div className="post__widget-adress">{adress} </div>
-        {adress !== '' ? (
-          <p className="post-widget__reset" onClick={resetPvz}>
-            (Изменить)
-          </p>
-        ) : (
-          ''
-        )}
-      </div>
+      {adress !== '' ? (
+        <>
+          <div className="post__widget-text">Вы выбрали пункт выдачи:</div>
+          <div style={{ display: 'flex' }}>
+            <div className="post__widget-adress">{adress} </div>
+
+            <p className="post__widget-reset" onClick={resetPvz}>
+              (Изменить)
+            </p>
+          </div>
+        </>
+      ) : (
+        ''
+      )}
     </div>
   );
 };
