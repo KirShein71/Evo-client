@@ -3,8 +3,7 @@ import React from 'react';
 import { guestCreate } from '../../http/orderApi';
 import { fetchBasket, getAllBasketProduct } from '../../http/basketApi';
 import Delevery from './Delevery';
-import { Link } from 'react-router-dom';
-import Message from './Message';
+import { Link, useNavigate } from 'react-router-dom';
 import './style.scss';
 import ModalCheckout from './modal/ModalCheckout';
 import ModalData from './modal/ModalData';
@@ -29,6 +28,7 @@ const CheckoutList = () => {
   const [phone, setPhone] = React.useState('');
   const [popupOpen, setPopupOpen] = React.useState(false);
   const [popupDataOpen, setPopupDataOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const isValid = (input) => {
     let pattern;
@@ -193,7 +193,7 @@ const CheckoutList = () => {
   }
 
   if (order) {
-    return <Message />;
+    navigate('/thankspage');
   }
 
   return (

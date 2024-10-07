@@ -1,6 +1,4 @@
 import React from 'react';
-import regions from '../../region.json';
-import cites from '../../cites.json';
 import './style.scss';
 import Cdek from '../Cdek/Cdek';
 import PostWidget from './PostRus/PostWidget';
@@ -43,22 +41,6 @@ function Delevery({
         'Стоимость доставки может измениться от объема заказа, и точного адреса доставки',
     },
   ];
-  const [selectedRegionId, setSelectedRegionId] = React.useState(null);
-
-  const handleRegionChange = (e) => {
-    const regionName = e.target.value;
-    const selectedRegion = regions.find((region) => region.name === regionName);
-    if (selectedRegion) {
-      setSelectedRegion(regionName);
-      setSelectedRegionId(selectedRegion.id);
-    } else {
-      alert('Регион не найден');
-    }
-  };
-
-  const handleCityChange = (e) => {
-    setSelectedCity(e.target.value);
-  };
 
   return (
     <div className="delevery">

@@ -1,6 +1,7 @@
 import React from 'react';
+import './style.scss';
 
-function Message() {
+function MessageOrder() {
   return (
     <div className="message">
       <div className="container">
@@ -13,4 +14,4 @@ function Message() {
   );
 }
 
-export default Message;
+export default MessageOrder;

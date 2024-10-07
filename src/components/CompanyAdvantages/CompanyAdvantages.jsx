@@ -9,17 +9,17 @@ function CompanyAdvantages() {
   const items = [
     {
       title: 'Доставка по всей России',
-      text: 'Мы предлагаем удобную доставку по всей России, чтобы каждый клиент мог получить качественные автомобильные коврики прямо к своему дому. Независимо от вашего местоположения, мы обеспечим быструю и надежную доставку.',
+      text: 'Доставка по всей России удобным способом с оплатой при получении',
       icon: <LocalShippingIcon color="primary" fontSize="large" />,
     },
     {
       title: 'Собственное производство',
-      text: 'Наши автомобильные коврики производятся непосредственно на нашем собственном производстве, что гарантирует высокое качество и контроль каждого этапа производства. Мы стремимся к совершенству в каждой детали',
+      text: 'У нас нет посредников. Вы покупаете товар без дополнительных наценок. И сможете сэкономить минимум от 2000 рублей на каждой позиции. Сшили более 250 000 ковриков. 10 лет на рынке',
       icon: <FactoryIcon color="primary" fontSize="large" />,
     },
     {
       title: 'Широкий выбор',
-      text: 'У нас вы найдете огромный выбор автомобильных ковриков различных размеров, цветов и материалов. Независимо от ваших предпочтений, у нас есть идеальное решение для вашего автомобиля, чтобы подчеркнуть его стиль и защитить пол.',
+      text: 'У нас более 1000 ковриков. Каждый коврик в 4 цветах и вариациях',
       icon: <CardGiftcardIcon color="primary" fontSize="large" />,
     },
   ];
@@ -27,13 +27,35 @@ function CompanyAdvantages() {
     <div className="companyadvantages">
       <div className="container">
         <div className="companyadvantages__content">
-          {items.map((item) => (
-            <div key={item.id} className="companyadvantages__card">
-              <div className="companyadvantages__card-icon">{item.icon}</div>
-              <h5 className="companyadvantages__card-title">{item.title}</h5>
-              <p className="companyadvantages__card-text">{item.text}</p>
+          <div className="companyadvantages__card">
+            <div className="companyadvantages__card-icon">
+              <LocalShippingIcon color="primary" fontSize="large" />
             </div>
-          ))}
+            <h5 className="companyadvantages__card-title">Доставка по всей России</h5>
+            <p className="companyadvantages__card-text">
+              Доставка по всей России удобным способом с оплатой при получении
+            </p>
+          </div>
+          <div className="companyadvantages__card">
+            <div className="companyadvantages__card-icon">
+              <CardGiftcardIcon color="primary" fontSize="large" />
+            </div>
+            <h5 className="companyadvantages__card-title">Собственное производство</h5>
+            <p className="companyadvantages__card-text">
+              У нас нет посредников. Вы покупаете товар без дополнительных наценок. И сможете
+              сэкономить минимум от 2000 рублей на каждой позиции.<br></br> Сшили более 250 000
+              ковриков. 10 лет на рынке. Гарантия 12 месяцев
+            </p>
+          </div>
+          <div className="companyadvantages__card">
+            <div className="companyadvantages__card-icon">
+              <CardGiftcardIcon color="primary" fontSize="large" />
+            </div>
+            <h5 className="companyadvantages__card-title">Широкий выбор</h5>
+            <p className="companyadvantages__card-text">
+              У нас более 1000 ковриков. Каждый коврик в 4 цветах и вариациях
+            </p>
+          </div>
         </div>
       </div>
     </div>

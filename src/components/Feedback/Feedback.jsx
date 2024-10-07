@@ -5,8 +5,8 @@ import ModalFeedback from './modal/ModalFeedback';
 import './style.scss';
 
 function Feedback() {
-  const [value, setValue] = React.useState({ name: '', surname: '', phone: '', note: '' });
-  const [valid, setValid] = React.useState({ name: null, surname: null, phone: null });
+  const [value, setValue] = React.useState({ name: '', phone: '' });
+  const [valid, setValid] = React.useState({ name: null, phone: null });
   const [feedback, setFeedback] = React.useState();
   const form = React.useRef();
   const [clicked, setClicked] = React.useState(false);
@@ -65,13 +65,12 @@ function Feedback() {
       const data = new FormData();
       data.append('name', value.name.trim());
       data.append('phone', value.phone.trim());
-      data.append('note', value.note.trim());
 
       createFeedback(data)
         .then((data) => {
           setFeedback(data);
-          setValue({ name: '', surname: '', phone: '', note: '' });
-          setValid({ name: null, surname: null, phone: null });
+          setValue({ name: '', phone: '' });
+          setValid({ name: null, phone: null });
           setClicked(false);
           setPhone('');
           setModalFeedback(true);
@@ -88,7 +87,7 @@ function Feedback() {
       <div className="container">
         <div className="feedback__content">
           <div className="feedback__card">
-            <h3 className="feedback__card-title">Оставьте заявку</h3>
+            <h3 className="feedback__card-title">Получить скидку и консультацию</h3>
             <p className="feedback__card-text">
               Менеджер свяжется с Вами и ответит на интересующие вопросы.
             </p>
@@ -118,24 +117,13 @@ function Feedback() {
                   placeholder="Ваш телефон"
                 />
               </div>
-              <div className="feedback__card-comments">
-                <textarea
-                  className="feedback__card-comments__note"
-                  name="note"
-                  value={value.note}
-                  onChange={handleChange}
-                  isValid={valid.note === true}
-                  isInvalid={valid.note === false}
-                  placeholder="Текст сообщения"
-                />
-              </div>
               {modalFeedback && <ModalFeedback />}
               <button className="feedback__card-button" type="submit">
-                Отправить
+                Получить скидку
               </button>
             </form>
             <p className="feedback__card-agreement">
-              Нажимая кнопку «Отправить», я подтверждаю свое согласие на{' '}
+              Нажимая кнопку «Получить скидку», я подтверждаю свое согласие на{' '}
               <Link to="/confidentiality">обработку персональных данных</Link>
             </p>
           </div>

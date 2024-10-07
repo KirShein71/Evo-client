@@ -32,6 +32,7 @@
 
         &-inputs {
             margin-top: 15px;
+            margin-bottom: 15px;
             display: flex;
             justify-content: center;
             
@@ -68,34 +69,11 @@
             }
         }
 
-        &-comments {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-
-            &__note {
-                width: 75%;
-                height: 150px;
-                border-radius: 10px;
-                border: 2px solid #3A5BCC26;
-                color: #000000ff;
-                font-size: 18px;
-                font-weight: 500;
-                outline: none;
-                padding: 15px 20px;
-                @media(max-width: 460px) {
-                    font-size: 14px;
-                    height: 80px;
-                    padding: 7px 10px;
-                    width: 90%;
-                }
-            }
-        }
+       
 
         &-button {
             display: block;
-            width: 150px;
+            width: 220px;
             height: auto;
             border-radius: 100px 100px 100px 100px;
             background-color: #3A5BCC;
@@ -110,6 +88,7 @@
             @media(max-width: 460px) {
                 font-size: 14px;
                 padding: 7px 7px;
+                width: 185px;
             }
         }
 

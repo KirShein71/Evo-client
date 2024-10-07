@@ -47,7 +47,6 @@ const AdminFeedback = () => {
             <tr>
               <th>Имя</th>
               <th>Телефон</th>
-              <th>Запрос покупателя</th>
               <th>Комментарии</th>
             </tr>
           </thead>
@@ -58,7 +57,6 @@ const AdminFeedback = () => {
                 <tr key={feedback.id}>
                   <td>{feedback.name}</td>
                   <td>{feedback.phone}</td>
-                  <td>{feedback.note}</td>
                   <td>
                     <div className="note">
                       <div className="note__content">
@@ -92,7 +90,6 @@ const AdminFeedback = () => {
           </tbody>
         </Table>
       </div>
-      <PostWidget adress={selectedAdress} />
     </Container>
   );
 };

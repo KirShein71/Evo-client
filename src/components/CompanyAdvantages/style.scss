@@ -15,7 +15,7 @@
     }
 
     &__card {
-        width: 370px;
+        width: 380px;
         height: auto;
         @media(max-width: 1024px) {
             width: 300px;
@@ -36,7 +36,7 @@
             margin-top: 15px;
             text-align: center;
             @media(max-width: 1024px) {
-                font-size: 21px;
+                font-size: 19px;
             }
         }
 
