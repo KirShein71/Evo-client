@@ -38,6 +38,8 @@ const AdminOrder = () => {
   const [isButtonDeliveryDisabled, setIsButtonDeliveryDisabled] = React.useState(false);
   const [modalCreateNote, setModalCreateNote] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
+  const [disabledOrderIds, setDisabledOrderIds] = React.useState([]);
+
   const modalRef = React.useRef();
 
   React.useEffect(() => {
@@ -45,15 +47,18 @@ const AdminOrder = () => {
       .then((data) => {
         setOrders(data);
         filterOrdersByStatus(selectedStatus, data);
-        console.log(data);
-        const orderId = data; // Замените на актуальный ID заказа
-        const storedState = localStorage.getItem(`order-${orderId}`);
-        if (storedState === 'disabled') {
-          setIsButtonPvzDisabled(true);
-        }
+
+        // Получаем отключенные заказы из localStorage
+        const disabledOrders = data.filter((order) => {
+          const storedState = localStorage.getItem(`order-${order.id}`);
+          return storedState === 'disabled';
+        });
+
+        // Обновляем состояние с отключенными id
+        setDisabledOrderIds(disabledOrders.map((order) => order.id));
       })
       .finally(() => setFetching(false));
-  }, [change, selectedStatus]);
+  }, [change, selectedStatus, disabledOrderIds]);
 
   const filterOrdersByStatus = (status, ordersData) => {
     if (status === 'Все') {
@@ -184,7 +189,8 @@ const AdminOrder = () => {
       );
       if (response && response.requests[0].state === 'ACCEPTED') {
         alert('Заказ успешно зарегистрован в Сдэк');
-        setIsButtonDeliveryDisabled(true);
+        setIsButtonPvzDisabled(true);
+        localStorage.setItem(`order-${id}`, 'disabled');
       } else {
         console.error('Ошибка регистрации заказа:', response);
       }
@@ -362,7 +368,7 @@ const AdminOrder = () => {
                     <>
                       <Button
                         variant="primary"
-                        disabled={isButtonPvzDisabled}
+                        disabled={disabledOrderIds.includes(item.id)}
                         onClick={() =>
                           handleOrderRegistration(
                             item.id,
@@ -386,7 +392,7 @@ const AdminOrder = () => {
                       <Button
                         variant="primary"
                         size="sm"
-                        disabled={isButtonDeliveryDisabled}
+                        disabled={disabledOrderIds.includes(item.id)}
                         onClick={() =>
                           handleOrderDeliveryRegistration(
                             item.id,
