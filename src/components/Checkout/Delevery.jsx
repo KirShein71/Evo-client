@@ -6,15 +6,14 @@ import PostWidget from './PostRus/PostWidget';
 function Delevery({
   selectedDelevery,
   setSelectedDelevery,
-  selectedIndex,
   setSelectedIndex,
-  selectedRegion,
   setSelectedRegion,
   selectedCodePVZ,
   setSelectedCodePVZ,
   selectedCityCode,
   setSelectedCityCode,
-
+  setTariffCode,
+  setSelectedLocation,
   value,
   valid,
   handleChange,
@@ -74,6 +73,8 @@ function Delevery({
           setSelectedCodePVZ={setSelectedCodePVZ}
           selectedCityCode={selectedCityCode}
           setSelectedCityCode={setSelectedCityCode}
+          setTariffCode={setTariffCode}
+          setSelectedLocation={setSelectedLocation}
           value={value}
           valid={valid}
           handleChange={handleChange}

@@ -23,6 +23,8 @@ const CheckoutList = () => {
   const [selectedDelevery, setSelectedDelevery] = React.useState(1);
   const [selectedCodePVZ, setSelectedCodePVZ] = React.useState(null);
   const [selectedCityCode, setSelectedCityCode] = React.useState(null);
+  const [tariffCode, setTariffCode] = React.useState(null);
+  const [selectedLocation, setSelectedLocation] = React.useState(null);
   const [checkboxConfid, setCheckboxConfid] = React.useState(true);
   const [totalAmount, setTotalAmount] = React.useState(null);
   const [phone, setPhone] = React.useState('');
@@ -153,6 +155,8 @@ const CheckoutList = () => {
         city: selectedIndex,
         citycode: selectedCityCode,
         codepvz: selectedCodePVZ,
+        tariffcode: tariffCode,
+        location: selectedLocation,
         totalamount: totalAmount,
         items: basketProduct,
       };
@@ -258,6 +262,8 @@ const CheckoutList = () => {
             setSelectedCodePVZ={setSelectedCodePVZ}
             selectedCityCode={selectedCityCode}
             setSelectedCityCode={setSelectedCityCode}
+            setTariffCode={setTariffCode}
+            setSelectedLocation={setSelectedLocation}
             value={value}
             valid={valid}
             handleChange={handleChange}

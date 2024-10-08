@@ -1,9 +1,9 @@
 import {guestInstance, authInstance } from './index'
 import {jwtDecode} from 'jwt-decode'
 
-export const signup = async (email, password) => {
+export const signup = async (phone, password) => {
     try {
-        const response = await guestInstance.post('user/signup', {email, password, role: 'USER'})
+        const response = await guestInstance.post('user/createAccount', {phone, password, role: 'USER'})
         const token = response.data.token
         const user = jwtDecode(token)
         localStorage.setItem('token', token)
@@ -14,9 +14,9 @@ export const signup = async (email, password) => {
     }
 }
 
-    export const login = async (email, password) => {
+    export const login = async (phone, password) => {
         try {
-            const response = await authInstance.post('user/login', {email, password})
+            const response = await authInstance.post('user/login', {phone, password})
             const token = response.data.token
             const user = jwtDecode(token)
             localStorage.setItem('token', token)

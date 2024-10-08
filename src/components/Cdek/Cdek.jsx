@@ -3,8 +3,10 @@ import {
   getAllRegions,
   getAllCities,
   getAllOffices,
-  getRatesPvz,
+  getRatesPackagePvz,
+  getRatesEconomPackagePvz,
   getRatesDelivery,
+  getRatesEconomDelivery,
 } from '../../http/cdekApi';
 
 import './style.scss';
@@ -14,6 +16,8 @@ function Cdek({
   setSelectedCodePVZ,
   selectedCityCode,
   setSelectedCityCode,
+  setTariffCode,
+  setSelectedLocation,
   value,
   valid,
   handleChange,
@@ -75,6 +79,7 @@ function Cdek({
       if (selectedCity) {
         setSelectedCity(cityName);
         setSelectedCityCode(selectedCity.code);
+        setSelectedLocation(selectedCity.city + ', ' + selectedCity.region);
       } else {
         alert('Город не найден');
       }
@@ -89,19 +94,36 @@ function Cdek({
 
   React.useEffect(() => {
     if (selectedCityCode) {
-      if (deliveryMethod < 1) {
-        getRatesPvz(selectedCityCode).then((data) => {
+      const fetchRates = async () => {
+        try {
+          let data;
+
+          if (deliveryMethod < 1) {
+            data = await getRatesEconomPackagePvz(selectedCityCode);
+            setTariffCode(234);
+
+            if (data === null) {
+              data = await getRatesPackagePvz(selectedCityCode);
+              setTariffCode(136);
+            }
+          } else {
+            data = await getRatesEconomDelivery(selectedCityCode);
+            setTariffCode(233);
+
+            if (data == null) {
+              data = await getRatesDelivery(selectedCityCode);
+              setTariffCode(137);
+            }
+          }
+
           setRates(data);
           setDataLoadedRates(true);
-          console.log(setDataLoadedRates);
-        });
-      } else {
-        getRatesDelivery(selectedCityCode).then((data) => {
-          setRates(data);
-          setDataLoadedRates(true);
-          console.log(setDataLoadedRates);
-        });
-      }
+        } catch (error) {
+          console.error('Error fetching rates:', error);
+        }
+      };
+
+      fetchRates();
     }
   }, [selectedCityCode, deliveryMethod]);
 
@@ -213,29 +235,22 @@ function Cdek({
         </div>
         {selectedCityCode ? (
           <div className="cdek__bottom">
-            {rates !== null ? (
-              [rates].map((rate) => (
-                <div key={rate.id}>
-                  {dataLoadedRates ? (
-                    <>
-                      <div className="cdek__bottom-days">
-                        Срок доставки: {rate?.calendar_min}-{rate?.calendar_max} дней
-                      </div>
-                      <div className="cdek__bottom-price">
-                        Стоимость доставки: {rate?.total_sum + 100} рублей
-                      </div>
-                    </>
-                  ) : (
-                    ''
-                  )}
-                </div>
-              ))
-            ) : (
-              <>
-                <div className="cdek__bottom-days">Срок доставки: от 3 дней</div>
-                <div className="cdek__bottom-price">Стоимость доставки: от 400 рублей</div>
-              </>
-            )}
+            {[rates].map((rate) => (
+              <div key={rate.id}>
+                {dataLoadedRates ? (
+                  <>
+                    <div className="cdek__bottom-days">
+                      Срок доставки: {rate?.calendar_min}-{rate?.calendar_max} дней
+                    </div>
+                    <div className="cdek__bottom-price">
+                      Стоимость доставки: {rate?.total_sum + 100} рублей
+                    </div>
+                  </>
+                ) : (
+                  ''
+                )}
+              </div>
+            ))}
           </div>
         ) : (
           ''

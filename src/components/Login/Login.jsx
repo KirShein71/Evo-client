@@ -2,25 +2,43 @@ import React from 'react';
 import { signup } from '../../http/userApi';
 
 function Login() {
+  const [clicked, setClicked] = React.useState(false);
+  const [phone, setPhone] = React.useState('');
+
+  const handleInputClick = () => {
+    if (!clicked) {
+      setClicked(true);
+      setPhone('8');
+    } else {
+      setPhone('8');
+    }
+  };
+
+  const handleInputPhone = (event) => {
+    const regex = /^[0-9]*$/;
+    if (event.target.value.length <= 11 && regex.test(event.target.value)) {
+      setPhone(event.target.value);
+    }
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const email = event.target.email.value.trim();
+    const phone = event.target.phone.value.trim();
     const password = event.target.password.value.trim();
 
     // Простая валидация
-    if (!email || !password) {
+    if (!phone || !password) {
       alert('Пожалуйста, заполните все поля.');
       return;
     }
 
     try {
-      const data = await signup(email, password);
+      const data = await signup(phone, password);
       // Обработка успешной регистрации
       console.log('Регистрация успешна:', data);
     } catch (error) {
       // Обработка ошибки
       console.error('Ошибка регистрации:', error);
-      alert('Произошла ошибка при регистрации. Попробуйте еще раз.');
     }
   };
 
@@ -32,10 +50,11 @@ function Login() {
             <form onSubmit={handleSubmit}>
               <div>
                 <input
-                  className="email__input"
-                  name="email"
-                  placeholder="Введите ваш email"
-                  required
+                  name="phone"
+                  value={clicked ? phone : ''}
+                  onChange={handleInputPhone}
+                  onClick={handleInputClick}
+                  placeholder="Введите номер телефона"
                 />
               </div>
               <div>

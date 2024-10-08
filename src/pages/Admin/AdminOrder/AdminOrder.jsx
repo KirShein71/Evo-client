@@ -45,6 +45,12 @@ const AdminOrder = () => {
       .then((data) => {
         setOrders(data);
         filterOrdersByStatus(selectedStatus, data);
+        console.log(data);
+        const orderId = data; // Замените на актуальный ID заказа
+        const storedState = localStorage.getItem(`order-${orderId}`);
+        if (storedState === 'disabled') {
+          setIsButtonPvzDisabled(true);
+        }
       })
       .finally(() => setFetching(false));
   }, [change, selectedStatus]);
@@ -126,6 +132,7 @@ const AdminOrder = () => {
     codepvz,
     totalamount,
     citycode,
+    tariffcode,
   ) => {
     try {
       const response = await createOrderCdek(
@@ -136,10 +143,12 @@ const AdminOrder = () => {
         codepvz,
         totalamount,
         citycode,
+        tariffcode,
       );
       if (response && response.requests[0].state === 'ACCEPTED') {
         alert('Заказ успешно зарегистрован в Сдэк');
         setIsButtonPvzDisabled(true);
+        localStorage.setItem(`order-${id}`, 'disabled');
       } else {
         console.error('Ошибка регистрации заказа:', response);
       }
@@ -158,6 +167,7 @@ const AdminOrder = () => {
     street,
     home,
     flat,
+    tariffcode,
   ) => {
     try {
       const response = await createOrderCdekDelivery(
@@ -170,6 +180,7 @@ const AdminOrder = () => {
         street,
         home,
         flat,
+        tariffcode,
       );
       if (response && response.requests[0].state === 'ACCEPTED') {
         alert('Заказ успешно зарегистрован в Сдэк');
@@ -348,42 +359,56 @@ const AdminOrder = () => {
               {item.order.delivery === 2 ? (
                 <td>
                   {item.order.codepvz !== null ? (
-                    <Button
-                      variant="primary"
-                      disabled={isButtonPvzDisabled}
-                      onClick={() =>
-                        handleOrderRegistration(
-                          item.id,
-                          item.order.name,
-                          item.order.surname,
-                          item.order.phone,
-                          item.order.codepvz,
-                          item.order.totalamount,
-                          item.order.citycode,
-                        )
-                      }>
-                      Зарегистрировать заказ
-                    </Button>
+                    <>
+                      <Button
+                        variant="primary"
+                        disabled={isButtonPvzDisabled}
+                        onClick={() =>
+                          handleOrderRegistration(
+                            item.id,
+                            item.order.name,
+                            item.order.surname,
+                            item.order.phone,
+                            item.order.codepvz,
+                            item.order.totalamount,
+                            item.order.citycode,
+                            item.order.tariffcode,
+                          )
+                        }>
+                        Зарегистрировать заказ
+                      </Button>
+                      <div>Доставка в пункт выдачи сдэк</div>
+                      <div>Населенный пунк: {item.order.location}</div>
+                      <div>Код пвз: {item.order.codepvz}</div>
+                    </>
                   ) : (
-                    <Button
-                      variant="primary"
-                      size="sm"
-                      disabled={isButtonDeliveryDisabled}
-                      onClick={() =>
-                        handleOrderDeliveryRegistration(
-                          item.id,
-                          item.order.name,
-                          item.order.surname,
-                          item.order.phone,
-                          item.order.totalamount,
-                          item.order.citycode,
-                          item.order.street,
-                          item.order.home,
-                          item.order.flat,
-                        )
-                      }>
-                      Зарегистрировать заказ с доставкой
-                    </Button>
+                    <>
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        disabled={isButtonDeliveryDisabled}
+                        onClick={() =>
+                          handleOrderDeliveryRegistration(
+                            item.id,
+                            item.order.name,
+                            item.order.surname,
+                            item.order.phone,
+                            item.order.totalamount,
+                            item.order.citycode,
+                            item.order.street,
+                            item.order.home,
+                            item.order.flat,
+                            item.order.tariffcode,
+                          )
+                        }>
+                        Зарегистрировать заказ с доставкой
+                      </Button>
+                      <div>Доставка сдэк курьером до адреса</div>
+                      <div>
+                        {item.order.location}, улица: {item.order.street}, дом: {item.order.home},
+                        кв: {item.order.flat}
+                      </div>
+                    </>
                   )}
                 </td>
               ) : (

@@ -26,9 +26,19 @@ export const getAllOffices = async (cityCode) => {
     }
   };
 
-  export const getRatesPvz = async (cityCode) => {
+  export const getRatesPackagePvz = async (cityCode) => {
     try {
-      const { data } = await guestInstance.post(`/cdek/getratespvz/${cityCode}`);
+      const { data } = await guestInstance.post(`/cdek/getratespackagepvz/${cityCode}`);
+      return data;
+    } catch (error) {
+      console.error('Ошибка получения данных о тарифах:', error);
+      throw error; 
+    }
+  };
+
+  export const getRatesEconomPackagePvz = async (cityCode) => {
+    try {
+      const { data } = await guestInstance.post(`/cdek/getrateseconompackagepvz/${cityCode}`);
       return data;
     } catch (error) {
       console.error('Ошибка получения данных о тарифах:', error);
@@ -46,14 +56,24 @@ export const getAllOffices = async (cityCode) => {
     }
   };
 
+  export const getRatesEconomDelivery = async (cityCode) => {
+    try {
+      const { data } = await guestInstance.post(`/cdek/getrateseconomdelivery/${cityCode}`);
+      return data;
+    } catch (error) {
+      console.error('Ошибка получения данных о тарифах:', error);
+      throw error; 
+    }
+  };
 
-  export const createOrderCdek = async (id, name, surname, phone, codepvz, totalamount, citycode) => {
-    const {data} = await guestInstance.post('cdek/createordercdek', {id, name, surname, phone, codepvz, totalamount, citycode})
+
+  export const createOrderCdek = async (id, name, surname, phone, codepvz, totalamount, citycode, tariffcode) => {
+    const {data} = await guestInstance.post('cdek/createordercdek', {id, name, surname, phone, codepvz, totalamount, citycode, tariffcode})
     return data
     }
 
-    export const createOrderCdekDelivery = async (id, name, surname, phone, totalamount, citycode, street, home, flat) => {
-        const {data} = await guestInstance.post('cdek/createordercdekdelivery', {id, name, surname, phone, totalamount, citycode, street, home, flat})
+    export const createOrderCdekDelivery = async (id, name, surname, phone, totalamount, citycode, street, home, flat, tariffcode) => {
+        const {data} = await guestInstance.post('cdek/createordercdekdelivery', {id, name, surname, phone, totalamount, citycode, street, home, flat, tariffcode})
         return data
         }
 

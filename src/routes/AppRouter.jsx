@@ -30,6 +30,7 @@ import AdminBag from '../pages/Admin/AdminBag/AdminBag';
 import Organizer from '../pages/Organizer';
 import AdminFeedback from '../pages/Admin/AdminFeedback/AdminFeedback';
 import Thankspage from '../pages/Thankspage';
+import Signup from '../pages/Signup';
 import { observer } from 'mobx-react';
 
 const routes = [
@@ -52,6 +53,7 @@ const routes = [
   { path: '/accessories', Component: Accessories },
   { path: '/organizer/:originalName', Component: Organizer },
   { path: '/thankspage', Component: Thankspage },
+  { path: '/signup', Component: Signup },
 ];
 
 const adminRoutes = [

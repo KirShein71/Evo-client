@@ -13,7 +13,8 @@ const Login = observer(() => {
 
   React.useEffect(() => {
     if (user.isAdmin) navigate('/admin', { replace: true });
-  }, [navigate, user.isAdmin]);
+    if (user.isUser) navigate('/login', { replace: true });
+  }, [navigate, user.isAdmin, user.isUser]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,6 +24,7 @@ const Login = observer(() => {
     if (data) {
       user.login(data);
       if (user.isAdmin) navigate('/admin');
+      if (user.isUser) navigate('/login');
     }
   };
 

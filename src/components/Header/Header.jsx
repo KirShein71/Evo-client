@@ -143,6 +143,13 @@ const Header = observer(() => {
               </div> */}
             </div>
             <div className="header__icons">
+              {/* <div className="header__user">
+                <div className="header__user-image">
+                  <Link to="/signup">
+                    <img src={`/img/user.png?v=${Date.now()}`} alt="icon_user" />
+                  </Link>
+                </div>
+              </div> */}
               <div className="header__feedback">
                 <div className="header__feedback" onClick={handleClickFeedback}>
                   <img src={`/img/feedback.png?v=${Date.now()}`} alt="icon_feedback" />
