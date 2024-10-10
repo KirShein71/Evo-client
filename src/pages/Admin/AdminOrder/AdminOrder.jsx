@@ -58,7 +58,7 @@ const AdminOrder = () => {
         setDisabledOrderIds(disabledOrders.map((order) => order.id));
       })
       .finally(() => setFetching(false));
-  }, [change, selectedStatus, disabledOrderIds]);
+  }, [change, selectedStatus]);
 
   const filterOrdersByStatus = (status, ordersData) => {
     if (status === 'Все') {
