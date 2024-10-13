@@ -1,6 +1,7 @@
 import React from 'react';
 import { deleteBasketProduct } from '../../../http/basketApi';
 import ModalBasket from '../modal/ModalBasket';
+import { Link } from 'react-router-dom';
 
 function BagTable({
   bagmaterial,
@@ -49,7 +50,9 @@ function BagTable({
       </td>
       <td>
         <div className="baskettable__information">
-          <div className="baskettable__information-name">{bag.name}</div>
+          <Link to={`/organizer/${bag.name.replace(/-+/g, '--').replace(/s+/g, '-')}`}>
+            <div className="baskettable__information-name">{bag.name}</div>
+          </Link>
           <div className="baskettable__information-options">Цвет материала: {bagmaterial.name}</div>
           <div className="baskettable__information-options">Размер: {bagsize.size} см</div>
         </div>

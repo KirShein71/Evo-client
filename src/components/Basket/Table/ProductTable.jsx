@@ -2,6 +2,7 @@ import React from 'react';
 import { deleteBasketProduct } from '../../../http/basketApi';
 import ModalBasket from '../modal/ModalBasket';
 import { AppContext } from '../../../context/AppContext';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 function ProductTable({ edging, material, product, quantity, thirdrow, id }) {
@@ -47,7 +48,11 @@ function ProductTable({ edging, material, product, quantity, thirdrow, id }) {
       </td>
       <td>
         <div className="baskettable__information">
-          <div className="baskettable__information-name">Комплект ковриков для: {product.name}</div>
+          <Link to={`/productproperty/${product.name.replace(/-+/g, '--').replace(/s+/g, '-')}`}>
+            <div className="baskettable__information-name">
+              Комплект ковриков для: {product.name}
+            </div>
+          </Link>
           <div className="baskettable__information-options">Форма ячейки: Сота</div>
           <div className="baskettable__information-options">Цвет материала: {material.name}</div>
           <div className="baskettable__information-options">Цвет канта: {edging.name}</div>

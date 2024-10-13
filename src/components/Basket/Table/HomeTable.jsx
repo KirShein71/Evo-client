@@ -1,6 +1,7 @@
 import React from 'react';
 import { deleteBasketProduct } from '../../../http/basketApi';
 import ModalBasket from '../modal/ModalBasket';
+import { Link } from 'react-router-dom';
 
 function HomeTable({ material, home, quantity, id, change, setChange, materialId }) {
   const [openDeleteHomeModal, setOpenDeleteHomeModal] = React.useState(false);
@@ -36,7 +37,9 @@ function HomeTable({ material, home, quantity, id, change, setChange, materialId
       </td>
       <td>
         <div className="baskettable__information">
-          <div className="baskettable__information-name">{home?.name}</div>
+          <Link to="/homeproduct">
+            <div className="baskettable__information-name">{home?.name}</div>
+          </Link>
           <div className="baskettable__information-options">
             Форма ячейки: Сота, Цвет материала: {material.name}
           </div>
