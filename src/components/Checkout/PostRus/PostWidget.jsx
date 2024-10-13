@@ -44,10 +44,10 @@ const PostWidget = ({ setSelectedIndex, setSelectedRegion }) => {
     setSelectedIndex(data.indexTo);
   };
 
-  const resetPvz = () => {
-    resetSelectedPlacemarkInEcomWidget();
-    setAdress('');
-  };
+  //   const resetPvz = () => {
+  //     resetSelectedPlacemarkInEcomWidget();
+  //     setAdress('');
+  //   };
 
   return (
     <div>
@@ -58,9 +58,9 @@ const PostWidget = ({ setSelectedIndex, setSelectedRegion }) => {
           <div style={{ display: 'flex' }}>
             <div className="post__widget-adress">{adress} </div>
 
-            <p className="post__widget-reset" onClick={resetPvz}>
+            {/* <p className="post__widget-reset" onClick={resetPvz}>
               (Изменить)
-            </p>
+            </p> */}
           </div>
         </>
       ) : (

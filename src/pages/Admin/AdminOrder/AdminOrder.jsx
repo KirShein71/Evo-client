@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllOrders, deleteOrder } from '../../../http/orderApi';
+import { getAllOrders, deleteOrder, deleteOrderItem } from '../../../http/orderApi';
 import { createOrderCdek, createOrderCdekDelivery } from '../../../http/cdekApi';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import UpdateStatus from './modals/UpdateStatus';
@@ -9,6 +9,7 @@ import UpdateDelivery from './modals/UpdateDelivery';
 import CreateOrder from './modals/CreateOrder';
 import CreateNote from './modals/createNote';
 import { CSVLink } from 'react-csv';
+import { Link } from 'react-router-dom';
 
 import './style.scss';
 
@@ -35,7 +36,7 @@ const AdminOrder = () => {
   const [openModalDelivery, setOpenModalDelivery] = React.useState(false);
   const [openCreateOrder, setOpenCreateOrder] = React.useState(false);
   const [isButtonPvzDisabled, setIsButtonPvzDisabled] = React.useState(false);
-  const [isButtonDeliveryDisabled, setIsButtonDeliveryDisabled] = React.useState(false);
+  const [textButton, setTextButton] = React.useState('Зарегистрировать заказ');
   const [modalCreateNote, setModalCreateNote] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [disabledOrderIds, setDisabledOrderIds] = React.useState([]);
@@ -118,12 +119,26 @@ const AdminOrder = () => {
   };
 
   const handleDeleteOrder = (id) => {
+    console.log(id);
     const confirmed = window.confirm('Вы уверены, что хотите удалить заказ?');
     if (confirmed) {
       deleteOrder(id)
         .then((data) => {
           setChange(!change);
           alert(`Заказ был удален`);
+        })
+        .catch((error) => alert(error.response.data.message));
+    }
+  };
+
+  const handleDeleteOrderItem = (id) => {
+    console.log(id);
+    const confirmed = window.confirm('Вы уверены, что хотите удалить часть заказа?');
+    if (confirmed) {
+      deleteOrderItem(id)
+        .then((data) => {
+          setChange(!change);
+          alert(`Часть заказа была удалена`);
         })
         .catch((error) => alert(error.response.data.message));
     }
@@ -153,6 +168,7 @@ const AdminOrder = () => {
       if (response && response.requests[0].state === 'ACCEPTED') {
         alert('Заказ успешно зарегистрован в Сдэк');
         setIsButtonPvzDisabled(true);
+        setTextButton('Заказ зарегистрирован');
         localStorage.setItem(`order-${id}`, 'disabled');
       } else {
         console.error('Ошибка регистрации заказа:', response);
@@ -190,6 +206,7 @@ const AdminOrder = () => {
       if (response && response.requests[0].state === 'ACCEPTED') {
         alert('Заказ успешно зарегистрован в Сдэк');
         setIsButtonPvzDisabled(true);
+        setTextButton('Заказ зарегистрирован');
         localStorage.setItem(`order-${id}`, 'disabled');
       } else {
         console.error('Ошибка регистрации заказа:', response);
@@ -303,20 +320,33 @@ const AdminOrder = () => {
         <tbody>
           {filteredOrders.map((item) => (
             <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>
-                {item.product && item.product.name
-                  ? item.product.name
-                  : item.trunk && item.trunk.product && item.trunk.product.name
-                  ? item.trunk.product.name
-                  : item.home && item.home.name
-                  ? item.home.name
-                  : item.animal && item.animal.name
-                  ? item.animal.name
-                  : item.bag && item.bag.name
-                  ? item.bag.name
-                  : ''}
-              </td>
+              <td>{item.orderId}</td>
+              <Link
+                to={
+                  item.product && item.product.name
+                    ? `/productproperty/${item.product.name
+                        .replace(/-+/g, '--')
+                        .replace(/s+/g, '-')}`
+                    : item.home && item.home.name
+                    ? '/homeproduct'
+                    : item.bag && item.bag.name
+                    ? `/organizer/${item.bag.name.replace(/-+/g, '--').replace(/s+/g, '-')}`
+                    : ''
+                }>
+                <td>
+                  {item.product && item.product.name
+                    ? item.product.name
+                    : item.trunk && item.trunk.product && item.trunk.product.name
+                    ? item.trunk.product.name
+                    : item.home && item.home.name
+                    ? item.home.name
+                    : item.animal && item.animal.name
+                    ? item.animal.name
+                    : item.bag && item.bag.name
+                    ? item.bag.name
+                    : ''}
+                </td>
+              </Link>
               <td
                 style={{ cursor: 'pointer' }}
                 onClick={() => handleUpdateOrder(item.id, item.productId)}>
@@ -338,7 +368,10 @@ const AdminOrder = () => {
                     {item.steel ? <span>{item.steel.name}</span> : null}{' '}
                     {item.saddle ? <span>{item.saddle.name}</span> : null}
                   </li>
-                  <li>Полная стоимость заказа (без доставки): {item.order.totalamount}</li>
+                  <li>
+                    Полная стоимость заказа (без доставки): {item.order.totalamount}, Стоимость
+                    доставки: {Number(item.order.deliverysum) + 100};
+                  </li>
                 </ul>
               </td>
               <td>{new Date(item.createdAt).toLocaleDateString('ru-RU')}</td>
@@ -366,53 +399,79 @@ const AdminOrder = () => {
                 <td>
                   {item.order.codepvz !== null ? (
                     <>
-                      <Button
-                        variant="primary"
-                        disabled={disabledOrderIds.includes(item.id)}
-                        onClick={() =>
-                          handleOrderRegistration(
-                            item.id,
-                            item.order.name,
-                            item.order.surname,
-                            item.order.phone,
-                            item.order.codepvz,
-                            item.order.totalamount,
-                            item.order.citycode,
-                            item.order.tariffcode,
-                          )
-                        }>
-                        Зарегистрировать заказ
-                      </Button>
-                      <div>Доставка в пункт выдачи сдэк</div>
-                      <div>Населенный пунк: {item.order.location}</div>
-                      <div>Код пвз: {item.order.codepvz}</div>
+                      <div style={{ textAlign: 'center', fontSize: '18px', fontWeight: '600' }}>
+                        СДЭК
+                      </div>
+                      <div style={{ fontSize: '17px', fontWeight: '400' }}>
+                        Доставка в пункт выдачи сдэк
+                      </div>
+                      <div style={{ fontSize: '17px', fontWeight: '400' }}>
+                        {' '}
+                        Населенный пунк: {item.order.location}
+                      </div>
+                      <div style={{ fontSize: '17px', fontWeight: '400' }}>
+                        Код пвз: {item.order.codepvz}
+                      </div>
+                      <div style={{ textAlign: 'center' }}>
+                        <Button
+                          className="mt-3 mb-3"
+                          variant="primary"
+                          disabled={disabledOrderIds.includes(item.id)}
+                          onClick={() =>
+                            handleOrderRegistration(
+                              item.id,
+                              item.order.name,
+                              item.order.surname,
+                              item.order.phone,
+                              item.order.codepvz,
+                              item.order.totalamount,
+                              item.order.citycode,
+                              item.order.tariffcode,
+                            )
+                          }>
+                          {disabledOrderIds.includes(item.id)
+                            ? 'Заказ зарегистрирован'
+                            : 'Зарегистрировать заказ'}
+                        </Button>
+                      </div>
                     </>
                   ) : (
                     <>
-                      <Button
-                        variant="primary"
-                        size="sm"
-                        disabled={disabledOrderIds.includes(item.id)}
-                        onClick={() =>
-                          handleOrderDeliveryRegistration(
-                            item.id,
-                            item.order.name,
-                            item.order.surname,
-                            item.order.phone,
-                            item.order.totalamount,
-                            item.order.citycode,
-                            item.order.street,
-                            item.order.home,
-                            item.order.flat,
-                            item.order.tariffcode,
-                          )
-                        }>
-                        Зарегистрировать заказ с доставкой
-                      </Button>
-                      <div>Доставка сдэк курьером до адреса</div>
-                      <div>
+                      <div style={{ textAlign: 'center', fontSize: '18px', fontWeight: '600' }}>
+                        СДЭК
+                      </div>
+                      <div style={{ fontSize: '17px', fontWeight: '400' }}>
+                        Доставка сдэк курьером до адреса
+                      </div>
+                      <div style={{ fontSize: '17px', fontWeight: '400' }}>
+                        {' '}
                         {item.order.location}, улица: {item.order.street}, дом: {item.order.home},
                         кв: {item.order.flat}
+                      </div>
+                      <div style={{ textAlign: 'center' }}>
+                        <Button
+                          variant="primary"
+                          size="sm"
+                          className="mt-3 mb-3"
+                          disabled={disabledOrderIds.includes(item.id)}
+                          onClick={() =>
+                            handleOrderDeliveryRegistration(
+                              item.id,
+                              item.order.name,
+                              item.order.surname,
+                              item.order.phone,
+                              item.order.totalamount,
+                              item.order.citycode,
+                              item.order.street,
+                              item.order.home,
+                              item.order.flat,
+                              item.order.tariffcode,
+                            )
+                          }>
+                          {disabledOrderIds.includes(item.id)
+                            ? 'Заказ зарегистрирован'
+                            : 'Зарегистрировать заказ'}
+                        </Button>
                       </div>
                     </>
                   )}
@@ -421,16 +480,18 @@ const AdminOrder = () => {
                 <td
                   style={{ cursor: 'pointer' }}
                   onClick={() => handleUpdateDelivery(item.order.id)}>
-                  <div>
+                  <div style={{ textAlign: 'center', fontSize: '18px', fontWeight: '600' }}>
                     {item.order.delivery === 1
                       ? 'Самовывоз'
                       : item.order.delivery === 3
-                      ? 'Почта'
+                      ? 'Почта России'
                       : ''}
                   </div>
-                  <div>
-                    {item.order.city}
-                    <div>{item.order.region}</div>
+                  <div style={{ fontSize: '17px', fontWeight: '400' }}>
+                    Индекс пвз: {item.order.city}
+                    <div style={{ fontSize: '17px', fontWeight: '400' }}>
+                      Адрес пвз: {item.order.region}
+                    </div>
                   </div>
                 </td>
               )}
@@ -463,7 +524,17 @@ const AdminOrder = () => {
                 </div>
               </td>
               <td>
-                <Button onClick={() => handleDeleteOrder(item.order.id)}>Удалить</Button>
+                <Button
+                  onClick={() => {
+                    const hasDuplicates =
+                      filteredOrders.filter((i) => i.orderId === item.orderId).length > 1;
+                    const idToDelete = hasDuplicates ? item.id : item.order.id;
+                    hasDuplicates
+                      ? handleDeleteOrderItem(idToDelete)
+                      : handleDeleteOrder(idToDelete);
+                  }}>
+                  Удалить
+                </Button>
               </td>
             </tr>
           ))}

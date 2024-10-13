@@ -18,6 +18,7 @@ function Cdek({
   setSelectedCityCode,
   setTariffCode,
   setSelectedLocation,
+  setDeliverySum,
   value,
   valid,
   handleChange,
@@ -101,18 +102,22 @@ function Cdek({
           if (deliveryMethod < 1) {
             data = await getRatesEconomPackagePvz(selectedCityCode);
             setTariffCode(234);
+            setDeliverySum(data.delivery_sum);
 
             if (data === null) {
               data = await getRatesPackagePvz(selectedCityCode);
               setTariffCode(136);
+              setDeliverySum(data.delivery_sum);
             }
           } else {
             data = await getRatesEconomDelivery(selectedCityCode);
             setTariffCode(233);
+            setDeliverySum(data.delivery_sum);
 
             if (data == null) {
               data = await getRatesDelivery(selectedCityCode);
               setTariffCode(137);
+              setDeliverySum(data.delivery_sum);
             }
           }
 

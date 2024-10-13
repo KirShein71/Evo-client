@@ -53,6 +53,11 @@ export const updateDelivery = async(id, order) => {
 }
 
 export const deleteOrder = async(id) => {
-    const {data} = await guestInstance.delete(`order/delete/${id}`)
+    const {data} = await guestInstance.delete(`order/deleteOrder/${id}`)
+    return data
+}
+
+export const deleteOrderItem = async(id) => {
+    const {data} = await guestInstance.delete(`order/deleteOrderItem/${id}`)
     return data
 }

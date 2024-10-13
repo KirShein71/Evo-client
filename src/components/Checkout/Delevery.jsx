@@ -14,6 +14,7 @@ function Delevery({
   setSelectedCityCode,
   setTariffCode,
   setSelectedLocation,
+  setDeliverySum,
   value,
   valid,
   handleChange,
@@ -75,6 +76,7 @@ function Delevery({
           setSelectedCityCode={setSelectedCityCode}
           setTariffCode={setTariffCode}
           setSelectedLocation={setSelectedLocation}
+          setDeliverySum={setDeliverySum}
           value={value}
           valid={valid}
           handleChange={handleChange}

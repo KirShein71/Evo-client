@@ -31,6 +31,7 @@ const CheckoutList = () => {
   const [popupOpen, setPopupOpen] = React.useState(false);
   const [popupDataOpen, setPopupDataOpen] = React.useState(false);
   const navigate = useNavigate();
+  const [deliverySum, setDeliverySum] = React.useState(null);
 
   const isValid = (input) => {
     let pattern;
@@ -158,6 +159,7 @@ const CheckoutList = () => {
         tariffcode: tariffCode,
         location: selectedLocation,
         totalamount: totalAmount,
+        deliverysum: deliverySum,
         items: basketProduct,
       };
 
@@ -264,6 +266,7 @@ const CheckoutList = () => {
             setSelectedCityCode={setSelectedCityCode}
             setTariffCode={setTariffCode}
             setSelectedLocation={setSelectedLocation}
+            setDeliverySum={setDeliverySum}
             value={value}
             valid={valid}
             handleChange={handleChange}

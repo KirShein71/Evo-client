@@ -19,7 +19,13 @@ const UpdateStatus = (props) => {
   const { id, show, setShow, setChange } = props;
   const [value, setValue] = React.useState(defaultValue);
   const [valid, setValid] = React.useState(defaultValid);
-  const status = [{ name: 'Новый' }, { name: 'В работе' }, { name: 'Закрыт' }];
+  const status = [
+    { name: 'Новый' },
+    { name: 'В работе' },
+    { name: 'Закрыт' },
+    { name: 'Выкуплен' },
+    { name: 'Не выкуплен' },
+  ];
 
   React.useEffect(() => {
     if (id) {
