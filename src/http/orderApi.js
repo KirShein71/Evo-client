@@ -22,6 +22,16 @@ export const guestCreate = async (body) => {
     return data
 }
 
+export const createOrderBag = async (items) => {
+    const { data } = await guestInstance.post('order/createOrderBag', items)
+    return data
+}
+
+export const createOrderAutoRug = async (items) => {
+    const { data } = await guestInstance.post('order/createOrderAutoRug', items)
+    return data
+}
+
 export const adminCreate = async (order) => {
     const { data } = await guestInstance.post('order/createAdmin', order)
     return data
@@ -44,6 +54,11 @@ export const updateOrder = async(id, order) => {
 
 export const updatePhone = async(id, order) => {
     const {data} = await guestInstance.put(`order/updatePhone/${id}`, order)
+    return data
+}
+
+export const updateName = async(id, order) => {
+    const {data} = await guestInstance.put(`order/updateName/${id}`, order)
     return data
 }
 

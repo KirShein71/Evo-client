@@ -8,10 +8,13 @@ import UpdatePhone from './modals/UpdatePhone';
 import UpdateDelivery from './modals/UpdateDelivery';
 import CreateOrder from './modals/CreateOrder';
 import CreateNote from './modals/createNote';
+import CreateOrderBag from './modals/CreateOrderBag';
+import CreateAutoRug from './modals/CreateAutoRug';
 import { CSVLink } from 'react-csv';
 import { Link } from 'react-router-dom';
 
 import './style.scss';
+import UpdateName from './modals/UpdateName';
 
 const AdminOrder = () => {
   const [orders, setOrders] = React.useState([]);
@@ -40,6 +43,9 @@ const AdminOrder = () => {
   const [modalCreateNote, setModalCreateNote] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [disabledOrderIds, setDisabledOrderIds] = React.useState([]);
+  const [openModalCreateBag, setOpenModalCreateBag] = React.useState(false);
+  const [openModalAutoRug, setOpenModalAutoRug] = React.useState(false);
+  const [openModalUpdateName, setOpenModalUpdateName] = React.useState(false);
 
   const modalRef = React.useRef();
 
@@ -65,7 +71,7 @@ const AdminOrder = () => {
     if (status === 'Все') {
       setFilteredOrders(ordersData);
     } else {
-      const filtered = ordersData?.filter((order) => order.order.status === status);
+      const filtered = ordersData?.filter((order) => order.status === status);
       setFilteredOrders(filtered);
     }
   };
@@ -118,8 +124,22 @@ const AdminOrder = () => {
     setOpenModalDelivery(true);
   };
 
+  const handleCreateBag = (id) => {
+    setOrderId(id);
+    setOpenModalCreateBag(true);
+  };
+
+  const handleCreateAutoRug = (id) => {
+    setOrderId(id);
+    setOpenModalAutoRug(true);
+  };
+
+  const handleUpdateName = (id) => {
+    setOrderId(id);
+    setOpenModalUpdateName(true);
+  };
+
   const handleDeleteOrder = (id) => {
-    console.log(id);
     const confirmed = window.confirm('Вы уверены, что хотите удалить заказ?');
     if (confirmed) {
       deleteOrder(id)
@@ -132,7 +152,6 @@ const AdminOrder = () => {
   };
 
   const handleDeleteOrderItem = (id) => {
-    console.log(id);
     const confirmed = window.confirm('Вы уверены, что хотите удалить часть заказа?');
     if (confirmed) {
       deleteOrderItem(id)
@@ -150,7 +169,7 @@ const AdminOrder = () => {
     surname,
     phone,
     codepvz,
-    totalamount,
+    total,
     citycode,
     tariffcode,
   ) => {
@@ -161,7 +180,7 @@ const AdminOrder = () => {
         surname,
         phone,
         codepvz,
-        totalamount,
+        total,
         citycode,
         tariffcode,
       );
@@ -183,7 +202,7 @@ const AdminOrder = () => {
     name,
     surname,
     phone,
-    totalamount,
+    total,
     citycode,
     street,
     home,
@@ -196,7 +215,7 @@ const AdminOrder = () => {
         name,
         surname,
         phone,
-        totalamount,
+        total,
         citycode,
         street,
         home,
@@ -268,6 +287,24 @@ const AdminOrder = () => {
         setChange={setChange}
       />
       <CreateOrder show={openCreateOrder} setShow={setOpenCreateOrder} setChange={setChange} />
+      <CreateOrderBag
+        orderId={orderId}
+        show={openModalCreateBag}
+        setShow={setOpenModalCreateBag}
+        setChange={setChange}
+      />
+      <CreateAutoRug
+        orderId={orderId}
+        show={openModalAutoRug}
+        setShow={setOpenModalAutoRug}
+        setChange={setChange}
+      />
+      <UpdateName
+        id={orderId}
+        show={openModalUpdateName}
+        setShow={setOpenModalUpdateName}
+        setChange={setChange}
+      />
       <Button variant="primary" onClick={() => setOpenCreateOrder(true)}>
         Создать заказ
       </Button>
@@ -307,7 +344,6 @@ const AdminOrder = () => {
         <thead>
           <tr>
             <th>№</th>
-            <th>Название</th>
             <th>Описание</th>
             <th>Дата</th>
             <th>Статус</th>
@@ -320,84 +356,178 @@ const AdminOrder = () => {
         <tbody>
           {filteredOrders.map((item) => (
             <tr key={item.id}>
-              <td>{item.orderId}</td>
-              <Link
-                to={
-                  item.product && item.product.name
-                    ? `/productproperty/${item.product.name
-                        .replace(/-+/g, '--')
-                        .replace(/s+/g, '-')}`
-                    : item.home && item.home.name
-                    ? '/homeproduct'
-                    : item.bag && item.bag.name
-                    ? `/organizer/${item.bag.name.replace(/-+/g, '--').replace(/s+/g, '-')}`
-                    : ''
-                }>
-                <td>
-                  {item.product && item.product.name
-                    ? item.product.name
-                    : item.trunk && item.trunk.product && item.trunk.product.name
-                    ? item.trunk.product.name
-                    : item.home && item.home.name
-                    ? item.home.name
-                    : item.animal && item.animal.name
-                    ? item.animal.name
-                    : item.bag && item.bag.name
-                    ? item.bag.name
-                    : ''}
-                </td>
-              </Link>
-              <td
-                style={{ cursor: 'pointer' }}
-                onClick={() => handleUpdateOrder(item.id, item.productId)}>
-                <ul>
-                  <li>
-                    Материал: {item.material?.name} || {item.bagmaterial?.name}
-                  </li>
-                  {item.bag !== null ? <li>Размер: {item.bagsize?.size}</li> : ''}
-                  <li>{item.edging ? <span>Кант: {item.edging.name}</span> : null}</li>
-                  {item.bag === null ? (
-                    <li>
-                      Количество: {item.quantity} шт {item.thirdrow ? '3 ряда' : ''}
-                    </li>
-                  ) : (
-                    ''
-                  )}
-                  <li>{item.trunk ? <span>Багажник: {item.quantity_trunk} шт</span> : null}</li>
-                  <li>
-                    {item.steel ? <span>{item.steel.name}</span> : null}{' '}
-                    {item.saddle ? <span>{item.saddle.name}</span> : null}
-                  </li>
-                  <li>
-                    Полная стоимость заказа (без доставки): {item.order.totalamount}, Стоимость
-                    доставки: {Number(item.order.deliverysum) + 100};
-                  </li>
-                </ul>
+              <td>{item.id}</td>
+              <td>
+                {item.order_items.map((orderItems) => {
+                  const productName =
+                    orderItems.product?.name ||
+                    orderItems.trunk?.product?.name ||
+                    orderItems.home?.name ||
+                    orderItems.animal?.name ||
+                    orderItems.bag?.name ||
+                    '';
+
+                  const linkTo =
+                    orderItems.product && orderItems.product.name
+                      ? `/productproperty/${orderItems.product.name
+                          .replace(/-+/g, '--')
+                          .replace(/s+/g, '-')}`
+                      : orderItems.trunk && orderItems.trunk.product.name
+                      ? `/productproperty/${orderItems.trunk.product.name
+                          .replace(/-+/g, '--')
+                          .replace(/s+/g, '-')}`
+                      : orderItems.home && orderItems.home.name
+                      ? '/homeproduct'
+                      : orderItems.bag && orderItems.bag.name
+                      ? `/organizer/${orderItems.bag.name.replace(/-+/g, '--').replace(/s+/g, '-')}`
+                      : '';
+
+                  return (
+                    <Table>
+                      <thead>
+                        <tr>
+                          <Link to={linkTo} key={orderItems.id}>
+                            <th>{productName}</th>
+                          </Link>
+                        </tr>
+                      </thead>
+                      <td style={{ cursor: 'pointer' }}>
+                        <>
+                          <Table>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div key={orderItems.id}>
+                                    <ul>
+                                      <li>
+                                        Материал: {orderItems.material?.name} ||{' '}
+                                        {orderItems.bagmaterial?.name}
+                                      </li>
+                                      {orderItems.bag !== null ? (
+                                        <li>Размер: {orderItems.bagsize?.size}</li>
+                                      ) : (
+                                        ''
+                                      )}
+                                      <li>
+                                        {orderItems.edging ? (
+                                          <span>Кант: {orderItems.edging.name}</span>
+                                        ) : null}
+                                      </li>
+                                      {orderItems.bag === null ? (
+                                        <li>
+                                          Количество: {orderItems.quantity} шт{' '}
+                                          {orderItems.thirdrow ? '3 ряда' : ''}
+                                        </li>
+                                      ) : (
+                                        <li>Количество: {orderItems.quantity} шт </li>
+                                      )}
+                                      <li>
+                                        {orderItems.trunk ? (
+                                          <span>Багажник: {orderItems.quantity_trunk} шт</span>
+                                        ) : null}
+                                      </li>
+                                      <li>
+                                        {orderItems.steel ? (
+                                          <span>{orderItems.steel.name}</span>
+                                        ) : null}{' '}
+                                        {orderItems.saddle ? (
+                                          <span>{orderItems.saddle.name}</span>
+                                        ) : null}
+                                      </li>
+                                    </ul>
+                                    <div style={{ marginBottom: '10px' }}>
+                                      Стоимость:
+                                      {(orderItems.product
+                                        ? orderItems.product.new_price * orderItems.quantity
+                                        : 0) +
+                                        (orderItems.home
+                                          ? orderItems.home.new_price * orderItems.quantity
+                                          : 0) +
+                                        (orderItems.bagsize
+                                          ? orderItems.bagsize.price * orderItems.quantity
+                                          : 0) +
+                                        (orderItems.steel ? orderItems.steel.new_price : 0) +
+                                        (orderItems.saddle ? orderItems.saddle.new_price : 0) +
+                                        (orderItems.thirdrow
+                                          ? orderItems.thirdrow.new_price * orderItems.quantity
+                                          : 0) +
+                                        (orderItems.trunk
+                                          ? orderItems.trunk.new_price * orderItems.quantity_trunk
+                                          : 0)}
+                                    </div>
+                                  </div>
+                                  <Button
+                                    variant="danger"
+                                    size="sm"
+                                    className="me-3"
+                                    onClick={() => handleDeleteOrderItem(orderItems.id)}>
+                                    Удалить
+                                  </Button>
+                                  {orderItems.bag === null ? (
+                                    <Button
+                                      size="sm"
+                                      onClick={() =>
+                                        handleUpdateOrder(orderItems.id, orderItems.productId)
+                                      }>
+                                      Редактировать
+                                    </Button>
+                                  ) : (
+                                    ''
+                                  )}
+                                </td>
+                              </tr>
+                            </tbody>
+                          </Table>
+                        </>
+                      </td>
+                    </Table>
+                  );
+                })}
+                <div style={{ textAlign: 'center', marginBottom: '10px', display: 'flex' }}>
+                  <Button size="sm" className="me-3" onClick={() => handleCreateBag(item.id)}>
+                    Добавить органайзер
+                  </Button>
+                  <Button size="sm" onClick={() => handleCreateAutoRug(item.id)}>
+                    Добавить автоковрик
+                  </Button>
+                </div>
+                <div>
+                  Полная стоимость заказа (без доставки):
+                  {item.total}
+                </div>
+
+                <div>Стоимость доставки: {Number(item.deliverysum) + 100};</div>
               </td>
-              <td>{new Date(item.createdAt).toLocaleDateString('ru-RU')}</td>
+
+              <td>{item.prettyCreatedAt}</td>
               <td
                 style={{
                   cursor: 'pointer',
                   color: 'white',
                   backgroundColor:
-                    item.order.status === 'Новый'
+                    item.status === 'Новый'
                       ? 'red'
-                      : item.order.status === 'В работе'
+                      : item.status === 'В работе'
                       ? 'green'
                       : 'black',
                 }}
-                onClick={() => handleUpdateStatus(item.order.id)}>
-                {item.order.status}
+                onClick={() => handleUpdateStatus(item.id)}>
+                {item.status}
               </td>
               <td>
-                {item.order.name} {item.order.surname}
-                <div style={{ cursor: 'pointer' }} onClick={() => handleUpdatePhone(item.order.id)}>
-                  {item.order.phone}
+                <div
+                  style={{ cursor: 'pointer', marginBottom: '10px' }}
+                  onClick={() => handleUpdateName(item.id)}>
+                  {item.name} {item.surname}
+                </div>
+
+                <div style={{ cursor: 'pointer' }} onClick={() => handleUpdatePhone(item.id)}>
+                  {item.phone}
                 </div>
               </td>
-              {item.order.delivery === 2 ? (
+              {item.delivery === 2 ? (
                 <td>
-                  {item.order.codepvz !== null ? (
+                  {item.codepvz !== null ? (
                     <>
                       <div style={{ textAlign: 'center', fontSize: '18px', fontWeight: '600' }}>
                         СДЭК
@@ -407,10 +537,10 @@ const AdminOrder = () => {
                       </div>
                       <div style={{ fontSize: '17px', fontWeight: '400' }}>
                         {' '}
-                        Населенный пунк: {item.order.location}
+                        Населенный пунк: {item.location}
                       </div>
                       <div style={{ fontSize: '17px', fontWeight: '400' }}>
-                        Код пвз: {item.order.codepvz}
+                        Код пвз: {item.codepvz}
                       </div>
                       <div style={{ textAlign: 'center' }}>
                         <Button
@@ -420,13 +550,13 @@ const AdminOrder = () => {
                           onClick={() =>
                             handleOrderRegistration(
                               item.id,
-                              item.order.name,
-                              item.order.surname,
-                              item.order.phone,
-                              item.order.codepvz,
-                              item.order.totalamount,
-                              item.order.citycode,
-                              item.order.tariffcode,
+                              item.name,
+                              item.surname,
+                              item.phone,
+                              item.codepvz,
+                              item.total,
+                              item.citycode,
+                              item.tariffcode,
                             )
                           }>
                           {disabledOrderIds.includes(item.id)
@@ -445,8 +575,7 @@ const AdminOrder = () => {
                       </div>
                       <div style={{ fontSize: '17px', fontWeight: '400' }}>
                         {' '}
-                        {item.order.location}, улица: {item.order.street}, дом: {item.order.home},
-                        кв: {item.order.flat}
+                        {item.location}, улица: {item.street}, дом: {item.home}, кв: {item.flat}
                       </div>
                       <div style={{ textAlign: 'center' }}>
                         <Button
@@ -457,15 +586,15 @@ const AdminOrder = () => {
                           onClick={() =>
                             handleOrderDeliveryRegistration(
                               item.id,
-                              item.order.name,
-                              item.order.surname,
-                              item.order.phone,
-                              item.order.totalamount,
-                              item.order.citycode,
-                              item.order.street,
-                              item.order.home,
-                              item.order.flat,
-                              item.order.tariffcode,
+                              item.name,
+                              item.surname,
+                              item.phone,
+                              item.total,
+                              item.citycode,
+                              item.street,
+                              item.home,
+                              item.flat,
+                              item.tariffcode,
                             )
                           }>
                           {disabledOrderIds.includes(item.id)
@@ -481,16 +610,12 @@ const AdminOrder = () => {
                   style={{ cursor: 'pointer' }}
                   onClick={() => handleUpdateDelivery(item.order.id)}>
                   <div style={{ textAlign: 'center', fontSize: '18px', fontWeight: '600' }}>
-                    {item.order.delivery === 1
-                      ? 'Самовывоз'
-                      : item.order.delivery === 3
-                      ? 'Почта России'
-                      : ''}
+                    {item.delivery === 1 ? 'Самовывоз' : item.delivery === 3 ? 'Почта России' : ''}
                   </div>
                   <div style={{ fontSize: '17px', fontWeight: '400' }}>
-                    Индекс пвз: {item.order.city}
+                    Индекс пвз: {item.city}
                     <div style={{ fontSize: '17px', fontWeight: '400' }}>
-                      Адрес пвз: {item.order.region}
+                      Адрес пвз: {item.region}
                     </div>
                   </div>
                 </td>
@@ -501,20 +626,18 @@ const AdminOrder = () => {
                     <p
                       className="note__field"
                       style={{ cursor: 'pointer' }}
-                      onClick={() => handleOpenModalCreateNote(item.order.id)}>
-                      {isExpanded
-                        ? item.order.note
-                        : item.order.note && item.order.note.slice(0, 250)}
+                      onClick={() => handleOpenModalCreateNote(item.id)}>
+                      {isExpanded ? item.note : item.note && item.note.slice(0, 250)}
                     </p>
-                    {item.order.note && item.order.note.length > 250 && (
+                    {item.note && item.note.length > 250 && (
                       <div className="note__show" onClick={handleToggleText}>
                         {isExpanded ? 'Скрыть' : 'Показать все...'}
                       </div>
                     )}
                   </div>
-                  {item.order.note === null ? (
+                  {item.note === null ? (
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                      <Button size="sm" onClick={() => handleOpenModalCreateNote(item.order.id)}>
+                      <Button size="sm" onClick={() => handleOpenModalCreateNote(item.id)}>
                         Добавить
                       </Button>
                     </div>
@@ -524,16 +647,8 @@ const AdminOrder = () => {
                 </div>
               </td>
               <td>
-                <Button
-                  onClick={() => {
-                    const hasDuplicates =
-                      filteredOrders.filter((i) => i.orderId === item.orderId).length > 1;
-                    const idToDelete = hasDuplicates ? item.id : item.order.id;
-                    hasDuplicates
-                      ? handleDeleteOrderItem(idToDelete)
-                      : handleDeleteOrder(idToDelete);
-                  }}>
-                  Удалить
+                <Button variant="danger" size="sm" onClick={() => handleDeleteOrder(item.id)}>
+                  Удалить заказ полность
                 </Button>
               </td>
             </tr>

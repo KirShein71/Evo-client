@@ -116,7 +116,7 @@ const UpdateOrder = (props) => {
     } else {
       setValue((prevValue) => ({
         ...prevValue,
-        trunkId: isChecked ? 0 : undefined,
+        trunkId: isChecked ? 0 : 0,
       }));
     }
   };
