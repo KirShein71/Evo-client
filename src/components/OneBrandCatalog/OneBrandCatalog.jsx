@@ -10,7 +10,7 @@ import './styles.scss';
 
 function OneBrandCatalog() {
   const { originalName } = useParams();
-  const brandName = originalName.replace(/-/g, ' ');
+  const brandName = originalName.replace(/(?<!-)-(?!-)/g, ' ').replace(/--/g, '-');
   const [brand, setBrand] = React.useState();
   const [products, setProducts] = React.useState([]);
   const [carModels, setCarModels] = React.useState([]);
