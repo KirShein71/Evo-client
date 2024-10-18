@@ -6,7 +6,6 @@ import UpdateStatus from './modals/UpdateStatus';
 import UpdateOrder from './modals/updateOrder';
 import UpdatePhone from './modals/UpdatePhone';
 import UpdateDelivery from './modals/UpdateDelivery';
-import CreateOrder from './modals/CreateOrder';
 import CreateNote from './modals/createNote';
 import CreateOrderBag from './modals/CreateOrderBag';
 import CreateAutoRug from './modals/CreateAutoRug';
@@ -37,7 +36,6 @@ const AdminOrder = () => {
   const [productId, setProductId] = React.useState(null);
   const [openModalPhone, setOpenModalPhone] = React.useState(false);
   const [openModalDelivery, setOpenModalDelivery] = React.useState(false);
-  const [openCreateOrder, setOpenCreateOrder] = React.useState(false);
   const [isButtonPvzDisabled, setIsButtonPvzDisabled] = React.useState(false);
   const [textButton, setTextButton] = React.useState('Зарегистрировать заказ');
   const [modalCreateNote, setModalCreateNote] = React.useState(false);
@@ -286,7 +284,7 @@ const AdminOrder = () => {
         setShow={setModalCreateNote}
         setChange={setChange}
       />
-      <CreateOrder show={openCreateOrder} setShow={setOpenCreateOrder} setChange={setChange} />
+
       <CreateOrderBag
         orderId={orderId}
         show={openModalCreateBag}
@@ -305,9 +303,9 @@ const AdminOrder = () => {
         setShow={setOpenModalUpdateName}
         setChange={setChange}
       />
-      <Button variant="primary" onClick={() => setOpenCreateOrder(true)}>
-        Создать заказ
-      </Button>
+      <Link to="/adminorder/createorder">
+        <Button variant="primary">Создать заказ</Button>
+      </Link>
       <div className="dropdown" ref={modalRef}>
         <div className="dropdown__title" onClick={hadleOpenModal}>
           Статус: <span>{selectedStatus ? selectedStatus : 'Новый'}</span>

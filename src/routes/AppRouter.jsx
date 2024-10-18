@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import Home from '../pages/Home';
@@ -31,6 +31,7 @@ import Organizer from '../pages/Organizer';
 import AdminFeedback from '../pages/Admin/AdminFeedback/AdminFeedback';
 import Thankspage from '../pages/Thankspage';
 import Signup from '../pages/Signup';
+import CreateOrder from '../pages/Admin/AdminCreateOrder/CreateOrder';
 import { observer } from 'mobx-react';
 
 const routes = [
@@ -67,6 +68,7 @@ const adminRoutes = [
   { path: '/adminhome', Component: AdminHome },
   { path: '/adminbag', Component: AdminBag },
   { path: '/adminfeedback', Component: AdminFeedback },
+  { path: '/adminorder/createorder', Component: CreateOrder },
 ];
 
 const AppRouter = observer(() => {

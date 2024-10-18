@@ -181,9 +181,10 @@ const CreateAutoRug = (props) => {
             <Col className="mb-3">
               <Form.Control
                 type="text"
-                placeholder="Поиск продукта"
+                placeholder="Поиск товара"
                 value={searchTerm}
                 onChange={(e) => handleSearchChange(e)}
+                className="mb-3"
               />
               <Form.Select
                 name="product"
