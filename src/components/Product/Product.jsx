@@ -188,7 +188,7 @@ function Product() {
             <img className="product__crumbs-icon" src="../img/arrow.png" alt="arrow" />
             <Link
               style={{ textDecoration: 'inherit', color: 'inherit' }}
-              to={`/onebrand/${product.brand.name}`}>
+              to={`/onebrand/${product.brand.name.replace(/-+/g, '--').replace(/\s+/g, '-')}`}>
               <div className="product__crumbs-item">{product.brand.name}</div>
             </Link>
             <img className="product__crumbs-icon" src="../img/arrow.png" alt="arrow" />
