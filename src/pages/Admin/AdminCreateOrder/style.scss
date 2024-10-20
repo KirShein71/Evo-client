@@ -6,7 +6,8 @@
     }
 
     &__steps {
-        margin-top: 15px;
+   
+        display: contents;
 
         &-title {
             font-size: 20px;
@@ -15,5 +16,12 @@
         }
     }
 
+    &__step {
+        margin-top: 15px;
+    }
+
+   
+
 
 }
+
