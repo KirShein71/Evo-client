@@ -3,11 +3,16 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
 import { observer } from 'mobx-react';
 import Burger from '../Burger/Burger';
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import Login from '../Login/Login';
 
 import './styles.scss';
 
 const Header = observer(() => {
-  const { basketProduct, favoriteProduct } = React.useContext(AppContext);
+  const { basketProduct, favoriteProduct, user } = React.useContext(AppContext);
   const [isOpen, setOpen] = React.useState(false);
   const [query, setQuery] = React.useState('');
   const [openCatalogModal, setOpenCatalogModal] = React.useState(false);
@@ -16,6 +21,7 @@ const Header = observer(() => {
   const navigate = useNavigate();
   const navigateToFeedback = useNavigate();
   const location = useLocation();
+  const [openLogin, setOpenLogin] = React.useState({ right: false });
 
   const toggleMenu = () => {
     setOpen(!isOpen);
@@ -25,6 +31,11 @@ const Header = observer(() => {
       document.body.classList.remove('no-scroll');
     }
   };
+
+  //   React.useEffect(() => {
+  //     if (user.isAdmin) navigate('/admin', { replace: true });
+  //     if (user.isUser) navigate('/personal-account', { replace: true });
+  //   }, [navigate, user.isAdmin, user.isUser]);
 
   React.useEffect(() => {
     if (isOpen) {
@@ -82,6 +93,36 @@ const Header = observer(() => {
     }
   };
 
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setOpenLogin({ ...openLogin, right: open });
+  };
+
+  const handleUserImageClick = (event) => {
+    if (!user.isAdmin && !user.isUser) {
+      toggleDrawer(true)(event);
+    } else {
+      if (user.isAdmin) {
+        navigate('/admin', { replace: true });
+      } else if (user.isUser) {
+        navigate('/personal-account', { replace: true });
+      }
+    }
+    console.log(user);
+  };
+
+  const DrawerList = ({ toggleDrawer }) => (
+    <Box sx={{ width: 550 }} role="presentation">
+      <List>
+        <Login toggleDrawer={toggleDrawer} setOpenLogin={setOpenLogin} />
+      </List>
+      <Divider />
+    </Box>
+  );
+
   return (
     <header className="header">
       <div className="container">
@@ -136,19 +177,15 @@ const Header = observer(() => {
                   8-812-220-29-09
                 </a>
               </div>
-              {/* <div className="header__information-operating">
-                <div className="header__information-operating__time">
-                  С 09-00 до 18-00 без выходных
-                </div>
-              </div> */}
             </div>
             <div className="header__icons">
               {/* <div className="header__user">
-                <div className="header__user-image">
-                  <Link to="/signup">
-                    <img src={`/img/user.png?v=${Date.now()}`} alt="icon_user" />
-                  </Link>
+                <div className="header__user-image" onClick={handleUserImageClick}>
+                  <img src={`/img/user.png?v=${Date.now()}`} alt="icon_user" />
                 </div>
+                <Drawer anchor="right" open={openLogin.right} onClose={toggleDrawer(false)}>
+                  <DrawerList toggleDrawer={toggleDrawer} />
+                </Drawer>
               </div> */}
               <div className="header__feedback">
                 <div className="header__feedback" onClick={handleClickFeedback}>

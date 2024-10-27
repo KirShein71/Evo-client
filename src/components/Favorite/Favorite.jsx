@@ -5,10 +5,10 @@ import CardFavorite from './CardFavorite/CardFavorite';
 import { AppContext } from '../../context/AppContext';
 import Loader from '../Loader/Loader';
 import { Link } from 'react-router-dom';
-
-import './style.scss';
 import { observer } from 'mobx-react';
 import FavoriteEmpty from './FavoriteEmpty';
+
+import './style.scss';
 
 const Favorite = observer(() => {
   const { favoriteProduct } = React.useContext(AppContext);

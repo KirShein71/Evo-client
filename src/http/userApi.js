@@ -3,14 +3,26 @@ import {jwtDecode} from 'jwt-decode'
 
 export const signup = async (phone, password) => {
     try {
-        const response = await guestInstance.post('user/createAccount', {phone, password, role: 'USER'})
-        const token = response.data.token
-        const user = jwtDecode(token)
-        localStorage.setItem('token', token)
-        return user
+        const response = await guestInstance.post('user/createAccount', { phone, password, role: 'USER' });
+        const token = response.data.token; 
+        if (typeof token !== 'string') {
+            throw new Error('Токен должен быть строкой');
+        }
+
+        const user = jwtDecode(token);
+        localStorage.setItem('token', token);
+        return user; // Успешная регистрация
     } catch (e) {
-        alert(e.response.data.message)
-        return false
+        if (e.response) {
+            if (e.response.data && e.response.data.message) {
+                alert(e.response.data.message); // Сообщение об ошибке от сервера
+            } else {
+                alert('Неизвестная ошибка.');
+            }
+        } else {
+            alert('Произошла ошибка при регистрации. Попробуйте еще раз.');
+        }
+        return false;
     }
 }
 
@@ -27,7 +39,6 @@ export const signup = async (phone, password) => {
             return false
         }
     }
-
 
     export const check = async () => {
         let userToken, userData
@@ -48,6 +59,8 @@ export const signup = async (phone, password) => {
             return false
         }
     }
+
+
 
 
     export const logout = () => {

@@ -1,0 +1,124 @@
+//product-favorite 
+.product-favorite {
+    &__title {
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--e-global-color-primary);
+    }
+    
+    &__cards {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+}
+
+
+
+// favorite-card
+.favorite-card {
+    width: 250px;
+    height: auto;
+    padding: 10px 0px 0px 0px;
+    border: 2px solid #3A5BCC26;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+   
+    @media(max-width: 1024px) {
+        transition: none;
+        box-shadow:none;
+        border: 2px solid #3A5BCC26;
+       
+    }
+ 
+    
+
+    &__favorite {
+        display: flex;
+        justify-content: right;
+        margin-right: 10px;
+    }
+  
+    &__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        img {
+            margin-top: 15px;
+            width: 180px;
+            @media(max-width: 595px) {
+                margin-top: 15px;
+            }
+            @media(max-width: 460px) {
+                margin-top: 0px;
+            }
+           
+            
+            
+        }
+    }
+  
+    &__title {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        color: #000000ff;
+      
+        @media(max-width: 1024px){
+            font-size: 17px;
+           
+            
+        }
+        @media(max-width: 768px){
+            font-size: 16px;
+        }
+        @media(max-width: 595px) {
+            padding-top: 15px;
+        }
+        @media(max-width: 480px) {
+            font-size: 15px;
+        }
+        @media(max-width: 440px) {
+            padding-top: 10px;
+            font-size: 14px;
+        }
+        @media(max-width: 380px) {
+            padding-top: 10px;
+        }
+    }
+
+    &__bottom {
+        padding: 10px 5px; 
+        background-color: #3A5BCC26;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+
+    }
+
+    &__price {
+        text-align: center;
+        font-size: 17px;
+        color: #d81212;
+        font-weight: 500;
+        small {
+            font-size: 80%;
+            color: #000000ff;
+            font-weight: 500;
+            text-decoration: line-through;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        @media(max-width: 1024px) {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        @media(max-width: 768px) {
+            font-size: 16px;
+        }
+    }   
+}

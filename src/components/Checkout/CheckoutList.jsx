@@ -8,8 +8,10 @@ import './style.scss';
 import ModalCheckout from './modal/ModalCheckout';
 import ModalData from './modal/ModalData';
 import emailjs from '@emailjs/browser';
+import { AppContext } from '../../context/AppContext';
 
 const CheckoutList = () => {
+  const { user } = React.useContext(AppContext);
   const [fetching, setFetching] = React.useState(true);
   const [basketProduct, setBasketProduct] = React.useState([]);
   const [order, setOrder] = React.useState();
@@ -160,6 +162,7 @@ const CheckoutList = () => {
         location: selectedLocation,
         totalamount: totalAmount,
         deliverysum: deliverySum,
+        userId: user.id,
         items: basketProduct,
       };
 

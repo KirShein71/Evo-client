@@ -4,7 +4,7 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/FooterList'
 import { BrowserRouter } from "react-router-dom";
 import { AppContext } from './context/AppContext';
-import { check as checkAuth } from './http/adminApi';
+import { check as checkAuth } from './http/userApi';
 import { getAllBasketProduct, fetchBasket } from './http/basketApi'
 import { getAllFavoriteProduct } from "./http/favoriteApi";
 import axios from 'axios';

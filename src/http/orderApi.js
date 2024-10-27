@@ -7,6 +7,11 @@ export const getAllOrders = async () => {
     return data
 }
 
+export const getAllForUserAccount = async (userId) => {
+    const { data } = await authInstance.get(`order/getAllForUserAccount/${userId}`)
+    return data
+}
+
 export const getOne = async (id) => {
     const { data } = await authInstance.get(`order/getone/${id}`)
     return data
