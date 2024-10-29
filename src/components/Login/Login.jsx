@@ -134,7 +134,7 @@ function Login({ toggleDrawer, setOpenLogin }) {
     }
 
     if (data === null) {
-      setErrorIncorrectLogin('Пользователь с такими данными не найден');
+      setErrorIncorrectLogin('Пользователь не найден');
     }
     console.log(data);
   };
