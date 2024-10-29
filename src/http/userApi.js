@@ -35,9 +35,16 @@ export const signup = async (phone, password) => {
             localStorage.setItem('id', user.id)
             return user
         } catch (e) {
-            alert(e.response.data.message)
-            return false
+           if(e.response.data.message === 'Указан неверный пароль') {
+            return undefined
+           } else if (e.response.data.message === 'Пользователь не найден в БД') {
+            return null
+           } else {
+            return e.response.data.message
+           }  
         }
+
+        
     }
 
     export const check = async () => {

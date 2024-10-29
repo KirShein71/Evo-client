@@ -23,7 +23,9 @@ function Login({ toggleDrawer, setOpenLogin }) {
   const [password, setPassword] = React.useState('');
   const [showPassword, setShowPassword] = React.useState(false);
   const [errorMessagePhone, setErrorMessagePhone] = React.useState('');
+  const [errorIncorrectLogin, setErrorIncorrectLogin] = React.useState('');
   const [errorMessagePassword, setErrorMessagePassword] = React.useState('');
+  const [errorIncorrectPassword, setErrorIncorrectPassword] = React.useState('');
   const [registrationAccount, setRegistrationAccount] = React.useState(false);
   const [checkboxConfid, setCheckboxConfid] = React.useState(true);
   const [popupCheckdox, setPopupCheckbox] = React.useState(false);
@@ -126,6 +128,15 @@ function Login({ toggleDrawer, setOpenLogin }) {
       if (user.isUser) navigate('/login');
       setOpenLogin(false);
     }
+
+    if (data === undefined) {
+      setErrorIncorrectPassword('Указан неверный пароль');
+    }
+
+    if (data === null) {
+      setErrorIncorrectLogin('Пользователь с такими данными не найден');
+    }
+    console.log(data);
   };
 
   return (
@@ -162,6 +173,7 @@ function Login({ toggleDrawer, setOpenLogin }) {
               />
             </Box>
             {errorMessagePhone && <div className="login__error">{errorMessagePhone}</div>}
+
             <Box>
               <FormControl sx={{ m: 1, width: { sm: '400px', xs: '300px' } }} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
@@ -189,6 +201,8 @@ function Login({ toggleDrawer, setOpenLogin }) {
               </FormControl>
             </Box>
             {errorMessagePassword && <div className="login__error">{errorMessagePassword}</div>}
+            {errorIncorrectPassword && <div className="login__error">{errorIncorrectPassword}</div>}
+            {errorIncorrectLogin && <div className="login__error">{errorIncorrectLogin}</div>}
           </div>
         </div>
         <div className="login__checkbox">
