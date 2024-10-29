@@ -122,7 +122,15 @@ function Login({ toggleDrawer, setOpenLogin }) {
           <div className="login__card-content">
             <Box
               component="form"
-              sx={{ '& > :not(style)': { m: 1, width: '400px' } }}
+              sx={{
+                '& > :not(style)': {
+                  m: 1,
+                  width: {
+                    sm: 400,
+                    xs: '300px',
+                  },
+                },
+              }}
               noValidate
               autoComplete="off">
               <TextField
@@ -138,7 +146,7 @@ function Login({ toggleDrawer, setOpenLogin }) {
             </Box>
             {errorMessagePhone && <div className="login__error">{errorMessagePhone}</div>}
             <Box>
-              <FormControl sx={{ m: 1, width: '400px' }} variant="outlined">
+              <FormControl sx={{ m: 1, width: { sm: '400px', xs: '300px' } }} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
                 <OutlinedInput
                   id="outlined-adornment-password"

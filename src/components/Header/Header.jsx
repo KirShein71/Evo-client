@@ -32,11 +32,6 @@ const Header = observer(() => {
     }
   };
 
-  //   React.useEffect(() => {
-  //     if (user.isAdmin) navigate('/admin', { replace: true });
-  //     if (user.isUser) navigate('/personal-account', { replace: true });
-  //   }, [navigate, user.isAdmin, user.isUser]);
-
   React.useEffect(() => {
     if (isOpen) {
       document.body.classList.add('no-scroll');
@@ -115,7 +110,14 @@ const Header = observer(() => {
   };
 
   const DrawerList = ({ toggleDrawer }) => (
-    <Box sx={{ width: 550 }} role="presentation">
+    <Box
+      sx={{
+        width: {
+          xs: '100%', // 100% для экранов меньше 460px
+          sm: 450, // 550px для экранов 460px и больше
+        },
+      }}
+      role="presentation">
       <List>
         <Login toggleDrawer={toggleDrawer} setOpenLogin={setOpenLogin} />
       </List>
@@ -165,34 +167,53 @@ const Header = observer(() => {
               />
             </form>
           </div>
-          <div className="header__information">
-            <div className="header__information-call">
-              <div style={{ textAlign: 'right' }}>
-                <a className="header__information-call__phone" href="tel:88003012901">
-                  8-800-301-29-01
-                </a>
-              </div>
-              <div style={{ textAlign: 'right', marginTop: '-3px' }}>
-                <a className="header__information-call__phone" href="tel:88122202909">
-                  8-812-220-29-09
-                </a>
-              </div>
-            </div>
-            <div className="header__icons">
-              {/* <div className="header__user">
-                <div className="header__user-image" onClick={handleUserImageClick}>
-                  <img src={`/img/user.png?v=${Date.now()}`} alt="icon_user" />
-                </div>
-                <Drawer anchor="right" open={openLogin.right} onClose={toggleDrawer(false)}>
-                  <DrawerList toggleDrawer={toggleDrawer} />
-                </Drawer>
-              </div> */}
-              <div className="header__feedback">
+          <div className="header__icons">
+            {/* <div className="header__feedback">
                 <div className="header__feedback" onClick={handleClickFeedback}>
                   <img src={`/img/feedback.png?v=${Date.now()}`} alt="icon_feedback" />
                 </div>
+                <div className="header__user-feedback">Почта</div>
+              </div> */}
+            <div className="header__phone">
+              <div className="header__phone-image">
+                <a href="tel:88003012901">
+                  <img src={`/img/phone.png?v=${Date.now()}`} alt="icon_user" />
+                </a>
               </div>
-              <div className="header__basket">
+              <div className="header__phone-title">Телефон</div>
+            </div>
+            <div className="header__user">
+              <div className="header__user-image" onClick={handleUserImageClick}>
+                <img src={`/img/user_icon.png?v=${Date.now()}`} alt="icon_user" />
+              </div>
+              {user.isUser || user.isAdmin ? (
+                <div className="header__user-title">Профиль</div>
+              ) : (
+                <div className="header__user-title">Войти</div>
+              )}
+              <Drawer anchor="right" open={openLogin.right} onClose={toggleDrawer(false)}>
+                <DrawerList toggleDrawer={toggleDrawer} />
+              </Drawer>
+            </div>
+
+            <div className="header__favorite">
+              <div className="header__favorite-content">
+                <div className="header__favorite-image">
+                  <Link to="/favorites">
+                    <img src={`/img/heart.png?v=${Date.now()}`} alt="favorite icon" />
+                  </Link>
+                </div>
+
+                {!!favoriteProduct.count && (
+                  <div className="header__favorite-circle">
+                    <div className="header__favorite-count">{favoriteProduct.count}</div>
+                  </div>
+                )}
+              </div>
+              <div className="header__favorite-title">Избранное</div>
+            </div>
+            <div className="header__basket">
+              <div className="header__basket-content">
                 <Link to="/basket">
                   <div className="header__basket-image">
                     <img src={`/img/cart.png?v=${Date.now()}`} alt="icon_basket" />
@@ -204,51 +225,42 @@ const Header = observer(() => {
                   </div>
                 )}
               </div>
-              <div className="header__favorite">
-                <Link to="/favorites">
-                  <img src={`/img/heart.png?v=${Date.now()}`} alt="favorite icon" />
-                </Link>
-                {!!favoriteProduct.count && (
-                  <div className="header__basket-circle">
-                    <div className="header__basket-count">{favoriteProduct.count}</div>
-                  </div>
-                )}
-              </div>
+              <div className="header__basket-title">Корзина</div>
             </div>
-            {isOpen && (
-              <>
-                <div className="overlay"></div>
-                <div className="burger-menu burger-menu__open">
-                  <div className="burger-menu__icon">
-                    <img onClick={() => setOpen(false)} src="./img/delete.png" alt="closed" />
-                  </div>
-                  <div className="burger-menu__item">
-                    <Link to="/" onClick={() => setOpen(false)}>
-                      <div className="burger-menu__items">Главная</div>
-                    </Link>
-                    <Link to="/allbrands" onClick={() => setOpen(false)}>
-                      <div className="burger-menu__items">Автомобильные коврики</div>
-                    </Link>
-                    <Link to="/homeproduct" onClick={() => setOpen(false)}>
-                      <div className="burger-menu__items">Коврики для дома</div>
-                    </Link>
-                    <Link to="/accessories" onClick={() => setOpen(false)}>
-                      <div className="burger-menu__items">Автоаксессуары</div>
-                    </Link>
-                    <Link to="/about" onClick={() => setOpen(false)}>
-                      <div className="burger-menu__items">О нас</div>
-                    </Link>
-                    <Link to="/guarantees" onClick={() => setOpen(false)}>
-                      <div className="burger-menu__items">Гарантии</div>
-                    </Link>
-                    <Link to="/contacts" onClick={() => setOpen(false)}>
-                      <div className="burger-menu__items">Контакты</div>
-                    </Link>
-                  </div>
-                </div>
-              </>
-            )}
           </div>
+          {isOpen && (
+            <>
+              <div className="overlay"></div>
+              <div className="burger-menu burger-menu__open">
+                <div className="burger-menu__icon">
+                  <img onClick={() => setOpen(false)} src="./img/delete.png" alt="closed" />
+                </div>
+                <div className="burger-menu__item">
+                  <Link to="/" onClick={() => setOpen(false)}>
+                    <div className="burger-menu__items">Главная</div>
+                  </Link>
+                  <Link to="/allbrands" onClick={() => setOpen(false)}>
+                    <div className="burger-menu__items">Автомобильные коврики</div>
+                  </Link>
+                  <Link to="/homeproduct" onClick={() => setOpen(false)}>
+                    <div className="burger-menu__items">Коврики для дома</div>
+                  </Link>
+                  <Link to="/accessories" onClick={() => setOpen(false)}>
+                    <div className="burger-menu__items">Автоаксессуары</div>
+                  </Link>
+                  <Link to="/about" onClick={() => setOpen(false)}>
+                    <div className="burger-menu__items">О нас</div>
+                  </Link>
+                  <Link to="/guarantees" onClick={() => setOpen(false)}>
+                    <div className="burger-menu__items">Гарантии</div>
+                  </Link>
+                  <Link to="/contacts" onClick={() => setOpen(false)}>
+                    <div className="burger-menu__items">Контакты</div>
+                  </Link>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </header>
