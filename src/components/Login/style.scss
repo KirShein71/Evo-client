@@ -29,6 +29,9 @@
         font-weight: 500;
         color: #ff0000;
         margin-left: 15px;
+        @media(max-width: 460px) {
+            width: 360px;
+        }
     }
 
     &__bottom {
@@ -140,6 +143,12 @@
         @media(max-width: 460px) {
             top: 17%;
         }
+    }
+
+    &__checkbox {
+        display: flex;
+        margin-bottom: 15px;
+        margin-top: 15px;
     }
 
 }

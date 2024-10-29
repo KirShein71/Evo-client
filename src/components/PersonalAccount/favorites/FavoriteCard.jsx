@@ -1,21 +1,12 @@
 import React from 'react';
 import ClearIcon from '@mui/icons-material/Clear';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { deleteFavoriteProduct } from '../../../http/favoriteApi';
 import { AppContext } from '../../../context/AppContext';
 
 function FavoriteCard({ product, change, setChange }) {
   const [originalName] = React.useState(product?.name);
-  const navigate = useNavigate();
-  const location = useLocation();
   const { favoriteProduct } = React.useContext(AppContext);
-
-  const addToOneProduct = () => {
-    const formattedName = originalName.replace(/\s+/g, '-').toLowerCase(); // Форматируем имя для URL
-    navigate(`/productproperty/${formattedName}`, {
-      state: { from: location.pathname, originalName },
-    });
-  };
 
   const updateLocalStorage = (favorites) => {
     localStorage.setItem('favoriteProducts', JSON.stringify(favorites));
@@ -35,6 +26,8 @@ function FavoriteCard({ product, change, setChange }) {
       .catch((error) => alert(error.response.data.message));
   };
 
+  const formattedName = originalName.replace(/-+/g, '--').replace(/\s+/g, '-');
+
   return (
     <div className="favorite-card">
       <div className="favorite-card__content">
@@ -43,9 +36,11 @@ function FavoriteCard({ product, change, setChange }) {
             <ClearIcon fontSize="small" onClick={() => handleDeleteFavoriteProduct(product.id)} />
           </div>
         </div>
-        <div className="favorite-card__image" onClick={addToOneProduct}>
-          <img src={process.env.REACT_APP_IMG_URL + product.image} alt="image_car" />
-        </div>
+        <Link to={`/productproperty/${formattedName}`}>
+          <div className="favorite-card__image">
+            <img src={process.env.REACT_APP_IMG_URL + product.image} alt="image_car" />
+          </div>
+        </Link>
         <div class="favorite-card__bottom">
           <h4 class="favorite-card__title">{product.name}</h4>
           <div class="favorite-card__price">

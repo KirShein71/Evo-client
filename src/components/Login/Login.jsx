@@ -10,8 +10,9 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { AppContext } from '../../context/AppContext';
+import ModalCheckout from '../Checkout/modal/ModalCheckout';
 
 import './style.scss';
 
@@ -24,6 +25,8 @@ function Login({ toggleDrawer, setOpenLogin }) {
   const [errorMessagePhone, setErrorMessagePhone] = React.useState('');
   const [errorMessagePassword, setErrorMessagePassword] = React.useState('');
   const [registrationAccount, setRegistrationAccount] = React.useState(false);
+  const [checkboxConfid, setCheckboxConfid] = React.useState(true);
+  const [popupCheckdox, setPopupCheckbox] = React.useState(false);
   const navigate = useNavigate();
 
   const handleInputClick = () => {
@@ -60,8 +63,17 @@ function Login({ toggleDrawer, setOpenLogin }) {
     setRegistrationAccount(true);
   };
 
+  const onClosePopupCheckbox = () => {
+    setPopupCheckbox(false);
+  };
+
   const handleRegistrationAccount = async (event) => {
     event.preventDefault();
+
+    if (!checkboxConfid) {
+      setPopupCheckbox(true);
+      return; // Если чекбокс не установлен, выходим из функции
+    }
 
     // Простая валидация
     if (!phone || !password) {
@@ -101,6 +113,11 @@ function Login({ toggleDrawer, setOpenLogin }) {
 
   const handleLogin = async (event) => {
     event.preventDefault();
+
+    if (!checkboxConfid) {
+      setPopupCheckbox(true);
+      return; // Если чекбокс не установлен, выходим из функции
+    }
 
     const data = await login(phone, password);
     if (data) {
@@ -174,6 +191,31 @@ function Login({ toggleDrawer, setOpenLogin }) {
             {errorMessagePassword && <div className="login__error">{errorMessagePassword}</div>}
           </div>
         </div>
+        <div className="login__checkbox">
+          <div class="cntr">
+            <label for="cbxConfiden" class="label-cbx">
+              <input
+                id="cbxConfiden"
+                type="checkbox"
+                class="invisible"
+                checked={checkboxConfid}
+                onChange={() => {
+                  setCheckboxConfid(!checkboxConfid);
+                }}
+              />
+              <div class="checkbox">
+                <svg width="20px" height="20px" viewBox="0 0 20 20">
+                  <path d="M3,1 L17,1 L17,1 C18.1045695,1 19,1.8954305 19,3 L19,17 L19,17 C19,18.1045695 18.1045695,19 17,19 L3,19 L3,19 C1.8954305,19 1,18.1045695 1,17 L1,3 L1,3 C1,1.8954305 1.8954305,1 3,1 Z"></path>
+                  <polyline points="4 11 8 15 16 6"></polyline>
+                </svg>
+              </div>
+            </label>
+          </div>{' '}
+          <span className="checkout__span">
+            Подтверждаю свое согласие на{' '}
+            <Link to="/confidentiality">обработку персональных данных</Link>
+          </span>
+        </div>
         {registrationAccount ? (
           <button className="login__button-signup">Регистрация</button>
         ) : (
@@ -189,6 +231,7 @@ function Login({ toggleDrawer, setOpenLogin }) {
           </div>
         )}
       </form>
+      {popupCheckdox && <ModalCheckout onClosePopup={onClosePopupCheckbox} />}
     </div>
   );
 }
