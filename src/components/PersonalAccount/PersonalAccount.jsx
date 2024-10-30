@@ -13,6 +13,7 @@ import SteelOrder from './orders/SteelOrder';
 import SaddleOrders from './orders/SaddleOrders';
 import BagOrders from './orders/BagOrders';
 import HomeOrders from './orders/HomeOrders';
+
 import './style.scss';
 
 function PersonalAccount() {
@@ -21,6 +22,7 @@ function PersonalAccount() {
   const navigate = useNavigate();
   const [change, setChange] = React.useState(true);
   const [fetching, setFetching] = React.useState(true);
+  const [archiveOrders, setArchiveOrders] = React.useState(false);
 
   const handleLogout = () => {
     logout();
@@ -45,6 +47,10 @@ function PersonalAccount() {
         });
     });
   }, [favoriteProduct, change]);
+
+  const handleOpenArchiveOrders = () => {
+    setArchiveOrders(!archiveOrders);
+  };
 
   if (fetching) {
     return <Loader />;
@@ -77,28 +83,78 @@ function PersonalAccount() {
           <div className="personal-account__items">
             <div className="personal-account__orders">
               <h2 className="personal-account__orders-title">Активные заказы</h2>
-              {userOrders.map((userOrder) =>
-                userOrder.order_items.map((userItems) => (
-                  <>
-                    {userItems.product !== null ? (
-                      <ProductOrders key={userItems.id} {...userItems} />
-                    ) : (
-                      ''
-                    )}
-                    {userItems.steel !== null ? <SteelOrder key={userItems} {...userItems} /> : ''}
-                    {userItems.saddle !== null ? (
-                      <SaddleOrders key={userItems} {...userItems} />
-                    ) : (
-                      ''
-                    )}
-                    {userItems.bag !== null ? <BagOrders key={userItems} {...userItems} /> : ''}
-                    {userItems.home !== null ? <HomeOrders key={userItems} {...userItems} /> : ''}
-                    <div className="personal-account__stepper">
+              {userOrders
+                .filter(
+                  (userOrder) => userOrder.status !== 'Выкуплен' && userOrder.status !== 'Закрыт',
+                )
+                .map((userOrder) =>
+                  userOrder.order_items.map((userItems) => (
+                    <div className="personal-account__orders-order">
+                      <div className="personal-account__orders-text">
+                        Заказ №{userOrder.id * 100} от {userOrder.prettyCreatedAt}
+                      </div>
+                      {userItems.product !== null ? (
+                        <ProductOrders key={userItems.id} {...userItems} />
+                      ) : (
+                        ''
+                      )}
+                      {userItems.steel !== null ? (
+                        <SteelOrder key={userItems} {...userItems} />
+                      ) : (
+                        ''
+                      )}
+                      {userItems.saddle !== null ? (
+                        <SaddleOrders key={userItems} {...userItems} />
+                      ) : (
+                        ''
+                      )}
+                      {userItems.bag !== null ? <BagOrders key={userItems} {...userItems} /> : ''}
+                      {userItems.home !== null ? <HomeOrders key={userItems} {...userItems} /> : ''}
+                      {/* <div className="personal-account__stepper">
                       <StepperDelivery />
+                    </div> */}
                     </div>
-                  </>
-                )),
-              )}
+                  )),
+                )}
+              <div className="personal-account__archive" onClick={handleOpenArchiveOrders}>
+                Все заказы
+              </div>
+              {archiveOrders &&
+                userOrders
+                  .filter((userOrder) => userOrder.status === 'Выкуплен')
+                  .map((userOrder) =>
+                    userOrder.order_items.map((userItems) => (
+                      <div className="personal-account__orders-order">
+                        <div className="personal-account__orders-text">
+                          Заказ №{userOrder.id * 100} от {userOrder.prettyCreatedAt}
+                        </div>
+                        {userItems.product !== null ? (
+                          <ProductOrders key={userItems.id} {...userItems} />
+                        ) : (
+                          ''
+                        )}
+                        {userItems.steel !== null ? (
+                          <SteelOrder key={userItems} {...userItems} />
+                        ) : (
+                          ''
+                        )}
+                        {userItems.saddle !== null ? (
+                          <SaddleOrders key={userItems} {...userItems} />
+                        ) : (
+                          ''
+                        )}
+                        {userItems.bag !== null ? <BagOrders key={userItems} {...userItems} /> : ''}
+                        {userItems.home !== null ? (
+                          <HomeOrders key={userItems} {...userItems} />
+                        ) : (
+                          ''
+                        )}
+                        {/* <div className="personal-account__stepper">
+                      <StepperDelivery />
+                    </div> */}
+                      </div>
+                    )),
+                  )}
             </div>
 
             <div className="personal-account__favorite">

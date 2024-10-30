@@ -4,7 +4,7 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 
-const steps = ['Создан', 'Отправлен', 'Доставлен'];
+const steps = ['Создан', 'Отправлен', 'Готов к выдачи'];
 
 function StepperDelivery() {
   return (

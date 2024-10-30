@@ -348,6 +348,7 @@ const AdminOrder = () => {
             <th>Покупатель</th>
             <th>Доставка</th>
             <th>Комментарии</th>
+            <th>Личный кабинет</th>
             <th></th>
           </tr>
         </thead>
@@ -644,6 +645,7 @@ const AdminOrder = () => {
                   )}
                 </div>
               </td>
+              <td>{item.userId !== null ? 'Есть' : 'Нет'}</td>
               <td>
                 <Button variant="danger" size="sm" onClick={() => handleDeleteOrder(item.id)}>
                   Удалить заказ полность
