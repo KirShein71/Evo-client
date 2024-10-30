@@ -241,6 +241,10 @@ const AdminOrder = () => {
     { label: 'Количество', key: 'quantity' },
     { label: 'Подпятник алюминевый', key: 'steel' },
     { label: 'Подпятник Стальной', key: 'saddle' },
+    { label: 'Багажник', key: 'trunk' },
+    { label: 'Кол Багажник', key: 'quantity_trunk' },
+    { label: 'Коврик 3 ряда', key: 'thirdrow' },
+    { label: 'Кол 3 ряда', key: 'quantity_thirdrow' },
   ];
 
   const flattenedOrders = orders
@@ -261,6 +265,10 @@ const AdminOrder = () => {
         quantity: orderItems.quantity,
         steel: orderItems.steel ? 'Да' : 'Нет',
         saddle: orderItems.saddle ? 'Да' : 'Нет',
+        trunk: orderItems.trunk ? 'Да' : 'Нет',
+        quantity_trunk: orderItems.trunk ? orderItems.quantity_trunk : 0,
+        thirdrow: orderItems.thirdrow ? 'Да' : 'Нет',
+        quantity_thirdrow: orderItems.thirdrow ? orderItems.quantity : '',
       }));
     });
 
