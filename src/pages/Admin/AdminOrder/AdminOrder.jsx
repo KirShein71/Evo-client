@@ -239,24 +239,32 @@ const AdminOrder = () => {
     { label: 'Материал', key: 'material' },
     { label: 'Кант', key: 'edging' },
     { label: 'Количество', key: 'quantity' },
+    { label: 'Подпятник алюминевый', key: 'steel' },
+    { label: 'Подпятник Стальной', key: 'saddle' },
   ];
 
-  const flattenedOrders = orders.flatMap((item) => {
-    return item.order_items.map((orderItems) => ({
-      id: item.id,
-      name:
-        orderItems.product?.name ||
-        orderItems.animal?.name ||
-        orderItems.home?.name ||
-        orderItems.bag?.name ||
-        '',
-      material: orderItems.material?.name || '',
-      bagmaterial: orderItems.bagmaterial?.name || '',
-      bagsize: orderItems.bagsize?.size || '',
-      edging: orderItems.edging && orderItems.edging.name ? orderItems.edging.name : '',
-      quantity: orderItems.quantity,
-    }));
-  });
+  const flattenedOrders = orders
+    .filter((item) => item.status === 'Новый')
+    .flatMap((item) => {
+      return item.order_items.map((orderItems) => ({
+        id: item.id,
+        name:
+          orderItems.product?.name ||
+          orderItems.animal?.name ||
+          orderItems.home?.name ||
+          orderItems.bag?.name ||
+          '',
+        material: orderItems.material?.name || '',
+        bagmaterial: orderItems.bagmaterial?.name || '',
+        bagsize: orderItems.bagsize?.size || '',
+        edging: orderItems.edging && orderItems.edging.name ? orderItems.edging.name : '',
+        quantity: orderItems.quantity,
+        steel: orderItems.steel ? 'Да' : 'Нет',
+        saddle: orderItems.saddle ? 'Да' : 'Нет',
+      }));
+    });
+
+  console.log(flattenedOrders);
 
   if (fetching) {
     return <Spinner animation="border" />;
