@@ -35,11 +35,6 @@ function Footer() {
           <Link to="/contacts">
             <div className="footer__item">Контакты</div>
           </Link>
-          <div className="footer__admin">
-            <Link to="/login">
-              <img src={`/img/admin.png?v=${Date.now()}`} alt="car" />
-            </Link>
-          </div>
           <a
             href="https://wa.me/79112142878"
             class="whatsapp_float"
