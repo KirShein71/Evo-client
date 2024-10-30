@@ -241,15 +241,22 @@ const AdminOrder = () => {
     { label: 'Количество', key: 'quantity' },
   ];
 
-  const flattenedOrders = orders.map((item) => ({
-    id: item.id,
-    name: item.product?.name || item.animal?.name || item.home?.name || item.bag?.name,
-    material: item.material?.name,
-    bagmaterial: item.bagmaterial?.name,
-    bagsize: item.bagsize?.size,
-    edging: item.edging && item.edging.name ? item.edging.name : '',
-    quantity: item.quantity,
-  }));
+  const flattenedOrders = orders.flatMap((item) => {
+    return item.order_items.map((orderItems) => ({
+      id: item.id,
+      name:
+        orderItems.product?.name ||
+        orderItems.animal?.name ||
+        orderItems.home?.name ||
+        orderItems.bag?.name ||
+        '',
+      material: orderItems.material?.name || '',
+      bagmaterial: orderItems.bagmaterial?.name || '',
+      bagsize: orderItems.bagsize?.size || '',
+      edging: orderItems.edging && orderItems.edging.name ? orderItems.edging.name : '',
+      quantity: orderItems.quantity,
+    }));
+  });
 
   if (fetching) {
     return <Spinner animation="border" />;
