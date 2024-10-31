@@ -628,9 +628,7 @@ const AdminOrder = () => {
                   )}
                 </td>
               ) : (
-                <td
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => handleUpdateDelivery(item.order.id)}>
+                <td style={{ cursor: 'pointer' }}>
                   <div style={{ textAlign: 'center', fontSize: '18px', fontWeight: '600' }}>
                     {item.delivery === 1 ? 'Самовывоз' : item.delivery === 3 ? 'Почта России' : ''}
                   </div>
