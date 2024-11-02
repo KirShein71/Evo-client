@@ -1,0 +1,123 @@
+.display {
+    background-color: #03142E;
+    padding-top: 100px;
+    padding-bottom: 80px;
+
+    &__content {
+        display: flex;
+    }
+
+    &__information {
+        &-title {
+            color: #e5e5e5;
+            width: 650px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        &-delivery {
+            color: #e5e5e5;
+            padding-top: 25px;
+            width: 450px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+       
+    }
+}
+
+
+//display-card 
+.display-card {
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    &__content {
+        position: absolute;
+        z-index: 50;
+    }    
+    &__title {
+        color: #e5e5e5;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+    
+
+    }
+
+    &__inputs {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__number {
+        width: 300px;
+        padding: 12px;
+        border: none;
+        border-bottom:2px solid #e5e5e5;
+        outline: none;
+        font-size: 16px;
+        font-weight: 500;
+        color: #e5e5e5;
+        font-family: 'Open Sans', sans-serif;
+        background-color: transparent;
+        &::placeholder {
+            color: #e5e5e5; 
+            opacity: 1; 
+        }
+    }
+
+    &__brand, &__model {
+        width: 300px;
+        padding: 12px;
+        border: none;
+        border-bottom:2px solid #e5e5e5;
+        font-size: 16px;
+        font-weight: 500;
+        color: #e5e5e5;
+        margin-top: 10px;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    &__button {
+        margin-top: 15px;
+        display: inline-block;
+        width: 300px;
+        height: auto;
+        border-radius: 100px 100px 100px 100px;
+        background-color: #03142E;
+        border: 2px solid #ffffff;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 400;
+        padding: 12px 24px 12px 24px;
+        color: #ffffff;
+        text-transform: uppercase;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-family: 'Open Sans', sans-serif;
+    
+        &:hover {
+            background-color: #ffffff;
+            border: 2px solid #03142E;
+            color: #03142E;
+            @media(max-width: 1024px) {
+                box-shadow: none;
+                background-color: #2e528f;
+                border: 2px solid #2e528f;
+                color: #ffffff;
+            }
+        }
+    }
+
+    .image {
+        opacity: 0.4;
+        width: 400px;
+        border-radius: 10px;
+      
+        
+    }
+
+    
+}

@@ -1,0 +1,54 @@
+.step-client {
+    background-color: #03142E;
+    padding-bottom: 50px;
+    padding-top: 30px;
+
+    &__title {
+        text-align: left;
+        color: #e5e5e5;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 33px;
+        font-weight: 700;
+        line-height: 1.3em;
+        @media(max-width: 1024px) {
+            font-size: 28px;
+        }
+        @media(max-width: 768px) {
+            font-size: 23px;
+        }
+        @media(max-width: 480px) {
+            font-size: 21px;
+            font-weight: 600;
+        }
+    }
+
+    &__content {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 0px;
+    }
+
+    &__item {
+        width: auto;
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 20px;
+
+        &-icon {
+            display: flex;
+            justify-content: center;
+        }
+
+        &-text {
+            color: #03142E;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            text-align: center;
+            padding-top: 10px;
+        }
+    }
+}
