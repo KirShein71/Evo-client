@@ -3,6 +3,7 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 import { getOneBag, getAllBagSize, getAllBagMaterial } from '../../http/bagApi';
 import { appendBag } from '../../http/basketApi';
 import Loader from '../Loader/Loader';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import BagImage from './BagImage/BagImage';
 import BagPicture from './BagPicture/BagPicture';
 import BagMaterials from './BagMaterials/BagMaterials';
@@ -111,11 +112,15 @@ function BagConstructor() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="bagconstructor__crumbs-item">Главная</div>
             </Link>
-            <img className="bagconstructor__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+            <div className="contaclist__crumbs-icon">
+              <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+            </div>
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/accessories">
               <div className="bagconstructor__crumbs-item">Автоаксессуары</div>
             </Link>
-            <img className="bagconstructor__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+            <div className="contaclist__crumbs-icon">
+              <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+            </div>
             {windowWidth > 460 ? (
               <div className="bagconstructor__crumbs-item__active">{bag.name}</div>
             ) : (

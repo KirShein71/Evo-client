@@ -5,6 +5,7 @@ import { getOneBrand } from '../../http/brandApi';
 import { getAllProductByBrandId } from '../../http/productApi';
 import { getAllCarModelByBrandId } from '../../http/carModelApi';
 import { useParams, Link } from 'react-router-dom';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 import './styles.scss';
 
@@ -80,11 +81,15 @@ function OneBrandCatalog() {
               <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
                 <div className="onebrandcatalog__crumbs-item">Главная</div>
               </Link>
-              <img className="onebrandcatalog__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+              <div className="contaclist__crumbs-icon">
+                <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+              </div>
               <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/allbrands">
                 <div className="onebrandcatalog__crumbs-item">Каталог</div>
               </Link>
-              <img className="onebrandcatalog__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+              <div className="contaclist__crumbs-icon">
+                <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+              </div>
               <div className="onebrandcatalog__crumbs-item__active">{brand?.name}</div>
             </div>
           </div>

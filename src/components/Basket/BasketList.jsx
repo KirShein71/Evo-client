@@ -12,6 +12,7 @@ import SaddleTable from './Table/SaddleTable';
 import SteelTable from './Table/SteelTable';
 import HomeTable from './Table/HomeTable';
 import BagTable from './Table/BagTable';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const BasketList = observer(() => {
   const { basketProduct } = React.useContext(AppContext);
@@ -82,7 +83,9 @@ const BasketList = observer(() => {
                 <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
                   <div className="basketlist__crumbs-item">Главная</div>
                 </Link>
-                <img className="basketlist__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+                <div className="contaclist__crumbs-icon">
+                  <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+                </div>
                 <div className="basketlist__crumbs-item__active">Корзина</div>
               </div>
             </div>

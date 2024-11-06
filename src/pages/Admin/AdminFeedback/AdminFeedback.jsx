@@ -2,7 +2,6 @@ import React from 'react';
 import { getAllFeedback } from '../../../http/feedback';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import CreateNoteAdmin from './modals/createAdminNote';
-import PostWidget from '../../../components/Checkout/PostRus/PostWidget';
 
 const AdminFeedback = () => {
   const [feedbacks, setFeedbaks] = React.useState([]);
@@ -11,7 +10,6 @@ const AdminFeedback = () => {
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [change, setChange] = React.useState(true);
   const [feedbackId, setFeedbackId] = React.useState(null);
-  const [selectedAdress, setSelectedAdress] = React.useState(null);
 
   React.useEffect(() => {
     getAllFeedback()
@@ -55,7 +53,12 @@ const AdminFeedback = () => {
               .sort((a, b) => a.id - b.id)
               .map((feedback) => (
                 <tr key={feedback.id}>
-                  <td>{feedback.name}</td>
+                  <td>
+                    {feedback.name
+                      ? feedback.name
+                      : `${feedback.brand.name} ${feedback.car_model.name}`}
+                  </td>
+
                   <td>{feedback.phone}</td>
                   <td>
                     <div className="note">

@@ -6,9 +6,9 @@ function Burger({ toggleMenu }) {
     <div className="burger">
       <div onClick={toggleMenu} style={{ cursor: 'pointer' }}>
         <>
-          <div className="burger__border"></div>
-          <div className="burger__border"></div>
-          <div className="burger__border"></div>
+          <div className="burger__border-one"></div>
+          <div className="burger__border-one"></div>
+          <div className="burger__border-three"></div>
         </>
       </div>
     </div>

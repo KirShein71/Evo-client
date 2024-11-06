@@ -1,10 +1,12 @@
 .confidentialitylist {
-    margin-top: 25px;
-    margin-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 50px;
+    background-color: #03142E;
     &__title {
         font-size: 18px;
         font-weight: 500;
-        color: rgb(7, 7, 7);
+        color: #e5e5e5;
+        font-family: 'Open Sans', sans-serif;
         @media(max-width: 480px) {
             font-size: 15px;
         }
@@ -15,9 +17,53 @@
     &__text {
         font-size: 16px;
         font-weight: 400;
-        color: rgb(7, 7, 7);
+        color: #e5e5e5;
+        font-family: 'Open Sans', sans-serif;
         @media(max-width: 480px) {
             font-size: 13px;
+        }
+    }
+
+    &__crumbs {
+        padding: 15px 0px;
+        background-color: #03142E;
+        @media(max-width: 991px) {
+            padding-top: 35px;
+        }
+        
+        &-content {
+            display: flex;
+        }
+
+        &-icon {
+            margin-top: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+           
+        }
+        
+        &-item {
+            font-size: 19px;
+            font-weight: 500;
+            color: #e5e5e5;
+        
+            &:hover {
+                color: #3A5BCC;
+                @media(max-width: 991px) {
+                    color: #e5e5e5;
+                }
+            }
+            @media(max-width: 768px) {
+                font-size: 17px;
+            }
+            &__active {
+                color: #2e528f;
+                font-size: 19px;
+                font-weight: 500;
+                @media(max-width: 768px) {
+                    font-size: 17px;
+                }
+            } 
         }
     }
 }

@@ -3,6 +3,7 @@ import CardBrand from '../CardBrand/CardBrand';
 import { getAllBrand } from '../../http/brandApi';
 import Loader from '../Loader/Loader';
 import { Link } from 'react-router-dom';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 import './styles.scss';
 function CatalogBrands() {
@@ -31,7 +32,9 @@ function CatalogBrands() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="catalogbrands__crumbs-item">Главная</div>
             </Link>
-            <img className="catalogbrands__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+            <div className="contaclist__crumbs-icon">
+              <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+            </div>
             <div className="catalogbrands__crumbs-item__active">Каталог</div>
           </div>
         </div>

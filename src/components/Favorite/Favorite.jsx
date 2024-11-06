@@ -7,7 +7,7 @@ import Loader from '../Loader/Loader';
 import { Link } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import FavoriteEmpty from './FavoriteEmpty';
-
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import './style.scss';
 
 const Favorite = observer(() => {
@@ -47,7 +47,7 @@ const Favorite = observer(() => {
                 <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
                   <div className="favorite__crumbs-item">Главная</div>
                 </Link>
-                <img className="favorite__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+                <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
                 <div className="favorite__crumbs-item__active">Избранное</div>
               </div>
             </div>

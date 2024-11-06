@@ -1,5 +1,5 @@
 import React from 'react';
-import CardBrand from '../CardBrand/CardBrand';
+import CardPromo from './CardPromo';
 import { getBrandToPromo } from '../../http/brandApi';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ function Promo() {
   const [brands, setBrands] = React.useState([]);
 
   React.useEffect(() => {
-    getBrandToPromo().then((data) => setBrands(data.slice(0, 15)));
+    getBrandToPromo().then((data) => setBrands(data.slice(0, 12)));
   }, []);
 
   return (
@@ -18,11 +18,11 @@ function Promo() {
         <h1 className="promo__title">Автомобильные коврики</h1>
         <div className="promo__content">
           {brands.slice(0, window.innerWidth < 1025 ? 15 : 12).map((brand) => (
-            <CardBrand key={brand.id} {...brand} />
+            <CardPromo key={brand.id} {...brand} />
           ))}
         </div>
         <Link to="/allbrands">
-          <button className="promo__button">Все марки</button>
+          <button className="promo__button">Каталог</button>
         </Link>
       </div>
     </div>

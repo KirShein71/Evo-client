@@ -1,19 +1,20 @@
 .feedback {
-    margin-top: 70px;
-    margin-bottom: 50px;
-    @media(max-width: 460px) {
-        margin-top: 25px;
-    }
+   padding-bottom: 50px;
+   @media(max-width: 460px) {
+    padding-bottom: 0px;
+   }
+
     
     &__card {
-        border: 2px solid #3A5BCC26;
+        border: 2px solid #ffff;
         border-radius: 10px;
         padding: 25px 10px;
 
         &-title {
-            font-size: 24px;
+            font-size: 38px;
             font-weight: 600;
-            color: #000000ff;
+            color: #03142E;
+            font-family: 'Open Sans', sans-serif;
             text-align: center;
             @media(max-width: 460px) {
                 font-size: 18px;
@@ -23,7 +24,8 @@
         &-text {
             font-size: 20px;
             font-weight: 400;
-            color:#000000ff;
+            color: #03142E;
+                font-family: 'Open Sans', sans-serif;
             text-align: center;
             @media(max-width: 460px) {
                 font-size: 15px;
@@ -41,12 +43,18 @@
                 padding: 5px 7px;
                 width: 37%;
                 margin-right: 10px;
-                border-radius: 10px;
-                border: 2px solid #3A5BCC26;
-                color: #000000ff;
-                font-size: 18px;
-                font-weight: 500;
+                border-radius: 5px;
+                border:2px solid #03142E;;
                 outline: none;
+                font-size: 16px;
+                font-weight: 500;
+                color: #03142E;
+                font-family: 'Open Sans', sans-serif;
+                background-color: transparent;
+                &::placeholder {
+                    color: #03142E;
+                    opacity: 1; 
+                }
                 @media(max-width: 460px) {
                     font-size: 14px;
                     width: 44%;
@@ -56,12 +64,18 @@
             &__phone {
                 padding: 5px 7px;
                 width: 37%;
-                border-radius: 10px;
-                border: 2px solid #3A5BCC26;
-                color: #000000ff;
-                font-size: 18px;
-                font-weight: 500;
+                border-radius: 5px;
+                border:2px solid #03142E;
                 outline: none;
+                font-size: 16px;
+                font-weight: 500;
+                color: #03142E;
+                font-family: 'Open Sans', sans-serif;
+                background-color: transparent;
+                &::placeholder {
+                    color: #03142E;
+                    opacity: 1; 
+                }
                 @media(max-width: 460px) {
                     font-size: 14px;
                     width: 44%;
@@ -76,14 +90,15 @@
             width: 220px;
             height: auto;
             border-radius: 100px 100px 100px 100px;
-            background-color: #3A5BCC;
-            border: 2px solid #3A5BCC;
+            background-color: #03142E;
+            border: 2px solid #ffffff;
             text-align: center;
             font-size: 17px;
             font-weight: 400;
-            padding: 10px 12px;
+            padding: 12px 24px 12px 24px;
             color: #ffffff;
             text-transform: uppercase;
+            font-family: 'Open Sans', sans-serif;
             margin: 0 auto;
             @media(max-width: 460px) {
                 font-size: 14px;
@@ -95,7 +110,7 @@
         &-agreement {
             margin-top: 15px;
             font-size: 19px;
-            color: #000000ff;
+            color: #03142E;
             text-align: center;
             @media(max-width: 460px) {
                 font-size: 14px;

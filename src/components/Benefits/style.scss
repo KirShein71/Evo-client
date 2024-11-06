@@ -1,6 +1,9 @@
-.reviews {
+.benefits {
     background-color: #03142E;
     padding-bottom: 50px;
+    padding-top: 50px;
+
+
     &__title {
         text-align: left;
         color: #e5e5e5;
@@ -15,21 +18,25 @@
             font-size: 23px;
         }
         @media(max-width: 480px) {
-            font-size: 21px;
+            font-size: 22px;
             font-weight: 600;
         }
     }
 
-    &__content {
+    
+
+    &-right {
         display: flex;
+        justify-content: right;
+        @media(max-width: 460px) {
+            justify-content: left;
+        }
     }
 
-    &__image {
-        margin-right: 25px;
-        img {
-            width: 400px;
-            height: 300px;
-        }
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
     }
 
     &__text {
@@ -37,5 +44,18 @@
         font-family: 'Open Sans', sans-serif;
         font-size: 18px;
         font-weight: 500;
+        width: 650px;
+        margin-left: 15px;
+        @media(max-width: 768px) {
+            width: 400px;
+        }
+        @media(max-width: 595px) {
+            font-size: 16px;
+        }
+        @media(max-width: 460px) {
+            width: 100%;
+        }
+        
     }
+
 }

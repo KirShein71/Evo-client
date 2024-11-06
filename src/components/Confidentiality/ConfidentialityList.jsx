@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import './style.scss';
 
 function ConfidentialityList() {
@@ -8,6 +10,21 @@ function ConfidentialityList() {
 
   return (
     <div className="confidentialitylist">
+      <div className="confidentialitylist__crumbs">
+        <div className="container">
+          <div className="confidentialitylist__crumbs-content">
+            <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
+              <div className="confidentialitylist__crumbs-item">Главная</div>
+            </Link>
+            <div className="cofidentialitylist__crumbs-icon">
+              <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+            </div>
+            <div className="confidentialitylist__crumbs-item__active">
+              Политика конфиденциальности
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         <div className="confidentialitylist__title">Политика конфиденциальности</div>
         <div className="confidentialitylist__content">

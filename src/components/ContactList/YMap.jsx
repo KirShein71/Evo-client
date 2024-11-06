@@ -5,7 +5,7 @@ function Ymap() {
   const mapState = { center: [59.912829, 30.340284], zoom: 16 };
   return (
     <YMaps>
-      <Map defaultState={mapState}>
+      <Map defaultState={mapState} className="map">
         <Placemark
           geometry={{
             type: 'Point',

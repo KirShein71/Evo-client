@@ -29,6 +29,16 @@
         grid-template-rows: 1fr;
         grid-column-gap: 20px;
         grid-row-gap: 0px;
+        @media(max-width: 595px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-row-gap: 20px;
+        }
+        @media(max-width: 595px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
     }
 
     &__item {
@@ -36,6 +46,10 @@
         padding: 15px;
         background-color: #ffffff;
         border-radius: 20px;
+        @media(max-width: 460px) {
+            width: 250px;
+        }
+        
 
         &-icon {
             display: flex;
@@ -49,6 +63,13 @@
             font-weight: 600;
             text-align: center;
             padding-top: 10px;
+            @media(max-width: 768px) {
+                font-size: 15px;
+            }
+            @media(max-width: 595px) {
+                font-size: 16px;
+            }
+            
         }
     }
 }

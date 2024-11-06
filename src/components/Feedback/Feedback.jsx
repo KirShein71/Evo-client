@@ -76,7 +76,7 @@ function Feedback() {
           setModalFeedback(true);
           setTimeout(() => {
             setModalFeedback(false);
-          }, 1500);
+          }, 2000);
         })
         .catch((error) => alert(error.response.data.message));
     }
@@ -87,9 +87,9 @@ function Feedback() {
       <div className="container">
         <div className="feedback__content">
           <div className="feedback__card">
-            <h3 className="feedback__card-title">Получить скидку и консультацию</h3>
+            <h3 className="feedback__card-title">Получить скидку</h3>
             <p className="feedback__card-text">
-              Менеджер свяжется с Вами и ответит на интересующие вопросы.
+              Менеджер свяжется с Вами и расскажет как получить скидку.
             </p>
             <form className="feedback__card-form" ref={form} noValidate onSubmit={handleSubmit}>
               <div className="feedback__card-inputs">

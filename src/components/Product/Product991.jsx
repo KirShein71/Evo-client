@@ -18,6 +18,7 @@ import Materials from './Materials/Materials';
 import Edging from './Edging/Edging';
 import Pattern from './Pattern/Pattern';
 import BottomSale from './BottomSale/BottomSale';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 function Product991() {
   const { originalName } = useParams();
@@ -183,17 +184,23 @@ function Product991() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="product__crumbs-item">Главная</div>
             </Link>
-            <img className="product__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+            <div className="contaclist__crumbs-icon">
+              <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+            </div>
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/allbrands">
               <div className="product__crumbs-item">Каталог</div>
             </Link>
-            <img className="product__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+            <div className="contaclist__crumbs-icon">
+              <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+            </div>
             <Link
               style={{ textDecoration: 'inherit', color: 'inherit' }}
               to={`/onebrand/${product.brand.name}`}>
               <div className="product__crumbs-item">{product.brand.name}</div>
             </Link>
-            <img className="product__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+            <div className="contaclist__crumbs-icon">
+              <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+            </div>
           </div>
           <div className="product__crumbs-item__active">{product.name}</div>
         </div>

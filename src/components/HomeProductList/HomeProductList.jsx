@@ -2,6 +2,7 @@ import React from 'react';
 import CardHomeProduct from '../CardHomeProduct/CardHomeProduct';
 import { getAllHome } from '../../http/homeApi';
 import { getAllMaterialForAnimal } from '../../http/materailRugApi';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 
@@ -54,7 +55,9 @@ function HomeProductList() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="homeproductlist__crumbs-item">Главная</div>
             </Link>
-            <img className="homeproductlist__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+            <div className="contaclist__crumbs-icon">
+              <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+            </div>
             <div className="homeproductlist__crumbs-item__active">EVA коврики для дома</div>
           </div>
         </div>

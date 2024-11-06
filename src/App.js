@@ -19,6 +19,7 @@ const App = observer(() => {
     const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
     const [loading, setLoading] = React.useState(true)
     
+    
     React.useEffect(() => {
         Promise.all([checkAuth(), fetchBasket()])
             .then(

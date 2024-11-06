@@ -1,87 +1,95 @@
 .contactlist {
-    
-    margin-bottom: 50px;
+    background-color: #03142E;
+    padding-bottom: 100px;
+    @media(max-width: 460px) {
+        padding-bottom: 50px;
+    }
     &__crumbs {
         padding: 15px 0px;
-        background-color: #3A5BCC26;
-        @media(max-width: 768px) {
-            padding: 5px 0px;
+        background-color: #03142E;
+        @media(max-width: 991px) {
+            padding-top: 35px;
         }
+        
         &-content {
             display: flex;
         }
 
         &-icon {
+            margin-top: 5px;
             margin-right: 5px;
             margin-left: 5px;
-            @media(max-width: 768px) {
-                width: 22px;
-                height: 22px;
-            }
+           
         }
         
         &-item {
             font-size: 19px;
             font-weight: 500;
-            color: var(--e-global-color-primary);
+            color: #e5e5e5;
         
             &:hover {
                 color: #3A5BCC;
                 @media(max-width: 991px) {
-                    color: var(--e-global-color-primary);
+                    color: #e5e5e5;
                 }
             }
             @media(max-width: 768px) {
-                font-size: 14px;
+                font-size: 17px;
             }
             &__active {
-                color: #3A5BCC;
+                color: #2e528f;
                 font-size: 19px;
                 font-weight: 500;
                 @media(max-width: 768px) {
-                    font-size: 14px;
+                    font-size: 17px;
                 }
             } 
         }
     }
     
     &__title {
-        margin-top: 25px;
-        font-size: 24px;
+        padding-bottom: 25px;
         font-weight: 500;
-        color: rgb(7, 7, 7);
+        color: #e5e5e5;
+        @media(max-width: 768px) {
+            font-size: 28px;
+        }
         @media(max-width: 480px) {
-            font-size: 20px;
+            font-size: 24px;
         }
     }
     &__content {
         margin-top: 25px;
         display: flex;
-        @media(max-width: 575px) {
+        @media(max-width: 595px) {
             display: contents;
         }
     }
     &__information {
-        margin-left: 25px;
+      margin-right: 150px;
+      @media(max-width: 768px) {
+        margin-right: 22px;
+      }
         @media(max-width: 575px) {
             margin-top: 15px;
-            margin-left: 15px;
+     
         }
         &-item {
-            font-size: 19px;
-            font-weight: 500;
-            color: rgb(7, 7, 7);
-            padding-bottom: 7px;
+            display: flex;
+            margin-bottom: 7px;
+
+            &__icon {
+                margin-right: 7px;
+            }
+            
+            &__text {
+                font-size: 19px;
+                font-weight: 500;
+                color: #e5e5e5;
+              
             @media(max-width: 575px) {
                 font-size: 17px;
             }
-            span {
-                font-size: 19px;
-                font-weight: 400;
-                color: rgb(7, 7, 7);
-                @media(max-width: 575px) {
-                    font-size: 17px;
-                }
             }
         }
         &-footnote {
@@ -96,7 +104,7 @@
     &__phone {
         font-size: 19px;
         font-weight: 400;
-        color: #0000ff;
+        color: #e5e5e5;
         padding-left: 7px;
         @media(max-width: 575px) {
             font-size: 17px;
@@ -106,17 +114,30 @@
 
 //YMap
 .contactlist__map {
-    @media(max-width: 575px) {
+    @media(max-width: 595px) {
         margin-top: 15px;
         display: flex;
         justify-content: center;
     }
     
+    
 }
-.ymaps-2-1-79-inner-panes {
-    overflow: hidden;
-    width: 450px;
-    height: 300px;
-    
-    
+
+
+
+.map {
+    width: 700px;
+    height: 400px;
+    @media(max-width: 1024px) {
+        width: 500px;
+        height: 300px;
+    }
+    @media(max-width: 768px) {
+        width: 400px;
+        height: 300px;
+    }
+    @media(max-width: 595px) {
+        width: 90%;
+      
+    }
 }

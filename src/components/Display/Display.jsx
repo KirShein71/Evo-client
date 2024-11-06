@@ -1,7 +1,6 @@
 import React from 'react';
-
-import './style.scss';
 import DisplayCard from './DisplayCard';
+import './style.scss';
 
 function Display() {
   return (
@@ -15,8 +14,12 @@ function Display() {
             <h3 className="display__information-delivery">
               Доставка по всей России удобным для Вас способом
             </h3>
+            <DisplayCard />
           </div>
-          <DisplayCard />
+          <div className="display__image">
+            {' '}
+            <img src="../img/rug-display.png" />
+          </div>
         </div>
       </div>
     </div>

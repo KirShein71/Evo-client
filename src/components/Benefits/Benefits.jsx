@@ -46,24 +46,40 @@ function Benefits() {
   ];
 
   const benefitsVariants = {
-    hidden: { opacity: 0, x: -100 },
+    hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0 },
   };
 
   const benefitsRightVariants = {
-    hidden: { opacity: 0, x: 100 },
+    hidden: { opacity: 0, x: 20 },
     visible: { opacity: 1, x: 0 },
   };
 
+  const benefitsVariantsMobile = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const benefitsRightMobile = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const isMobile = window.innerWidth < 490;
+
   return (
-    <div className="benefits">
+    <div className="benefits" id="benefits">
       <div className="container">
         <h2 className="benefits__title">Почему выберают нас</h2>
         <div className="benefits-left">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            variants={benefitsVariants}
+            variants={
+              isMobile
+                ? { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }
+                : benefitsVariants
+            }
             transition={{ duration: 0.5 }}>
             {benefitsLeft.map((itemLeft) => (
               <div className="benefits__item" key={itemLeft.id}>
@@ -79,7 +95,11 @@ function Benefits() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            variants={benefitsRightVariants}
+            variants={
+              isMobile
+                ? { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }
+                : benefitsRightVariants
+            }
             transition={{ duration: 0.5 }}>
             {benefitsRight.map((itemRight) => (
               <div className="benefits__item">

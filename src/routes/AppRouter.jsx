@@ -33,7 +33,7 @@ import Thankspage from '../pages/Thankspage';
 import Signup from '../pages/Signup';
 import CreateOrder from '../pages/Admin/AdminCreateOrder/CreateOrder';
 import Personal from '../pages/Personal';
-import HomePage from '../pages/HomePage';
+
 import { observer } from 'mobx-react';
 
 const routes = [
@@ -72,7 +72,6 @@ const adminRoutes = [
   { path: '/adminbag', Component: AdminBag },
   { path: '/adminfeedback', Component: AdminFeedback },
   { path: '/adminorder/createorder', Component: CreateOrder },
-  { path: '/home-example', Component: HomePage },
 ];
 
 const AppRouter = observer(() => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Bag from './Bag/Bag';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { Link } from 'react-router-dom';
 
 import './style.scss';
@@ -13,7 +14,9 @@ function AccessoriesList() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="accessorieslist__crumbs-item">Главная</div>
             </Link>
-            <img className="accessorieslist__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+            <div className="contaclist__crumbs-icon">
+              <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+            </div>
             <div className="accessorieslist__crumbs-item__active">Автоаксессуары</div>
           </div>
         </div>

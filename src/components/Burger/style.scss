@@ -1,16 +1,39 @@
 .burger {
     display: none;
-    @media(max-width: 595px) {
+    @media(max-width: 769px) {
         display: block;
         margin-top: 13px;
     }
+    @media(max-width: 595px) {
+        margin-top: 8px;
+    }
     @media(max-width: 480px) {
-        margin-top: 13px;
+        margin-top: 9px;
     }
    
 
-    &__border {
-        width: 25px;
+    &__border-one {
+        width: 35px;
+        height: 3px;
+        background-color: black;
+        margin: 4px 0;
+        @media(max-width: 595px) {
+            height: 2px;
+            margin: 8px 0px;
+        }
+        @media(max-width: 480px) {
+            width: 25px;
+            margin: 7px 0px;
+            
+        }
+        @media(max-width: 460px) {
+            height: 1px;
+        }
+    }
+
+
+    &__border-three {
+        width: 26px;
         height: 3px;
         background-color: black;
         margin: 4px 0;

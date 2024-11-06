@@ -4,7 +4,7 @@ import './style.scss';
 
 function Reviews() {
   return (
-    <div className="reviews">
+    <div className="reviews" id="reviews">
       <div className="container">
         <h3 className="reviews__title">Отзывы наших клиентов</h3>
         <div className="reviews__content">

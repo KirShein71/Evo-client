@@ -1,12 +1,12 @@
 .advantages {
     background-color: #03142E;
-    padding-top: 50px;
+    padding-top: 15px;
     padding-bottom: 50px;
   
         &__content {
             display: flex;
             justify-content: space-between;
-            @media(max-width: 460px) {
+            @media(max-width: 768px) {
                 flex-direction: column; 
                 justify-content: center;
                 align-items: center;
@@ -46,6 +46,9 @@
                 text-align: center;
                 color: #e5e5e5;
                 font-family: 'Open Sans', sans-serif;
+                @media(max-width: 460px) {
+                    font-size: 16px;
+                }
                
             }
         }
