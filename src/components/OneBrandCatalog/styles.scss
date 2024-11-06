@@ -54,11 +54,13 @@
         margin-top: 25px;
         font-size: 25px;
         font-weight: bold;
-        color: var(--e-global-color-primary);
+        color: #03142E;
+        font-family: 'Open Sans', sans-serif;
         &-span {
             font-size: 25px;
             font-weight: bold;
-            color: var(--e-global-color-primary);
+            color: #03142E;
+            font-family: 'Open Sans', sans-serif;
             padding-right: 7px;
             @media(max-width: 595px) {
                 font-size: 21px;
@@ -78,7 +80,8 @@
     &__text {
         font-size: 25px;
         font-weight: 500;
-        color: rgb(7, 6, 6);
+        color: #03142E;
+        font-family: 'Open Sans', sans-serif;
         text-align: center;
         margin-top: 55px;
         margin-bottom: 70px;
@@ -132,7 +135,8 @@
         &__title {
             font-size: 18px;
             font-weight: 500;
-            color: rgb(7, 6, 6);
+            color: #03142E;
+            font-family: 'Open Sans', sans-serif;
         }
 
         .modaldown {
@@ -141,7 +145,7 @@
                 width: 25%;
                 min-height: 100%;
                 border-radius: 10px;
-                border: 2px solid rgb(156, 153, 153);
+                border: 2px solid #03142E;
                 cursor: pointer;
                 @media(max-width: 1024px) {
                     width: 30%;
@@ -164,7 +168,8 @@
             &__title {
                 font-size: 18px;
                 font-weight: 400;
-                color: rgb(7, 6, 6);
+                color: #03142E;
+                font-family: 'Open Sans', sans-serif;
                 @media(max-width: 480px) {
                     font-size: 16px;
                 }
@@ -176,7 +181,7 @@
                 width: 25%;
                 background-color: #ffffff;
                 border-radius: 10px;
-                border: 2px solid rgb(156, 153, 153);
+                border: 2px solid #03142E;
                 cursor: pointer;
                 overflow: auto;
                 max-height: 350px;
@@ -208,7 +213,8 @@
                 &-item {
                     font-size: 18px;
                     font-weight: 400;
-                    color: rgb(7, 6, 6);
+                    color: #03142E;
+                    font-family: 'Open Sans', sans-serif;
                     padding-bottom: 3px;
                     @media(max-width: 480px) {
                         font-size: 16px;

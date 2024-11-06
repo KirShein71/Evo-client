@@ -1,11 +1,13 @@
 .catalogbrands {
     padding-bottom: 50px;
+    background-color: #03142E;
+    
     &__content {
         padding-top: 25px;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: 1fr;
-        grid-column-gap: 10px;
+        grid-column-gap: 20px;
         grid-row-gap: 20px;
         justify-content: center;
         align-items: center;

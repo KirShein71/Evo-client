@@ -1,19 +1,25 @@
 .searchsection {
-    display: none;
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
     @media(max-width: 480px) {
         display: contents;
     }
     
 
     &__title {
-        text-align: center;
+        text-align: left;
         font-size: 21px;
-        font-weight: 600;
-        color: var(--e-global-color-primary);
+        font-weight: 500;
+        color: #03142E;
+        font-family: 'Open Sans', sans-serif;
     }
 
     &__forms {
         margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
     }
 
     &__brand, &__model {
@@ -23,7 +29,7 @@
             width: 100%;
             min-height: 100%;
             border-radius: 10px;
-            border: 3px solid #3A5BCC26;
+            border: 3px solid #03142E;
             cursor: pointer;     
         }
         &-content {
@@ -35,14 +41,15 @@
         &-title {
             font-size: 16px;
             font-weight: 500;
-            color: var(--e-global-color-primary);
+            color: #03142E;
+            font-family: 'Open Sans', sans-serif;
             
         }
 
         &-modal {
             
             position: absolute;
-            width: 95%;
+           
             background-color: #ffffff;
             border-radius: 10px;
             border: 3px solid #3A5BCC26;

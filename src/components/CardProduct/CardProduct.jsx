@@ -8,7 +8,7 @@ import { AppContext } from '../../context/AppContext';
 import './styles.scss';
 import { observer } from 'mobx-react';
 
-const CardProduct = observer(({ name, old_price, new_price, image, id }) => {
+const CardProduct = observer(({ name, old_price, new_price, image, id, pattern_image }) => {
   const [originalName] = React.useState(name);
   const { favoriteProduct } = React.useContext(AppContext);
   const [isAddedToFavorite, setIsAddedToFavorite] = React.useState(false);
@@ -77,6 +77,9 @@ const CardProduct = observer(({ name, old_price, new_price, image, id }) => {
       <Link to={`/productproperty/${formattedName}`} className="cardproduct__content">
         <div className="cardproduct__image">
           <img src={process.env.REACT_APP_IMG_URL + image} alt="image_car" />
+        </div>
+        <div className="cardproduct__pattern-image">
+          <img src={process.env.REACT_APP_IMG_URL + pattern_image} alt="image_car" />
         </div>
         <div class="cardproduct__bottom">
           <h4 class="cardproduct__title">{name}</h4>

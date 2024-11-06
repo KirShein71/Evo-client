@@ -1,9 +1,11 @@
 import React from 'react';
+import CardPromo from '../Promo/CardPromo';
 import CardBrand from '../CardBrand/CardBrand';
 import { getAllBrand } from '../../http/brandApi';
 import Loader from '../Loader/Loader';
 import { Link } from 'react-router-dom';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import SearchSection from '../SearchSection/SearchSection';
 
 import './styles.scss';
 function CatalogBrands() {
@@ -40,10 +42,12 @@ function CatalogBrands() {
         </div>
       </div>
       <div className="container">
-        <div className="catalogbrands__content">
-          {brands.map((brand) => (
-            <CardBrand key={brand.id} {...brand} />
-          ))}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div className="catalogbrands__content">
+            {brands.map((brand) => (
+              <CardBrand key={brand.id} {...brand} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

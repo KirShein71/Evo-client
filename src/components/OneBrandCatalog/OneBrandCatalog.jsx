@@ -6,6 +6,7 @@ import { getAllProductByBrandId } from '../../http/productApi';
 import { getAllCarModelByBrandId } from '../../http/carModelApi';
 import { useParams, Link } from 'react-router-dom';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import SearchSection from '../SearchSection/SearchSection';
 
 import './styles.scss';
 
@@ -94,6 +95,7 @@ function OneBrandCatalog() {
             </div>
           </div>
         </div>
+
         <div className="container">
           {products.length === 0 ? (
             <div className="onebrandcatalog__text">
