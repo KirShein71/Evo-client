@@ -17,7 +17,7 @@ function AccessoriesList() {
             <div className="contaclist__crumbs-icon">
               <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
             </div>
-            <div className="accessorieslist__crumbs-item__active">Автоаксессуары</div>
+            <h1 className="accessorieslist__crumbs-item__active">Автоаксессуары</h1>
           </div>
         </div>
       </div>

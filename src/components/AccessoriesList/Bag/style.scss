@@ -34,7 +34,7 @@
     width: 100%;
     height: auto;
     padding: 10px 0px 0px 0px;
-    border: 2px solid #3A5BCC26;
+    border: 2px solid #03142E;
     cursor: pointer;
     transition: box-shadow 0.3s, transform 0.3s;
     position: relative;
@@ -49,7 +49,7 @@
     @media(max-width: 1024px) {
         transition: none;
         box-shadow:none;
-        border: 2px solid #3A5BCC26;
+        border: 2px solid #03142E;
        
     }
  
@@ -91,7 +91,8 @@
         text-align: center;
         font-size: 18px;
         font-weight: bold;
-        color: #000000ff;
+        color: #e5e5e5;
+        font-family: 'Open Sans', sans-serif;
         @media(max-width: 1024px){
             font-size: 17px;
            
@@ -118,14 +119,15 @@
 
     &__bottom {
         padding: 15px 5px; 
-        background-color: #3A5BCC26;
-
+        background-color: #03142E;
+       
     }
 
     &__price {
         text-align: center;
         font-size: 20px;
-        color: #d81212;
+        color: #e5e5e5;
+        font-family: 'Open Sans', sans-serif;
         font-weight: 500;
         @media(max-width: 1024px) {
             margin-bottom: 15px;

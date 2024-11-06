@@ -63,10 +63,10 @@ function HomeProductList() {
         </div>
       </div>
       <div className="container">
-        <div className="homeproductlist__title">Коврики для дома</div>
-        <div className="homeproductlist__subtitle">
+        <h1 className="homeproductlist__title">Коврики для дома</h1>
+        <p className="homeproductlist__subtitle">
           *Можем изготовить коврик по вашим индивидуальным размерам, звоните или пишите нам
-        </div>
+        </p>
         <div className="homeproductlist__content">
           {sortedHomeProducts.map((homeProduct) => (
             <CardHomeProduct key={homeProduct.id} {...homeProduct} materials={materials} />

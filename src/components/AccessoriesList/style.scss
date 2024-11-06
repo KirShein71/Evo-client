@@ -48,9 +48,9 @@
 
     &__title {
         margin-top: 25px;
-        font-size: 24px;
-        font-weight: 500;
-        color: var(--e-global-color-primary);
+        font-size: 32px;
+        color: #03142E;
+        font-family: 'Open Sans', sans-serif;
         @media(max-width: 480px) {
             font-size: 20px;
         }

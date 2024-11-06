@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './style.scss';
 import ModalImage from './ModalImage';
 import { AppContext } from '../../context/AppContext';
+import HomeProductModal from './modal/HomeProductModal';
 
 function CardHomeProduct({ name, new_price, id, materials, home_images }) {
   const { basketProduct } = React.useContext(AppContext);
@@ -12,16 +13,16 @@ function CardHomeProduct({ name, new_price, id, materials, home_images }) {
   const [selectedMaterial, setSelectedMaterial] = React.useState('blacksota');
   const [selectedMaterialName, setSelectedMaterialName] = React.useState('Черный');
   const [selectedMaterialId, setSelectedMaterialId] = React.useState(28);
-  const [buttonText, setButtonText] = React.useState('В корзину');
   const [isAddedToCart, setIsAddedToCart] = React.useState(false);
   const [openModalImage, setOpenModalImage] = React.useState(false);
+  const [openModalToBasket, setOpenModalToBasket] = React.useState(false);
   const navigate = useNavigate();
 
   const clickToCart = (homeId, materialId, quantity) => {
     appendHome(homeId, materialId, quantity)
       .then((data) => {
         setIsAddedToCart(true);
-        setButtonText('В корзине');
+        setOpenModalToBasket(true);
         fetchBasket().then((data) => {
           const basketId = data.id;
           getAllBasketProduct(basketId)
@@ -42,6 +43,10 @@ function CardHomeProduct({ name, new_price, id, materials, home_images }) {
 
   const closedImageModal = () => {
     setOpenModalImage(false);
+  };
+
+  const closedModalToBasket = () => {
+    setOpenModalToBasket(false);
   };
 
   const goToCart = () => {
@@ -133,10 +138,21 @@ function CardHomeProduct({ name, new_price, id, materials, home_images }) {
               }
             }}
             type="button"
-            id="cardhomeproduct__button"
-            className={isAddedToCart ? 'added' : ''}>
-            {buttonText}
+            id="cardhomeproduct__button">
+            В Корзину
           </button>
+          {openModalToBasket && (
+            <HomeProductModal
+              closedModalToBasket={closedModalToBasket}
+              name={name}
+              selectedMaterialName={selectedMaterialName}
+              selectedMaterialId={selectedMaterialId}
+              quantity={quantity}
+              price={new_price}
+              homeImages={home_images}
+              goToCart={goToCart}
+            />
+          )}
         </div>
       </div>
     </div>
