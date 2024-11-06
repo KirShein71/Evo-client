@@ -8,16 +8,20 @@ class BasketProductStore {
     }
 
     get products() {
+        console.log(this._products)
         return this._products
     }
 
-    get count() { // всего позиций в корзине
-        return this._products.length 
+    get count() {
+        console.log('Количество товаров в корзине:', this._products.length); // Логируем значение
+        return this._products.length; 
     }
 
     set products(products) {
         this._products = products
     }
+
+   
 }
 
 export default BasketProductStore

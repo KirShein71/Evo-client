@@ -5,7 +5,7 @@ import { getAllProductId } from '../../http/trunkApi';
 import { getAllProductIdThirdrow } from '../../http/thirdrowApi';
 import { getAllMaterialRug } from '../../http/materailRugApi';
 import { getAllEdging } from '../../http/edgingApi';
-import { append } from '../../http/basketApi';
+import { append, fetchBasket, getAllBasketProduct } from '../../http/basketApi';
 import { useNavigate, Link } from 'react-router-dom';
 import Saddle from './Saddle/Saddle';
 import './styles.scss';
@@ -19,8 +19,10 @@ import Edging from './Edging/Edging';
 import Pattern from './Pattern/Pattern';
 import BottomSale from './BottomSale/BottomSale';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import { AppContext } from '../../context/AppContext';
 
 function Product991() {
+  const { basketProduct } = React.useContext(AppContext);
   const { originalName } = useParams();
   const modelName = originalName.replace(/(?<!-)-(?!-)/g, ' ').replace(/--/g, '-');
   const [fetching, setFetching] = React.useState(true);
@@ -159,6 +161,18 @@ function Product991() {
         .then((data) => {
           setIsAddedToCart(true);
           setButtonText('В корзине');
+          fetchBasket().then((data) => {
+            const basketId = data.id;
+            getAllBasketProduct(basketId)
+              .then((item) => {
+                basketProduct.products = item;
+                setFetching(false);
+              })
+              .catch((error) => {
+                console.error('Произошла ошибка при загрузке данных:', error);
+                setFetching(false);
+              });
+          });
         })
         .catch((error) => alert(error.response.data.message));
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { getOneBag, getAllBagSize, getAllBagMaterial } from '../../http/bagApi';
-import { appendBag } from '../../http/basketApi';
+import { appendBag, fetchBasket, getAllBasketProduct } from '../../http/basketApi';
 import Loader from '../Loader/Loader';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import BagImage from './BagImage/BagImage';
@@ -10,10 +10,11 @@ import BagMaterials from './BagMaterials/BagMaterials';
 import ModalBag from './modal/ModalBag';
 import BagSize from './BagSize/BagSize';
 import BagText from './BagText/BagText';
-
+import { AppContext } from '../../context/AppContext';
 import './style.scss';
 
 function BagConstructor() {
+  const { basketProduct } = React.useContext(AppContext);
   const { originalName } = useParams();
   const bagName = originalName.replace(/(?<!-)-(?!-)/g, ' ').replace(/--/g, '-');
   const [fetching, setFetching] = React.useState(true);
@@ -88,6 +89,18 @@ function BagConstructor() {
     appendBag(bagId, bagmaterialId, bagsizeId, quantity)
       .then((data) => {
         setModalOpen(true);
+        fetchBasket().then((data) => {
+          const basketId = data.id;
+          getAllBasketProduct(basketId)
+            .then((item) => {
+              basketProduct.products = item;
+              setFetching(false);
+            })
+            .catch((error) => {
+              console.error('Произошла ошибка при загрузке данных:', error);
+              setFetching(false);
+            });
+        });
       })
       .catch((error) => alert(error.response.data.message));
   };

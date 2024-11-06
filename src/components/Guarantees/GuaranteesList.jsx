@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import './style.scss';
 
 function GuaranteesList() {
@@ -15,7 +16,9 @@ function GuaranteesList() {
             <Link style={{ textDecoration: 'inherit', color: 'inherit' }} to="/">
               <div className="guaranteeslist__crumbs-item">Главная</div>
             </Link>
-            <img className="guaranteeslist__crumbs-icon" src="../img/arrow.png" alt="arrow" />
+            <div className="cofidentialitylist__crumbs-icon">
+              <ArrowRightAltIcon sx={{ color: '#ffffff', fontSize: 28 }} />
+            </div>
             <div className="guaranteeslist__crumbs-item__active">Гарантии</div>
           </div>
         </div>

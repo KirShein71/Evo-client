@@ -40,7 +40,6 @@ const CardProduct = observer(({ name, old_price, new_price, image, id }) => {
         favoriteProduct.addToFavorites(productId);
         const favorites = JSON.parse(localStorage.getItem('favoriteProducts')) || [];
         favorites.push(productId);
-        console.log(favorites);
         updateLocalStorage(favorites); // Обновляем localStorage
 
         setIsAddedToFavorite(true);

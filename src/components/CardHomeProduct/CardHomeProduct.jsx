@@ -1,10 +1,12 @@
 import React from 'react';
-import { appendHome } from '../../http/basketApi';
+import { appendHome, fetchBasket, getAllBasketProduct } from '../../http/basketApi';
 import { useNavigate } from 'react-router-dom';
 import './style.scss';
 import ModalImage from './ModalImage';
+import { AppContext } from '../../context/AppContext';
 
 function CardHomeProduct({ name, new_price, id, materials, home_images }) {
+  const { basketProduct } = React.useContext(AppContext);
   const [quantity, setQuantity] = React.useState(1);
   const isCountDisabled = quantity <= 1;
   const [selectedMaterial, setSelectedMaterial] = React.useState('blacksota');
@@ -20,6 +22,16 @@ function CardHomeProduct({ name, new_price, id, materials, home_images }) {
       .then((data) => {
         setIsAddedToCart(true);
         setButtonText('В корзине');
+        fetchBasket().then((data) => {
+          const basketId = data.id;
+          getAllBasketProduct(basketId)
+            .then((item) => {
+              basketProduct.products = item;
+            })
+            .catch((error) => {
+              console.error('Произошла ошибка при загрузке данных:', error);
+            });
+        });
       })
       .catch((error) => alert(error.response.data.message));
   };
