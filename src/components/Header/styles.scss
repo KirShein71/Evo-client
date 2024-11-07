@@ -235,10 +235,10 @@
 // burger 
 .burger-menu {
     width: 250px;
-    height: 1000%;
+    height: 100%;
     background-color: #ffff;
     box-shadow: 0 2px 7px #706f6f;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1200;

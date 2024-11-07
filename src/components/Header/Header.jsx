@@ -11,6 +11,7 @@ import Login from '../Login/Login';
 import PhoneInTalkOutlinedIcon from '@mui/icons-material/PhoneInTalkOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import ClearIcon from '@mui/icons-material/Clear';
 
 import './styles.scss';
 
@@ -251,11 +252,7 @@ const Header = observer(() => {
           <div className="overlay"></div>
           <div className="burger-menu burger-menu__open">
             <div className="burger-menu__icon">
-              <img
-                onClick={() => setOpen(false)}
-                src={`./img/delete.png?v=${Date.now()}`}
-                alt="closed"
-              />
+              <ClearIcon onClick={() => setOpen(false)} />
             </div>
             <div className="burger-menu__item">
               <Link to="/" onClick={() => setOpen(false)}>
