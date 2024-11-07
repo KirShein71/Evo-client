@@ -251,7 +251,11 @@ const Header = observer(() => {
           <div className="overlay"></div>
           <div className="burger-menu burger-menu__open">
             <div className="burger-menu__icon">
-              <img onClick={() => setOpen(false)} src="./img/delete.png" alt="closed" />
+              <img
+                onClick={() => setOpen(false)}
+                src={`./img/delete.png?v=${Date.now()}`}
+                alt="closed"
+              />
             </div>
             <div className="burger-menu__item">
               <Link to="/" onClick={() => setOpen(false)}>

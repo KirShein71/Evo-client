@@ -38,7 +38,6 @@ function Product() {
   const [selectedSteel, setSelectedSteel] = React.useState(null);
   const [selectedSaddle, setSelectedSaddle] = React.useState(null);
   const navigate = useNavigate();
-  const [isAddedToCart, setIsAddedToCart] = React.useState(false);
   const [trunk, setTrunk] = React.useState();
   const [isSalonChecked, setIsSalonChecked] = React.useState(false);
   const [selectedProduct, setSelectedProduct] = React.useState(null);
@@ -49,7 +48,6 @@ function Product() {
   const [selectedProductThirdrow, setSelectedProductThirdrow] = React.useState(null);
   const [isSecondrowChecked, setIsSecondrowChecked] = React.useState(true);
   const [popupOpen, setPopupOpen] = React.useState(false);
-  const [basketId, setBasketId] = React.useState();
   const [modalToBasket, setModaltoBasket] = React.useState(false);
 
   const [quantity, setQuantity] = React.useState(1);
@@ -163,7 +161,6 @@ function Product() {
         trunkQuantity,
       )
         .then((data) => {
-          setIsAddedToCart(true);
           setModaltoBasket(true);
           fetchBasket().then((data) => {
             const basketId = data.id;
@@ -289,25 +286,20 @@ function Product() {
         {popupOpen && <ModalRug onClosePopup={onClosePopup} />}
         <button
           onClick={() => {
-            if (isAddedToCart) {
-              goToCart();
-            } else {
-              clickToCart(
-                selectedProduct,
-                selectedMaterialId,
-                selectedEdgingId,
-                selectedProductTrunk,
-                selectedProductThirdrow,
-                selectedSaddle,
-                selectedSteel,
-                quantity,
-                trunkQuantity,
-              );
-            }
+            clickToCart(
+              selectedProduct,
+              selectedMaterialId,
+              selectedEdgingId,
+              selectedProductTrunk,
+              selectedProductThirdrow,
+              selectedSaddle,
+              selectedSteel,
+              quantity,
+              trunkQuantity,
+            );
           }}
           type="button"
-          id="product__button"
-          className={isAddedToCart ? 'added' : ''}>
+          id="product__button">
           В Корзину
         </button>
         <BottomSale />

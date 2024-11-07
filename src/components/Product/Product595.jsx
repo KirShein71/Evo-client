@@ -39,7 +39,6 @@ function Product595() {
   const [selectedSteel, setSelectedSteel] = React.useState(null);
   const [selectedSaddle, setSelectedSaddle] = React.useState(null);
   const navigate = useNavigate();
-  const [isAddedToCart, setIsAddedToCart] = React.useState(false);
   const [trunk, setTrunk] = React.useState();
   const [isSalonChecked, setIsSalonChecked] = React.useState(false);
   const [selectedProduct, setSelectedProduct] = React.useState(null);
@@ -164,7 +163,6 @@ function Product595() {
         trunkQuantity,
       )
         .then((data) => {
-          setIsAddedToCart(true);
           setModaltoBasket(true);
           fetchBasket().then((data) => {
             const basketId = data.id;
@@ -291,25 +289,20 @@ function Product595() {
         {popupOpen && <ModalRug onClosePopup={onClosePopup} />}
         <button
           onClick={() => {
-            if (isAddedToCart) {
-              goToCart();
-            } else {
-              clickToCart(
-                selectedProduct,
-                selectedMaterialId,
-                selectedEdgingId,
-                selectedProductTrunk,
-                selectedProductThirdrow,
-                selectedSaddle,
-                selectedSteel,
-                quantity,
-                trunkQuantity,
-              );
-            }
+            clickToCart(
+              selectedProduct,
+              selectedMaterialId,
+              selectedEdgingId,
+              selectedProductTrunk,
+              selectedProductThirdrow,
+              selectedSaddle,
+              selectedSteel,
+              quantity,
+              trunkQuantity,
+            );
           }}
           type="button"
-          id="product__button"
-          className={isAddedToCart ? 'added' : ''}>
+          id="product__button">
           В корзину
         </button>
         <BottomSale />
