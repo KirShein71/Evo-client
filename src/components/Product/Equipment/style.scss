@@ -1,11 +1,12 @@
 .equipment {
     margin-top: 15px;
     margin-bottom: 15px;
-    border-bottom: 2px solid #3A5BCC26;
+    border-bottom: 2px solid #e5e5e5;
     &__title {
         font-size: 21px;
         font-weight: 600;
-        color: var(--e-global-color-primary);
+        color:#03142E;
+        font-family: 'Open Sans', sans-serif;   
         @media(max-width: 460px) {
             font-size: 19px;
         }
@@ -22,7 +23,8 @@
         span {
             font-size: 17px;
             font-weight: 400;
-            color: var(--e-global-color-primary);
+            color:#03142E;
+            font-family: 'Open Sans', sans-serif;   
             width: 300px;
             @media(max-width: 460px) {
                 width: 100%;
@@ -38,7 +40,8 @@
 
     &__oldPrice {
         font-size: 20px;
-        color: var(--e-global-color-primary);
+        color:#03142E;
+        font-family: 'Open Sans', sans-serif;   
         font-weight: 400;
         text-decoration: line-through;
         display: inline-block;
@@ -50,6 +53,7 @@
     &__newPrice {
         font-size: 20px;
         color: #d81212;
+        font-family: 'Open Sans', sans-serif;   
         font-weight: 500;
         @media(max-width: 460px) {
             font-size: 18px;
@@ -66,7 +70,8 @@
     &__total {
         font-size: 22px;
         font-weight: 500;
-        color: var(--e-global-color-primary);
+        color:#03142E;
+        font-family: 'Open Sans', sans-serif;   
         padding-left: 15px;
         padding-right: 15px;
         @media(max-width: 460px) {
@@ -88,7 +93,8 @@
         &-title {
             font-size: 21px;
             font-weight: 600;
-            color: var(--e-global-color-primary);
+            color:#03142E;
+            font-family: 'Open Sans', sans-serif;   
             cursor: pointer;
             @media(max-width: 460px) {
                 font-size: 19px;

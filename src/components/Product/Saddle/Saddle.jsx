@@ -2,6 +2,7 @@ import React from 'react';
 import { getAllSaddle } from '../../../http/saddleApi';
 import { getAllSteel } from '../../../http/steelApi';
 import './style.scss';
+import BottomSale from '../BottomSale/BottomSale';
 
 function Saddle({ setSelectedSaddle, setSelectedSteel }) {
   const [saddles, setSaddles] = React.useState([]);
@@ -34,6 +35,7 @@ function Saddle({ setSelectedSaddle, setSelectedSteel }) {
 
   return (
     <div className="saddle">
+      <h2 className="saddle__title">Дополнительные аксессуары</h2>
       <div className="saddle__content">
         {saddles.map((saddle) => (
           <div key={saddle.id}>

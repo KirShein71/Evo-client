@@ -19,6 +19,7 @@ import Pattern from './Pattern/Pattern';
 import BottomSale from './BottomSale/BottomSale';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { AppContext } from '../../context/AppContext';
+import ModalToBasket from './modal/ModalToBasket';
 
 function Product() {
   const { basketProduct } = React.useContext(AppContext);
@@ -37,7 +38,6 @@ function Product() {
   const [selectedSteel, setSelectedSteel] = React.useState(null);
   const [selectedSaddle, setSelectedSaddle] = React.useState(null);
   const navigate = useNavigate();
-  const [buttonText, setButtonText] = React.useState('В корзину');
   const [isAddedToCart, setIsAddedToCart] = React.useState(false);
   const [trunk, setTrunk] = React.useState();
   const [isSalonChecked, setIsSalonChecked] = React.useState(false);
@@ -50,6 +50,7 @@ function Product() {
   const [isSecondrowChecked, setIsSecondrowChecked] = React.useState(true);
   const [popupOpen, setPopupOpen] = React.useState(false);
   const [basketId, setBasketId] = React.useState();
+  const [modalToBasket, setModaltoBasket] = React.useState(false);
 
   const [quantity, setQuantity] = React.useState(1);
   const isCountDisabled = quantity <= 1;
@@ -130,6 +131,10 @@ function Product() {
     setSelectedProductThirdrow(thirdrowId);
   };
 
+  const handleClosedModalToBasket = () => {
+    setModaltoBasket(false);
+  };
+
   const clickToCart = (
     productId,
     materialId,
@@ -159,7 +164,7 @@ function Product() {
       )
         .then((data) => {
           setIsAddedToCart(true);
-          setButtonText('В корзине');
+          setModaltoBasket(true);
           fetchBasket().then((data) => {
             const basketId = data.id;
             getAllBasketProduct(basketId)
@@ -303,9 +308,30 @@ function Product() {
           type="button"
           id="product__button"
           className={isAddedToCart ? 'added' : ''}>
-          {buttonText}
+          В Корзину
         </button>
         <BottomSale />
+        {modalToBasket && (
+          <ModalToBasket
+            closedModalToBasket={handleClosedModalToBasket}
+            materialColor={selectedMaterialName}
+            edgingColor={selectedEdgingName}
+            name={product.name}
+            materials={materials}
+            edgings={edgings}
+            selectedEdging={selectedEdging}
+            selectedMaterial={selectedMaterial}
+            price={product.new_price}
+            quantity={quantity}
+            steel={selectedSteel}
+            saddle={selectedSaddle}
+            trunk={selectedProductTrunk}
+            thirdrowId={selectedProductThirdrow}
+            thirdrow={thirdrow}
+            productId={selectedProduct}
+            goToCart={goToCart}
+          />
+        )}
       </div>
     </div>
   );

@@ -15,21 +15,23 @@
     text-align: center;
     font-size: 18px;
     font-weight: 500;
-    color: var(--e-global-color-primary);
+    color: #03142E;
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 15px;
     
   }
   &__button {
     display: block;
     margin: 0 auto;
-    background-color: #3A5BCC;
-    border: 2px solid #3A5BCC;
+    background-color: #03142E;
+    border: 2px solid #03142E;
     color: #ffffff;
     font-size: 18px;
     font-weight: 500;
     width: auto;
     height: auto;
     cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     padding: 5px 10px;
 
@@ -37,6 +39,171 @@
 }
 
 .overlay__modalrug {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  
+  z-index: 10;
+}
+
+//ModalToBasket
+.modaltobasket {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px 25px;
+    @media(max-width: 460px) {
+       padding: 15px;
+       width: 95%;
+    }
+    
+  &__close {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 15px;
+  }
+
+  &__image {
+    position: relative;
+    margin-right: 25px;
+   
+}
+
+.image_one {
+    position: relative;
+    top: 0;
+    left:0;
+    width: 120px;
+   
+    @media(max-width: 480px) {
+        width: 120px;
+    }
+  }
+
+  .image_two {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    
+    @media(max-width: 480px) {
+        width: 120px;
+    }
+  }
+  
+  &__title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    color: #03142E;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    @media(max-width: 460px) {
+        font-size: 17px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    margin-top: 15px;
+    @media(max-width: 460px) {
+        margin-top: 15px;
+    }
+
+    &-image {
+        margin-right: 25px;
+        @media(max-width: 460px) {
+            margin-right: 7px;
+        }
+        img {
+            width: 158px;
+            
+        }
+    }
+
+    &-description {
+        width: 250px;
+        &__title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #03142E;
+            font-family: 'Open Sans', sans-serif;
+            margin-bottom: 10px;
+            @media(max-width: 460px) {
+                font-size: 16px;
+            }
+        }
+
+        &__item {
+            font-size: 15px;
+            font-weight: 500;
+            color: #17336b;
+            font-family: 'Open Sans', sans-serif;
+            @media(max-width: 460px) {
+                font-size: 16px;
+            }
+        }
+    }
+
+  }
+
+
+
+
+  &__bottom {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+
+    &-back {
+        margin-right: 15px;
+        padding: 10px 20px; 
+        font-size: 16px; 
+        font-weight: 500;
+        border: none;
+        text-align: center; 
+        text-decoration: none; 
+        border-radius: 5px; 
+        cursor: pointer;
+        background-color: #a5a6a7;  
+        color: #ffffff; 
+        @media(max-width: 460px) {
+            padding: 7px;
+            margin-right: 7px;
+            font-size: 15px;
+        }
+    }
+
+    &-cart {
+        padding: 10px 20px; 
+        font-size: 16px; 
+        font-weight: 500;
+        border: none;
+        text-align: center; 
+        text-decoration: none; 
+        border-radius: 5px; 
+        cursor: pointer;
+        background-color: #03142E;
+        color: #ffffff; 
+        @media(max-width: 460px) {
+            padding: 7px;
+            font-size: 15px;
+        }
+    }
+  }
+
+
+ 
+}
+
+.overlay__modaltobasket-modal {
     position: fixed;
   top: 0;
   left: 0;

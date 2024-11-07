@@ -6,7 +6,8 @@
     &__title {
         font-size: 24px;
         font-weight: bold;
-        color: var(--e-global-color-primary);
+        color:#03142E;
+        font-family: 'Open Sans', sans-serif;    
         @media(max-width: 460px) {
             font-size: 20px;
         }
