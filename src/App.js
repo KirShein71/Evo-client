@@ -19,6 +19,10 @@ const App = observer(() => {
     const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
     const [loading, setLoading] = React.useState(true)
 
+    window.onerror = function (message, source, lineno, colno, error) {
+        console.error("Глобальная ошибка:", message, source, lineno, colno, error);
+    };
+
     React.useEffect(() => {
         setLoading(true); 
         Promise.all([checkAuth(), fetchBasket()])
