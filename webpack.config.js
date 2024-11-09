@@ -14,7 +14,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: ['@babel/preset-env', '@babel/preset-react'], 
             plugins: ['@babel/plugin-transform-runtime']
           }
         }
@@ -22,19 +22,15 @@ module.exports = {
     ]
   },
   devServer: {
-    setupMiddlewares: (middlewares, devServer) => {
-        // Код для onBeforeSetupMiddleware
-        console.log('Before setup middleware');
-
-        // Код для onAfterSetupMiddleware
-        console.log('After setup middleware');
-
-        return middlewares;
-    },
     static: {
-        directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, 'public'),
     },
     port: 3000,
     hot: true,
-},
+    setupMiddlewares: (middlewares, devServer) => {
+      console.log('Before setup middleware');
+      console.log('After setup middleware');
+      return middlewares; // Верните middleware
+    }
+  }
 };
