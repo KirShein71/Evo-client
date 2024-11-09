@@ -21,4 +21,9 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    client: {
+      overlay: false, // <- add this
+    }
+  }
 };
