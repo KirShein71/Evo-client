@@ -22,8 +22,19 @@ module.exports = {
     ]
   },
   devServer: {
-    client: {
-      overlay: false, // <- add this
-    }
-  }
+    setupMiddlewares: (middlewares, devServer) => {
+        // Код для onBeforeSetupMiddleware
+        console.log('Before setup middleware');
+
+        // Код для onAfterSetupMiddleware
+        console.log('After setup middleware');
+
+        return middlewares;
+    },
+    static: {
+        directory: path.join(__dirname, 'public'),
+    },
+    port: 3000,
+    hot: true,
+},
 };
