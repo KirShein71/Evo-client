@@ -21,14 +21,24 @@ const App = observer(() => {
 
     React.useEffect(() => {
         const handleError = (message, source, lineno, colno, error) => {
+            console.clear(); // Очистка консоли
+            if (navigator.userAgent.includes('Telegram')) {
+                return true; // Прекратить вывод ошибки в Telegram Web View
+            }
             console.error("Error occurred: ", message, " at ", source, ":", lineno, ":", colno);
-            // Дополнительная логика обработки ошибок (например, отправка на сервер)
-            return true; // Возвращение true предотвращает дальнейшую обработку ошибки
+            // Отправка данных об ошибке на сервер
+            fetch('/error-reporting', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message, source, lineno, colno, error })
+            });
+            return true;
         };
 
         window.onerror = handleError;
 
-        // Очистка обработчика при размонтировании компонента
         return () => {
             window.onerror = null;
         };
