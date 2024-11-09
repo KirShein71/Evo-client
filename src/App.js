@@ -19,12 +19,20 @@ const App = observer(() => {
     const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
     const [loading, setLoading] = React.useState(true)
 
-    window.onerror = function(message, source, lineno, colno, error) {
-        console.error("Error caught: ", message, " at ", source, ":", lineno, ":", colno);
-        // Возвращаем true, чтобы предотвратить дальнейшую обработку ошибки
-        return true;
-    };
-    
+    React.useEffect(() => {
+        const handleError = (message, source, lineno, colno, error) => {
+            console.error("Error occurred: ", message, " at ", source, ":", lineno, ":", colno);
+            // Дополнительная логика обработки ошибок (например, отправка на сервер)
+            return true; // Возвращение true предотвращает дальнейшую обработку ошибки
+        };
+
+        window.onerror = handleError;
+
+        // Очистка обработчика при размонтировании компонента
+        return () => {
+            window.onerror = null;
+        };
+    }, []);
     
     React.useEffect(() => {
         Promise.all([checkAuth(), fetchBasket()])
