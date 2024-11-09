@@ -13,7 +13,7 @@ class BasketProductStore {
     }
 
     get count() {
-        console.log('Количество товаров в корзине:', this._products.length); // Логируем значение
+    
         return this._products.length; 
     }
 
