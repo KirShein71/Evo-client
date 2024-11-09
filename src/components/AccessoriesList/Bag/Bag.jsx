@@ -14,9 +14,13 @@ function Bag() {
   }, []);
 
   React.useEffect(() => {
+    setFetching(true); // Устанавливаем состояние загрузки перед началом запроса
     getAllBag()
       .then((data) => setBags(data))
-      .finally(() => setFetching(false));
+      .catch((error) => {
+        console.error('Ошибка при получении данных:', error);
+      })
+      .finally(() => setFetching(false)); // Устанавливаем состояние загрузки в false в любом случае
   }, []);
 
   if (fetching) {
