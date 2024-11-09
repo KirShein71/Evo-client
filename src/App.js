@@ -20,49 +20,41 @@ const App = observer(() => {
     const [loading, setLoading] = React.useState(true)
 
     React.useEffect(() => {
-        const handleError = (message, source, lineno, colno, error) => {
-            console.clear(); // Очистка консоли
-            if (navigator.userAgent.includes('Telegram')) {
-                return true; // Прекратить вывод ошибки в Telegram Web View
-            }
-            console.error("Error occurred: ", message, " at ", source, ":", lineno, ":", colno);
-            // Отправка данных об ошибке на сервер
-            fetch('/error-reporting', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message, source, lineno, colno, error })
-            });
-            return true;
-        };
-
-        window.onerror = handleError;
-
-        return () => {
-            window.onerror = null;
-        };
-    }, []);
-    
-    React.useEffect(() => {
+        setLoading(true); 
         Promise.all([checkAuth(), fetchBasket()])
             .then(
                 axios.spread((userData, basketData) => {
                     if (userData) {
-                        user.login(userData)
+                        user.login(userData);
                     }
-                    const basketId = basketData.id
+                    const basketId = basketData.id;
+    
+                    // Обработка ошибок для получения продуктов корзины
                     getAllBasketProduct(basketId)
-                    .then((item) => basketProduct.products = item);
-
+                        .then((item) => {
+                            basketProduct.products = item;
+                        })
+                        .catch((error) => {
+                            console.error("Ошибка при получении продуктов корзины:", error);
+                      
+                        });
+    
+                
                     getAllFavoriteProduct(basketId)
-                    .then((item) => favoriteProduct.item = item)
+                        .then((item) => {
+                            favoriteProduct.item = item;
+                        })
+                        .catch((error) => {
+                            console.error("Ошибка при получении избранных продуктов:", error);
+                            // Здесь можно установить состояние ошибки, если нужно
+                        });
                 })
             )
-            .finally(
-                () => setLoading(false)
-            )
-    }, [user, basketProduct, favoriteProduct])
+            .catch((error) => {
+                console.error("Ошибка при проверке авторизации или получении корзины:", error);
+            })
+            .finally(() => setLoading(false));
+    }, [user, basketProduct, favoriteProduct]);
 
 
     if (loading) {
