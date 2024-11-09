@@ -68,25 +68,45 @@ function Product() {
     let thirdrowLoaded = false;
 
     const fetchData = async () => {
-      const productData = await getOneProduct(modelName);
-      setProduct(productData);
-      productLoaded = true;
+      try {
+        const productData = await getOneProduct(modelName);
+        setProduct(productData);
+        productLoaded = true;
+      } catch (error) {
+        console.error('Ошибка при загрузке продукта:', error);
+      }
 
-      const MaterialData = await getAllMaterialRug();
-      setMaterials(MaterialData);
-      materialLoaded = true;
+      try {
+        const materialData = await getAllMaterialRug();
+        setMaterials(materialData);
+        materialLoaded = true;
+      } catch (error) {
+        console.error('Ошибка при загрузке материалов:', error);
+      }
 
-      const edgingData = await getAllEdging();
-      setEdgings(edgingData);
-      edgingLoaded = true;
+      try {
+        const edgingData = await getAllEdging();
+        setEdgings(edgingData);
+        edgingLoaded = true;
+      } catch (error) {
+        console.error('Ошибка при загрузке окантовки:', error);
+      }
 
-      const trunkData = await getAllProductId(productData.id);
-      setTrunk(trunkData);
-      trunkLoaded = true;
+      try {
+        const trunkData = await getAllProductId(productData.id);
+        setTrunk(trunkData);
+        trunkLoaded = true;
+      } catch (error) {
+        console.error('Ошибка при загрузке ствола:', error);
+      }
 
-      const thirdrowData = await getAllProductIdThirdrow(productData.id);
-      setThirdrow(thirdrowData);
-      thirdrowLoaded = true;
+      try {
+        const thirdrowData = await getAllProductIdThirdrow(productData.id);
+        setThirdrow(thirdrowData);
+        thirdrowLoaded = true;
+      } catch (error) {
+        console.error('Ошибка при загрузке третьего ряда:', error);
+      }
 
       if (productLoaded && materialLoaded && edgingLoaded && trunkLoaded && thirdrowLoaded) {
         setFetching(false);

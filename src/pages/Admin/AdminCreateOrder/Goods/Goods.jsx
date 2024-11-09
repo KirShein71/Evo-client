@@ -29,9 +29,33 @@ function Goods({
   const [searchTerm, setSearchTerm] = React.useState('');
 
   React.useEffect(() => {
-    getAllProduct().then((data) => setProducts(data));
-    getAllMaterialRug().then((data) => setMaterials(data));
-    getAllEdging().then((data) => setEdgings(data));
+    const fetchData = async () => {
+      try {
+        const productsData = await getAllProduct();
+        setProducts(productsData);
+      } catch (error) {
+        console.error('Ошибка при загрузке продуктов:', error);
+        alert('Не удалось загрузить продукты. Пожалуйста, попробуйте позже.');
+      }
+
+      try {
+        const materialsData = await getAllMaterialRug();
+        setMaterials(materialsData);
+      } catch (error) {
+        console.error('Ошибка при загрузке материалов:', error);
+        alert('Не удалось загрузить материалы. Пожалуйста, попробуйте позже.');
+      }
+
+      try {
+        const edgingsData = await getAllEdging();
+        setEdgings(edgingsData);
+      } catch (error) {
+        console.error('Ошибка при загрузке окантовок:', error);
+        alert('Не удалось загрузить окантовки. Пожалуйста, попробуйте позже.');
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleSearchChange = (e) => {

@@ -17,13 +17,33 @@ function SearchSection() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    getAllBrand().then((data) => setBrands(data));
+    const fetchAllBrands = async () => {
+      try {
+        const data = await getAllBrand();
+        setBrands(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке всех брендов:', error);
+        alert('Не удалось загрузить все бренды. Пожалуйста, попробуйте позже.');
+      }
+    };
+
+    fetchAllBrands();
   }, []);
 
   React.useEffect(() => {
-    if (brandId) {
-      getAllCarModelByBrandId(brandId).then((data) => setCarModels(data));
-    }
+    const fetchCarModels = async () => {
+      if (brandId) {
+        try {
+          const data = await getAllCarModelByBrandId(brandId);
+          setCarModels(data);
+        } catch (error) {
+          console.error('Ошибка при загрузке моделей автомобилей:', error);
+          alert('Не удалось загрузить модели автомобилей. Пожалуйста, попробуйте позже.');
+        }
+      }
+    };
+
+    fetchCarModels();
   }, [brandId]);
 
   React.useEffect(() => {

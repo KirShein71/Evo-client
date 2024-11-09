@@ -42,9 +42,19 @@ const CreateProduct = (props) => {
   const [fetching, setFetching] = React.useState(true);
 
   React.useEffect(() => {
-    getAllBrand()
-      .then((data) => setBrands(data))
-      .finally(() => setFetching(false));
+    const fetchBrands = async () => {
+      try {
+        const brandsData = await getAllBrand();
+        setBrands(brandsData);
+      } catch (error) {
+        console.error('Ошибка при загрузке брендов:', error);
+        alert('Не удалось загрузить бренды. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchBrands();
   }, []);
 
   const handleInputChange = (event) => {
@@ -63,7 +73,19 @@ const CreateProduct = (props) => {
   };
 
   React.useEffect(() => {
-    getAllCarModelByBrandId(value.brand).then((data) => setFilteredCarModels(data));
+    const fetchCarModels = async () => {
+      if (value.brand) {
+        try {
+          const carModelsData = await getAllCarModelByBrandId(value.brand);
+          setFilteredCarModels(carModelsData);
+        } catch (error) {
+          console.error('Ошибка при загрузке моделей автомобилей по ID бренда:', error);
+          alert('Не удалось загрузить модели автомобилей. Пожалуйста, попробуйте позже.');
+        }
+      }
+    };
+
+    fetchCarModels();
   }, [value.brand]);
 
   const handleImageChange = (event) => {

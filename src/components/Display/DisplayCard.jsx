@@ -29,13 +29,31 @@ function DisplayCard() {
   const modelRef = React.useRef();
 
   React.useEffect(() => {
-    getAllBrand().then((data) => setBrands(data));
+    const fetchBrands = async () => {
+      try {
+        const data = await getAllBrand();
+        setBrands(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке брендов:', error);
+      }
+    };
+
+    fetchBrands();
   }, []);
 
   React.useEffect(() => {
-    if (brandId) {
-      getAllCarModelByBrandId(brandId).then((data) => setCarModels(data));
-    }
+    const fetchCarModels = async () => {
+      if (brandId) {
+        try {
+          const data = await getAllCarModelByBrandId(brandId);
+          setCarModels(data);
+        } catch (error) {
+          console.error('Ошибка при загрузке моделей автомобилей:', error);
+        }
+      }
+    };
+
+    fetchCarModels();
   }, [brandId]);
 
   React.useEffect(() => {

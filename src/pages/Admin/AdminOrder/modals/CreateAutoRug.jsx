@@ -61,9 +61,23 @@ const CreateAutoRug = (props) => {
   const [valid, setValid] = React.useState(defaultValid);
 
   React.useEffect(() => {
-    getAllProduct().then((data) => setProducts(data));
-    getAllMaterialRug().then((data) => setMaterials(data));
-    getAllEdging().then((data) => setEdgings(data));
+    const fetchData = async () => {
+      try {
+        const productsData = await getAllProduct();
+        setProducts(productsData);
+
+        const materialsData = await getAllMaterialRug();
+        setMaterials(materialsData);
+
+        const edgingsData = await getAllEdging();
+        setEdgings(edgingsData);
+      } catch (error) {
+        console.error('Ошибка при загрузке данных:', error);
+        alert('Не удалось загрузить данные. Пожалуйста, попробуйте позже.');
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleInputChange = (event) => {
@@ -130,15 +144,35 @@ const CreateAutoRug = (props) => {
   };
 
   React.useEffect(() => {
-    if (value.product) {
-      getAllProductId(value.product).then((data) => setTrunks(data));
-    }
+    const fetchProductId = async () => {
+      if (value.product) {
+        try {
+          const data = await getAllProductId(value.product);
+          setTrunks(data);
+        } catch (error) {
+          console.error('Ошибка при загрузке данных по продукту:', error);
+          alert('Не удалось загрузить данные по продукту. Пожалуйста, попробуйте позже.');
+        }
+      }
+    };
+
+    fetchProductId();
   }, [value.product]);
 
   React.useEffect(() => {
-    if (value.product) {
-      getAllProductIdThirdrow(value.product).then((data) => setThidrows(data));
-    }
+    const fetchThirdRow = async () => {
+      if (value.product) {
+        try {
+          const data = await getAllProductIdThirdrow(value.product);
+          setThidrows(data);
+        } catch (error) {
+          console.error('Ошибка при загрузке третьего ряда:', error);
+          alert('Не удалось загрузить данные третьего ряда. Пожалуйста, попробуйте позже.');
+        }
+      }
+    };
+
+    fetchThirdRow();
   }, [value.product]);
 
   const handleSubmit = (event) => {

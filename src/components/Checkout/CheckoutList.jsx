@@ -55,17 +55,22 @@ const CheckoutList = () => {
   };
 
   React.useEffect(() => {
-    fetchBasket()
-      .then((data) => {
+    const fetchBasketData = async () => {
+      try {
+        const data = await fetchBasket();
         const basketId = data.id;
-        getAllBasketProduct(basketId).then((item) => {
-          setBasketProduct(item);
-          setIsBasketLoaded(true); // Устанавливаем, что данные корзины загружены
-        });
-      })
-      .finally(() => setFetching(false));
-  }, []);
+        const item = await getAllBasketProduct(basketId);
+        setBasketProduct(item);
+        setIsBasketLoaded(true); // Устанавливаем, что данные корзины загружены
+      } catch (error) {
+        console.error('Ошибка при загрузке корзины:', error);
+      } finally {
+        setFetching(false);
+      }
+    };
 
+    fetchBasketData();
+  }, []);
   React.useEffect(() => {
     // Получение значения из localStorage при монтировании компонента
     const storedTotalAmount = localStorage.getItem('totalAmount');

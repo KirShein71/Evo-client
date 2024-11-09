@@ -35,18 +35,31 @@ const UpdateProduct = (props) => {
   const [patternImage, setPatternImage] = React.useState(null);
 
   React.useEffect(() => {
-    if (id) {
-      getOneProduct(id)
-        .then((data) => {
+    const fetchProduct = async () => {
+      if (id) {
+        try {
+          const productData = await getOneProduct(id);
           const prod = {
-            name: data.name,
+            name: productData.name,
           };
           setValue(prod);
           setValid(isValid(prod));
-        })
-        .catch((error) => console.log(error.response.data.message));
-    }
-    getAllBrand().then((data) => setBrands(data));
+        } catch (error) {
+          console.error('Ошибка при загрузке продукта:', error);
+          alert(error.response?.data?.message || 'Не удалось загрузить продукт.');
+        }
+      }
+
+      try {
+        const brandsData = await getAllBrand();
+        setBrands(brandsData);
+      } catch (error) {
+        console.error('Ошибка при загрузке брендов:', error);
+        alert('Не удалось загрузить бренды. Пожалуйста, попробуйте позже.');
+      }
+    };
+
+    fetchProduct();
   }, [id]);
 
   const handleInputChange = (event) => {
@@ -65,9 +78,19 @@ const UpdateProduct = (props) => {
   };
 
   React.useEffect(() => {
-    if (value.brand) {
-      getAllCarModelByBrandId(value.brand).then((data) => setFilteredCarModels(data));
-    }
+    const fetchCarModelsByBrand = async () => {
+      if (value.brand) {
+        try {
+          const carModelsData = await getAllCarModelByBrandId(value.brand);
+          setFilteredCarModels(carModelsData);
+        } catch (error) {
+          console.error('Ошибка при загрузке моделей автомобилей по ID бренда:', error);
+          alert('Не удалось загрузить модели автомобилей. Пожалуйста, попробуйте позже.');
+        }
+      }
+    };
+
+    fetchCarModelsByBrand();
   }, [value.brand]);
 
   const handleImageChange = (event) => {

@@ -13,9 +13,19 @@ const AdminBrand = () => {
   const [brandId, setBrandId] = React.useState(null);
 
   React.useEffect(() => {
-    getAllBrand()
-      .then((data) => setBrands(data))
-      .finally(() => setFetching(false));
+    const fetchBrands = async () => {
+      try {
+        const data = await getAllBrand();
+        setBrands(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке брендов:', error);
+        alert('Не удалось загрузить бренды. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchBrands();
   }, [change]);
 
   const handleUpdateBrand = (id) => {

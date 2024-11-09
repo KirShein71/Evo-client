@@ -52,9 +52,10 @@ const UpdateOrder = (props) => {
   const [valid, setValid] = React.useState(defaultValid);
 
   React.useEffect(() => {
-    if (id) {
-      getOneOrderItem(id)
-        .then((data) => {
+    const fetchOrderItem = async () => {
+      if (id) {
+        try {
+          const data = await getOneOrderItem(id);
           const prod = {
             quantity: data.quantity,
             quantity_trunk: data.quantity_trunk,
@@ -67,19 +68,46 @@ const UpdateOrder = (props) => {
           };
           setValue(prod);
           setValid(isValid(prod));
-        })
-        .catch((error) => alert(error.response.data.message));
+        } catch (error) {
+          console.error('Ошибка при загрузке элемента заказа:', error);
+          alert(error.response?.data?.message || 'Не удалось загрузить элемент заказа.');
+        }
 
-      getAllEdging().then((data) => setEdgings(data));
-      getAllMaterialRug().then((data) => setMaterials(data));
-    }
+        try {
+          const edgingsData = await getAllEdging();
+          setEdgings(edgingsData);
+
+          const materialsData = await getAllMaterialRug();
+          setMaterials(materialsData);
+        } catch (error) {
+          console.error('Ошибка при загрузке дополнительных данных:', error);
+          alert('Не удалось загрузить дополнительные данные. Пожалуйста, попробуйте позже.');
+        }
+      }
+    };
+
+    fetchOrderItem();
   }, [id]);
 
   React.useEffect(() => {
-    if (productId) {
-      getAllProductId(productId).then((data) => setTrunk(data));
-      getAllProductIdThirdrow(productId).then((data) => setThidrow(data));
-    }
+    const fetchProductData = async () => {
+      if (productId) {
+        try {
+          const trunkData = await getAllProductId(productId);
+          setTrunk(trunkData);
+
+          const thirdrowData = await getAllProductIdThirdrow(productId);
+          setThidrow(thirdrowData);
+        } catch (error) {
+          console.error('Ошибка при загрузке данных по productId:', error);
+          alert(
+            'Не удалось загрузить данные по выбранному продукту. Пожалуйста, попробуйте позже.',
+          );
+        }
+      }
+    };
+
+    fetchProductData();
   }, [productId]);
 
   const handleInputChange = (event) => {

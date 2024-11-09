@@ -17,10 +17,22 @@ const AdminCarModel = () => {
   const [openBrandModal, setOpenBrandModal] = React.useState(false);
 
   React.useEffect(() => {
-    getAllCarModel()
-      .then((data) => setCarModels(data))
-      .finally(() => setFetching(false));
-    getAllBrand().then((data) => setBrands(data));
+    const fetchCarModelsAndBrands = async () => {
+      try {
+        const carModelsData = await getAllCarModel();
+        setCarModels(carModelsData);
+
+        const brandsData = await getAllBrand();
+        setBrands(brandsData);
+      } catch (error) {
+        console.error('Ошибка при загрузке моделей автомобилей или брендов:', error);
+        alert('Не удалось загрузить модели автомобилей или бренды. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchCarModelsAndBrands();
   }, [change]);
 
   const handleUpdateCarModel = (id) => {

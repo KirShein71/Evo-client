@@ -10,9 +10,19 @@ const AdminEdging = () => {
   const [change, setChange] = React.useState(true);
 
   React.useEffect(() => {
-    getAllEdging()
-      .then((data) => setEdgings(data))
-      .finally(() => setFetching(false));
+    const fetchEdgings = async () => {
+      try {
+        const data = await getAllEdging();
+        setEdgings(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке окантовок:', error);
+        alert('Не удалось загрузить окантовки. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchEdgings();
   }, [change]);
 
   const handleDeleteClick = (id) => {

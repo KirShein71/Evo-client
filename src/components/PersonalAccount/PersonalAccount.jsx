@@ -31,21 +31,34 @@ function PersonalAccount() {
   };
 
   React.useEffect(() => {
-    getAllForUserAccount(user.id).then((data) => setUserOrders(data));
+    const fetchUserOrders = async () => {
+      try {
+        const data = await getAllForUserAccount(user.id);
+        setUserOrders(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке заказов пользователя:', error);
+      }
+    };
+
+    fetchUserOrders();
   }, [user.id]);
 
   React.useEffect(() => {
-    fetchBasket().then((data) => {
-      const basketId = data.id;
-      getAllFavoriteProduct(basketId)
-        .then((item) => {
-          favoriteProduct.items = item;
-          setFetching(false);
-        })
-        .catch((error) => {
-          console.error('Произошла ошибка при загрузке данных:', error);
-        });
-    });
+    const fetchFavoriteProducts = async () => {
+      try {
+        const data = await fetchBasket();
+        const basketId = data.id;
+
+        const item = await getAllFavoriteProduct(basketId);
+        favoriteProduct.items = item;
+        setFetching(false);
+      } catch (error) {
+        console.error('Произошла ошибка при загрузке данных:', error);
+        setFetching(false); // Убедитесь, что состояние загрузки также обновляется
+      }
+    };
+
+    fetchFavoriteProducts();
   }, [favoriteProduct, change]);
 
   const handleOpenArchiveOrders = () => {

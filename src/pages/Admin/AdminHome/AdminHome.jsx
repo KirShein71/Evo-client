@@ -17,9 +17,19 @@ const AdminHome = () => {
   const [change, setChange] = React.useState(true);
 
   React.useEffect(() => {
-    getAllHome()
-      .then((data) => setHomeProducts(data))
-      .finally(() => setFetching(false));
+    const fetchHomeProducts = async () => {
+      try {
+        const data = await getAllHome();
+        setHomeProducts(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке домашних продуктов:', error);
+        alert('Не удалось загрузить домашние продукты. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchHomeProducts();
   }, [change]);
 
   const handleUpdateHomeProduct = (id) => {

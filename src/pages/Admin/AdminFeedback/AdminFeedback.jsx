@@ -12,9 +12,19 @@ const AdminFeedback = () => {
   const [feedbackId, setFeedbackId] = React.useState(null);
 
   React.useEffect(() => {
-    getAllFeedback()
-      .then((data) => setFeedbaks(data))
-      .finally(() => setFetching(false));
+    const fetchFeedback = async () => {
+      try {
+        const data = await getAllFeedback();
+        setFeedbaks(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке отзывов:', error);
+        alert('Не удалось загрузить отзывы. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchFeedback();
   }, [change]);
 
   const handleCreateAdminNote = (id) => {

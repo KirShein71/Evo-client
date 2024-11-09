@@ -48,8 +48,9 @@ const AdminOrder = () => {
   const modalRef = React.useRef();
 
   React.useEffect(() => {
-    getAllOrders()
-      .then((data) => {
+    const fetchOrders = async () => {
+      try {
+        const data = await getAllOrders();
         setOrders(data);
         filterOrdersByStatus(selectedStatus, data);
 
@@ -61,8 +62,15 @@ const AdminOrder = () => {
 
         // Обновляем состояние с отключенными id
         setDisabledOrderIds(disabledOrders.map((order) => order.id));
-      })
-      .finally(() => setFetching(false));
+      } catch (error) {
+        console.error('Ошибка при загрузке заказов:', error);
+        alert('Не удалось загрузить заказы. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchOrders();
   }, [change, selectedStatus]);
 
   const filterOrdersByStatus = (status, ordersData) => {

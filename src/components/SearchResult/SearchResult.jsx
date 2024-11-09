@@ -12,9 +12,19 @@ function SearchResult({ query }) {
   const [fetching, setFetching] = React.useState(true);
 
   React.useEffect(() => {
-    getAllProduct()
-      .then((data) => setProducts(data))
-      .finally(() => setFetching(false));
+    const fetchProducts = async () => {
+      try {
+        const data = await getAllProduct();
+        setProducts(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке продуктов:', error);
+        alert('Не удалось загрузить продукты. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchProducts();
   }, []);
 
   React.useEffect(() => {

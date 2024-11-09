@@ -25,18 +25,34 @@ const UpdateCarModel = (props) => {
   const [valid, setValid] = React.useState(defaultValid);
 
   React.useEffect(() => {
-    if (id) {
-      getOneCarModel(id)
-        .then((data) => {
+    const fetchCarModel = async () => {
+      if (id) {
+        try {
+          const data = await getOneCarModel(id);
           const prod = {
             name: data.name,
           };
           setValue(prod);
           setValid(isValid(prod));
-        })
-        .catch((error) => alert(error.response.data.message));
-    }
-    getAllBrand().then((data) => setBrands(data));
+        } catch (error) {
+          console.error('Ошибка при загрузке модели автомобиля:', error);
+          alert(
+            error.response?.data?.message ||
+              'Не удалось загрузить модель автомобиля. Пожалуйста, попробуйте позже.',
+          );
+        }
+      }
+
+      try {
+        const brandsData = await getAllBrand();
+        setBrands(brandsData);
+      } catch (error) {
+        console.error('Ошибка при загрузке брендов:', error);
+        alert('Не удалось загрузить бренды. Пожалуйста, попробуйте позже.');
+      }
+    };
+
+    fetchCarModel();
   }, [id]);
 
   const handleInputChange = (event) => {

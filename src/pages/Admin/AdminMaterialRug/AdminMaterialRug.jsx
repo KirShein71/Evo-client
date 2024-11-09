@@ -10,9 +10,19 @@ const AdminMaterialRug = () => {
   const [change, setChange] = React.useState(true);
 
   React.useEffect(() => {
-    getAllMaterialRug()
-      .then((data) => setMaterials(data))
-      .finally(() => setFetching(false));
+    const fetchMaterials = async () => {
+      try {
+        const data = await getAllMaterialRug();
+        setMaterials(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке материалов:', error);
+        alert('Не удалось загрузить материалы. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchMaterials();
   }, [change]);
 
   const handleDeleteClick = (id) => {

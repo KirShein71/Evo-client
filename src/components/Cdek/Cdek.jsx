@@ -40,10 +40,17 @@ function Cdek({
   const [deliveryMethod, setDeliveryMethod] = React.useState(null);
 
   React.useEffect(() => {
-    getAllRegions().then((data) => {
-      setRegions(data);
-      setDataLoadedRegion(true);
-    });
+    const fetchRegions = async () => {
+      try {
+        const data = await getAllRegions();
+        setRegions(data);
+        setDataLoadedRegion(true);
+      } catch (error) {
+        console.error('Ошибка при загрузке регионов:', error);
+      }
+    };
+
+    fetchRegions();
   }, []);
 
   const handleRegionChange = (e) => {
@@ -65,12 +72,19 @@ function Cdek({
   };
 
   React.useEffect(() => {
-    if (selectedRegionCode) {
-      getAllCities(selectedRegionCode).then((data) => {
-        setCities(data);
-        setDataLoadedCity(true);
-      });
-    }
+    const fetchCities = async () => {
+      if (selectedRegionCode) {
+        try {
+          const data = await getAllCities(selectedRegionCode);
+          setCities(data);
+          setDataLoadedCity(true);
+        } catch (error) {
+          console.error('Ошибка при загрузке городов:', error);
+        }
+      }
+    };
+
+    fetchCities();
   }, [selectedRegionCode]);
 
   const handleCityChange = (e) => {
@@ -88,9 +102,18 @@ function Cdek({
   };
 
   React.useEffect(() => {
-    if (selectedCityCode) {
-      getAllOffices(selectedCityCode).then((data) => setOffices(data));
-    }
+    const fetchOffices = async () => {
+      if (selectedCityCode) {
+        try {
+          const data = await getAllOffices(selectedCityCode);
+          setOffices(data);
+        } catch (error) {
+          console.error('Ошибка при загрузке офисов:', error);
+        }
+      }
+    };
+
+    fetchOffices();
   }, [selectedCityCode]);
 
   React.useEffect(() => {

@@ -12,9 +12,20 @@ function Sale() {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
   React.useEffect(() => {
-    getSaleProduct()
-      .then((data) => setSaleProducts(data))
-      .catch((error) => alert(error.response.data.message));
+    const fetchSaleProducts = async () => {
+      try {
+        const data = await getSaleProduct();
+        setSaleProducts(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке распродаж:', error);
+        alert(
+          error.response?.data?.message ||
+            'Не удалось загрузить распродажу. Пожалуйста, попробуйте позже.',
+        );
+      }
+    };
+
+    fetchSaleProducts();
   }, []);
 
   React.useEffect(() => {

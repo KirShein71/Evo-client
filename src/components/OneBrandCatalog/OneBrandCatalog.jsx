@@ -31,20 +31,27 @@ function OneBrandCatalog() {
     let carModelsLoaded = false;
 
     const fetchData = async () => {
-      const brandData = await getOneBrand(brandName);
-      setBrand(brandData);
-      brandLoaded = true;
+      try {
+        const brandData = await getOneBrand(brandName);
+        setBrand(brandData);
+        brandLoaded = true;
 
-      const productsData = await getAllProductByBrandId(brandData.id);
-      setProducts(productsData);
-      productsLoaded = true;
+        const productsData = await getAllProductByBrandId(brandData.id);
+        setProducts(productsData);
+        productsLoaded = true;
 
-      const carModelsData = await getAllCarModelByBrandId(brandData.id);
-      setCarModels(carModelsData);
-      carModelsLoaded = true;
+        const carModelsData = await getAllCarModelByBrandId(brandData.id);
+        setCarModels(carModelsData);
+        carModelsLoaded = true;
 
-      if (brandLoaded && productsLoaded && carModelsLoaded) {
-        setFetching(false);
+        if (brandLoaded && productsLoaded && carModelsLoaded) {
+          setFetching(false);
+        }
+      } catch (error) {
+        console.error('Ошибка при загрузке данных:', error);
+        // Установите состояние ошибки для уведомления пользователя
+        setError('Произошла ошибка при загрузке данных. Попробуйте снова.'); // Предполагается, что у вас есть состояние для ошибок
+        setFetching(false); // Убедитесь, что состояние загрузки также обновляется
       }
     };
 

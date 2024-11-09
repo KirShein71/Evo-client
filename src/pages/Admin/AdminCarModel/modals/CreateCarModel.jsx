@@ -28,7 +28,17 @@ const CreateCarModel = (props) => {
   const [valid, setValid] = React.useState(defaultValid);
 
   React.useEffect(() => {
-    getAllBrand().then((data) => setBrands(data));
+    const fetchBrands = async () => {
+      try {
+        const data = await getAllBrand();
+        setBrands(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке брендов:', error);
+        alert('Не удалось загрузить бренды. Пожалуйста, попробуйте позже.');
+      }
+    };
+
+    fetchBrands();
   }, []);
 
   const handleInputChange = (event) => {

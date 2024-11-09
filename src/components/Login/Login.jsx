@@ -121,22 +121,26 @@ function Login({ toggleDrawer, setOpenLogin }) {
       return; // Если чекбокс не установлен, выходим из функции
     }
 
-    const data = await login(phone, password);
-    if (data) {
-      user.login(data);
-      if (user.isAdmin) navigate('/admin');
-      if (user.isUser) navigate('/login');
-      setOpenLogin(false);
-    }
+    try {
+      const data = await login(phone, password);
 
-    if (data === undefined) {
-      setErrorIncorrectPassword('Указан неверный пароль');
-    }
+      if (data) {
+        user.login(data);
+        if (user.isAdmin) navigate('/admin');
+        if (user.isUser) navigate('/login');
+        setOpenLogin(false);
+      } else if (data === undefined) {
+        setErrorIncorrectPassword('Указан неверный пароль');
+      } else if (data === null) {
+        setErrorIncorrectLogin('Пользователь не найден');
+      }
 
-    if (data === null) {
-      setErrorIncorrectLogin('Пользователь не найден');
+      console.log(data);
+    } catch (error) {
+      console.error('Ошибка при выполнении входа:', error);
+
+      setErrorIncorrectLogin('Произошла ошибка при входе. Попробуйте снова.');
     }
-    console.log(data);
   };
 
   return (

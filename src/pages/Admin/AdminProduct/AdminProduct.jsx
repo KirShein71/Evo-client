@@ -43,10 +43,22 @@ const AdminProduct = () => {
   const [thirdrowId, setThirdrowId] = React.useState(null);
 
   React.useEffect(() => {
-    getAllProduct().then((data) => setProducts(data));
-    getAllBrand()
-      .then((data) => setBrands(data))
-      .finally(() => setFetching(false));
+    const fetchProductsAndBrands = async () => {
+      try {
+        const productsData = await getAllProduct();
+        setProducts(productsData);
+
+        const brandsData = await getAllBrand();
+        setBrands(brandsData);
+      } catch (error) {
+        console.error('Ошибка при загрузке продуктов и брендов:', error);
+        alert('Не удалось загрузить продукты и бренды. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchProductsAndBrands();
   }, [change]);
 
   const handleSearch = (event) => {
@@ -84,7 +96,6 @@ const AdminProduct = () => {
   const handleUpdateName = (id) => {
     setProductId(id);
     setUpdateNameModal(true);
-    console.log(id);
   };
 
   const handleDeleteClick = (id) => {

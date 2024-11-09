@@ -19,16 +19,20 @@ function HomeProductList() {
     let materialLoaded = false;
 
     const fetchData = async () => {
-      const homeProductData = await getAllHome();
-      setHomeProducts(homeProductData);
-      homeProductLoaded = true;
+      try {
+        const homeProductData = await getAllHome();
+        setHomeProducts(homeProductData);
+        homeProductLoaded = true;
 
-      const MaterialData = await getAllMaterialForAnimal();
-      setMaterials(MaterialData);
-      materialLoaded = true;
-
-      if (homeProductLoaded && materialLoaded) {
-        setFetching(false);
+        const materialData = await getAllMaterialForAnimal();
+        setMaterials(materialData);
+        materialLoaded = true;
+      } catch (error) {
+        console.error('Ошибка при загрузке данных:', error);
+      } finally {
+        if (homeProductLoaded || materialLoaded) {
+          setFetching(false);
+        }
       }
     };
 

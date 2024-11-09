@@ -9,7 +9,17 @@ function Promo() {
   const [brands, setBrands] = React.useState([]);
 
   React.useEffect(() => {
-    getBrandToPromo().then((data) => setBrands(data.slice(0, 12)));
+    const fetchBrands = async () => {
+      try {
+        const data = await getBrandToPromo();
+        setBrands(data.slice(0, 12));
+      } catch (error) {
+        console.error('Ошибка при загрузке брендов:', error);
+        alert('Не удалось загрузить бренды. Пожалуйста, попробуйте позже.');
+      }
+    };
+
+    fetchBrands();
   }, []);
 
   return (

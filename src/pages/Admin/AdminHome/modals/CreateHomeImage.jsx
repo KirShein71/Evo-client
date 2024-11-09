@@ -19,7 +19,17 @@ const CreateHomeImage = (props) => {
   const [selectedImages, setSelectedImages] = React.useState([]);
 
   React.useEffect(() => {
-    getAllMaterialRug().then((data) => setMaterials(data));
+    const fetchMaterials = async () => {
+      try {
+        const data = await getAllMaterialRug();
+        setMaterials(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке материалов:', error);
+        alert('Не удалось загрузить материалы. Пожалуйста, попробуйте позже.');
+      }
+    };
+
+    fetchMaterials();
   }, []);
 
   const handleMaterialChange = (e) => {

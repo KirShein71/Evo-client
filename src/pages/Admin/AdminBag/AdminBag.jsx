@@ -19,9 +19,19 @@ const AdminBag = () => {
   const [change, setChange] = React.useState(true);
 
   React.useEffect(() => {
-    getAllBag()
-      .then((data) => setBags(data))
-      .finally(() => setFetching(false));
+    const fetchBags = async () => {
+      try {
+        const data = await getAllBag();
+        setBags(data);
+      } catch (error) {
+        console.error('Ошибка при загрузке сумок:', error);
+        alert('Не удалось загрузить сумки. Пожалуйста, попробуйте позже.');
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    fetchBags();
   }, [change]);
 
   const handleUpdateBag = (id) => {
