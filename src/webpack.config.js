@@ -23,7 +23,7 @@ module.exports = {
   },
   devServer: {
     client: {
-      overlay: true, // <- add this
+      overlay: false, // <- add this
     }
   }
 };
