@@ -18,6 +18,12 @@ import './app.scss'
 const App = observer(() => {
     const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
     const [loading, setLoading] = React.useState(true)
+
+    window.onerror = function(message, source, lineno, colno, error) {
+        console.error("Error caught: ", message, " at ", source, ":", lineno, ":", colno);
+        // Возвращаем true, чтобы предотвратить дальнейшую обработку ошибки
+        return true;
+    };
     
     
     React.useEffect(() => {
