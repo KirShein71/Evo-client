@@ -108,7 +108,7 @@ function Product() {
         console.error('Ошибка при загрузке третьего ряда:', error);
       }
 
-      if (productLoaded && materialLoaded && edgingLoaded && trunkLoaded && thirdrowLoaded) {
+      if (productLoaded && materialLoaded && edgingLoaded) {
         setFetching(false);
       }
     };
