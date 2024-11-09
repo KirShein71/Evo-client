@@ -71,7 +71,7 @@ function Product991() {
 
     const fetchData = async () => {
       try {
-        const productData = await getOneProduct(modelName);
+        const productData = await getOneProduct(originalName);
         setProduct(productData);
         productLoaded = true;
       } catch (error) {
