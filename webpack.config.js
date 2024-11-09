@@ -31,6 +31,9 @@ module.exports = {
       console.log('Before setup middleware');
       console.log('After setup middleware');
       return middlewares; // Верните middleware
-    }
+    },
+    client: {
+        overlay: false, 
+      }
   }
 };
