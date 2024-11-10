@@ -44,7 +44,7 @@ function BagTable({
           )
           .map((imageBag) => (
             <div className="baskettable__animalimage">
-              <img src={process.env.REACT_APP_IMG_URL + imageBag.image} alt="bag image" />
+              <img src={process.env.REACT_APP_IMG_URL + imageBag.image} alt="bag" />
             </div>
           ))}
       </td>

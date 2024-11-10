@@ -27,7 +27,7 @@ function HomeProductModal({
               style={{
                 display: iconModal.materialId === selectedMaterialId ? 'block' : 'none',
               }}>
-              <img src={process.env.REACT_APP_IMG_URL + iconModal.image} alt="image bag" />
+              <img src={process.env.REACT_APP_IMG_URL + iconModal.image} alt="bag" />
             </div>
           ))}
           <div className="homeproductmodal__content-description">

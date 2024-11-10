@@ -2,7 +2,6 @@ import React from 'react';
 import { getAllSaddle } from '../../../http/saddleApi';
 import { getAllSteel } from '../../../http/steelApi';
 import './style.scss';
-import BottomSale from '../BottomSale/BottomSale';
 
 function Saddle({ setSelectedSaddle, setSelectedSteel }) {
   const [saddles, setSaddles] = React.useState([]);

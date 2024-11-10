@@ -38,7 +38,7 @@ function BagPicture({ bag, selectedBagmaterialId, selectedBagSize }) {
                   }}>
                   <img
                     src={process.env.REACT_APP_IMG_URL + bagPicture.image}
-                    alt="image bag"
+                    alt="bag"
                     onClick={() => handleClickPicture(bagPicture.image)}
                   />
                 </div>

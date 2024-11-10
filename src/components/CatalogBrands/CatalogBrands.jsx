@@ -1,11 +1,9 @@
 import React from 'react';
-import CardPromo from '../Promo/CardPromo';
 import CardBrand from '../CardBrand/CardBrand';
 import { getAllBrand } from '../../http/brandApi';
 import Loader from '../Loader/Loader';
 import { Link } from 'react-router-dom';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import SearchSection from '../SearchSection/SearchSection';
 
 import './styles.scss';
 function CatalogBrands() {

@@ -6,7 +6,6 @@ import { fetchBasket } from '../../http/basketApi';
 import { AppContext } from '../../context/AppContext';
 import { getAllForUserAccount } from '../../http/orderApi';
 import ProductOrders from './orders/ProductOrders';
-import StepperDelivery from './StepperDelivery';
 import ProductFavorite from './favorites/ProductFavorite';
 import Loader from '../Loader/Loader';
 import SteelOrder from './orders/SteelOrder';

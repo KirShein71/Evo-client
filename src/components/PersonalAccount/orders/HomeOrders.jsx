@@ -11,7 +11,7 @@ function HomeOrders({ material, home, quantity, materialId }) {
             .filter((imageHome) => imageHome.materialId === materialId)
             .map((imageHome) => (
               <div className="baskettable__homeimage">
-                <img src={process.env.REACT_APP_IMG_URL + imageHome.image} alt="home rug image" />
+                <img src={process.env.REACT_APP_IMG_URL + imageHome.image} alt="home rug" />
               </div>
             ))}
         </div>

@@ -18,7 +18,7 @@ function BagImage({ bag, selectedBagmaterialId, selectedBagSize }) {
                         ? 'block'
                         : 'none',
                   }}>
-                  <img src={process.env.REACT_APP_IMG_URL + bagImage.image} alt="image bag" />
+                  <img src={process.env.REACT_APP_IMG_URL + bagImage.image} alt="bag" />
                 </div>
               </>
             );

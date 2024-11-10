@@ -7,7 +7,7 @@ import './style.scss';
 function Feedback() {
   const [value, setValue] = React.useState({ name: '', phone: '' });
   const [valid, setValid] = React.useState({ name: null, phone: null });
-  const [feedback, setFeedback] = React.useState();
+  const [setFeedback] = React.useState();
   const form = React.useRef();
   const [clicked, setClicked] = React.useState(false);
   const [phone, setPhone] = React.useState('');

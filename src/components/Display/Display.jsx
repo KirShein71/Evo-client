@@ -18,7 +18,7 @@ function Display() {
           </div>
           <div className="display__image">
             {' '}
-            <img src="../img/rug-display.png" />
+            <img src="../img/rug-display.png" alt="car mat" />
           </div>
         </div>
       </div>

@@ -150,7 +150,7 @@ function Cdek({
 
       fetchRates();
     }
-  }, [selectedCityCode, deliveryMethod]);
+  }, [selectedCityCode, setDeliverySum, setTariffCode, deliveryMethod]);
 
   return (
     <div className="cdek">

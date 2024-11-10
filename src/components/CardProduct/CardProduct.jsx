@@ -14,20 +14,18 @@ const CardProduct = observer(({ name, old_price, new_price, image, id, pattern_i
   const [isAddedToFavorite, setIsAddedToFavorite] = React.useState(false);
 
   // Используйте MobX для обновления состояния
-  const checkIfFavorite = () => {
+  const checkIfFavorite = React.useCallback(() => {
     const storedFavorites = localStorage.getItem('favoriteProducts');
-    let favorites = []; // Инициализируем favorites как пустой массив
+    let favorites = [];
     if (storedFavorites !== null) {
-      favorites = JSON.parse(storedFavorites); // Преобразуем только если localStorage не пустой
+      favorites = JSON.parse(storedFavorites);
     }
     return favorites.includes(id);
-  };
+  }, [id]); // Добавляем id как зависимость
 
-  // Используйте MobX для обновления состояния
   React.useEffect(() => {
     setIsAddedToFavorite(checkIfFavorite());
-    console.log('chek', checkIfFavorite);
-  }, [favoriteProduct.items]);
+  }, [checkIfFavorite, favoriteProduct.items]);
 
   // Функция для обновления localStorage
   const updateLocalStorage = (favorites) => {
@@ -67,7 +65,7 @@ const CardProduct = observer(({ name, old_price, new_price, image, id, pattern_i
     <div className="cardproduct">
       <div className="cardproduct__favorite">
         <div style={{ position: 'absolute' }}>
-          {checkIfFavorite() ? (
+          {isAddedToFavorite ? (
             <FavoriteIcon fontSize="small" onClick={() => handleDeleteFavoriteProduct(id)} />
           ) : (
             <FavoriteBorderIcon fontSize="small" onClick={() => clickToFavorite(id)} />

@@ -5,7 +5,7 @@ import './styles.scss';
 
 function Footer() {
   const navigateToBenefits = useNavigate();
-  const navigateToReviews = useNavigate();
+  //   const navigateToReviews = useNavigate();
   const location = useLocation();
 
   const handleClickScrollBenefits = () => {
@@ -28,25 +28,25 @@ function Footer() {
     }
   };
 
-  const handleClickScrollReviews = () => {
-    const element = document.getElementById('reviews');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  //   const handleClickScrollReviews = () => {
+  //     const element = document.getElementById('reviews');
+  //     if (element) {
+  //       element.scrollIntoView({ behavior: 'smooth' });
+  //     }
+  //   };
 
-  const handleClickReviews = () => {
-    if (location.pathname !== '/') {
-      navigateToReviews('/');
-      setTimeout(() => {
-        handleClickScrollReviews();
-      }, 100);
-    } else {
-      setTimeout(() => {
-        handleClickScrollReviews();
-      }, 100);
-    }
-  };
+  //   const handleClickReviews = () => {
+  //     if (location.pathname !== '/') {
+  //       navigateToReviews('/');
+  //       setTimeout(() => {
+  //         handleClickScrollReviews();
+  //       }, 100);
+  //     } else {
+  //       setTimeout(() => {
+  //         handleClickScrollReviews();
+  //       }, 100);
+  //     }
+  //   };
 
   return (
     <footer className="footer">
@@ -99,7 +99,7 @@ function Footer() {
           </div> */}
           <Link to="/login">
             <div className="footer__item">
-              <img width={15} src={`./img/admin.png?=v=${Date.now()}`} />
+              <img width={15} src={`./img/admin.png?=v=${Date.now()}`} alt="admin" />
             </div>
           </Link>
           <a

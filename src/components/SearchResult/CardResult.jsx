@@ -10,23 +10,23 @@ import './style.scss';
 function CardResult({ name, old_price, new_price, image, id }) {
   const [originalName] = React.useState(name);
   const { favoriteProduct } = React.useContext(AppContext);
-  const [isAddedToFavorite, setIsAddedToFavorite] = React.useState(false);
+  const [setIsAddedToFavorite] = React.useState(false);
 
   // Используйте MobX для обновления состояния
-  const checkIfFavorite = () => {
+  const checkIfFavorite = React.useCallback(() => {
     const storedFavorites = localStorage.getItem('favoriteProducts');
     let favorites = []; // Инициализируем favorites как пустой массив
     if (storedFavorites !== null) {
       favorites = JSON.parse(storedFavorites); // Преобразуем только если localStorage не пустой
     }
     return favorites.includes(id);
-  };
+  }, [id]); // Добавляем id как зависимость
 
   // Используйте MobX для обновления состояния
   React.useEffect(() => {
     setIsAddedToFavorite(checkIfFavorite());
-    console.log('chek', checkIfFavorite);
-  }, [favoriteProduct.items]);
+    console.log('check', checkIfFavorite());
+  }, [favoriteProduct.items, checkIfFavorite, setIsAddedToFavorite]);
 
   // Функция для обновления localStorage
   const updateLocalStorage = (favorites) => {

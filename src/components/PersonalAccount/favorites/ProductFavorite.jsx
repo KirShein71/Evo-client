@@ -1,6 +1,4 @@
 import React from 'react';
-
-import { AppContext } from '../../../context/AppContext';
 import { observer } from 'mobx-react';
 import FavoriteCard from './FavoriteCard';
 

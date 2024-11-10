@@ -9,7 +9,7 @@ function CardBag({ name, new_price, image }) {
       <Link to={`/organizer/${formattedName}`}>
         <div className="cardbag__content">
           <div className="cardbag__image">
-            <img src={process.env.REACT_APP_IMG_URL + image} alt="image bag" />
+            <img src={process.env.REACT_APP_IMG_URL + image} alt="bag" />
           </div>
           <div class="cardbag__bottom">
             <h4 class="cardbag__title">{name}</h4>

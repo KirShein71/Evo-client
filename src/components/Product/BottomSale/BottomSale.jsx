@@ -1,56 +1,39 @@
 import React from 'react';
 import CardBag from '../../AccessoriesList/Bag/CardBag';
-import { getAllBag, getAllBagMaterial, getAllBagSize } from '../../../http/bagApi';
+import { getAllBag } from '../../../http/bagApi';
 import './style.scss';
-import ConstructorModal from './modal/ConstructorModal';
 
 function BottomSale() {
   const [bags, setBags] = React.useState([]);
-  const [bagId, setBagId] = React.useState(null);
-  const [fetching, setFetching] = React.useState(true);
-  const [openModalConstructor, setOpenModalConstructor] = React.useState(false);
-  const [bagmaterials, setBagmaterials] = React.useState([]);
-  const [selectedBagmaterial, setSelectedBagmaterial] = React.useState('blacksota');
-  const [selectedBagmaterialId, setSelectedBagmaterialId] = React.useState(1);
-  const [selectedBagmaterialName, setSelectedBagmaterialName] = React.useState('Черный');
-  const [bagsizes, setBagsizes] = React.useState([]);
-  const [bagSizeChecked, setBagSizeChecked] = React.useState(false);
-  const [selectedBagSize, setSelectedBagSize] = React.useState(1);
+
+  //   const [bagId, setBagId] = React.useState(null);
+  //   const [fetching, setFetching] = React.useState(true);
+  //   const [openModalConstructor, setOpenModalConstructor] = React.useState(false);
+  //   const [bagmaterials, setBagmaterials] = React.useState([]);
+  //   const [selectedBagmaterial, setSelectedBagmaterial] = React.useState('blacksota');
+  //   const [selectedBagmaterialId, setSelectedBagmaterialId] = React.useState(1);
+  //   const [selectedBagmaterialName, setSelectedBagmaterialName] = React.useState('Черный');
+  //   const [bagsizes, setBagsizes] = React.useState([]);
+  //   const [bagSizeChecked, setBagSizeChecked] = React.useState(false);
+  //   const [selectedBagSize, setSelectedBagSize] = React.useState(1);
 
   React.useEffect(() => {
-    let bagLoaded = false;
-    let materialLoaded = false;
-    let bagSizeLoaded = false;
-
     const fetchData = async () => {
       const bagData = await getAllBag();
       setBags(bagData);
-      bagLoaded = true;
-
-      const MaterialData = await getAllBagMaterial();
-      setBagmaterials(MaterialData);
-      materialLoaded = true;
-
-      const bagSizeData = await getAllBagSize();
-      setBagsizes(bagSizeData);
-      bagSizeLoaded = true;
-
-      if (bagLoaded && materialLoaded && bagSizeLoaded) {
-        setFetching(false);
-      }
     };
 
     fetchData();
   }, []);
 
-  const handleOpenModalConstructor = (id) => {
-    setBagId(id);
-    setOpenModalConstructor(true);
-  };
+  //   const handleOpenModalConstructor = (id) => {
+  //     setBagId(id);
+  //     setOpenModalConstructor(true);
+  //   };
 
-  const closedModalConstructor = () => {
-    setOpenModalConstructor(false);
-  };
+  //   const closedModalConstructor = () => {
+  //     setOpenModalConstructor(false);
+  //   };
 
   return (
     <div className="bottomsale">
@@ -60,7 +43,7 @@ function BottomSale() {
           <CardBag key={bag.id} {...bag} />
         ))}
       </div>
-      {openModalConstructor && (
+      {/* {openModalConstructor && (
         <ConstructorModal
           id={bagId}
           closed={closedModalConstructor}
@@ -72,7 +55,7 @@ function BottomSale() {
           setSelectedBagmaterialName={setSelectedBagmaterialName}
           setSelectedBagmaterialId={setSelectedBagmaterialId}
         />
-      )}
+      )} */}
     </div>
   );
 }

@@ -16,11 +16,11 @@ function DisplayCard() {
   const [carmodelId, setCarmodelId] = React.useState(null);
   const [value, setValue] = React.useState({ phone: '' });
   const [valid, setValid] = React.useState({ phone: null });
-  const [feedback, setFeedback] = React.useState();
+  const [setFeedback] = React.useState();
   const form = React.useRef();
   const [clicked, setClicked] = React.useState(false);
   const [phone, setPhone] = React.useState('');
-  const [isSubmitted, setIsSubmitted] = React.useState(false);
+  const [setIsSubmitted] = React.useState(false);
   const [modalFeedback, setModalFeedback] = React.useState(false);
   const [errorMessagePhone, setErrorMessagePhone] = React.useState('');
   const [errorMessageBrand, setErrorMessageBrand] = React.useState('');

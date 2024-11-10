@@ -4,6 +4,17 @@ import './style.scss';
 const PostWidget = ({ setSelectedIndex, setSelectedRegion }) => {
   const [adress, setAdress] = React.useState(''); // Создаем состояние для адреса
 
+  const callbackPostRus = React.useCallback(
+    (data) => {
+      // Извлечение значений
+      const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Исправлено на шаблонные строки
+      setAdress(addressInfo); // Обновляем состояние adress
+      setSelectedRegion(addressInfo);
+      setSelectedIndex(data.indexTo);
+    },
+    [setSelectedIndex, setSelectedRegion],
+  ); // Добавьте зависимости, если нужно
+
   React.useEffect(() => {
     const loadScript = () => {
       const script = document.createElement('script');
@@ -34,15 +45,7 @@ const PostWidget = ({ setSelectedIndex, setSelectedRegion }) => {
         widgetContainer.innerHTML = ''; // Очистка содержимого контейнера
       }
     };
-  }, []);
-
-  const callbackPostRus = (data) => {
-    // Извлечение значений
-    const addressInfo = `${data.addressTo}, ${data.cityTo}, ${data.regionTo}`; // Исправлено на шаблонные строки
-    setAdress(addressInfo); // Обновляем состояние adress
-    setSelectedRegion(addressInfo);
-    setSelectedIndex(data.indexTo);
-  };
+  }, [callbackPostRus]); // Теперь здесь безопасно использовать callbackPostRus
 
   //   const resetPvz = () => {
   //     resetSelectedPlacemarkInEcomWidget();

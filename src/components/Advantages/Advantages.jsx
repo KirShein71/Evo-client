@@ -8,22 +8,21 @@ import './style.scss';
 
 function Advantages() {
   const controls = useAnimation();
-  const handleScroll = () => {
+  const handleScroll = React.useCallback(() => {
     const scrollPosition = window.scrollY;
     if (scrollPosition > 700) {
-      // Измените это значение по вашему усмотрению
       controls.start({ y: 0, opacity: 1 });
     } else {
       controls.start({ y: -50, opacity: 0 }); // Начальная позиция выше экрана
     }
-  };
+  }, [controls]);
 
   React.useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [controls]);
+  }, [handleScroll]);
 
   return (
     <div className="advantages">
