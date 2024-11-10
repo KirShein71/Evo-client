@@ -22,7 +22,7 @@ const App = observer(() => {
 
     React.useEffect(() => {
         // Проверяем userAgent на наличие Telegram и мобильных устройств
-        const isTelegramBrowser = /Telegram/i.test(navigator.userAgent);
+        const isTelegramBrowser = /WebView/i.test(navigator.userAgent);
         const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
 
         // Если это Telegram или мобильное устройство, скрываем заголовок
