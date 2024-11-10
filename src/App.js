@@ -15,16 +15,6 @@ import './app.scss'
 
 
 
-import React from 'react';
-import { observer } from 'mobx-react-lite';
-import { BrowserRouter } from 'react-router-dom';
-import Loader from './Loader';
-import Header from './Header';
-import Footer from './Footer';
-import AppRouter from './AppRouter';
-import AppContext from './AppContext';
-import Modal from './Modal'; // Импортируйте ваш компонент модального окна
-
 const App = observer(() => {
     const { user, basketProduct, favoriteProduct } = React.useContext(AppContext);
     const [loading, setLoading] = React.useState(true);
