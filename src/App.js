@@ -15,17 +15,38 @@ import './app.scss'
 
 
 
+class ErrorBoundary extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { hasError: false };
+    }
+
+    static getDerivedStateFromError(error) {
+        return { hasError: true };
+    }
+
+    componentDidCatch(error, errorInfo) {
+        console.error("Ошибка поймана в ErrorBoundary: ", error, errorInfo);
+    }
+
+    render() {
+        if (this.state.hasError) {
+            return <h1>Что-то пошло не так.</h1>;
+        }
+
+        return this.props.children; 
+    }
+}
+
 const App = observer(() => {
     const { user, basketProduct, favoriteProduct } = React.useContext(AppContext);
     const [loading, setLoading] = React.useState(true);
-    const [showHeader, setShowHeader] = React.useState(true); // Состояние для управления отображением заголовка
+    const [showHeader, setShowHeader] = React.useState(true);
 
     React.useEffect(() => {
-        // Проверяем userAgent на наличие Telegram и мобильных устройств
         const isTelegramBrowser = /WebView/i.test(navigator.userAgent);
         const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
 
-        // Если это Telegram или мобильное устройство, скрываем заголовок
         if (isTelegramBrowser && isMobileDevice) {
             setShowHeader(false);
         }
@@ -39,7 +60,6 @@ const App = observer(() => {
                     }
                     const basketId = basketData.id;
 
-                    // Обработка ошибок для получения продуктов корзины
                     getAllBasketProduct(basketId)
                         .then((item) => {
                             basketProduct.products = item;
@@ -70,11 +90,13 @@ const App = observer(() => {
     return (
         <div className="wrapper">
             <BrowserRouter>
-                {showHeader && <Header />} {/* Отображаем заголовок только если showHeader true */}
-                <div className="content">
-                    <AppRouter />
-                </div>
-                <Footer />
+                <ErrorBoundary>
+                    {showHeader && <Header />}
+                    <div className="content">
+                        <AppRouter />
+                    </div>
+                    <Footer />
+                </ErrorBoundary>
             </BrowserRouter>
         </div>
     );
