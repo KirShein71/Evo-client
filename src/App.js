@@ -22,10 +22,10 @@ const App = observer(() => {
 
     React.useEffect(() => {
         // Проверяем userAgent на наличие Telegram
-        const isTelegramBrowser = /Telegram/.test(navigator.userAgent);
-        if (isTelegramBrowser) {
-            setShowModal(true); // Показываем модальное окно
-        }
+        const isChromeBrowser = /Chrome/.test(navigator.userAgent) && !/Edge/.test(navigator.userAgent);
+    if (isChromeBrowser) {
+        setShowModal(true); // Показываем модальное окно
+    }
 
         setLoading(true);
         Promise.all([checkAuth(), fetchBasket()])
@@ -74,9 +74,11 @@ const App = observer(() => {
                 <Footer />
             </BrowserRouter>
             {showModal && (
-                
-                    <><h2>Внимание!</h2><p>Пожалуйста, откройте сайт через другой браузер для лучшего опыта.</p><button onClick={() => setShowModal(false)}>Закрыть</button></>
-              
+                <div className="modal-overlay">
+                    <h2 style={{color: '#ffffff'}}>Внимание!</h2>
+                    <p>Пожалуйста, откройте сайт через другой браузер для лучшего опыта.</p>
+                    <button onClick={() => setShowModal(false)}>Закрыть</button>
+                    </div>
             )}
         </div>
     );
