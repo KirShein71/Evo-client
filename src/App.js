@@ -18,7 +18,7 @@ import './app.scss'
 const App = observer(() => {
     const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
     const [loading, setLoading] = React.useState(true)
-    const [showHeader, setShowHeader] = React.useState(true); // Состояние для управления отображением заголовка
+    const [showModal, setShowModal] = React.useState(false); // Состояние для управления отображением заголовка
 
     React.useEffect(() => {
         // Проверяем userAgent на наличие Telegram и мобильных устройств
@@ -26,8 +26,8 @@ const App = observer(() => {
         const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
 
         // Если это Telegram или мобильное устройство, скрываем заголовок
-        if (isTelegramBrowser || isMobileDevice) {
-            setShowHeader(false);
+        if (isTelegramBrowser && isMobileDevice) {
+            setShowModal(true);
         }
 
         setLoading(true);
@@ -70,12 +70,21 @@ const App = observer(() => {
     return (
         <div className="wrapper">
             <BrowserRouter>
-                {showHeader && <Header />} {/* Отображаем заголовок только если showHeader true */}
+                <Header />
                 <div className="content">
                     <AppRouter />
                 </div>
                 <Footer />
             </BrowserRouter>
+            {showModal && (
+            <div className="modal-overlay">
+                <div className="modal-telegram">
+                    <h2 style={{ color: '#ffffff' }}>Внимание!</h2>
+                    <p>Пожалуйста, откройте сайт через другой браузер для лучшего опыта.</p>
+                    <button onClick={() => setShowModal(false)}>Закрыть</button>
+                </div>
+            </div>
+        )}
         </div>
     );
 });
