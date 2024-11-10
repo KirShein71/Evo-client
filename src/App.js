@@ -15,16 +15,29 @@ import './app.scss'
 
 
 
-const App = observer(() => {
-    const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
-    const [loading, setLoading] = React.useState(true)
+import React from 'react';
+import { observer } from 'mobx-react-lite';
+import { BrowserRouter } from 'react-router-dom';
+import Loader from './Loader';
+import Header from './Header';
+import Footer from './Footer';
+import AppRouter from './AppRouter';
+import AppContext from './AppContext';
+import Modal from './Modal'; // Импортируйте ваш компонент модального окна
 
-    window.onerror = function (message, source, lineno, colno, error) {
-        console.error("Глобальная ошибка:", message, source, lineno, colno, error);
-    };
+const App = observer(() => {
+    const { user, basketProduct, favoriteProduct } = React.useContext(AppContext);
+    const [loading, setLoading] = React.useState(true);
+    const [showModal, setShowModal] = React.useState(false);
 
     React.useEffect(() => {
-        setLoading(true); 
+        // Проверяем userAgent на наличие Telegram
+        const isTelegramBrowser = /Telegram/.test(navigator.userAgent);
+        if (isTelegramBrowser) {
+            setShowModal(true); // Показываем модальное окно
+        }
+
+        setLoading(true);
         Promise.all([checkAuth(), fetchBasket()])
             .then(
                 axios.spread((userData, basketData) => {
@@ -32,7 +45,7 @@ const App = observer(() => {
                         user.login(userData);
                     }
                     const basketId = basketData.id;
-    
+
                     // Обработка ошибок для получения продуктов корзины
                     getAllBasketProduct(basketId)
                         .then((item) => {
@@ -40,17 +53,14 @@ const App = observer(() => {
                         })
                         .catch((error) => {
                             console.error("Ошибка при получении продуктов корзины:", error);
-                      
                         });
-    
-                
+
                     getAllFavoriteProduct(basketId)
                         .then((item) => {
                             favoriteProduct.item = item;
                         })
                         .catch((error) => {
                             console.error("Ошибка при получении избранных продуктов:", error);
-                            // Здесь можно установить состояние ошибки, если нужно
                         });
                 })
             )
@@ -60,21 +70,28 @@ const App = observer(() => {
             .finally(() => setLoading(false));
     }, [user, basketProduct, favoriteProduct]);
 
-
     if (loading) {
-        return <Loader />
+        return <Loader />;
     }
-  return (
-    <div className="wrapper">
-            <BrowserRouter> 
-            <Header/>
-            <div className="content">
-                <AppRouter/>
-            </div>
-                <Footer/>
+
+    return (
+        <div className="wrapper">
+            <BrowserRouter>
+                <Header />
+                <div className="content">
+                    <AppRouter />
+                </div>
+                <Footer />
             </BrowserRouter>
-    </div>
-  );
-})
+            {showModal && (
+                <Modal onClose={() => setShowModal(false)}>
+                    <h2>Внимание!</h2>
+                    <p>Пожалуйста, откройте сайт через другой браузер для лучшего опыта.</p>
+                    <button onClick={() => setShowModal(false)}>Закрыть</button>
+                </Modal>
+            )}
+        </div>
+    );
+});
 
 export default App;
