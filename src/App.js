@@ -69,7 +69,7 @@ const App = observer(() => {
     }
   return (
     <div className="wrapper">
-            <BrowserRouter> 
+            <BrowserRouter future={{ v7_relativeSplatPath: true }}> 
             <Header/>
             <div className="content">
                 <AppRouter/>
