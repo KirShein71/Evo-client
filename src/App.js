@@ -15,43 +15,14 @@ import './app.scss'
 
 
 
-class ErrorBoundary extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { hasError: false };
-    }
-
-    static getDerivedStateFromError(error) {
-        return { hasError: true };
-    }
-
-    componentDidCatch(error, errorInfo) {
-        console.error("Ошибка поймана в ErrorBoundary: ", error, errorInfo);
-    }
-
-    render() {
-        if (this.state.hasError) {
-            return <h1>Что-то пошло не так.</h1>;
-        }
-
-        return this.props.children; 
-    }
-}
-
 const App = observer(() => {
-    const { user, basketProduct, favoriteProduct } = React.useContext(AppContext);
-    const [loading, setLoading] = React.useState(true);
-    const [showHeader, setShowHeader] = React.useState(true);
+    const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
+    const [loading, setLoading] = React.useState(true)
+
+  
 
     React.useEffect(() => {
-        const isTelegramBrowser = /WebView/i.test(navigator.userAgent);
-        const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
-
-        if (isTelegramBrowser && isMobileDevice) {
-            setShowHeader(false);
-        }
-
-        setLoading(true);
+        setLoading(true); 
         Promise.all([checkAuth(), fetchBasket()])
             .then(
                 axios.spread((userData, basketData) => {
@@ -59,21 +30,25 @@ const App = observer(() => {
                         user.login(userData);
                     }
                     const basketId = basketData.id;
-
+    
+                    // Обработка ошибок для получения продуктов корзины
                     getAllBasketProduct(basketId)
                         .then((item) => {
                             basketProduct.products = item;
                         })
                         .catch((error) => {
                             console.error("Ошибка при получении продуктов корзины:", error);
+                      
                         });
-
+    
+                
                     getAllFavoriteProduct(basketId)
                         .then((item) => {
                             favoriteProduct.item = item;
                         })
                         .catch((error) => {
                             console.error("Ошибка при получении избранных продуктов:", error);
+                            // Здесь можно установить состояние ошибки, если нужно
                         });
                 })
             )
@@ -83,23 +58,26 @@ const App = observer(() => {
             .finally(() => setLoading(false));
     }, [user, basketProduct, favoriteProduct]);
 
-    if (loading) {
-        return <Loader />;
-    }
+    window.onerror = function (message, source, lineno, colno, error) {
+        console.error('Ошибка в скрипте:', message, source, lineno, colno, error); 
+        // Не показывайте всплывающее сообщение
+        return true; 
+    };
 
-    return (
-        <div className="wrapper">
-            <BrowserRouter>
-                <ErrorBoundary>
-                    {showHeader && <Header />}
-                    <div className="content">
-                        <AppRouter />
-                    </div>
-                    <Footer />
-                </ErrorBoundary>
+    if (loading) {
+        return <Loader />
+    }
+  return (
+    <div className="wrapper">
+            <BrowserRouter> 
+            <Header/>
+            <div className="content">
+                <AppRouter/>
+            </div>
+                <Footer/>
             </BrowserRouter>
-        </div>
-    );
-});
+    </div>
+  );
+})
 
 export default App;
