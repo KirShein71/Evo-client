@@ -22,7 +22,7 @@ const App = observer(() => {
 
     React.useEffect(() => {
         // Проверяем userAgent на наличие Telegram
-        const isTelegramBrowser = /Telegram/.test(navigator.userAgent);
+        const isTelegramBrowser = /Telegram Web View/.test(navigator.userAgent);
         if (isTelegramBrowser) {
             setShowModal(true); // Показываем модальное окно
         }
