@@ -9,7 +9,7 @@ function Reviews() {
         <h3 className="reviews__title">Отзывы наших клиентов</h3>
         <div className="reviews__content">
           <div className="reviews__image">
-            <img src="../img/rug-category.jpg" alt="car mat" />
+            <img src="../img/rug-category.jpg" alt="коврик для автомобиля" />
           </div>
           <p className="reviews__text">
             Заказал комплект ковров в компании Savaks, сделали за один день, качество на высоте,
