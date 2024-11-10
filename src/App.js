@@ -16,57 +16,57 @@ import './app.scss'
 
 
 const App = observer(() => {
-    const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
-    const [loading, setLoading] = React.useState(true)
+    // const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
+    // const [loading, setLoading] = React.useState(true)
 
   
 
-    React.useEffect(() => {
-        setLoading(true); 
-        Promise.all([checkAuth(), fetchBasket()])
-            .then(
-                axios.spread((userData, basketData) => {
-                    if (userData) {
-                        user.login(userData);
-                    }
-                    const basketId = basketData.id;
+    // React.useEffect(() => {
+    //     setLoading(true); 
+    //     Promise.all([checkAuth(), fetchBasket()])
+    //         .then(
+    //             axios.spread((userData, basketData) => {
+    //                 if (userData) {
+    //                     user.login(userData);
+    //                 }
+    //                 const basketId = basketData.id;
     
-                    // Обработка ошибок для получения продуктов корзины
-                    getAllBasketProduct(basketId)
-                        .then((item) => {
-                            basketProduct.products = item;
-                        })
-                        .catch((error) => {
-                            console.error("Ошибка при получении продуктов корзины:", error);
+    //                 // Обработка ошибок для получения продуктов корзины
+    //                 getAllBasketProduct(basketId)
+    //                     .then((item) => {
+    //                         basketProduct.products = item;
+    //                     })
+    //                     .catch((error) => {
+    //                         console.error("Ошибка при получении продуктов корзины:", error);
                       
-                        });
+    //                     });
     
                 
-                    getAllFavoriteProduct(basketId)
-                        .then((item) => {
-                            favoriteProduct.item = item;
-                        })
-                        .catch((error) => {
-                            console.error("Ошибка при получении избранных продуктов:", error);
-                            // Здесь можно установить состояние ошибки, если нужно
-                        });
-                })
-            )
-            .catch((error) => {
-                console.error("Ошибка при проверке авторизации или получении корзины:", error);
-            })
-            .finally(() => setLoading(false));
-    }, [user, basketProduct, favoriteProduct]);
+    //                 getAllFavoriteProduct(basketId)
+    //                     .then((item) => {
+    //                         favoriteProduct.item = item;
+    //                     })
+    //                     .catch((error) => {
+    //                         console.error("Ошибка при получении избранных продуктов:", error);
+    //                         // Здесь можно установить состояние ошибки, если нужно
+    //                     });
+    //             })
+    //         )
+    //         .catch((error) => {
+    //             console.error("Ошибка при проверке авторизации или получении корзины:", error);
+    //         })
+    //         .finally(() => setLoading(false));
+    // }, [user, basketProduct, favoriteProduct]);
 
-    window.onerror = function (message, source, lineno, colno, error) {
-        console.error('Ошибка в скрипте:', message, source, lineno, colno, error); 
-        // Не показывайте всплывающее сообщение
-        return true; 
-    };
+    // window.onerror = function (message, source, lineno, colno, error) {
+    //     console.error('Ошибка в скрипте:', message, source, lineno, colno, error); 
+    //     // Не показывайте всплывающее сообщение
+    //     return true; 
+    // };
 
-    if (loading) {
-        return <Loader />
-    }
+    // if (loading) {
+    //     return <Loader />
+    // }
   return (
     <div className="wrapper">
             <BrowserRouter future={{ v7_relativeSplatPath: true }}> 
