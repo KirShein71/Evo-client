@@ -36,8 +36,8 @@ const AdminOrder = () => {
   const [productId, setProductId] = React.useState(null);
   const [openModalPhone, setOpenModalPhone] = React.useState(false);
   const [openModalDelivery, setOpenModalDelivery] = React.useState(false);
-  const [isButtonPvzDisabled, setIsButtonPvzDisabled] = React.useState(false);
-  const [textButton, setTextButton] = React.useState('Зарегистрировать заказ');
+  const [setIsButtonPvzDisabled] = React.useState(false);
+  const [setTextButton] = React.useState('Зарегистрировать заказ');
   const [modalCreateNote, setModalCreateNote] = React.useState(false);
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [disabledOrderIds, setDisabledOrderIds] = React.useState([]);
@@ -123,11 +123,6 @@ const AdminOrder = () => {
   const handleUpdatePhone = (id) => {
     setOrderId(id);
     setOpenModalPhone(true);
-  };
-
-  const handleUpdateDelivery = (id) => {
-    setOrderId(id);
-    setOpenModalDelivery(true);
   };
 
   const handleCreateBag = (id) => {
