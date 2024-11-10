@@ -18,7 +18,8 @@
     &__text {
         font-size: 18px; 
         font-weight: 500;
-        color: var(--e-global-color-primary);
+        font-family: 'Open Sans', sans-serif;
+        color: #03142E;
         @media(max-width: 400px) {
             font-size: 16px;
         }
@@ -49,7 +50,7 @@
             text-decoration: none; 
             border-radius: 5px; 
             cursor: pointer;
-            background-color: #3A5BCC;; 
+            background-color: #03142E; 
             color: #ffffff; 
         }
     }

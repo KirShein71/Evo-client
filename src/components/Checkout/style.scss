@@ -54,7 +54,8 @@
         margin-top: 25px;
         font-size: 32px;
         font-weight: 500;
-        color: var(--e-global-color-primary);
+        font-family: 'Open Sans', sans-serif;
+        color: #03142E;
         @media(max-width: 768px) {
             font-size: 24px;
         }
@@ -62,7 +63,8 @@
     &__subtitle {
         font-size: 27px;
         font-weight: 400;
-        color: var(--e-global-color-primary);
+        font-family: 'Open Sans', sans-serif;
+        color: #03142E;
         margin-top: 25px;
         @media(max-width: 768px) {
             font-size: 21px;
@@ -116,20 +118,21 @@
         width: 200px;
         height: 35px;
         border-radius: 10px;
-        background-color: #3A5BCC;
-        border: 2px solid #3A5BCC;
+        background-color: #03142E;
+        border: 2px solid #03142E;
+        font-family: 'Open Sans', sans-serif;
         color: #ffffff;
         text-align: center;
         font-size: 18px;
         font-weight: 500;
-        color: #ffffff;
+      
         &:hover {
             background-color: #ffffff;
-            color: #4949cf;
+            color: #03142E;
             @media(max-width: 1024px) {
                 box-shadow: none;
-                background-color: #3A5BCC;
-                border: 2px solid #3A5BCC;
+                background-color: #03142E;
+                border: 2px solid #03142E;
                 color: #ffffff;
             }
         }
@@ -141,7 +144,8 @@
     &__span {
         font-size: 17px;
         font-weight: 400;
-        color: var(--e-global-color-primary);
+        font-family: 'Open Sans', sans-serif;
+        color: #03142E;
         @media(max-width: 480px) {
             font-size: 14px;
         }
@@ -155,7 +159,8 @@
     &__title {
         font-size: 27px;
         font-weight: 400;
-        color: var(--e-global-color-primary);
+        font-family: 'Open Sans', sans-serif;
+        color: #03142E;
         @media(max-width: 768px) {
             font-size: 21px;
         }
@@ -197,13 +202,15 @@
         &-title {
             font-size: 17px;
             font-weight: 600;
-            color: var(--e-global-color-primary);
+            font-family: 'Open Sans', sans-serif;
+            color: #03142E;
         }
         &-price {
             padding-top: 10px;
             font-size: 17px;
             font-weight: 400;
-            color: var(--e-global-color-primary);
+            font-family: 'Open Sans', sans-serif;
+            color: #03142E;
         }
         &-span {
             font-size: 17px;
@@ -213,6 +220,7 @@
             padding-top: 10px;
             font-size: 17px;
             font-weight: 400;
+            font-family: 'Open Sans', sans-serif;
             color: #504f4f;
             line-height:normal;
         }

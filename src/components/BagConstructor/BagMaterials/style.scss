@@ -1,6 +1,6 @@
 .bagmaterials {
     margin-top: 15px;
-    border-bottom: 2px solid #3A5BCC26;
+    border-bottom: 2px solid #e5e5e5;
     @media(max-width: 595px) {
         margin-left: 25px;
         margin-top: 25px;
@@ -8,7 +8,8 @@
     &__title {
         font-size: 21px;
         font-weight: 600;
-        color: var(--e-global-color-primary);    
+        color: #03142E;
+        font-family: 'Open Sans', sans-serif;   
         width: 336px; 
         @media(max-width: 460px) {
             font-size: 19px;
@@ -21,14 +22,18 @@
         display: flex;
         
         &-item {
-            width: 25px;
-            height: 25px;
-            -webkit-border-radius: 25px;
-            -moz-border-radius: 25px;
+            width: 30px;
+            height: 30px;
             border-radius: 50px;
-            border: 2px solid #9b9999;
+            border: 2px solid #e5e5e5;
             cursor: pointer;
             margin-right: 5px;
+            &:hover {
+                border: 2px solid #ff0000;
+                @media(max-width: 991px) {
+                    border: 2px solid #e5e5e5; 
+                }
+            }
             &.active {
                 border-color: #ff0000;
             }

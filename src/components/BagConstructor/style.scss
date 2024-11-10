@@ -52,7 +52,8 @@
         margin-top: 25px;
         font-size: 27px;
         font-weight: bold;
-        color: var(--e-global-color-primary);
+        color: #03142E;
+        font-family: 'Open Sans', sans-serif;
         text-transform: uppercase;
         @media(max-width: 768px) {
             font-size: 24px;
@@ -87,8 +88,8 @@
         height: 50px;
         border-radius: 10px;
         border-radius: 100px 100px 100px 100px;
-        background-color: #3A5BCC;
-        border: 2px solid #3A5BCC;
+        background-color: #03142E;
+        border: 2px solid #03142E;
         text-align: center;
         font-size: 17px;
         font-weight: 400;
@@ -97,22 +98,22 @@
         text-transform: uppercase;
         &:hover {
             background-color: #ffffff;
-            color: #4949cf;
+            color: #03142E;
             @media(max-width: 1024px) {
                 box-shadow: none;
-                background-color: #3A5BCC;
-                border: 2px solid #3A5BCC;
+                background-color: #03142E;
+                border: 2px solid #03142E;
                 color: #ffffff;
             }
         }
         &.added {
             &:hover {
                 background-color: #ffffff;
-                color: #4949cf;
+                color: #03142E;
                 @media(max-width: 1024px) {
                     box-shadow: none;
-                    background-color: #3A5BCC;
-                    border: 2px solid #3A5BCC;
+                    background-color: #03142E;
+                    border: 2px solid #03142E;
                     color: #ffffff;
                 }
             }

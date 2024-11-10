@@ -51,7 +51,8 @@
         margin-top: 25px;
         font-size: 25px;
         font-weight: 500;
-        color: var(--e-global-color-primary);
+        color: #03142E;
+        font-family: 'Open Sans', sans-serif;
         @media(max-width: 595px) {
             font-size: 21px;
         }
@@ -95,13 +96,15 @@
     &__title {
         font-size: 25px;
         font-weight: 500;
-        color: var(--e-global-color-primary);
+        color: #03142E;
+        font-family: 'Open Sans', sans-serif;
         text-align: center;
     }
     &__subtitle {
         font-size: 24px;
         font-weight: 400;
-        color: var(--e-global-color-primary);
+        color: #03142E;
+        font-family: 'Open Sans', sans-serif;
         text-align: center;
         margin-bottom: 30px;
     }
@@ -111,26 +114,27 @@
         width: 200px;
         height: 50px;
         border-radius: 10px;
-        background-color: #3A5BCC;
-        border: 2px solid #3A5BCC;
+        background-color: #03142E;
+        border: 2px solid #03142E;
         color: #ffffff;
         text-align: center;
         font-size: 18px;
         font-weight: 500;
         white-space: nowrap;
         color: #ffffff;
+        font-family: 'Open Sans', sans-serif;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         &:hover {
             background-color: #ffffff;
-            color: #4949cf;
-           @media(max-width: 1024px) {
-            box-shadow: none;
-            background-color: #3A5BCC;
-            border: 2px solid #3A5BCC;
-            color: #ffffff;
-           }
+            color: #03142E;
+            @media(max-width: 1024px) {
+                box-shadow: none;
+                background-color: #03142E;
+                border: 2px solid #03142E;  
+                color: #ffffff;
+            }
         }
     }
 }

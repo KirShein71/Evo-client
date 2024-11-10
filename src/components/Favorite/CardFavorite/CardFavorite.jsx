@@ -43,7 +43,11 @@ function CardFavorite({ product, change, setChange }) {
           <div className="cardfavorite__image">
             <img src={process.env.REACT_APP_IMG_URL + product.image} alt="image_car" />
           </div>
+          <div className="cardfavorite__pattern-image">
+            <img src={process.env.REACT_APP_IMG_URL + product.pattern_image} alt="image_car" />
+          </div>
         </Link>
+
         <div class="cardfavorite__bottom">
           <h4 class="cardfavorite__title">{product.name}</h4>
           <div class="cardfavorite__price">

@@ -32,7 +32,8 @@
         &-name {
             font-size: 18px;
             font-weight: bold;
-            color: #000000ff;
+            font-family: 'Open Sans', sans-serif;
+            color: #03142E;
             @media(max-width: 460px) {
                 font-size: 16px;
             }
@@ -41,6 +42,7 @@
             font-size: 16px;
             font-weight: 400;
             color: #6b6b6b;
+            font-family: 'Open Sans', sans-serif;
             margin-right: 5px;
             @media(max-width: 460px) {
                 font-size: 14px;
@@ -52,7 +54,8 @@
             @media(max-width: 460px) {
                 display: inline;
                 font-weight: bold;
-                color: #000000ff;
+                font-family: 'Open Sans', sans-serif;
+                color: #03142E;
                 margin-right: 5px;
                 font-size: 16px;
             }
@@ -62,7 +65,8 @@
     &__quantity, &__price, &__total {
         font-size: 18px;
         font-weight: 500;
-        color: #000000ff;
+        font-family: 'Open Sans', sans-serif;
+        color: #03142E;
         text-align: center;
         @media(max-width: 460px) {
             display: none;

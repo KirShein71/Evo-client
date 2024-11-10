@@ -1,6 +1,6 @@
 .bagsize {
     margin-top: 15px;
-    border-bottom: 2px solid #3A5BCC26;
+    border-bottom: 2px solid #e5e5e5;
     @media(max-width: 595px) {
         margin-left: 25px;
         margin-top: 25px;
@@ -10,7 +10,8 @@
     &__title {
         font-size: 21px;
         font-weight: 600;
-        color: var(--e-global-color-primary);    
+        color: #03142E;
+        font-family: 'Open Sans', sans-serif;   
         width: 336px; 
         @media(max-width: 460px) {
             font-size: 19px;
@@ -29,7 +30,8 @@
         span {
             font-size: 16px;
             font-weight: 400;
-            color: var(--e-global-color-primary);   
+            color: #03142E;
+            font-family: 'Open Sans', sans-serif;
             padding-right: 15px;
             @media(max-width: 460px) {
                 font-size: 16px;
@@ -38,7 +40,8 @@
         p {
             font-size: 18px;
             font-weight: 600;
-            color: var(--e-global-color-primary);   
+            color: #03142E;
+            font-family: 'Open Sans', sans-serif;  
             margin-bottom: 0px;
             @media(max-width: 460px) {
                 font-size: 16px;
@@ -58,7 +61,8 @@
         &__total {
             font-size: 18px;
             font-weight: 500;
-            color: var(--e-global-color-primary);   
+            color: #03142E;
+            font-family: 'Open Sans', sans-serif;   
             padding-left: 10px;
             padding-right: 10px;
             @media(max-width: 460px) {
