@@ -74,11 +74,9 @@ const App = observer(() => {
                 <Footer />
             </BrowserRouter>
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
-                    <h2>Внимание!</h2>
-                    <p>Пожалуйста, откройте сайт через другой браузер для лучшего опыта.</p>
-                    <button onClick={() => setShowModal(false)}>Закрыть</button>
-                </Modal>
+                
+                    <><h2>Внимание!</h2><p>Пожалуйста, откройте сайт через другой браузер для лучшего опыта.</p><button onClick={() => setShowModal(false)}>Закрыть</button></>
+              
             )}
         </div>
     );
