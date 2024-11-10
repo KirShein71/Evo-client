@@ -16,15 +16,18 @@ import './app.scss'
 
 
 const App = observer(() => {
-    const { user, basketProduct, favoriteProduct } = React.useContext(AppContext);
-    const [loading, setLoading] = React.useState(true);
-    const [showModal, setShowModal] = React.useState(false);
+    const { user, basketProduct, favoriteProduct } = React.useContext(AppContext)
+    const [loading, setLoading] = React.useState(true)
+    const [showHeader, setShowHeader] = React.useState(true); // Состояние для управления отображением заголовка
 
     React.useEffect(() => {
-        // Проверяем userAgent на наличие Telegram
-        const isTelegramBrowser = /Telegram/.test(navigator.userAgent) && !/Edge/.test(navigator.userAgent) && /Mobile/.test(navigator.userAgent);
-        if (isTelegramBrowser) {
-            setShowModal(true); // Показываем модальное окно
+        // Проверяем userAgent на наличие Telegram и мобильных устройств
+        const isTelegramBrowser = /Telegram/.test(navigator.userAgent);
+        const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
+
+        // Если это Telegram или мобильное устройство, скрываем заголовок
+        if (isTelegramBrowser || isMobileDevice) {
+            setShowHeader(false);
         }
 
         setLoading(true);
@@ -67,19 +70,12 @@ const App = observer(() => {
     return (
         <div className="wrapper">
             <BrowserRouter>
-                <Header />
+                {showHeader && <Header />} {/* Отображаем заголовок только если showHeader true */}
                 <div className="content">
                     <AppRouter />
                 </div>
                 <Footer />
             </BrowserRouter>
-            {showModal && (
-                <div className="modal-overlay">
-                    <h2 style={{color: 'ffffff'}}>Внимание!</h2>
-                    <p>Пожалуйста, откройте сайт через другой браузер для лучшего опыта.</p>
-                    <button onClick={() => setShowModal(false)}>Закрыть</button>
-                    </div>
-            )}
         </div>
     );
 });
