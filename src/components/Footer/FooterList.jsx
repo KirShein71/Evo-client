@@ -99,7 +99,7 @@ function Footer() {
           </div> */}
           <Link to="/login">
             <div className="footer__item">
-              <img width={15} src={`./img/admin.png?=v=${Date.now()}`} alt="admin" />
+              <img width={15} src={`./img/admin.png?=v=${Date.now()}`} />
             </div>
           </Link>
           <a
